@@ -36,6 +36,5 @@
 };
 
 &mo {
-    flavor = "tap-preferred";
     tapping-term-ms = <TAPPING_TERM>;
 };
