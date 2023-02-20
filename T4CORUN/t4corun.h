@@ -15,10 +15,15 @@
 
 //Layer Taps
 #define MOU_SPC &lt     MOUSE   SPACE
+#define MOU_N	&lt		MOUSE	N
+#define MOU_K	&lt		MOUSE	K
 #define NAV_TAB &lt     NAVI    TAB
 #define NUM_BSP &lt     NUMBER  BSPC
 #define FUN_Z   &lt_pky FUNC    Z
 #define AD_FSLH &lt_pky	ADJUST  FSLH
+
+//Mod Taps
+#define NUM_LYR &mo		NUMBER
 
 //To Layer
 #define DEFAULT &to 	QWERTY

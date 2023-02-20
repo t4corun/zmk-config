@@ -27,9 +27,9 @@
                 *   +------+------+------+------+------|    +------+------+------+------+------+
                 *   |   A  |   S  |   D  |   F  |   G  |    |   H  |   J  |   K  |   L  |   '  |
                 *   +------+------+------+------+------|    +------+------+------+------+------+
-                *   |FUN_Z |   X  |   C  |   V  |   B  |    |   N  |   M  |   ,  |   .  |ADJ_/ |
+                *   |FUN_Z |   X  |   C  |   V  |   B  |    |MOU_N |   M  |   ,  |   .  |ADJ_/ |
                 *   `------+------+------+------+------+    +------+------+------+------+------'
-                *                 |plypau|NUMBSP| Shft |    |MOUSPC|NAVTAB| mute |
+                *                 |plypau| NUM  | Shft |    | Spc  |NAVTAB| mute |
                 *                 `------+------+------'    `------+------+------'
                 *
                 *   Encoder Left: Up <-> Down
@@ -41,8 +41,8 @@
                         bindings = <
                                 &kp Q           &kp W           &kp E           &kp R           &kp T           &kp Y           &kp U           &kp I           &kp O           &kp P
                                 LGUI_A          LALT_S          LCTRL_D         LSHFT_F         &kp G           &kp H           RSHFT_J         RCTRL_K         RALT_L          RGUI_QT
-                                FUN_Z           &kp X           &kp C           &kp V           &kp B           &kp N           &kp M           &kp COMMA       &kp DOT         AD_FSLH
-                                                                &kp C_PP        NUM_BSP         &kp LSHFT       MOU_SPC         NAV_TAB         &kp C_MUTE
+                                FUN_Z           &kp X           &kp C           &kp V           &kp B           MOU_N           &kp M           &kp COMMA       &kp DOT         AD_FSLH
+                                                                &kp C_PP        NUM_LYR         &kp LSHFT       &kp SPACE       NAV_TAB         &kp C_MUTE
                         >;
 
                         sensor-bindings = <&inc_dec_mwh SCROLL_DOWN SCROLL_UP &inc_dec_mwh SCROLL_RIGHT SCROLL_LEFT>;
@@ -57,9 +57,9 @@
                 *   +------+------+------+------+------|    +------+------+------+------+------+
                 *   |   A  |   R  |   S  |   T  |   G  |    |   M  |   N  |   E  |   I  |   O  |
                 *   +------+------+------+------+------|    +------+------+------+------+------+
-                *   |FUN_Z |   X  |   C  |   D  |   V  |    |   K  |   H  |   ,  |   .  |ADJ_/ |
+                *   |FUN_Z |   X  |   C  |   D  |   V  |    |MOU_K |   H  |   ,  |   .  |ADJ_/ |
                 *   `------+------+------+------+------+    +------+------+------+------+------'
-                *                 |plypau|NUMBSP| Shft |    |MOUSPC|NAVTAB| mute |
+                *                 |plypau|NUMBSP| Shft |    | Spc  |NAVTAB| mute |
                 *                 `------+------+------'    `------+------+------'
                 *
                 *   Encoder Left: Up <-> Down
@@ -71,8 +71,8 @@
                         bindings = <
                                 &kp Q           &kp W           &kp F           &kp P           &kp B           &kp J           &kp L           &kp U           &kp Y           &kp SQT
                                 LGUI_A          LALT_R          LCTRL_S         LSHFT_T         &kp G           &kp M           RSHFT_N         RCTRL_E         RALT_I          RGUI_O
-                                FUN_Z           &kp X           &kp C           &kp D           &kp V           &kp K           &kp H           &kp COMMA       &kp DOT         AD_FSLH
-                                                                &kp C_PP        NUM_BSP         &kp LSHFT       MOU_SPC         NAV_TAB         &kp C_MUTE
+                                FUN_Z           &kp X           &kp C           &kp D           &kp V           MOU_K           &kp H           &kp COMMA       &kp DOT         AD_FSLH
+                                                                &kp C_PP        NUM_LYR         &kp LSHFT       &kp SPACE       NAV_TAB         &kp C_MUTE
                         >;
 
                         sensor-bindings = <&inc_dec_kp DOWN UP &inc_dec_kp RIGHT LEFT>;
