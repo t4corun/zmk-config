@@ -1,18 +1,5 @@
 #pragma once
 
-enum layers {
-  _QWERTY = 0,
-  FIRST_DEFAULT_LAYER = 0,
-  _COLEMAK_DH,
-  _GAMING,
-  _NUMBER,
-  _NAVIGATION,
-  _FUNCTION,
-  _MOUSE,
-  _GAMENUMBER,
-  _ADJUST
-};
-
 // Layer Definitions out toggle
 #define QWERTY  0
 #define COLEMAK 1
@@ -39,8 +26,8 @@ enum layers {
 #define NUM_LYR &mo		NUMBER
 
 //To Layer
-#define DEFAULT &to 	_QWERTY
-#define COLMKDH &to	    _COLEMAK_DH
+#define DEFAULT &to 	QWERTY
+#define COLMKDH &to	    COLEMAK
 
 //Shortcuts
 #define S_UNDO  &kp LC(Z)
