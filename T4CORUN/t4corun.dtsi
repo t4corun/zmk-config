@@ -24,7 +24,7 @@
 		HOLD_TAP(lgt, tap_preferred, &kp LT &kp RT &kp LEFT, &kp)
 		HOLD_TAP(ne, tap_preferred, &kp SPACE &kp EXCL &kp EQUAL &kp SPACE, &kp)
 
-		TAP_DANCE(shftcaps, <&sk LSHFT>, <&caps_word>)
+		TAP_DANCE(shftcaps, "<&sk LSHFT>, <&caps_word>")
     };
 
 	combos {

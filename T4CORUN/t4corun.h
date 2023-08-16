@@ -14,7 +14,7 @@
 #define NAV(keycode) 	&lt NAVI 	keycode
 
 //To Layer
-#define QWERTY 			&to 		QWERTY
+#define DEFAULT			&to 		QWERTY
 #define CLMAKDH 		&to	    	COLEMAK
 
 //Shortcuts
