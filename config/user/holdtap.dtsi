@@ -1,4 +1,4 @@
-#define HOLD_TAP(NAME, FLAVOR, TAP, HOLD) 				\
+/*#define HOLD_TAP(NAME, FLAVOR, TAP, HOLD) 				\
 	NAME: hold_tap_##NAME { 							\
 	    compatible      = "zmk,behavior-hold-tap"; 		\
 		label           = ZMK_MACRO_STRINGIFY(NAME);	\
@@ -8,6 +8,18 @@
 	    #binding-cells  = <2>;                    		\
 	    bindings        = <HOLD>, <TAP>;    	      	\
 	};
+*/
+
+	Bleh: hold_tap_Bleh { 							
+	    compatible      = "zmk,behavior-hold-tap"; 		
+		label           = "Bleh";	
+	    flavor          = "tap-preferred";	
+	    tapping-term-ms = <200>;	
+	    quick-tap-ms    = <125>;       					
+	    #binding-cells  = <2>;                    		
+	    bindings        = <&kp LT &kp RT &kp LEFT>, <&kp>;    	      	
+	};
+
 
 /*
 HOLD_TAP(ht,	tap_preferred, TAPPING_TERM, QUICK_TAP_TERM, &kp, &kp)
@@ -21,7 +33,7 @@ HOLD_TAP(lrbkt, tap_preferred, TAPPING_TERM, QUICK_TAP_TERM, &kp, &kp LBKT &kp R
 HOLD_TAP(lrpar, tap_preferred, TAPPING_TERM, QUICK_TAP_TERM, &kp, &kp LPAR &kp RPAR &kp LEFT)
 HOLD_TAP(lgt, 	tap_preferred, TAPPING_TERM, QUICK_TAP_TERM, &kp, &kp LT &kp RT &kp LEFT)
 HOLD_TAP(ne, 	tap_preferred, TAPPING_TERM, QUICK_TAP_TERM, &kp, &kp SPACE &kp EXCL &kp EQUAL &kp SPACE)
-*/
+
 
 HOLD_TAP(ht,	tap_preferred, &kp, &kp)
 HOLD_TAP(dt, 	tap_preferred, &kp, &kp &kp)
@@ -32,7 +44,7 @@ HOLD_TAP(tri, 	tap_preferred, &kp, &kp &kp &kp)
 HOLD_TAP(lrbrc, tap_preferred, &kp, &kp LBRC &kp RBRC &kp LEFT)
 HOLD_TAP(lrbkt, tap_preferred, &kp, &kp LBKT &kp RBKT &kp LEFT)
 HOLD_TAP(lrpar, tap_preferred, &kp, &kp LPAR &kp RPAR &kp LEFT)
-HOLD_TAP(lgt, 	tap_preferred, &kp, &kp LT &kp RT &kp LEFT)
+HOLD_TAP(ltgt, 	tap_preferred, &kp, &kp LT &kp RT &kp LEFT)
 HOLD_TAP(ne, 	tap_preferred, &kp, &kp SPACE &kp EXCL &kp EQUAL &kp SPACE)
 
 
@@ -45,5 +57,9 @@ HOLD_TAP(ne, 	tap_preferred, &kp, &kp SPACE &kp EXCL &kp EQUAL &kp SPACE)
 #define LRBRC(keycode)			&lrbrc 	&none, 		keycode
 #define LRBKT(keycode)			&lrbkt 	&none, 		keycode
 #define LRPAR(keycode)			&lrpar 	&none, 		keycode
-#define LGT(keycode)			&lgt 	&none, 		keycode
+#define LGT(keycode)			&ltgt 	&none, 		keycode
 #define NE(keycode)				&ne 	&none, 		keycode
+
+*/
+
+#define NE(keycode)				&bleh 	&none, 		keycode
