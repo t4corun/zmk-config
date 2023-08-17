@@ -17,7 +17,7 @@
 	    tapping-term-ms = <200>;	
 	    quick-tap-ms    = <125>;       					
 	    #binding-cells  = <2>;                    		
-	    bindings        = <&kp LT &kp RT &kp LEFT>, <&kp>;    	      	
+	    bindings        = <&kp LPAR &kp RPAR &kp LEFT>, <&kp>;    	      	
 	};
 
 
