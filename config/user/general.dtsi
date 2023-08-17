@@ -1,0 +1,58 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
+
+// Layer Definitions out toggle
+#define QWERTY  0
+#define COLEMAK 1
+#define NUMBER  2
+#define NAVI    3
+#define SYMBOL  4
+#define MOUSE	5
+#define CONFIG  6
+
+//Feature Configuration
+#define TAPPING_TERM 		200
+#define QUICK_TAP_TERM 		125
+#define STICKYKEY_TIMEOUT 	3000
+
+//new stuff
+#define MOU(keycode) 	&lt MOUSE 	keycode
+#define NAV(keycode) 	&lt NAVI 	keycode
+
+//To Layer
+#define DEFAULT			&to 		QWERTY
+#define CLMAKDH 		&to	    	COLEMAK
+
+//Shortcuts
+#define W_UNDO  		&kp 		LC(Z)
+#define W_CUT   		&kp 		LC(X)
+#define W_COPY  		&kp 		LC(C)
+#define W_PASTE 		&kp 		LC(V)
+#define W_REDO  		&kp 		LC(Y)
+#define W_SNIP  		&kp 		LS(LG(S))
+#define W_FILE  		&kp 		LG(E)
+
+#define NEXTTAB 		&kp 		LC(TAB)
+
+//Bluetooth
+#define BTClear 		&bt 		BT_CLR
+#define BT0     		&bt 		BT_SEL 0
+#define BT1     		&bt 		BT_SEL 1
+#define BT2     		&bt 		BT_SEL 2
+#define BT3     		&bt 		BT_SEL 3
+#define BT4     		&bt 		BT_SEL 4
+
+&lt {
+    tapping-term-ms = <TAPPING_TERM>;
+};
+
+&sk {
+    release-after-ms = <STICKYKEY_TIMEOUT>;
+    quick-release;
+};
+
+&caps_word {
+    continue-list = <UNDER MINUS BSPC DELETE0>;
+};

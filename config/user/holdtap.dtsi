@@ -1,0 +1,34 @@
+#define HOLD_TAP(NAME, FLAVOR, TAPTERM, QTAPTERM, TAP, HOLD) 	\
+	NAME: hold_tap_##NAME { 									\
+	    compatible      = "zmk,behavior-hold-tap"; 				\
+		label           = ZMK_MACRO_STRINGIFY(NAME)				\
+	    flavor          = ZMK_MACRO_STRINGIFY(FLAVOR);			\
+	    tapping-term-ms = <TAPTERM>;         					\
+	    quick-tap-ms    = <QTAPTERM>;       					\
+	    #binding-cells  = <2>;                    				\
+	    bindings        = <HOLD>, <TAP>;    	      			\
+	};
+
+HOLD_TAP(ht,	tap_preferred, TAPPING_TERM, QUICK_TAP_TERM, &kp, &kp)
+HOLD_TAP(dt, 	tap_preferred, TAPPING_TERM, QUICK_TAP_TERM, &kp, &kp &kp)
+HOLD_TAP(dtl, 	tap_preferred, TAPPING_TERM, QUICK_TAP_TERM, &kp, &kp &kp &kp LEFT)
+HOLD_TAP(dts, 	tap_preferred, TAPPING_TERM, QUICK_TAP_TERM, &kp, &kp SPACE &kp &kp &kp SPACE)
+HOLD_TAP(tri, 	tap_preferred, TAPPING_TERM, QUICK_TAP_TERM, &kp, &kp &kp &kp)
+		
+HOLD_TAP(lrbrc, tap_preferred, TAPPING_TERM, QUICK_TAP_TERM, &kp, &kp LBRC &kp RBRC &kp LEFT)
+HOLD_TAP(lrbkt, tap_preferred, TAPPING_TERM, QUICK_TAP_TERM, &kp, &kp LBKT &kp RBKT &kp LEFT)
+HOLD_TAP(lrpar, tap_preferred, TAPPING_TERM, QUICK_TAP_TERM, &kp, &kp LPAR &kp RPAR &kp LEFT)
+HOLD_TAP(lgt, 	tap_preferred, TAPPING_TERM, QUICK_TAP_TERM, &kp, &kp LT &kp RT &kp LEFT)
+HOLD_TAP(ne, 	tap_preferred, TAPPING_TERM, QUICK_TAP_TERM, &kp, &kp SPACE &kp EXCL &kp EQUAL &kp SPACE)
+
+#define HT(holdkey, tapkey)		&ht 	holdkey, 	tapkey
+#define DT(keycode) 			&dt 	keycode, 	keycode	
+#define DTL(keycode) 			&dtl 	keycode, 	keycode
+#define DTS(keycode)			&dts	keycode, 	keycode
+#define TRI(keycode)			&tri	keycode, 	keycode
+
+#define LRBRC(keycode)			&lrbrc 	&none, 		keycode
+#define LRBKT(keycode)			&lrbkt 	&none, 		keycode
+#define LRPAR(keycode)			&lrpar 	&none, 		keycode
+#define LGT(keycode)			&lgt 	&none, 		keycode
+#define NE(keycode)				&ne 	&none, 		keycode
