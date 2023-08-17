@@ -11,7 +11,14 @@
 
 / {
     behaviors {
-
+        gresc: grave_escape {
+            label          = "grave_escape";
+            compatible     = "zmk,behavior-mod-morph";
+            mods           = <(MOD_LGUI|MOD_RGUI)>;
+            keep-mods      = <(MOD_RGUI)>;
+            #binding-cells = <0>;
+            bindings       = <&kp ESC>, <&kp GRAVE>;
+        };		
 		HOLD_TAP(ht, tap_preferred, &kp, &kp)
 		HOLD_TAP(dt, tap_preferred, &kp &kp, &kp)
 		HOLD_TAP(dtl, tap_preferred, &kp &kp &kp LEFT, &kp)
