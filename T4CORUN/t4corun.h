@@ -51,20 +51,19 @@ combo_##name {                      \
     key-positions = <pos>;          \
 };
 
-/*
-#define HOLD_TAP(name, hold_tap_flavor, hold, tap)  \
-name: name##_hold_tap {                       		\
-    compatible      = "zmk,behavior-hold-tap";		\
-	label           = #name;                  		\
-    flavor          = #hold_tap_flavor;       		\
-    tapping-term-ms = <TAPPING_TERM>;         		\
-    quick-tap-ms    = <QUICK_TAP_TERM>;       		\
-    #binding-cells  = <2>;                    		\
-    bindings        = <hold>, <tap>;          		\
-};
-*/
 
-#define HOLD_TAP(name, hold_tap_flavor, hold, tap) name: name##_hold_tap { compatible = "zmk,behavior-hold-tap"; label = #name; flavor = #hold_tap_flavor; tapping-term-ms = <TAPPING_TERM>; quick-tap-ms = <QUICK_TAP_TERM>; #binding-cells = <2>; bindings = <hold>, <tap>; };
+#define HOLD_TAP(name, hold_tap_flavor, hold, tap) 			\
+name: name##_hold_tap { 									\
+    compatible      = "zmk,behavior-hold-tap"; 				\
+	label           = ZMK_MACRO_STRINGIFY(name)				\
+    flavor          = ZMK_MACRO_STRINGIFY(hold_tap_flavor);	\
+    tapping-term-ms = <TAPPING_TERM>;         				\
+    quick-tap-ms    = <QUICK_TAP_TERM>;       				\
+    #binding-cells  = <2>;                    				\
+    bindings        = <hold>, <tap>;    	      			\
+};
+
+//#define HOLD_TAP(name, hold_tap_flavor, hold, tap) name: name##_hold_tap { compatible = "zmk,behavior-hold-tap"; label = #name; flavor = #hold_tap_flavor; tapping-term-ms = <TAPPING_TERM>; quick-tap-ms = <QUICK_TAP_TERM>; #binding-cells = <2>; bindings = <hold>, <tap>; };
 
 #define HT(holdkey, tapkey)		&ht 	holdkey, 	tapkey
 #define DT(keycode) 			&dt 	keycode, 	keycode	
