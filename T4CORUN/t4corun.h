@@ -56,10 +56,10 @@ combo_##name {                      \
 name: name##_hold_tap {                       		\
     compatible      = "zmk,behavior-hold-tap";		\
 	label           = #name;                  		\
-    #binding-cells  = <2>;                    		\
     flavor          = #hold_tap_flavor;       		\
     tapping-term-ms = <TAPPING_TERM>;         		\
     quick-tap-ms    = <QUICK_TAP_TERM>;       		\
+    #binding-cells  = <2>;                    		\
     bindings        = <hold>, <tap>;          		\
 };
 
