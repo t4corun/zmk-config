@@ -1,12 +1,12 @@
-#define HOLD_TAP(NAME, FLAVOR, TAP, HOLD) 	\
-	NAME: hold_tap_##NAME { 									\
-	    compatible      = "zmk,behavior-hold-tap"; 				\
-		label           = ZMK_MACRO_STRINGIFY(NAME)				\
-	    flavor          = ZMK_MACRO_STRINGIFY(FLAVOR);			\
-	    tapping-term-ms = <200>;         					\
+#define HOLD_TAP(NAME, FLAVOR, TAP, HOLD) 				\
+	NAME: hold_tap_##NAME { 							\
+	    compatible      = "zmk,behavior-hold-tap"; 		\
+		label           = ZMK_MACRO_STRINGIFY(NAME);	\
+	    flavor          = ZMK_MACRO_STRINGIFY(FLAVOR);	\
+	    tapping-term-ms = <200>;         				\
 	    quick-tap-ms    = <125>;       					\
-	    #binding-cells  = <2>;                    				\
-	    bindings        = <HOLD>, <TAP>;    	      			\
+	    #binding-cells  = <2>;                    		\
+	    bindings        = <HOLD>, <TAP>;    	      	\
 	};
 
 /*
