@@ -54,5 +54,5 @@
 };
 
 &caps_word {
-    continue-list = <UNDER MINUS BSPC DELETE0>;
+    continue-list = <UNDER MINUS BSPC DEL>;
 };
