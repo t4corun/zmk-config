@@ -9,7 +9,7 @@
 	conditional_layers {
 		compatible = "zmk,conditional-layers";
 		tri_layer {
-			if-layers = <NUMBER, NAVI>;
+			if-layers = <NUMBER NAVI>;
 			then-layer = <SYMBOL>;
 		}
 	};
