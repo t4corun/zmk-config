@@ -3,8 +3,8 @@
 	    compatible      = "zmk,behavior-hold-tap"; 		\
 		label           = ZMK_MACRO_STRINGIFY(NAME);	\
 	    flavor          = ZMK_MACRO_STRINGIFY(FLAVOR);	\
-	    tapping-term-ms = <200>;         				\
-	    quick-tap-ms    = <125>;       					\
+	    tapping-term-ms = <TAPPING_TERM>;       		\
+	    quick-tap-ms    = <QUICK_TAP_TERM>;  			\
 	    #binding-cells  = <2>;                    		\
 	    bindings        = <HOLD>, <TAP>;    	      	\
 	};
