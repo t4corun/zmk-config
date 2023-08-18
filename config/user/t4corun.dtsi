@@ -2,7 +2,7 @@
 
 / {
 	#include "combos.dtsi"
-	#include "tapdance.dtsi"
+	//#include "tapdance.dtsi"
 	#include "holdtap.dtsi"
 	#include "mouse.dtsi"
 
@@ -38,42 +38,12 @@
                         
             bindings = <
                 &kp Q           &kp W           &kp E           &kp R           &kp T           &kp Y           &kp U           &kp I           &kp O           &kp P
-                &kp A           &kp S           &kp D           &kp F           &kp G           &kp H           &kp J         	&kp K         	&kp L           DTL(SQT)
-                MOU(Z)      	&kp X           &kp C           &kp V           &kp B           &kp N           &kp M           HT(LPAR, COMMA) HT(RPAR,DOT) 	HT(UNDER, MINUS)
+                &kp A           &kp S           &kp D           &kp F           &kp G           &kp H           &kp J         	&kp K         	&kp L           &kp SQT
+                MOU(Z)      	&kp X           &kp C           &kp V           &kp B           &kp N           &kp M           &kp COMMA       &kp DOT 		HT(UNDER, MINUS)
                                                 &none           &mo NUMBER      &shftcaps       &kp SPACE       NAV(0) 		    &kp C_MUTE
             >;
 
 			sensor-bindings = <&inc_dec_mwh SCROLL_RIGHT SCROLL_LEFT &inc_dec_mwh SCROLL_UP SCROLL_DOWN>;
-        };
-
-        /*
-		*
-		*   ,----------------------------------.    ,----------------------------------.
-		*   | Q    | W    | F    | P    | B    |    | J    | L    | U    | Y    | '    |
-		*   +------+------+------+------+------|    +------+------+------+------+------+
-		*   | A    | R    | S    | T    | G    |    | M    | N    | E    | I    | O    |
-		*   +------+------+------+------+------|    +------+------+------+------+------+
-		*   | MOUZ | X    | C    | D    | V    |    | K    | H    | ,    | .    | -    |
-		*   `------+------+------+------+------+    +------+------+------+------+------'
-		*                 |      | NUM  | Lsft |    | Spc  | NAV  |      |
-		*                 `------+------+------'    `------+------+------'
-		*
-        *   Encoder Left: Scroll Left <-> Scroll Right
-		*	Encoder Right: Scroll Down <-> Scroll Up
-		*/
-		
-		colemakdh_layer {
-
-			label = "ColmakDH";
-
-            bindings = <
-                &kp Q           &kp W           &kp F           &kp P           &kp B           &kp J           &kp L           &kp U           &kp Y           DTL(SQT)
-                &kp A           &kp R           &kp S           &kp T           &kp G           &kp M           &kp N           &kp E           &kp I           &kp O
-                MOU(Z)          &kp X           &kp C           &kp D           &kp V           &kp K           &kp H           HT(LPAR, COMMA) HT(RPAR,DOT) 	HT(UNDER, MINUS)
-                                                &none           &mo NUMBER      &shftcaps       &kp SPACE       NAV(0)          &kp C_MUTE
-            >;
-
-            sensor-bindings = <&inc_dec_mwh SCROLL_RIGHT SCROLL_LEFT &inc_dec_mwh SCROLL_UP SCROLL_DOWN>;
         };
 
 		/*
@@ -97,9 +67,9 @@
             label = "Numbers";
 
             bindings = <
-                &kp ESC         W_SNIP     		W_FILE     		&none	        TRI(GRAVE)      DTS(EQUAL)      &kp N7          &kp N8          &kp N9          &kp TAB
-                &sk LGUI        &sk LALT        &sk LCTRL       &sk LSHFT       HT(COLON, SEMI) &kp BSPC        &kp N4          &kp N5          &kp N6          &kp DOT
-                W_UNDO          W_CUT           W_COPY          W_PASTE         W_REDO          &none	        &kp N1          &kp N2          &kp N3          HT(UNDER, MINUS)
+                &kp ESC         W_SNIP     		W_FILE     		&none	        &none      		&none      		&kp N7          &kp N8          &kp N9          &kp TAB
+                &sk LGUI        &sk LALT        &sk LCTRL       &sk LSHFT       &none			&kp BSPC        &kp N4          &kp N5          &kp N6          &kp DOT
+                W_UNDO          W_CUT           W_COPY          W_PASTE         W_REDO          &none	        &kp N1          &kp N2          &kp N3          &none
                                                 &none		    &trans 		    &none		    &kp SPACE       &trans          &kp C_MUTE
             >;
 
@@ -161,10 +131,10 @@
 			label = "Symbol";
 
             bindings = <
-                &kp PRCNT       &kp CARET       &kp DLLR        &kp PLUS        TRI(GRAVE)      DTS(EQUAL)      DT(HASH)        &kp STAR        DTS(PIPE)       DT(DQT)
-                DTS(AMPS)       LRBRC(LBRC)     &kp RBRC        &kp AT          HT(COLON, SEMI) &kp BSPC        &kp QMARK       LRBKT(LBKT)     &kp RBKT        DT(SQT)
-                &none           LGT(LT)         &kp GT          DT(BSLH)        NE(EXCL)        DT(MINUS) 		DT(FSLH)        LRPAR(LPAR)     &kp RPAR        HT(UNDER, MINUS)
-                                                &none           &trans          &none           &none           &trans          &none
+                &none	&none	&none	&none	&none	&none	&none	&none	&none	&none
+                &none	&none	&none	&none	&none	&none	&none	&none	&none	&none
+                &none	&none	&none	&none	&none	&none	&none	&none	&none	&none
+                                &none   &trans  &none   &none   &trans  &none
             >;
 
             sensor-bindings = <&inc_dec_kp &none &none &inc_dec_kp &none &none>;
@@ -220,7 +190,7 @@
             label = "Config";
 
             bindings = <
-                &kp SLCK        &kp F7          &kp F8          &kp F9		    &kp F10	        DEFAULT         CLMAKDH         BTClear         &out OUT_TOG    &trans      
+                &kp SLCK        &kp F7          &kp F8          &kp F9		    &kp F10	        DEFAULT         &none           BTClear         &out OUT_TOG    &trans      
                 &kp PSCRN       &kp F4          &kp F5          &kp F6          &kp F11         &kp CAPS        &kp RSHFT       &kp RCTRL       &kp RALT        &kp RGUI
                 &kp PAUSE_BREAK &kp F1          &kp F2          &kp F3		    &kp F12         BT0             BT1             BT2             BT3             &trans     
                                                 &none           &bootloader     &reset          &reset          &bootloader     &none      
