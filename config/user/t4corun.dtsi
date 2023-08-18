@@ -11,7 +11,7 @@
 		tri_layer {
 			if-layers = <NUMBER NAVI>;
 			then-layer = <SYMBOL>;
-		}
+		};
 	};
 
     keymap {
