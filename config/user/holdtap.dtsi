@@ -40,7 +40,7 @@ HOLD_TAP(ltgt, 	tap_preferred, &kp, &kp LT &kp RT &kp LEFT)
 HOLD_TAP(ne, 	tap_preferred, &kp, &kp SPACE &kp EXCL &kp EQUAL &kp SPACE)
 */
 
-#define HT(holdkey, tapkey)		&ht 	holdkey, 	tapkey
+//#define HT(holdkey, tapkey)		&ht 	holdkey, 	tapkey
 
 /*
 #define DT(keycode) 			&dt 	keycode, 	keycode	

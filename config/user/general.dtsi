@@ -53,6 +53,8 @@
 #define BT3     		&bt 		BT_SEL 3
 #define BT4     		&bt 		BT_SEL 4
 
+#define HT(holdkey, tapkey)		&ht 	holdkey, 	tapkey
+
 &lt {
     tapping-term-ms = <TAPPING_TERM>;
 };
