@@ -1,0 +1,232 @@
+#include "general.dtsi"
+
+/ {
+	#include "combos.dtsi"
+	#include "tapdance.dtsi"
+	#include "holdtap.dtsi"
+	#include "mouse.dtsi"
+
+	conditional_layers {
+		compatible = "zmk,conditional-layers";
+		tri_layer {
+			if-layers = <NUMBER, NAVI>;
+			then-layer = <SYMBOL>;
+		}
+	};
+
+    keymap {
+        compatible = "zmk,keymap";
+
+		/*
+		*   ,----------------------------------.    ,----------------------------------.
+		*   | Q    | W    | E    | R    | T    |    | Y    | U    | I    | O    | P    |
+		*   +------+------+------+------+------|    +------+------+------+------+------+
+		*   | A    | S    | D    | F    | G    |    | H    | J    | K    | L    | '    |
+		*   +------+------+------+------+------|    +------+------+------+------+------+
+		*   | MOUZ | X    | C    | V    | B    |    | N    | M    | ,    | .    | -    |
+		*   `------+------+------+------+------+    +------+------+------+------+------'
+		*                 |      | NUM  | Lsft |    | Spc  | NAV  | Mute |
+		*                 `------+------+------'    `------+------+------'
+        *
+        *   Encoder Left: Scroll Left <-> Scroll Right
+		*	Encoder Right: Scroll Down <-> Scroll Up
+		*/
+		
+        default_layer {
+
+            label = "Qwerty";
+                        
+            bindings = <
+                &kp Q           &kp W           &kp E           &kp R           &kp T           &kp Y           &kp U           &kp I           &kp O           &kp P
+                &kp A           &kp S           &kp D           &kp F           &kp G           &kp H           &kp J         	&kp K         	&kp L           DTL(SQT)
+                MOU(Z)      	&kp X           &kp C           &kp V           &kp B           &kp N           &kp M           HT(LPAR, COMMA) HT(RPAR,DOT) 	HT(UNDER, MINUS)
+                                                &none           &mo NUMBER      &shftcaps       &kp SPACE       NAV(0) 		    &kp C_MUTEm
+            >;
+
+			sensor-bindings = <&inc_dec_mwh SCROLL_RIGHT SCROLL_LEFT &inc_dec_mwh SCROLL_UP SCROLL_DOWN>;
+        };
+
+        /*
+		*
+		*   ,----------------------------------.    ,----------------------------------.
+		*   | Q    | W    | F    | P    | B    |    | J    | L    | U    | Y    | '    |
+		*   +------+------+------+------+------|    +------+------+------+------+------+
+		*   | A    | R    | S    | T    | G    |    | M    | N    | E    | I    | O    |
+		*   +------+------+------+------+------|    +------+------+------+------+------+
+		*   | MOUZ | X    | C    | D    | V    |    | K    | H    | ,    | .    | -    |
+		*   `------+------+------+------+------+    +------+------+------+------+------'
+		*                 |      | NUM  | Lsft |    | Spc  | NAV  |      |
+		*                 `------+------+------'    `------+------+------'
+		*
+        *   Encoder Left: Scroll Left <-> Scroll Right
+		*	Encoder Right: Scroll Down <-> Scroll Up
+		*/
+		
+		colemakdh_layer {
+
+			label = "ColmakDH";
+
+            bindings = <
+                &kp Q           &kp W           &kp F           &kp P           &kp B           &kp J           &kp L           &kp U           &kp Y           DTL(SQT)
+                &kp A           &kp R           &kp S           &kp T           &kp G           &kp M           &kp N           &kp E           &kp I           &kp O
+                MOU(Z)          &kp X           &kp C           &kp D           &kp V           &kp K           &kp H           HT(LPAR, COMMA) HT(RPAR,DOT) 	HT(UNDER, MINUS)
+                                                &none           &mo NUMBER      &shftcaps       &kp SPACE       NAV(0)          &kp C_MUTE
+            >;
+
+            sensor-bindings = <&inc_dec_mwh SCROLL_RIGHT SCROLL_LEFT &inc_dec_mwh SCROLL_UP SCROLL_DOWN>;
+        };
+
+		/*
+		*
+		*   ,----------------------------------.    ,----------------------------------.
+		*   | Esc  | Snip | File |      | `    |    | =    | 7    | 8    | 9    | Tab  |
+		*   +------+------+------+------+------|    +------+------+------+------+------+
+		*   | Gui  | Alt  | Ctrl | Shft | ;    |    | Bksp | 4    | 5    | 6    | .    |
+		*   +------+------+------+------+------|    +------+------+------+------+------+
+		*   | Undo | Cut  | Copy | Pste | Redo |    |      | 1    | 2    | 3    | -    |
+		*   `------+------+------+------+------+    +------+------+------+------+------'
+		*                 |      | NUM  |      |    | Spc  | NAV  |      |
+		*                 `------+------+------'    `------+------+------'
+		*
+        *   Encoder Left: none <-> none
+        *   Encoder Right: Backspace <-> Del
+		*/
+
+        number_layer {
+
+            label = "Numbers";
+
+            bindings = <
+                &kp ESC         W_SNIP     		W_FILE     		&none	        TRI(GRAVE)      DTS(EQUAL)      &kp N7          &kp N8          &kp N9          &kp TAB
+                &sk LGUI        &sk LALT        &sk LCTRL       &sk LSHFT       HT(COLON, SEMI) &kp BSPC        &kp N4          &kp N5          &kp N6          &kp DOT
+                W_UNDO          W_CUT           W_COPY          W_PASTE         W_REDO          &none	        &kp N1          &kp N2          &kp N3          HT(UNDER, MINUS)
+                                                &none		    &trans 		    &none		    &kp SPACE       &trans          &kp C_MUTE
+            >;
+
+            sensor-bindings = <&inc_dec_kp &none &none &inc_dec_kp DEL BSPC>;
+        };
+
+		/*
+		*
+		*   ,----------------------------------.    ,----------------------------------.
+		*   | Esc  | Home | Up   | End  | PgUp |    |      |      |NxtTab|      |      |
+		*   +------+------+------+------+------|    +------+------+------+------+------+
+		*   |      | Left | Down | Right| PgDn |    | Bksp | Shft | Ctrl | Alt  | Gui  |
+		*   +------+------+------+------+------|    +------+------+------+------+------+
+		*   | Undo | Cut  | Copy | Pste | Redo |    | App  | Del  | Tab  |      |      |
+		*   `------+------+------+------+------+    +------+------+------+------+------'
+		*                 | Tab  | NUM  | Ent  |    | Ins  | NAV  | Mute |
+		*                 `------+------+------'    `------+------+------'
+        *
+		*   Encoder Left: Volume Down <-> Volume Up
+        *   Encoder Right: none <-> none
+		*/
+				
+		nav_layer {
+
+            label = "Nav";
+
+            bindings = <
+                &kp ESC         &kp HOME        &kp UP          &kp END         &kp PG_UP       &none           &none		    NEXTTAB		    &none		    &none
+                &none	        &kp LEFT        &kp DOWN        &kp RIGHT       &kp PG_DN       &kp BSPC        &sk RSHFT       &sk RCTRL       &sk RALT        &sk RGUI
+                W_UNDO          W_CUT           W_COPY          W_PASTE         W_REDO          &kp K_APP	    &kp DEL	        &kp TAB	        &none		    &none
+                                                &kp TAB         &trans        	&kp ENTER       &kp INS		    &trans	     	&kp C_MUTE
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp &none &none>;
+        };
+
+		/*
+		*
+		*   ,----------------------------------.    ,----------------------------------.
+		*   | %    | ^    | $    | +    | `    |    | =    | #    | *    | |    | "    |
+		*   +------+------+------+------+------|    +------+------+------+------+------+
+		*   | &    | {    | }    | @    | ;    |    | Bksp | ?    | [    | ]    | '    |
+		*   +------+------+------+------+------|    +------+------+------+------+------+
+		*   |      | <    | >    | \    | !    |    | _    | /    | (    | )    | -    |
+		*   `------+------+------+------+------+    +------+------+------+------+------'
+		*                 |      | NUM  |      |    |      | NAV  |      |              
+		*                 `------+------+------'    `------+------+------'
+		*
+		* Need to use One shot shift to hit the following symbols
+		*   ~ 
+		*   : (can activate via tap hold as well)
+		* 
+        *   Encoder Left: none <-> none
+        *   Encoder Right: none <-> none
+		*/        
+
+		symbol_layer {
+
+			label = "Symbol";
+
+            bindings = <
+                &kp PRCNT       &kp CARET       &kp DLLR        &kp PLUS        TRI(GRAVE)      DTS(EQUAL)      DT(HASH)        &kp STAR        DTS(PIPE)       DT(DQT)
+                DTS(AMPS)       LRBRC(LBRC)     &kp RBRC        &kp AT          HT(COLON, SEMI) &kp BSPC        &kp QMARK       LRBKT(LBKT)     &kp RBKT        DT(SQT)
+                &none           LGT(LT)         &kp GT          DT(BSLH)        NE(EXCL)        DT(MINUS) 		DT(FSLH)        LRPAR(LPAR)     &kp RPAR        HT(UNDER, MINUS)
+                                                &none           &trans          &none           &none           &trans          &none
+            >;
+
+            sensor-bindings = <&inc_dec_kp &none &none &inc_dec_kp &none &none>;
+        };
+
+		/*
+		*   ,----------------------------------.    ,----------------------------------.
+		*   |      | MB5  | MouU | MB4  |      |    |      |      |      |      |      |
+		*   +------+------+------+------+------|    +------+------+------+------+------+
+		*   |      | MouL | MouD | MouR |      |    |      | Shft | Ctrl | Alt  | Gui  |
+		*   +------+------+------+------+------|    +------+------+------+------+------+
+		*   | MOU  |      |      |      | MB1  |    |      | MB1  | MB2  | MB3  |      |
+		*   `------+------+------+------+------+    +------+------+------+------+------'
+		*                 |      | MB2  | MB3  |    | MB5  | MB4  |      |
+		*                 `------+------+------'    `------+------+------'
+        *
+        *   Encoder Left: Scroll Left <-> Scroll Right
+		*	Encoder Right: Scroll Down <-> Scroll Up
+		*/
+
+
+		mou_layer {
+
+            label = "Mouse";
+
+            bindings = <
+                &none           &mkp MB4        MOU_U           &mkp MB5        &none           &none           &none           &none           &none           &none      
+                &none           MOU_L           MOU_D           MOU_R           &none           &none           &kp RSHFT       &kp RCTRL       &kp RALT        &kp RGUI
+                &trans          &none           &none           &none           &mkp LCLK       &none           &mkp LCLK       &mkp RCLK       &mkp MCLK       &none
+                                                &none           &mkp RCLK       &mkp MCLK       &mkp MB5        &mkp MB4        &none      
+            >;
+
+            sensor-bindings = <&inc_dec_mwh SCROLL_RIGHT SCROLL_LEFT &inc_dec_mwh SCROLL_UP SCROLL_DOWN>;
+        };
+
+		/*
+		*   ,----------------------------------.    ,----------------------------------.
+		*   |ScrLck|  F7  |  F8  |  F9  | F10  |    |QWERTY|ClmkDH|BTclr |OutTog|      |
+		*   +------+------+------+------+------|    +------+------+------+------+------+
+		*   |PrnScr|  F4  |  F5  |  F6  | F11  |    | Caps | Shft | Ctrl | Alt  | Gui  |
+		*   +------+------+------+------+------|    +------+------+------+------+------+
+		*   |PauBrk|  F1  |  F2  |  F3  | F12  |    | BT0  | BT1  | BT2  | BT3  |      |
+		*   `------+------+------+------+------+    +------+------+------+------+------'
+		*                 |      | boot |reset |    |reset |boot  |      |
+		*                 `------+------+------'    `------+------+------'
+		*
+		*   Encoder Left: x <-> x
+        *   Encoder Right: x <-> x
+		*/
+
+        config_layer {
+
+            label = "Config";
+
+            bindings = <
+                &kp SLCK        &kp F7          &kp F8          &kp F9		    &kp F10	        DEFAULT         CLMAKDH         BTClear         &out OUT_TOG    &trans      
+                &kp PSCRN       &kp F4          &kp F5          &kp F6          &kp F11         &kp CAPS        &kp RSHFT       &kp RCTRL       &kp RALT        &kp RGUI
+                &kp PAUSE_BREAK &kp F1          &kp F2          &kp F3		    &kp F12         BT0             BT1             BT2             BT3             &trans     
+                                                &none           &bootloader     &reset          &reset          &bootloader     &none      
+            >;
+
+            sensor-bindings = <&inc_dec_kp &none &none &inc_dec_kp &none &none>;
+        };
+    };
+};
