@@ -74,6 +74,17 @@
 };
 
 / {
+    behavior {
+        inc_dec_mwh: behavior_sensor_rotate_mouse_wheel {
+			compatible = "zmk,behavior-sensor-rotate-var";
+			label = "ENC_MOUSE_WHEEL";
+			#sensor-binding-cells = <2>;
+		 	bindings = <&mwh>, <&mwh>;
+		};
+	};
+};
+
+/ {
     keymap {
         compatible = "zmk,keymap";
 
