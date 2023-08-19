@@ -98,7 +98,7 @@
                                                 &none           &kp SPACE       &kp LSHFT       &kp SPACE       &kp A 		    &kp C_MUTE
             >;
 
-			sensor-bindings = <&inc_dec_mwh RIGHT LEFT &inc_dec_mwh UP DOWN>;
+			sensor-bindings = <&inc_dec_mwh &none &none &inc_dec_mwh &none &none>;
         };
 	};
 };
