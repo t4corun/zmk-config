@@ -1,8 +1,11 @@
-/ {
-    chosen {
-        zmk,matrix_transform = &five_column_transform;
-	};
-};
+/*                KEY POSITIONS
+
+  ╭────────────────────────╮ ╭────────────────────────╮
+  │ 0   1   2   3   4   5  │ │ 6   7   8   9   10  11 │
+  │ 12  13  14  15  16  17 │ │ 18  19  19  20  22  23 │
+  │ 24  25  26  27  28  29 │ │ 30  31  32  33  34  35 │
+  ╰───────────╮ 36  37  38 │ │ 39  40  41 ╭───────────╯
+              ╰────────────╯ ╰────────────╯ */
 
 /*                KEY POSITIONS
 
@@ -59,4 +62,45 @@
 #define RH1 40
 #define RH2 41
 
-#include "user/t4corun.dtsi"
+/ {
+    chosen {
+        zmk,matrix_transform = &five_column_transform;
+	};
+};
+
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+
+		/*
+		*   ,----------------------------------.    ,----------------------------------.
+		*   | Q    | W    | E    | R    | T    |    | Y    | U    | I    | O    | P    |
+		*   +------+------+------+------+------|    +------+------+------+------+------+
+		*   | A    | S    | D    | F    | G    |    | H    | J    | K    | L    | '    |
+		*   +------+------+------+------+------|    +------+------+------+------+------+
+		*   | MOUZ | X    | C    | V    | B    |    | N    | M    | ,    | .    | -    |
+		*   `------+------+------+------+------+    +------+------+------+------+------'
+		*                 |      | NUM  | Lsft |    | Spc  | NAV  | Mute |
+		*                 `------+------+------'    `------+------+------'
+        *
+        *   Encoder Left: Scroll Left <-> Scroll Right
+		*	Encoder Right: Scroll Down <-> Scroll Up
+		*/
+		
+        default_layer {
+
+            label = "Qwerty";
+                        
+            bindings = <
+                &kp Q           &kp W           &kp E           &kp R           &kp T           &kp Y           &kp U           &kp I           &kp O           &kp P
+                &kp A           &kp S           &kp D           &kp F           &kp G           &kp H           &kp J         	&kp K         	&kp L           &kp SQT
+                &kp Z 	     	&kp X           &kp C           &kp V           &kp B           &kp N           &kp M           &kp COMMA       &kp DOT 		&kp A
+                                                &none           &kp SPACE       &kp LSHFT       &kp SPACE       &kp A 		    &kp C_MUTE
+            >;
+
+			sensor-bindings = <&inc_dec_mwh RIGHT LEFT &inc_dec_mwh UP DOWN>;
+        };
+	};
+};
+
+//#include "user/t4corun.dtsi"
