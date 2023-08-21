@@ -20,13 +20,8 @@
 	    bindings 		= <&mo>, <&kp>;	    	      			\
 	};
 
-#define TAPPING_TERM 		200
-#define MOUSE_TAP_TERM		170
-#define NAV_TAP_TERM		125
-#define QUICK_TAP_TERM 		100
-
-LAYER_TAP(mou,	tap-preferred, MOUSE_TAP_TERM, QUICK_TAP_TERM)
-LAYER_TAP(nav,	tap-preferred, NAV_TAP_TERM, QUICK_TAP_TERM)
+//LAYER_TAP(mou,	tap-preferred, MOUSE_TAP_TERM, QUICK_TAP_TERM)
+//LAYER_TAP(nav,	tap-preferred, NAV_TAP_TERM, QUICK_TAP_TERM)
 
 HOLD_TAP(ht,	tap-preferred, TAPPING_TERM, QUICK_TAP_TERM, &kp, &kp)
 
@@ -57,8 +52,8 @@ HOLD_TAP(ne, 	tap-preferred, &kp, &kp SPACE &kp EXCL &kp EQUAL &kp SPACE)
 */
 
 
-#define MOU(tapkey)				&mou	4,		tapkey
-#define NAV(tapkey)				&nav	2,		tapkey
+//#define MOU(tapkey)				&mou	MOUSE,		tapkey
+//#define NAV(tapkey)				&nav	NAVI,		tapkey
 
 #define HT(holdkey, tapkey)		&ht 	holdkey, 	tapkey
 

@@ -14,6 +14,8 @@
 #define CONFIG  5
 
 //Feature Configuration
+#define TAPPING_TERM 		200
+#define QUICK_TAP_TERM 		100
 #define STICKYKEY_TIMEOUT 	3000
 
 #define U_MOUSE_MOVE_DELAY 0
@@ -23,6 +25,10 @@
 #define U_MOUSE_SCROLL_DELAY 0
 #define U_MOUSE_SCROLL_EXPONENT 1
 #define U_MOUSE_SCROLL_TIME 0
+
+//new stuff
+#define MOU(keycode) 	&lt MOUSE 	keycode
+#define NAV(keycode) 	&lt NAVI 	keycode
 
 //To Layer
 #define DEFAULT			&to 		QWERTY
@@ -49,11 +55,11 @@
 
 #define HT(holdkey, tapkey)		&ht 	holdkey, 	tapkey
 
-/*
+
 &lt {
     tapping-term-ms = <TAPPING_TERM>;
 	quick-tap-ms = <QUICK_TAP_TERM>;
-};*/
+};
 
 &sk {
     release-after-ms = <STICKYKEY_TIMEOUT>;
