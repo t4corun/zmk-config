@@ -1,7 +1,7 @@
 #define HOLD_TAP(NAME, FLAVOR, TAP_TERM, QTAP_TERM, TAP, HOLD) 	\
 	NAME: hold_tap_##NAME { 									\
 	    compatible      = "zmk,behavior-hold-tap"; 				\
-		label           = ZMK_MACRO_STRINGIFY(ht_##NAME);			\
+		label           = ZMK_MACRO_STRINGIFY(NAME);			\
 	    flavor          = ZMK_MACRO_STRINGIFY(FLAVOR);			\
 	    tapping-term-ms = <TAP_TERM>;       					\
 	    quick-tap-ms    = <QTAP_TERM>;  						\
@@ -12,7 +12,7 @@
 #define LAYER_TAP(NAME, FLAVOR, TAP_TERM, QTAP_TERM) 			\
 	NAME: layer_tap_##NAME { 									\
 	    compatible      = "zmk,behavior-hold-tap"; 				\
-		label           = ZMK_MACRO_STRINGIFY(lt_##NAME);			\
+		label           = ZMK_MACRO_STRINGIFY(NAME);			\
 	    flavor          = ZMK_MACRO_STRINGIFY(FLAVOR);			\
 	    tapping-term-ms = <TAP_TERM>;       					\
 	    quick-tap-ms    = <QTAP_TERM>;  						\
