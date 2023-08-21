@@ -14,8 +14,6 @@
 #define CONFIG  5
 
 //Feature Configuration
-#define TAPPING_TERM 		200
-#define QUICK_TAP_TERM 		100
 #define STICKYKEY_TIMEOUT 	3000
 
 #define U_MOUSE_MOVE_DELAY 0

@@ -20,10 +20,13 @@
 	    bindings 		= <&mo>, <&kp>;	    	      			\
 	};
 
+#define TAPPING_TERM 		200
+#define MOUSE_TAP_TERM		TAPPING_TERM - 30
+#define NAV_TAP_TERM		TAPPING_TERM - 75
+#define QUICK_TAP_TERM 		100
 
-LAYER_TAP(mou,	tap-preferred, TAPPING_TERM-30, QUICK_TAP_TERM)
-LAYER_TAP(nav,	tap-preferred, TAPPING_TERM-75, QUICK_TAP_TERM)
-
+LAYER_TAP(mou,	tap-preferred, MOUSE_TAP_TERM, QUICK_TAP_TERM)
+LAYER_TAP(nav,	tap-preferred, NAV_TAP_TERM, QUICK_TAP_TERM)
 
 HOLD_TAP(ht,	tap-preferred, TAPPING_TERM, QUICK_TAP_TERM, &kp, &kp)
 
