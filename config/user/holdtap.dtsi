@@ -12,32 +12,32 @@
 
 
 
-HOLD_TAP(ht,	tap_preferred, TAPPING_TERM, QUICK_TAP_TERM, &kp, &kp)
+HOLD_TAP(ht,	tap-preferred, TAPPING_TERM, QUICK_TAP_TERM, &kp, &kp)
 
 /*
-HOLD_TAP(dt, 	tap_preferred, TAPPING_TERM, QUICK_TAP_TERM, &kp, &kp &kp)
-HOLD_TAP(dtl, 	tap_preferred, TAPPING_TERM, QUICK_TAP_TERM, &kp, &kp &kp &kp LEFT)
-HOLD_TAP(dts, 	tap_preferred, TAPPING_TERM, QUICK_TAP_TERM, &kp, &kp SPACE &kp &kp &kp SPACE)
-HOLD_TAP(tri, 	tap_preferred, TAPPING_TERM, QUICK_TAP_TERM, &kp, &kp &kp &kp)
+HOLD_TAP(dt, 	tap-preferred, TAPPING_TERM, QUICK_TAP_TERM, &kp, &kp &kp)
+HOLD_TAP(dtl, 	tap-preferred, TAPPING_TERM, QUICK_TAP_TERM, &kp, &kp &kp &kp LEFT)
+HOLD_TAP(dts, 	tap-preferred, TAPPING_TERM, QUICK_TAP_TERM, &kp, &kp SPACE &kp &kp &kp SPACE)
+HOLD_TAP(tri, 	tap-preferred, TAPPING_TERM, QUICK_TAP_TERM, &kp, &kp &kp &kp)
 		
-HOLD_TAP(lrbrc, tap_preferred, TAPPING_TERM, QUICK_TAP_TERM, &kp, &kp LBRC &kp RBRC &kp LEFT)
-HOLD_TAP(lrbkt, tap_preferred, TAPPING_TERM, QUICK_TAP_TERM, &kp, &kp LBKT &kp RBKT &kp LEFT)
-HOLD_TAP(lrpar, tap_preferred, TAPPING_TERM, QUICK_TAP_TERM, &kp, &kp LPAR &kp RPAR &kp LEFT)
-HOLD_TAP(lgt, 	tap_preferred, TAPPING_TERM, QUICK_TAP_TERM, &kp, &kp LT &kp RT &kp LEFT)
-HOLD_TAP(ne, 	tap_preferred, TAPPING_TERM, QUICK_TAP_TERM, &kp, &kp SPACE &kp EXCL &kp EQUAL &kp SPACE)
+HOLD_TAP(lrbrc, tap-preferred, TAPPING_TERM, QUICK_TAP_TERM, &kp, &kp LBRC &kp RBRC &kp LEFT)
+HOLD_TAP(lrbkt, tap-preferred, TAPPING_TERM, QUICK_TAP_TERM, &kp, &kp LBKT &kp RBKT &kp LEFT)
+HOLD_TAP(lrpar, tap-preferred, TAPPING_TERM, QUICK_TAP_TERM, &kp, &kp LPAR &kp RPAR &kp LEFT)
+HOLD_TAP(lgt, 	tap-preferred, TAPPING_TERM, QUICK_TAP_TERM, &kp, &kp LT &kp RT &kp LEFT)
+HOLD_TAP(ne, 	tap-preferred, TAPPING_TERM, QUICK_TAP_TERM, &kp, &kp SPACE &kp EXCL &kp EQUAL &kp SPACE)
 
 
-HOLD_TAP(ht,	tap_preferred, &kp, &kp)
-HOLD_TAP(dt, 	tap_preferred, &kp, &kp &kp)
-HOLD_TAP(dtl, 	tap_preferred, &kp, &kp &kp &kp LEFT)
-HOLD_TAP(dts, 	tap_preferred, &kp, &kp SPACE &kp &kp &kp SPACE)
-HOLD_TAP(tri, 	tap_preferred, &kp, &kp &kp &kp)
+HOLD_TAP(ht,	tap-preferred, &kp, &kp)
+HOLD_TAP(dt, 	tap-preferred, &kp, &kp &kp)
+HOLD_TAP(dtl, 	tap-preferred, &kp, &kp &kp &kp LEFT)
+HOLD_TAP(dts, 	tap-preferred, &kp, &kp SPACE &kp &kp &kp SPACE)
+HOLD_TAP(tri, 	tap-preferred, &kp, &kp &kp &kp)
 		
-HOLD_TAP(lrbrc, tap_preferred, &kp, &kp LBRC &kp RBRC &kp LEFT)
-HOLD_TAP(lrbkt, tap_preferred, &kp, &kp LBKT &kp RBKT &kp LEFT)
-HOLD_TAP(lrpar, tap_preferred, &kp, &kp LPAR &kp RPAR &kp LEFT)
-HOLD_TAP(ltgt, 	tap_preferred, &kp, &kp LT &kp RT &kp LEFT)
-HOLD_TAP(ne, 	tap_preferred, &kp, &kp SPACE &kp EXCL &kp EQUAL &kp SPACE)
+HOLD_TAP(lrbrc, tap-preferred, &kp, &kp LBRC &kp RBRC &kp LEFT)
+HOLD_TAP(lrbkt, tap-preferred, &kp, &kp LBKT &kp RBKT &kp LEFT)
+HOLD_TAP(lrpar, tap-preferred, &kp, &kp LPAR &kp RPAR &kp LEFT)
+HOLD_TAP(ltgt, 	tap-preferred, &kp, &kp LT &kp RT &kp LEFT)
+HOLD_TAP(ne, 	tap-preferred, &kp, &kp SPACE &kp EXCL &kp EQUAL &kp SPACE)
 */
 
 //#define HT(holdkey, tapkey)		&ht 	holdkey, 	tapkey
