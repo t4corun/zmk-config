@@ -57,8 +57,8 @@ HOLD_TAP(ne, 	tap-preferred, &kp, &kp SPACE &kp EXCL &kp EQUAL &kp SPACE)
 */
 
 
-#define MOU(tapkey)				&mou	MOUSE,		tapkey
-#define NAV(tapkey)				&nav	NAVI,		tapkey
+#define MOU(tapkey)				&mou	4,		tapkey
+#define NAV(tapkey)				&nav	2,		tapkey
 
 #define HT(holdkey, tapkey)		&ht 	holdkey, 	tapkey
 
