@@ -29,6 +29,7 @@
 //new stuff
 #define MOU(keycode) 	&lt MOUSE 	keycode
 #define NAV(keycode) 	&lt NAVI 	keycode
+#define CON(keycode) 	&lt CONFIG 	keycode
 
 //To Layer
 #define DEFAULT			&to 		QWERTY
