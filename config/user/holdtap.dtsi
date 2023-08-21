@@ -21,8 +21,8 @@
 	};
 
 #define TAPPING_TERM 		200
-#define MOUSE_TAP_TERM		TAPPING_TERM - 30
-#define NAV_TAP_TERM		TAPPING_TERM - 75
+#define MOUSE_TAP_TERM		170
+#define NAV_TAP_TERM		125
 #define QUICK_TAP_TERM 		100
 
 LAYER_TAP(mou,	tap-preferred, MOUSE_TAP_TERM, QUICK_TAP_TERM)
