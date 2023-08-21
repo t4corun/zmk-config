@@ -46,4 +46,3 @@ inc_dec_mmv: behavior_sensor_rotate_mouse_movement {
 #define MWH_D 	&mwh 	SCROLL_DOWN
 #define MWH_L	&mwh 	SCROLL_LEFT
 #define MWH_R 	&mwh 	SCROLL_RIGHT
-

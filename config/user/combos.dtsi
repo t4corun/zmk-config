@@ -11,7 +11,7 @@
 
 #define COMBO(NAME, TIMEOUT, POSITION, LAYER, BINDINGS )  \
 	combo_##NAME {                      		\
-	    timeout-ms    = <TIMEOUT>;		\
+	    timeout-ms    = <TIMEOUT>;				\
 		layers 		  = <LAYER>;				\
 	    bindings      = <BINDINGS>;     		\
 	    key-positions = <POSITION>;          	\
@@ -20,4 +20,4 @@
 combos {
 	compatible = "zmk,combos";
 	COMBO(config, COMBO_TIMEOUT, RT4 RB4, QWERTY, &mo CONFIG)
-};
+};q
