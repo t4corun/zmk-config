@@ -1,7 +1,7 @@
 #define HOLD_TAP(NAME, FLAVOR, TAP_TERM, QTAP_TERM, TAP, HOLD) 	\
 	NAME: hold_tap_##NAME { 									\
 	    compatible      = "zmk,behavior-hold-tap"; 				\
-		label           = ZMK_MACRO_STRINGIFY(NAME);			\
+		label           = ZMK_MACRO_STRINGIFY(ht_##NAME);			\
 	    flavor          = ZMK_MACRO_STRINGIFY(FLAVOR);			\
 	    tapping-term-ms = <TAP_TERM>;       					\
 	    quick-tap-ms    = <QTAP_TERM>;  						\
@@ -9,7 +9,20 @@
 	    bindings        = <HOLD>, <TAP>;    	      			\
 	};
 
+#define LAYER_TAP(NAME, FLAVOR, TAP_TERM, QTAP_TERM) 			\
+	NAME: layer_tap_##NAME { 									\
+	    compatible      = "zmk,behavior-hold-tap"; 				\
+		label           = ZMK_MACRO_STRINGIFY(lt_##NAME);			\
+	    flavor          = ZMK_MACRO_STRINGIFY(FLAVOR);			\
+	    tapping-term-ms = <TAP_TERM>;       					\
+	    quick-tap-ms    = <QTAP_TERM>;  						\
+	    #binding-cells  = <2>;                    				\
+	    bindings 		= <&mo>, <&kp>;	    	      			\
+	};
 
+
+LAYER_TAP(mou,	tap-preferred, TAPPING_TERM-30, QUICK_TAP_TERM)
+LAYER_TAP(nav,	tap-preferred, TAPPING_TERM-75, QUICK_TAP_TERM)
 
 
 HOLD_TAP(ht,	tap-preferred, TAPPING_TERM, QUICK_TAP_TERM, &kp, &kp)
@@ -39,6 +52,10 @@ HOLD_TAP(lrpar, tap-preferred, &kp, &kp LPAR &kp RPAR &kp LEFT)
 HOLD_TAP(ltgt, 	tap-preferred, &kp, &kp LT &kp RT &kp LEFT)
 HOLD_TAP(ne, 	tap-preferred, &kp, &kp SPACE &kp EXCL &kp EQUAL &kp SPACE)
 */
+
+
+#define MOU(tapkey)				&mou	MOUSE,		tapkey
+#define NAV(tapkey)				&nav	NAVI,		tapkey
 
 #define HT(holdkey, tapkey)		&ht 	holdkey, 	tapkey
 

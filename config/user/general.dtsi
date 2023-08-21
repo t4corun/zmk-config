@@ -26,10 +26,6 @@
 #define U_MOUSE_SCROLL_EXPONENT 1
 #define U_MOUSE_SCROLL_TIME 0
 
-//new stuff
-#define MOU(keycode) 	&lt MOUSE 	keycode
-#define NAV(keycode) 	&lt NAVI 	keycode
-
 //To Layer
 #define DEFAULT			&to 		QWERTY
 //#define CLMAKDH 		&to	    	COLEMAK
@@ -55,10 +51,11 @@
 
 #define HT(holdkey, tapkey)		&ht 	holdkey, 	tapkey
 
+/*
 &lt {
     tapping-term-ms = <TAPPING_TERM>;
-	quick-tap-ms = <QUICK_TAP_TERM>;.
-};
+	quick-tap-ms = <QUICK_TAP_TERM>;
+};*/
 
 &sk {
     release-after-ms = <STICKYKEY_TIMEOUT>;
