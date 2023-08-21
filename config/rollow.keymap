@@ -84,39 +84,4 @@
 	};
 };
 
-/ {
-    keymap {
-        compatible = "zmk,keymap";
-
-		/*
-		*   ,----------------------------------.    ,----------------------------------.
-		*   | Q    | W    | E    | R    | T    |    | Y    | U    | I    | O    | P    |
-		*   +------+------+------+------+------|    +------+------+------+------+------+
-		*   | A    | S    | D    | F    | G    |    | H    | J    | K    | L    | '    |
-		*   +------+------+------+------+------|    +------+------+------+------+------+
-		*   | MOUZ | X    | C    | V    | B    |    | N    | M    | ,    | .    | -    |
-		*   `------+------+------+------+------+    +------+------+------+------+------'
-		*                 |      | NUM  | Lsft |    | Spc  | NAV  | Mute |
-		*                 `------+------+------'    `------+------+------'
-        *
-        *   Encoder Left: Scroll Left <-> Scroll Right
-		*	Encoder Right: Scroll Down <-> Scroll Up
-		*/
-		
-        default_layer {
-
-            label = "Qwerty";
-                        
-            bindings = <
-                &kp Q           &kp W           &kp E           &kp R           &kp T           &kp Y           &kp U           &kp I           &kp O           &kp P
-                &kp A           &kp S           &kp D           &kp F           &kp G           &kp H           &kp J         	&kp K         	&kp L           &kp SQT
-                &kp Z 	     	&kp X           &kp C           &kp V           &kp B           &kp N           &kp M           &kp COMMA       &kp DOT 		&kp A
-                                                &none           &kp SPACE       &kp LSHFT       &kp SPACE       &kp A 		    &kp C_MUTE
-            >;
-
-			sensor-bindings = <&inc_dec_mwh &none &none &inc_dec_mwh &none &none>;
-        };
-	};
-};
-
-//#include "user/t4corun.dtsi"
+#include "user/t4corun.dtsi"

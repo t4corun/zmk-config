@@ -1,7 +1,7 @@
 #include "general.dtsi"
 
 / {
-	#include "combos.dtsi"
+	//#include "combos.dtsi"
 	//#include "tapdance.dtsi"
 	#include "holdtap.dtsi"
 	#include "mouse.dtsi"
@@ -43,7 +43,8 @@
                                                 &none           &mo NUMBER      &kp LSHFT       &kp SPACE       NAV(0) 		    &kp C_MUTE
             >;
 
-			sensor-bindings = <&inc_dec_mwh SCROLL_RIGHT SCROLL_LEFT &inc_dec_mwh SCROLL_UP SCROLL_DOWN>;
+			//sensor-bindings = <&inc_dec_mwh SCROLL_RIGHT SCROLL_LEFT &inc_dec_mwh SCROLL_UP SCROLL_DOWN>;
+			sensor-bindings = <&inc_dec_kp &none &none &inc_dec_kp &none &none>;
         };
 
 		/*
@@ -103,7 +104,8 @@
                                                 &kp TAB         &trans        	&kp ENTER       &kp INS		    &trans	     	&kp C_MUTE
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp &none &none>;
+            //sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp &none &none>;
+			sensor-bindings = <&inc_dec_kp &none &none &inc_dec_kp &none &none>;
         };
 
 		/*
@@ -167,7 +169,8 @@
                                                 &none           &mkp RCLK       &mkp MCLK       &mkp MB5        &mkp MB4        &none      
             >;
 
-            sensor-bindings = <&inc_dec_mwh SCROLL_RIGHT SCROLL_LEFT &inc_dec_mwh SCROLL_UP SCROLL_DOWN>;
+            //sensor-bindings = <&inc_dec_mwh SCROLL_RIGHT SCROLL_LEFT &inc_dec_mwh SCROLL_UP SCROLL_DOWN>;
+			sensor-bindings = <&inc_dec_kp &none &none &inc_dec_kp &none &none>;
         };
 
 		/*
