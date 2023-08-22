@@ -15,8 +15,8 @@
 
 //Feature Configuration
 #define TAPPING_TERM 		200
-#define MOU_TAP_TERM		TAPPING_TERM-30
-#define NAV_TAP_TERM		TAPPING_TERM-75
+#define MOU_TAP_TERM		170
+#define NAV_TAP_TERM		125
 #define QUICK_TAP_TERM 		100
 #define STICKYKEY_TIMEOUT 	3000
 
