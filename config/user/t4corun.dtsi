@@ -37,10 +37,10 @@
             label = "Qwerty";
                         
             bindings = <
-                &kp Q           &kp W           &kp E           &kp R           &kp T           &kp Y           &kp U           &kp I           &kp O           &kp P
-                &kp A           &kp S           &kp D           &kp F           &kp G           &kp H           &kp J         	&kp K         	&kp L           &kp SQT
-                MOU(Z)      	&kp X           &kp C           &kp V           &kp B           &kp N           &kp M           HT(LPAR, COMMA) HT(RPAR, DOT) 	HT(UNDER, MINUS)
-                                                &none           &mo NUMBER      &kp LSHFT       &kp SPACE       NAV(N0) 	    &kp C_MUTE
+                &kp Q   &kp W   &kp E   &kp R       &kp T       &kp Y       &kp U   &kp I           &kp O           &kp P
+                &kp A   &kp S   &kp D   &kp F       &kp G       &kp H       &kp J   &kp K         	&kp L           &kp SQT
+                MOU(Z)  &kp X   &kp C   &kp V       &kp B       &kp N       &kp M   HT(LPAR, COMMA)	HT(RPAR, DOT)	HT(UNDER, MINUS)
+                                &none	&mo NUMBER	&kp LSHFT	&kp SPACE	NAV(N0)	&kp C_MUTE
             >;
 
 			//sensor-bindings = <&inc_dec_mwh SCROLL_RIGHT SCROLL_LEFT &inc_dec_mwh SCROLL_UP SCROLL_DOWN>;
