@@ -1,4 +1,4 @@
-#define HOLD_TAP(NAME, FLAVOR, TAP_TERM, QTAP_TERM, TAP, HOLD) 	\
+#define HOLD_TAP(NAME, FLAVOR, TAP_TERM, QTAP_TERM, HOLD, TAP) 	\
 	NAME: hold_tap_##NAME { 									\
 	    compatible      = "zmk,behavior-hold-tap"; 				\
 		label           = ZMK_MACRO_STRINGIFY(NAME);			\

@@ -4,5 +4,8 @@
 			"path": "."
 		}
 	],
-	"settings": {}
+	"settings": {
+		"editor.fontFamily": "'JetBrains Mono ExtraLight', 'Roboto Mono Light', Consolas, 'Cascadia Code Light'",
+
+	}
 }
