@@ -39,7 +39,7 @@
             bindings = <
                 &kp Q           &kp W           &kp E           &kp R           &kp T           &kp Y           &kp U           &kp I           &kp O           &kp CON(P)
                 &kp A           &kp S           &kp D           &kp F           &kp G           &kp H           &kp J         	&kp K         	&kp L           &kp SQT
-                MOU(Z)      	&kp X           &kp C           &kp V           &kp B           &kp N           &kp M           HT(LPAR, COMMA) HT(RPAR, DOT) 	&kp DOT
+                MOU(Z)      	&kp X           &kp C           &kp V           &kp B           &kp N           &kp M           &kp Z 			&kp Z 			&kp DOT
                                                 &none           &mo NUMBER      &kp LSHFT       &kp SPACE       NAV(0) 		    &kp C_MUTE
             >;
 
