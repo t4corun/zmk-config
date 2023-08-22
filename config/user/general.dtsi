@@ -28,44 +28,36 @@
 #define U_MOUSE_SCROLL_EXPONENT 1
 #define U_MOUSE_SCROLL_TIME 0
 
-//new stuff
-
-//#define NAV(keycode) 	&lt NAVI 	keycode
-#define CON(keycode) 	&lt CONFIG 	keycode
-
-#define MOU(keycode) 	&mou MOUSE 	keycode
-#define NAV(keycode) 	&nav NAVI 	keycode
+//custom layer taps
+#define MOU(keycode)	&mou MOUSE 	keycode
+#define NAV(keycode)	&nav NAVI 	keycode
 
 //To Layer
-#define DEFAULT			&to 		QWERTY
-//#define CLMAKDH 		&to	    	COLEMAK
+#define DEFAULT		&to QWERTY
+//#define CLMAKDH 	&to	COLEMAK
 
 //Shortcuts
-#define W_UNDO  		&kp 		LC(Z)
-#define W_CUT   		&kp 		LC(X)
-#define W_COPY  		&kp 		LC(C)
-#define W_PASTE 		&kp 		LC(V)
-#define W_REDO  		&kp 		LC(Y)
-#define W_SNIP  		&kp 		LS(LG(S))
-#define W_FILE  		&kp 		LG(E)
+#define W_UNDO  	&kp LC(Z)
+#define W_CUT   	&kp LC(X)
+#define W_COPY  	&kp LC(C)
+#define W_PASTE 	&kp LC(V)
+#define W_REDO  	&kp LC(Y)
+#define W_SNIP  	&kp LS(LG(S))
+#define W_FILE  	&kp LG(E)
 
-#define NEXTTAB 		&kp 		LC(TAB)
+#define NEXTTAB 	&kp LC(TAB)
 
 //Bluetooth
-#define BTClear 		&bt 		BT_CLR
-#define BT0     		&bt 		BT_SEL 0
-#define BT1     		&bt 		BT_SEL 1
-#define BT2     		&bt 		BT_SEL 2
-#define BT3     		&bt 		BT_SEL 3
-#define BT4     		&bt 		BT_SEL 4
+#define BTClear 	&bt BT_CLR
+#define BT0     	&bt BT_SEL 0
+#define BT1     	&bt BT_SEL 1
+#define BT2     	&bt BT_SEL 2
+#define BT3     	&bt BT_SEL 3
+#define BT4     	&bt BT_SEL 4
 
-#define HT(holdkey, tapkey)		&ht 	holdkey 	tapkey
+//Hold Taps
+#define HT(holdkey, tapkey)		&ht holdkey	tapkey
 
-
-&lt {
-    tapping-term-ms = <TAPPING_TERM>;
-	quick-tap-ms = <QUICK_TAP_TERM>;
-};
 
 &sk {
     release-after-ms = <STICKYKEY_TIMEOUT>;
