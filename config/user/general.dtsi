@@ -15,6 +15,8 @@
 
 //Feature Configuration
 #define TAPPING_TERM 		200
+#define MOU_TAP_TERM		TAPPING_TERM-30
+#define NAV_TAP_TERM		TAPPING_TERM-75
 #define QUICK_TAP_TERM 		100
 #define STICKYKEY_TIMEOUT 	3000
 
@@ -27,9 +29,12 @@
 #define U_MOUSE_SCROLL_TIME 0
 
 //new stuff
-#define MOU(keycode) 	&lt MOUSE 	keycode
-#define NAV(keycode) 	&lt NAVI 	keycode
+
+//#define NAV(keycode) 	&lt NAVI 	keycode
 #define CON(keycode) 	&lt CONFIG 	keycode
+
+#define MOU(keycode) 	&mou MOUSE 	keycode
+#define NAV(keycode) 	&nav NAVI 	keycode
 
 //To Layer
 #define DEFAULT			&to 		QWERTY
