@@ -9,15 +9,16 @@
 
 #define COMBO_TIMEOUT 50
 
-#define COMBO(NAME, TIMEOUT, POSITION, LAYER, BINDINGS )  \
+#define COMBO(NAME, TIMEOUT, LAYER, POSITION, BINDINGS )  \
 	combo_##NAME {                      		\
 	    timeout-ms    = <TIMEOUT>;				\
 		layers 		  = <LAYER>;				\
-	    bindings      = <BINDINGS>;     		\
 	    key-positions = <POSITION>;          	\
+	    bindings      = <BINDINGS>;     		\
 	};
 
 combos {
 	compatible = "zmk,combos";
-	COMBO(config, COMBO_TIMEOUT, RT4 RB4, QWERTY, &mo CONFIG)
-};q
+	
+	COMBO(config, COMBO_TIMEOUT, QWERTY, RT4 RB4, &mo CONFIG)
+};

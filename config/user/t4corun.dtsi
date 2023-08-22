@@ -1,7 +1,7 @@
 #include "general.dtsi"
 
 / {
-	//#include "combos.dtsi"
+	#include "combos.dtsi"
 	//#include "tapdance.dtsi"
 	#include "holdtap.dtsi"
 	#include "mouse.dtsi"
@@ -37,10 +37,10 @@
             label = "Qwerty2.";
                         
             bindings = <
-                &kp Q           &kp W           &kp E           &kp R           &kp T           &kp Y           &kp U           &kp I           &kp O           CON(P)
+                &kp Q           &kp W           &kp E           &kp R           &kp T           &kp Y           &kp U           &kp I           &kp O           &kp P
                 &kp A           &kp S           &kp D           &kp F           &kp G           &kp H           &kp J         	&kp K         	&kp L           &kp SQT
-                MOU(Z)      	&kp X           &kp C           &kp V           &kp B           &kp N           &kp M           HT(LPAR, COMMA) HT(RPAR, DOT) 	&kp DOT
-                                                &none           &mo NUMBER      &kp LSHFT       &kp SPACE       NAV(0) 		    &kp C_MUTE
+                MOU(Z)      	&kp X           &kp C           &kp V           &kp B           &kp N           &kp M           HT(LPAR, COMMA) HT(RPAR, DOT) 	HT(UNDER, MINUS)
+                                                &none           &mo NUMBER      &kp LSHFT       &kp SPACE       NAV(N0) 	    &kp C_MUTE
             >;
 
 			//sensor-bindings = <&inc_dec_mwh SCROLL_RIGHT SCROLL_LEFT &inc_dec_mwh SCROLL_UP SCROLL_DOWN>;
