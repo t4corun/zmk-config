@@ -164,7 +164,7 @@
 
 			label = "Symbol";
 
-            bindings = <0
+            bindings = <
                 &kp PRCNT	&kp CARET					&kp DLLR	&kp PLUS	&none			&none		&none		&kp STAR	&none		&none
                 &none		HT(M2(LBRC, RBRC), LBRC)	&kp RBRC	&kp AT		HT(COLON, SEMI)	&kp BSPC	&kp QMARK	&none		&kp RBKT	&none
                 &none		&none						&kp GT		&none		&none			&none		&none		&none		&kp RPAR	HT(UNDER, MINUS)
