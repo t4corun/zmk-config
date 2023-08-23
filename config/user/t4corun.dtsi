@@ -3,9 +3,9 @@
 / {
 	#include "combo.dtsi"
 	//#include "tapdance.dtsi"
-	#include "holdtap.dtsi"
 	#include "mouse.dtsi"
 	#include "macro.dtsi"
+	#include "holdtap.dtsi"
 
 	conditional_layers {
 		compatible = "zmk,conditional-layers";
