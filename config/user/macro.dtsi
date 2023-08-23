@@ -19,5 +19,5 @@
 
 macros {
 	MACRO(m2, "zmk,behavior-macro-two-param", 2, MACRO_WAIT_TERM, MACRO_TAP_TERM, bindings = <&kp &kp>; )
-}
+};
 
