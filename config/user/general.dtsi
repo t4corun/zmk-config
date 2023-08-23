@@ -6,13 +6,6 @@
 
 #define ZMK_HELPER_STRINGIFY(x) #x
 
-#define ZMK_BEHAVIOR(NAME, TYPE, ...) 				\
-    NAME: NAME { 									\
-        label = ZMK_HELPER_STRINGIFY(ZB_ ## NAME); 	\
-        ZMK_BEHAVIOR_CORE_ ## TYPE; 				\
-        __VA_ARGS__									\
-    };
-
 #define ZMK_BEHAVIOR_CORE_caps_word       compatible = "zmk,behavior-caps-word";       #binding-cells = <0>
 //#define ZMK_BEHAVIOR_CORE_dynamic_macro   compatible = "zmk,behavior-dynamic-macro";   #binding-cells = <1>
 #define ZMK_BEHAVIOR_CORE_hold_tap        compatible = "zmk,behavior-hold-tap";        #binding-cells = <2>
@@ -24,6 +17,13 @@
 #define ZMK_BEHAVIOR_CORE_sticky_key      compatible = "zmk,behavior-sticky-key";      #binding-cells = <1>
 #define ZMK_BEHAVIOR_CORE_tap_dance       compatible = "zmk,behavior-tap-dance";       #binding-cells = <0>
 #define ZMK_BEHAVIOR_CORE_tri_state       compatible = "zmk,behavior-tri-state";       #binding-cells = <0>
+
+#define ZMK_BEHAVIOR(NAME, TYPE, ...) 				\
+    NAME: NAME { 									\
+        label = ZMK_HELPER_STRINGIFY(TR_ ## NAME); 	\
+        ZMK_BEHAVIOR_CORE_ ## TYPE; 				\
+        __VA_ARGS__									\
+    };
 
 // Layer Definitions out toggle
 #define QWERTY  0

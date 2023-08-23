@@ -50,21 +50,21 @@ HOLD_TAP(ht,	tap-preferred, TAPPING_TERM, QUICK_TAP_TERM, &kp, &kp)
 ZMK_BEHAVIOR(ht, hold_tap, 
 	flavor = "tap-preferred";
 	tapping-term-ms = <TAPPING_TERM>;
-	quick-tap-ms    = <QUICK_TAP_TERM>;
+	quick-tap-ms = <QUICK_TAP_TERM>;
 	bindings = <&kp>, <&kp>;	
 )
 
 ZMK_BEHAVIOR(mou, hold_tap, 
 	flavor = "tap-preferred";
 	tapping-term-ms = <MOUSE_TAP_TERM>;
-	quick-tap-ms    = <QUICK_TAP_TERM>;
+	quick-tap-ms = <QUICK_TAP_TERM>;
 	bindings = <&mo>, <&kp>;	
 )
 
 ZMK_BEHAVIOR(nav, hold_tap, 
 	flavor = "tap-preferred";
 	tapping-term-ms = <NAV_TAP_TERM>;
-	quick-tap-ms    = <QUICK_TAP_TERM>;
+	quick-tap-ms = <QUICK_TAP_TERM>;
 	bindings = <&mo>, <&kp>;	
 )
 
