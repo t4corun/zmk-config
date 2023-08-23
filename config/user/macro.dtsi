@@ -22,4 +22,10 @@ macros {
 		tap-ms = <MACRO_TAP_TERM>;
 		bindings = <&kp>, <&kp>;
 	)
+
+	ZMK_BEHAVIOR(test, macro,
+		wait-ms = <MACRO_WAIT_TERM>;
+		tap-ms = <MACRO_TAP_TERM>;
+		bindings = <&kp LBRC>, <&kp RBRC>;
+	)
 };

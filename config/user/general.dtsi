@@ -74,7 +74,7 @@
 
 //Hold Taps
 #define HT(holdkey, tapkey)		&ht 	holdkey	tapkey
-#define HT2(holdkey, tapkey)	&ht2	holdkey	tapkey
+#define HT2(tapkey)				&ht2	tapkey
 #define M2(key1, key2)			&m2 	key1	key2
 
 &sk {
