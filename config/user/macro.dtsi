@@ -20,6 +20,6 @@ macros {
 	ZMK_BEHAVIOR(m2, macro-two-param, 
 		wait-ms = <MACRO_TAP_TERM>;
 		tap-ms = <MACRO_WAIT_TERM>;
-		bindings = <&kp>, <&kp>;	
+		bindings = <&kp &kp>;	
 	)
 };
