@@ -1,10 +1,11 @@
 #include "general.dtsi"
 
 / {
-	#include "combos.dtsi"
+	#include "combo.dtsi"
 	//#include "tapdance.dtsi"
 	#include "holdtap.dtsi"
 	#include "mouse.dtsi"
+	#include "macro.dtsi"
 
 	conditional_layers {
 		compatible = "zmk,conditional-layers";
@@ -47,6 +48,37 @@
 			sensor-bindings = <&inc_dec_kp &none &none &inc_dec_kp &none &none>;
         };
 
+        /*
+		*
+		*   ,----------------------------------.    ,----------------------------------.
+		*   | Q    | W    | F    | P    | B    |    | J    | L    | U    | Y    | '    |
+		*   +------+------+------+------+------|    +------+------+------+------+------+
+		*   | A    | R    | S    | T    | G    |    | M    | N    | E    | I    | O    |
+		*   +------+------+------+------+------|    +------+------+------+------+------+
+		*   | MOUZ | X    | C    | D    | V    |    | K    | H    | ,    | .    | -    |
+		*   `------+------+------+------+------+    +------+------+------+------+------'
+		*                 |      | NUM  | Lsft |    | Spc  | NAV  |      |
+		*                 `------+------+------'    `------+------+------'
+		*
+        *   Encoder Left: Scroll Left <-> Scroll Right
+		*	Encoder Right: Scroll Down <-> Scroll Up
+		*/
+		
+		colemakdh_layer {
+
+			label = "ColmakDH";
+
+            bindings = <
+                &kp Q   &kp W	&kp F	&kp P     	&kp B    	&kp J    	&kp L  	&kp U          	&kp Y       	&kp SQT
+                &kp A   &kp R	&kp S	&kp T     	&kp G    	&kp M    	&kp N  	&kp E          	&kp I       	&kp O
+                MOU(Z)  &kp X	&kp C	&kp D     	&kp V    	&kp K    	&kp H  	HT(LPAR, COMMA)	HT(RPAR,DOT)	HT(UNDER, MINUS)
+                             	&none	&mo NUMBER	&kp LSHFT	&kp SPACE	NAV(N0)	&kp C_MUTE
+            >;
+
+            //sensor-bindings = <&inc_dec_mwh SCROLL_RIGHT SCROLL_LEFT &inc_dec_mwh SCROLL_UP SCROLL_DOWN>;
+			sensor-bindings = <&inc_dec_kp &none &none &inc_dec_kp &none &none>;
+        };
+
 		/*
 		*
 		*   ,----------------------------------.    ,----------------------------------.
@@ -68,10 +100,10 @@
             label = "Numbers";
 
             bindings = <
-                &kp ESC         W_SNIP     		W_FILE     		&none	        &none      		&none      		&kp N7          &kp N8          &kp N9          &kp TAB
-                &sk LGUI        &sk LALT        &sk LCTRL       &sk LSHFT       &none			&kp BSPC        &kp N4          &kp N5          &kp N6          &kp DOT
-                W_UNDO          W_CUT           W_COPY          W_PASTE         W_REDO          &none	        &kp N1          &kp N2          &kp N3          &none
-                                                &none		    &trans 		    &none		    &kp SPACE       &trans          &kp C_MUTE
+                &kp ESC     W_SNIP  	W_FILE     	&none	    &none   		&none      	&kp N7	&kp N8    	&kp N9	&kp TAB
+                &sk LGUI	&sk LALT	&sk LCTRL	&sk LSHFT	HT(COLON, SEMI)	&kp BSPC    &kp N4	&kp N5    	&kp N6	&kp DOT
+                W_UNDO      W_CUT   	W_COPY      W_PASTE     W_REDO			&none	    &kp N1	&kp N2    	&kp N3	HT(UNDER, MINUS)
+                                    	&none		&trans 		&none			&kp SPACE	&trans	&kp C_MUTE
             >;
 
             sensor-bindings = <&inc_dec_kp &none &none &inc_dec_kp DEL BSPC>;
@@ -98,10 +130,10 @@
             label = "Nav";
 
             bindings = <
-                &kp ESC         &kp HOME        &kp UP          &kp END         &kp PG_UP       &none           &none		    NEXTTAB		    &none		    &none
-                &none	        &kp LEFT        &kp DOWN        &kp RIGHT       &kp PG_DN       &kp BSPC        &sk RSHFT       &sk RCTRL       &sk RALT        &sk RGUI
-                W_UNDO          W_CUT           W_COPY          W_PASTE         W_REDO          &kp K_APP	    &kp DEL	        &kp TAB	        &none		    &none
-                                                &kp TAB         &trans        	&kp ENTER       &kp INS		    &trans	     	&kp C_MUTE
+                &kp ESC &kp HOME	&kp UP  	&kp END  	&kp PG_UP	&none       &none		NEXTTAB		&none		&none
+                &none	&kp LEFT    &kp DOWN	&kp RIGHT	&kp PG_DN	&kp BSPC    &sk RSHFT	&sk RCTRL 	&sk RALT	&sk RGUI
+                W_UNDO  W_CUT       W_COPY  	W_PASTE  	W_REDO   	&kp K_APP	&kp DEL	    &kp TAB	    &none		&none
+                                    &kp TAB 	&trans   	&kp ENTER	&kp INS		&trans	    &kp C_MUTE
             >;
 
             //sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp &none &none>;
@@ -132,11 +164,11 @@
 
 			label = "Symbol";
 
-            bindings = <
-                &none	&none	&none	&none	&none	&none	&none	&none	&none	&none
-                &none	&none	&none	&none	&none	&none	&none	&none	&none	&none
-                &none	&none	&none	&none	&none	&none	&none	&none	&none	&none
-                                &none   &trans  &none   &none   &trans  &none
+            bindings = <0
+                &kp PRCNT	&kp CARET					&kp DLLR	&kp PLUS	&none			&none		&none		&kp STAR	&none		&none
+                &none		HT(MAC2(LBRC, RBRC), LBRC)	&kp RBRC	&kp AT		HT(COLON, SEMI)	&kp BSPC	&kp QMARK	&none		&kp RBKT	&none
+                &none		&none						&kp GT		&none		&none			&none		&none		&none		&kp RPAR	HT(UNDER, MINUS)
+                            	    					&none   	&trans  	&none   		&none   	&trans  	&none
             >;
 
             sensor-bindings = <&inc_dec_kp &none &none &inc_dec_kp &none &none>;
@@ -163,10 +195,10 @@
             label = "Mouse";
 
             bindings = <
-                &none           &mkp MB4        MOU_U           &mkp MB5        &none           &none           &none           &none           &none           &none      
-                &none           MOU_L           MOU_D           MOU_R           &none           &none           &kp RSHFT       &kp RCTRL       &kp RALT        &kp RGUI
-                &trans          &none           &none           &none           &mkp LCLK       &none           &mkp LCLK       &mkp RCLK       &mkp MCLK       &none
-                                                &none           &mkp RCLK       &mkp MCLK       &mkp MB5        &mkp MB4        &none      
+                &none   &mkp MB4	MOU_U	&mkp MB5 	&none    	&none   	&none    	&none    	&none    	&none
+                &none   MOU_L   	MOU_D	MOU_R    	&none    	&none   	&kp RSHFT	&kp RCTRL	&kp RALT 	&kp RGUI
+                &trans  &none   	&none	&none    	&mkp LCLK	&none   	&mkp LCLK	&mkp RCLK	&mkp MCLK	&none
+                                	&none	&mkp RCLK	&mkp MCLK	&mkp MB5	&mkp MB4 	&none
             >;
 
             //sensor-bindings = <&inc_dec_mwh SCROLL_RIGHT SCROLL_LEFT &inc_dec_mwh SCROLL_UP SCROLL_DOWN>;
@@ -193,10 +225,10 @@
             label = "Config";
 
             bindings = <
-                &kp SLCK        &kp F7          &kp F8          &kp F9		    &kp F10	        DEFAULT         &none           BTClear         &out OUT_TOG    &trans      
-                &kp PSCRN       &kp F4          &kp F5          &kp F6          &kp F11         &kp CAPS        &kp RSHFT       &kp RCTRL       &kp RALT        &kp RGUI
-                &kp PAUSE_BREAK &kp F1          &kp F2          &kp F3		    &kp F12         BT0             BT1             BT2             BT3             &trans     
-                                                &none           &bootloader     &sys_reset      &sys_reset      &bootloader     &none      
+                &kp SLCK        &kp F7	&kp F8	&kp F9    	&kp F10	    DEFAULT   	CLMAKDH    	BTClear  	&out OUT_TOG	&trans      
+                &kp PSCRN       &kp F4	&kp F5	&kp F6    	&kp F11     &kp CAPS  	&sk RSHFT  	&sk RCTRL	&sk RALT    	&sk RGUI
+                &kp PAUSE_BREAK &kp F1	&kp F2	&kp F3    	&kp F12     BT0       	BT1        	BT2      	BT3         	&trans     
+                                      	&none 	&bootloader	&sys_reset	&sys_reset	&bootloader	&none      
             >;
 
             sensor-bindings = <&inc_dec_kp &none &none &inc_dec_kp &none &none>;

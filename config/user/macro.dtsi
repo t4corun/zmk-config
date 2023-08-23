@@ -1,0 +1,23 @@
+#define MACRO(NAME, TYPE, CELLS, WAIT_TERM, TAP_TERM, ...)	\
+    NAME: macro_##NAME { 									\
+        label = ZMK_MACRO_STRINGIFY(macro_ ## NAME);		\
+        compatible = ZMK_MACRO_STRINGIFY(TYPE); 			\
+        #binding-cells = <CELLS>;							\
+        wait-ms = <WAIT_TERM>; 								\
+        tap-ms = <TAP_TERM>; 								\
+    	__VA_ARGS__  		                            	\
+};
+
+#define MACRO_TAP_TERM 10
+#define MACRO_WAIT_TERM 10
+
+/*
+"zmk,behavior-macro"
+"zmk,behavior-macro-one-param"
+"zmk,behavior-macro-two-param"
+*/
+
+macros {
+	MACRO(mac2, "zmk,behavior-macro-two-param", 2, MACRO_WAIT_TERM, MACRO_TAP_TERM, bindings = <&kp>, <&kp> )
+}
+
