@@ -9,6 +9,9 @@
 	- peripheral side encoder
 	- mouse support
 	- 2023-Aug: Leveraging the shield definition he imported into `/app/boards/shields/rollow` versus including my own
+- Credit to the below for convenience macros from
+	- [urob/zmk-nodefree-config](https://github.com/urob/zmk-nodefree-config)
+	- [filterpaper/zmk-config](https://github.com/filterpaper/zmk-config)
 - [Previous commit](https://github.com/T4CORUN/zmk-config/commit/34b44a78fa057029da4901533f4dfb751d2bf727) before my 2023-Aug update for breaking changes. This commit includes examples of
 	- header files, macros, tap dances
 	- "custom" shield definition. Imported rollow definition by [tutuuXY](https://github.com/TutuuXY/zmk-config)

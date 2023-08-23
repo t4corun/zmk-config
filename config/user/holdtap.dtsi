@@ -1,8 +1,10 @@
+
+/*
 #define HOLD_TAP(NAME, FLAVOR, TAP_TERM, QTAP_TERM, HOLD, TAP) 	\
 	NAME: hold_tap_##NAME { 									\
 	    compatible      = "zmk,behavior-hold-tap"; 				\
-		label           = ZMK_MACRO_STRINGIFY(ht_ ## NAME);		\
-	    flavor          = ZMK_MACRO_STRINGIFY(FLAVOR);			\
+		label           = ZMK_HELPER_STRINGIFY(ht_ ## NAME);	\
+	    flavor          = ZMK_HELPER_STRINGIFY(FLAVOR);			\
 	    tapping-term-ms = <TAP_TERM>;       					\
 	    quick-tap-ms    = <QTAP_TERM>;  						\
 	    #binding-cells  = <2>;                    				\
@@ -12,18 +14,61 @@
 #define LAYER_TAP(NAME, FLAVOR, TAP_TERM, QTAP_TERM) 			\
 	NAME: layer_tap_##NAME { 									\
 	    compatible      = "zmk,behavior-hold-tap"; 				\
-		label           = ZMK_MACRO_STRINGIFY(lt_ ## NAME);		\
-	    flavor          = ZMK_MACRO_STRINGIFY(FLAVOR);			\
+		label           = ZMK_HELPER_STRINGIFY(lt_ ## NAME);	\
+	    flavor          = ZMK_HELPER_STRINGIFY(FLAVOR);			\
 	    tapping-term-ms = <TAP_TERM>;       					\
 	    quick-tap-ms    = <QTAP_TERM>;  						\
 	    #binding-cells  = <2>;                    				\
 	    bindings 		= <&mo>, <&kp>;	    	      			\
 	};
 
+
+#define HOLD_TAP(NAME, FLAVOR, TAP_TERM, QTAP_TERM, HOLD, TAP) 	\
+	NAME: hold_tap_##NAME { 									\
+		label           = ZMK_HELPER_STRINGIFY(ht_ ## NAME);	\
+	    compatible      = "zmk,behavior-hold-tap"; 				\
+
+	    flavor          = ZMK_HELPER_STRINGIFY(FLAVOR);			\
+	    tapping-term-ms = <TAP_TERM>;       					\
+	    quick-tap-ms    = <QTAP_TERM>;  						\
+	    #binding-cells  = <2>;                    				\
+	    bindings        = <HOLD>, <TAP>;    	      			\
+	};
+
 LAYER_TAP(mou,	tap-preferred, MOU_TAP_TERM, QUICK_TAP_TERM)
 LAYER_TAP(nav,	tap-preferred, NAV_TAP_TERM, QUICK_TAP_TERM)
 
 HOLD_TAP(ht,	tap-preferred, TAPPING_TERM, QUICK_TAP_TERM, &kp, &kp)
+*/
+
+
+#define TAPPING_TERM 	200
+#define MOUSE_TAP_TERM	170
+#define NAV_TAP_TERM	125
+#define QUICK_TAP_TERM 	100
+
+ZMK_BEHAVIOR(ht, hold_tap, 
+	flavor = "tap-preferred";
+	tapping-term-ms = <TAPPING_TERM>;
+	quick-tap-ms    = <QUICK_TAP_TERM>;
+	bindings = <&kp>, <&kp>;	
+)
+
+ZMK_BEHAVIOR(mou, hold_tap, 
+	flavor = "tap-preferred";
+	tapping-term-ms = <MOUSE_TAP_TERM>;
+	quick-tap-ms    = <QUICK_TAP_TERM>;
+	bindings = <&mo>, <&kp>;	
+)
+
+ZMK_BEHAVIOR(nav, hold_tap, 
+	flavor = "tap-preferred";
+	tapping-term-ms = <NAV_TAP_TERM>;
+	quick-tap-ms    = <QUICK_TAP_TERM>;
+	bindings = <&mo>, <&kp>;	
+)
+
+
 
 /*
 HOLD_TAP(dt, 	tap-preferred, TAPPING_TERM, QUICK_TAP_TERM, &kp, &kp &kp)
