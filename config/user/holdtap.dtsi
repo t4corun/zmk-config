@@ -68,13 +68,6 @@ ZMK_BEHAVIOR(nav, hold_tap,
 	bindings = <&mo>, <&kp>;	
 )
 
-ZMK_BEHAVIOR(ht2, hold_tap, 
-	flavor = "tap-preferred";
-	tapping-term-ms = <TAPPING_TERM>;
-	quick-tap-ms = <QUICK_TAP_TERM>;
-	bindings = <&test>, <&kp>;
-)
-
 
 
 /*
