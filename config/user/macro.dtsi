@@ -25,15 +25,13 @@ macros {
 			, <&macro_tap &kp MACRO_PLACEHOLDER>
 			, <&macro_param_2to1>
 			, <&macro_tap &kp MACRO_PLACEHOLDER>;
-	)*/
+	)
 
 	ZMK_BEHAVIOR(mdt, macro_one_param,
 		wait-ms = <MACRO_WAIT_TERM>;
 		tap-ms = <MACRO_TAP_TERM>;
 		bindings = <&macro_param_1to1 &macro_tap &kp MACRO_PLACEHOLDER>;
-//, <&macro_param_1to1>
-//			, <&macro_tap &kp MACRO_PLACEHOLDER>;
-	)
+	)*/
 
 
 	ZMK_BEHAVIOR(test, macro,
