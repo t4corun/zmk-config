@@ -17,7 +17,13 @@
 #define MACRO_WAIT_TERM 10
 
 macros {
-	/*
+	
+	ZMK_BEHAVIOR(m2, macro_two_param,
+		wait-ms = <MACRO_WAIT_TERM>;
+		tap-ms = <MACRO_TAP_TERM>;
+		bindings = <&kp>, <&kp>;
+	)
+/*
 	ZMK_BEHAVIOR(m2, macro_two_param,
 		wait-ms = <MACRO_WAIT_TERM>;
 		tap-ms = <MACRO_TAP_TERM>;
@@ -26,6 +32,7 @@ macros {
 			, <&macro_param_2to1>
 			, <&macro_tap &kp MACRO_PLACEHOLDER>;
 	)
+
 
 	ZMK_BEHAVIOR(mdt, macro_one_param,
 		wait-ms = <MACRO_WAIT_TERM>;

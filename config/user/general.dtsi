@@ -76,8 +76,8 @@
 #define HT(holdkey, tapkey)		&ht 	holdkey	tapkey
 
 
-//#define M2(key1, key2)			&m2 	key1	key2
-#define HT2(key1)				&ht2 0 key1
+#define M2(key1, key2)			&m2 	key1	key2
+#define HT2(tapkey)				&ht2 	0 		tapkey
 
 &sk {
     release-after-ms = <STICKYKEY_TIMEOUT>;
