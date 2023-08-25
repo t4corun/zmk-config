@@ -18,32 +18,80 @@
 
 macros {
 	
-	ZMK_BEHAVIOR(m2, macro_two_param,
-		wait-ms = <MACRO_WAIT_TERM>;
-		tap-ms = <MACRO_TAP_TERM>;
-		bindings = <&kp>, <&kp>;
-	)
-/*
-	ZMK_BEHAVIOR(m2, macro_two_param,
-		wait-ms = <MACRO_WAIT_TERM>;
-		tap-ms = <MACRO_TAP_TERM>;
-		bindings = <&macro_param_1to1>
-			, <&macro_tap &kp MACRO_PLACEHOLDER>
-			, <&macro_param_2to1>
-			, <&macro_tap &kp MACRO_PLACEHOLDER>;
-	)
+	/*
+	2023-08-24 
+	The below is temporary because Nick Conway started his dev branch before main zmk released parameterized macros
 
-*/
-	ZMK_BEHAVIOR(mtt, macro_one_param,
+	#TODO remove this in the future
+	*/
+
+	ZMK_BEHAVIOR(mbrc, macro,
 		wait-ms = <MACRO_WAIT_TERM>;
 		tap-ms = <MACRO_TAP_TERM>;
-		bindings = <&macro_param_1to1>, <&kp 0>;
+		bindings = 
+			<&kp LBRC>
+			, <&kp RBRC>
+			, <&kp LEFT>;
 	)
 
-
-	ZMK_BEHAVIOR(test, macro,
+	ZMK_BEHAVIOR(mlgt, macro,
 		wait-ms = <MACRO_WAIT_TERM>;
 		tap-ms = <MACRO_TAP_TERM>;
-		bindings = <&kp LBRC>, <&kp RBRC>;
+		bindings = 
+			<&kp LGT>
+			, <&kp GT>
+			, <&kp LEFT>;
+	)
+
+	ZMK_BEHAVIOR(mbkt, macro,
+		wait-ms = <MACRO_WAIT_TERM>;
+		tap-ms = <MACRO_TAP_TERM>;
+		bindings = 
+			<&kp LBKT>
+			, <&kp RBKT>
+			, <&kp LEFT>;
+	)
+
+	ZMK_BEHAVIOR(mpar, macro,
+		wait-ms = <MACRO_WAIT_TERM>;
+		tap-ms = <MACRO_TAP_TERM>;
+		bindings = 
+			<&kp LPAR>
+			, <&kp RPAR>
+			, <&kp LEFT>;
+	)
+
+	ZMK_BEHAVIOR(mbslh, macro,
+		wait-ms = <MACRO_WAIT_TERM>;
+		tap-ms = <MACRO_TAP_TERM>;
+		bindings = 
+			<&kp BSLH>
+			, <&kp BSLH>;
+	)
+
+	ZMK_BEHAVIOR(mfslh, macro,
+		wait-ms = <MACRO_WAIT_TERM>;
+		tap-ms = <MACRO_TAP_TERM>;
+		bindings = 
+			<&kp FSLH>
+			, <&kp FSLH>;
+	)
+
+	ZMK_BEHAVIOR(mfslh, macro,
+		wait-ms = <MACRO_WAIT_TERM>;
+		tap-ms = <MACRO_TAP_TERM>;
+		bindings = 
+			<&kp FSLH>
+			, <&kp FSLH>;
+	)
+
+	ZMK_BEHAVIOR(mne, macro,
+		wait-ms = <MACRO_WAIT_TERM>;
+		tap-ms = <MACRO_TAP_TERM>;
+		bindings = 
+			<&kp SPACE>
+			, <&kp EXCL>
+			, <&kp EQUAL>
+			, <&kp SPACE>;
 	)
 };

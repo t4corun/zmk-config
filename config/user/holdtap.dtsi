@@ -68,14 +68,69 @@ ZMK_BEHAVIOR(nav, hold_tap,
 	bindings = <&mo>, <&kp>;	
 )
 
-ZMK_BEHAVIOR(ht2, hold_tap, 
+
+/*
+2023-08-24 
+The below is temporary because Nick Conway started his dev branch before main zmk released parameterized macros
+
+#TODO remove this in the future
+*/
+
+ZMK_BEHAVIOR(brc, hold_tap, 
+	flavor = "tap-preferred";.
+	tapping-term-ms = <TAPPING_TERM>;
+	quick-tap-ms = <QUICK_TAP_TERM>;
+	bindings = <&mbrc>, <&kp>;	
+)
+
+ZMK_BEHAVIOR(lgt, hold_tap, 
 	flavor = "tap-preferred";
 	tapping-term-ms = <TAPPING_TERM>;
 	quick-tap-ms = <QUICK_TAP_TERM>;
-	bindings = <&test>, <&kp>;	
+	bindings = <&mlgt>, <&kp>;	
 )
 
+ZMK_BEHAVIOR(bkt, hold_tap, 
+	flavor = "tap-preferred";
+	tapping-term-ms = <TAPPING_TERM>;
+	quick-tap-ms = <QUICK_TAP_TERM>;
+	bindings = <&mbkt>, <&kp>;	
+)
 
+ZMK_BEHAVIOR(par, hold_tap, 
+	flavor = "tap-preferred";
+	tapping-term-ms = <TAPPING_TERM>;
+	quick-tap-ms = <QUICK_TAP_TERM>;
+	bindings = <&mpar>, <&kp>;	
+)
+
+ZMK_BEHAVIOR(bslh, hold_tap, 
+	flavor = "tap-preferred";
+	tapping-term-ms = <TAPPING_TERM>;
+	quick-tap-ms = <QUICK_TAP_TERM>;
+	bindings = <&mbslh>, <&kp>;	
+)
+
+ZMK_BEHAVIOR(fslh, hold_tap, 
+	flavor = "tap-preferred";
+	tapping-term-ms = <TAPPING_TERM>;
+	quick-tap-ms = <QUICK_TAP_TERM>;
+	bindings = <&mfslh>, <&kp>;	
+)
+
+ZMK_BEHAVIOR(ne, hold_tap, 
+	flavor = "tap-preferred";
+	tapping-term-ms = <TAPPING_TERM>;
+	quick-tap-ms = <QUICK_TAP_TERM>;
+	bindings = <&mne>, <&kp>;	
+)
+
+ZMK_BEHAVIOR(und, hold_tap, 
+	flavor = "tap-preferred";
+	tapping-term-ms = <TAPPING_TERM>;
+	quick-tap-ms = <QUICK_TAP_TERM>;
+	bindings = <&mund>, <&kp>;	
+)
 
 /*
 HOLD_TAP(dt, 	tap-preferred, TAPPING_TERM, QUICK_TAP_TERM, &kp, &kp &kp)

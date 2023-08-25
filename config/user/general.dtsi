@@ -76,9 +76,23 @@
 #define HT(holdkey, tapkey)		&ht 	holdkey	tapkey
 
 
-#define M2(key1, key2)			&m2 	key1	key2
-#define HT2(tapkey)				&ht2 	0 		tapkey
-#define MTT(tripletapkey)		&mtt	tripletapkey
+
+/*
+2023-08-24 
+The below is temporary because Nick Conway started his dev branch before main zmk released parameterized macros
+
+#TODO remove this in the future
+*/
+
+#define BRC(tapkey)	&brc 0 tapkey
+#define LGT(tapkey)	&lgt 0 tapkey
+#define BKT(tapkey)	&bkt 0 tapkey
+#define PAR(tapkey)	&par 0 tapkey
+
+#define BSLH(tapkey) &bslh 0 tapkey
+#define FSLH(tapkey) &fslh 0 tapkey
+
+#define NE(tapkey) &ne 0 tapkey
 
 &sk {
     release-after-ms = <STICKYKEY_TIMEOUT>;
@@ -94,7 +108,6 @@
     acceleration-exponent = <U_MOUSE_MOVE_EXPONENT>;
     time-to-max-speed-ms = <U_MOUSE_MOVE_TIME>;
 };
-
 
 &mwh {
     delay-ms = <U_MOUSE_SCROLL_DELAY>;

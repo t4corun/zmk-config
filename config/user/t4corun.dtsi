@@ -165,10 +165,10 @@
 			label = "Symbol";
 
             bindings = <
-                &kp PRCNT	&kp CARET					&kp DLLR	&kp PLUS	&none			&none		&none		&kp STAR	&none		&none
-                &none		HT2(LBRC)				&kp RBRC	&kp AT		HT(COLON, SEMI)	&kp BSPC	&kp QMARK	&none		&kp RBKT	&none
-                &none		&none						&kp GT		&none		&none			&none		&none		&none		&kp RPAR	HT(UNDER, MINUS)
-                            	    					&none   	&trans  	&none   		&none   	&trans  	&none
+                &kp PRCNT	&kp CARET	&kp DLLR	&kp PLUS	&none			&none		&none		&kp STAR	&none		&none
+                &none		BRC(RBRC)	&kp RBRC	&kp AT		HT(COLON, SEMI)	&kp BSPC	&kp QMARK	BKT(RBKT)	&kp RBKT	&none
+                &none		LGT(GT)		&kp GT		BSLH(BSLH)	NE(EXCL)		UND(UNDER)	FSLH(FSLH)	PAR(RPAR)	&kp RPAR	HT(UNDER, MINUS)
+                            	    	&none   	&trans  	&none   		&none   	&trans  	&none
             >;
 
             sensor-bindings = <&inc_dec_kp &none &none &inc_dec_kp &none &none>;
