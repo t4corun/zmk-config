@@ -40,7 +40,7 @@ macros {
 		wait-ms = <MACRO_WAIT_TERM>;
 		tap-ms = <MACRO_TAP_TERM>;
 		bindings = 
-			<&kp LGT>
+			<&kp LT>
 			, <&kp GT>
 			, <&kp LEFT>;
 	)
