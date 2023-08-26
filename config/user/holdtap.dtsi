@@ -79,9 +79,7 @@ The below is temporary because Nick Conway started his dev branch before main zm
 // brackets, quotes then put cursor inside
 
 ZMK_BEHAVIOR(ht_brc, hold_tap, 
-	flavor = "tap-preferred";
-	tapping-term-ms = <TAPPING_TERM>;
-	quick-tap-ms = <QUICK_TAP_TERM>;
+	ZMK_HOLDTAP_CORE
 	bindings = <&m_brc>, <&kp>;	
 )
 
