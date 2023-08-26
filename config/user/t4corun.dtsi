@@ -100,7 +100,7 @@
             label = "Numbers";
 
             bindings = <
-                &kp ESC     W_SNIP  	W_FILE     	&none	    &none   		&none      	&kp N7	&kp N8    	&kp N9	&kp TAB
+                &kp ESC     W_SNIP  	W_FILE     	&none	    fGRV(GRAVE)		fEQL(EQUAL)	&kp N7	&kp N8    	&kp N9	&kp TAB
                 &sk LGUI	&sk LALT	&sk LCTRL	&sk LSHFT	HT(COLON, SEMI)	&kp BSPC    &kp N4	&kp N5    	&kp N6	&kp DOT
                 W_UNDO      W_CUT   	W_COPY      W_PASTE     W_REDO			&none	    &kp N1	&kp N2    	&kp N3	HT(UNDER, MINUS)
                                     	&none		&trans 		&none			&kp SPACE	&trans	&kp C_MUTE
@@ -165,9 +165,9 @@
 			label = "Symbol";
 
             bindings = <
-                &kp PRCNT	&kp CARET	&kp DLLR	&kp PLUS	&none			&none		&none		&kp STAR	&none		&none
-                &none		BRC(RBRC)	&kp RBRC	&kp AT		HT(COLON, SEMI)	&kp BSPC	&kp QMARK	BKT(RBKT)	&kp RBKT	&none
-                &none		LGT(GT)		&kp GT		BSLH(BSLH)	NE(EXCL)		UND(UNDER)	FSLH(FSLH)	PAR(RPAR)	&kp RPAR	HT(UNDER, MINUS)
+                &kp PRCNT	&kp CARET	&kp DLLR	&kp PLUS	fGRV(GRAVE)		fEQL(EQUAL)	fHASH(HASH)	&kp STAR	fPIPE(PIPE)	fDQT(DQT)
+                &none		fBRC(RBRC)	&kp RBRC	&kp AT		HT(COLON, SEMI)	&kp BSPC	&kp QMARK	fBKT(RBKT)	&kp RBKT	fSQT(SQT)
+                &none		fLGT(GT)	&kp GT		fBSLH(BSLH)	fNEQL(EXCL)		fUND(UNDER)	fFSLH(FSLH)	fPAR(RPAR)	&kp RPAR	HT(UNDER, MINUS)
                             	    	&none   	&trans  	&none   		&none   	&trans  	&none
             >;
 
