@@ -25,7 +25,9 @@ macros {
 	#TODO remove this in the future
 	*/
 
-	ZMK_BEHAVIOR(mbrc, macro,
+	// brackets, quotes then put cursor inside
+
+	ZMK_BEHAVIOR(m_brc, macro,
 		wait-ms = <MACRO_WAIT_TERM>;
 		tap-ms = <MACRO_TAP_TERM>;
 		bindings = 
@@ -34,7 +36,7 @@ macros {
 			, <&kp LEFT>;
 	)
 
-	ZMK_BEHAVIOR(mlgt, macro,
+	ZMK_BEHAVIOR(m_lgt, macro,
 		wait-ms = <MACRO_WAIT_TERM>;
 		tap-ms = <MACRO_TAP_TERM>;
 		bindings = 
@@ -43,7 +45,7 @@ macros {
 			, <&kp LEFT>;
 	)
 
-	ZMK_BEHAVIOR(mbkt, macro,
+	ZMK_BEHAVIOR(m_bkt, macro,
 		wait-ms = <MACRO_WAIT_TERM>;
 		tap-ms = <MACRO_TAP_TERM>;
 		bindings = 
@@ -52,7 +54,7 @@ macros {
 			, <&kp LEFT>;
 	)
 
-	ZMK_BEHAVIOR(mpar, macro,
+	ZMK_BEHAVIOR(m_par, macro,
 		wait-ms = <MACRO_WAIT_TERM>;
 		tap-ms = <MACRO_TAP_TERM>;
 		bindings = 
@@ -61,7 +63,28 @@ macros {
 			, <&kp LEFT>;
 	)
 
-	ZMK_BEHAVIOR(mbslh, macro,
+	ZMK_BEHAVIOR(m_sqt, macro,
+		wait-ms = <MACRO_WAIT_TERM>;
+		tap-ms = <MACRO_TAP_TERM>;
+		bindings = 
+			<&kp SQT>
+			, <&kp SQT>
+			, <&kp LEFT>;
+	)
+
+	ZMK_BEHAVIOR(m_dqt, macro,
+		wait-ms = <MACRO_WAIT_TERM>;
+		tap-ms = <MACRO_TAP_TERM>;
+		bindings = 
+			<&kp DQT>
+			, <&kp DQT>
+			, <&kp LEFT>;
+	)
+
+
+	// double tap keys
+
+	ZMK_BEHAVIOR(m_bslh, macro,
 		wait-ms = <MACRO_WAIT_TERM>;
 		tap-ms = <MACRO_TAP_TERM>;
 		bindings = 
@@ -69,7 +92,7 @@ macros {
 			, <&kp BSLH>;
 	)
 
-	ZMK_BEHAVIOR(mfslh, macro,
+	ZMK_BEHAVIOR(m_fslh, macro,
 		wait-ms = <MACRO_WAIT_TERM>;
 		tap-ms = <MACRO_TAP_TERM>;
 		bindings = 
@@ -77,21 +100,62 @@ macros {
 			, <&kp FSLH>;
 	)
 
-	ZMK_BEHAVIOR(mfslh, macro,
+	ZMK_BEHAVIOR(m_und, macro,
 		wait-ms = <MACRO_WAIT_TERM>;
 		tap-ms = <MACRO_TAP_TERM>;
 		bindings = 
-			<&kp FSLH>
-			, <&kp FSLH>;
+			<&kp UNDER>
+			, <&kp UNDER>;
 	)
 
-	ZMK_BEHAVIOR(mne, macro,
+	ZMK_BEHAVIOR(m_pipe, macro,
 		wait-ms = <MACRO_WAIT_TERM>;
 		tap-ms = <MACRO_TAP_TERM>;
 		bindings = 
-			<&kp SPACE>
-			, <&kp EXCL>
-			, <&kp EQUAL>
-			, <&kp SPACE>;
+			<&kp PIPE>
+			, <&kp PIPE>;
+	)
+
+	ZMK_BEHAVIOR(m_hash, macro,
+		wait-ms = <MACRO_WAIT_TERM>;
+		tap-ms = <MACRO_TAP_TERM>;
+		bindings = 
+			<&kp HASH>
+			, <&kp HASH>;
+	)
+
+	ZMK_BEHAVIOR(m_eql, macro,
+		wait-ms = <MACRO_WAIT_TERM>;
+		tap-ms = <MACRO_TAP_TERM>;
+		bindings = 
+			<&kp EQUAL>
+			, <&kp EQUAL>;
+	)
+
+	ZMK_BEHAVIOR(m_amp, macro,
+		wait-ms = <MACRO_WAIT_TERM>;
+		tap-ms = <MACRO_TAP_TERM>;
+		bindings = 
+			<&kp AMPS>
+			, <&kp AMPS>;
+	)
+
+	// custom macros
+
+	ZMK_BEHAVIOR(m_neql, macro,
+		wait-ms = <MACRO_WAIT_TERM>;
+		tap-ms = <MACRO_TAP_TERM>;
+		bindings = 
+			<&kp EXCL>
+			, <&kp EQUAL>;
+	)
+
+	ZMK_BEHAVIOR(m_grv, macro,
+		wait-ms = <MACRO_WAIT_TERM>;
+		tap-ms = <MACRO_TAP_TERM>;
+		bindings = 
+			<&kp GRAVE>
+			, <&kp GRAVE>
+			, <&kp GRAVE>;
 	)
 };
