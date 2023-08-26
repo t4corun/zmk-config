@@ -84,104 +84,76 @@ ZMK_BEHAVIOR(ht_brc, hold_tap,
 )
 
 ZMK_BEHAVIOR(ht_lgt, hold_tap, 
-	flavor = "tap-preferred";
-	tapping-term-ms = <TAPPING_TERM>;
-	quick-tap-ms = <QUICK_TAP_TERM>;
+	ZMK_HOLDTAP_CORE
 	bindings = <&m_lgt>, <&kp>;	
 )
 
 ZMK_BEHAVIOR(ht_bkt, hold_tap, 
-	flavor = "tap-preferred";
-	tapping-term-ms = <TAPPING_TERM>;
-	quick-tap-ms = <QUICK_TAP_TERM>;
+	ZMK_HOLDTAP_CORE
 	bindings = <&m_bkt>, <&kp>;	
 )
 
 ZMK_BEHAVIOR(ht_par, hold_tap, 
-	flavor = "tap-preferred";
-	tapping-term-ms = <TAPPING_TERM>;
-	quick-tap-ms = <QUICK_TAP_TERM>;
+	ZMK_HOLDTAP_CORE
 	bindings = <&m_par>, <&kp>;	
 )
 
 ZMK_BEHAVIOR(ht_sqt, hold_tap, 
-	flavor = "tap-preferred";
-	tapping-term-ms = <TAPPING_TERM>;
-	quick-tap-ms = <QUICK_TAP_TERM>;
+	ZMK_HOLDTAP_CORE
 	bindings = <&m_sqt>, <&kp>;	
 )
 
 ZMK_BEHAVIOR(ht_dqt, hold_tap, 
-	flavor = "tap-preferred";
-	tapping-term-ms = <TAPPING_TERM>;
-	quick-tap-ms = <QUICK_TAP_TERM>;
+	ZMK_HOLDTAP_CORE
 	bindings = <&m_dqt>, <&kp>;	
 )
 
 // double tap keys
 
 ZMK_BEHAVIOR(ht_bslh, hold_tap, 
-	flavor = "tap-preferred";
-	tapping-term-ms = <TAPPING_TERM>;
-	quick-tap-ms = <QUICK_TAP_TERM>;
+	ZMK_HOLDTAP_CORE
 	bindings = <&m_bslh>, <&kp>;	
 )
 
 ZMK_BEHAVIOR(ht_fslh, hold_tap, 
-	flavor = "tap-preferred";
-	tapping-term-ms = <TAPPING_TERM>;
-	quick-tap-ms = <QUICK_TAP_TERM>;
+	ZMK_HOLDTAP_CORE
 	bindings = <&m_fslh>, <&kp>;	
 )
 
 ZMK_BEHAVIOR(ht_und, hold_tap, 
-	flavor = "tap-preferred";
-	tapping-term-ms = <TAPPING_TERM>;
-	quick-tap-ms = <QUICK_TAP_TERM>;
+	ZMK_HOLDTAP_CORE
 	bindings = <&m_und>, <&kp>;	
 )
 
 ZMK_BEHAVIOR(ht_pipe, hold_tap, 
-	flavor = "tap-preferred";
-	tapping-term-ms = <TAPPING_TERM>;
-	quick-tap-ms = <QUICK_TAP_TERM>;
+	ZMK_HOLDTAP_CORE
 	bindings = <&m_pipe>, <&kp>;	
 )
 
 ZMK_BEHAVIOR(ht_hash, hold_tap, 
-	flavor = "tap-preferred";
-	tapping-term-ms = <TAPPING_TERM>;
-	quick-tap-ms = <QUICK_TAP_TERM>;
+	ZMK_HOLDTAP_CORE
 	bindings = <&m_hash>, <&kp>;	
 )
 
 ZMK_BEHAVIOR(ht_eql, hold_tap, 
-	flavor = "tap-preferred";
-	tapping-term-ms = <TAPPING_TERM>;
-	quick-tap-ms = <QUICK_TAP_TERM>;
+	ZMK_HOLDTAP_CORE
 	bindings = <&m_eql>, <&kp>;	
 )
 
 ZMK_BEHAVIOR(ht_amp, hold_tap, 
-	flavor = "tap-preferred";
-	tapping-term-ms = <TAPPING_TERM>;
-	quick-tap-ms = <QUICK_TAP_TERM>;
+	ZMK_HOLDTAP_CORE
 	bindings = <&m_amp>, <&kp>;	
 )
 
 // custom macros
 
 ZMK_BEHAVIOR(ht_neql, hold_tap, 
-	flavor = "tap-preferred";
-	tapping-term-ms = <TAPPING_TERM>;
-	quick-tap-ms = <QUICK_TAP_TERM>;
+	ZMK_HOLDTAP_CORE
 	bindings = <&m_neql>, <&kp>;	
 )
 
 ZMK_BEHAVIOR(ht_grv, hold_tap, 
-	flavor = "tap-preferred";
-	tapping-term-ms = <TAPPING_TERM>;
-	quick-tap-ms = <QUICK_TAP_TERM>;
+	ZMK_HOLDTAP_CORE
 	bindings = <&m_grv>, <&kp>;	
 )
 

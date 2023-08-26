@@ -8,6 +8,8 @@
 
 
 #define ZMK_HOLDTAP_CORE		          flavor = "tap-preferred"; tapping-term-ms = <TAPPING_TERM>; quick-tap-ms = <QUICK_TAP_TERM>;
+#define ZMK_MACRO_CORE			          wait-ms = <MACRO_WAIT_TERM>; tap-ms = <MACRO_TAP_TERM>;
+
 #define ZMK_BEHAVIOR_CORE_caps_word       compatible = "zmk,behavior-caps-word";       #binding-cells = <0>
 #define ZMK_BEHAVIOR_CORE_hold_tap        compatible = "zmk,behavior-hold-tap";        #binding-cells = <2>
 #define ZMK_BEHAVIOR_CORE_macro           compatible = "zmk,behavior-macro";           #binding-cells = <0>
