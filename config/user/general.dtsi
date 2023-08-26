@@ -30,11 +30,11 @@
 // Layer Definitions out toggle
 #define QWERTY  0
 #define COLEMAK 1
-#define NUMBER  1
-#define NAVI    2
-#define SYMBOL  3
-#define MOUSE	4
-#define CONFIG  5
+#define NUMBER  2
+#define NAVI    3
+#define SYMBOL  4
+#define MOUSE	5
+#define CONFIG  6
 
 //Feature Configuration
 #define STICKYKEY_TIMEOUT 	2000
