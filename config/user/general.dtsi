@@ -6,17 +6,19 @@
 
 #define ZMK_HELPER_STRINGIFY(x) #x
 
+
+#define ZMK_HOLDTAP_CORE		          flavor = "tap-preferred"; tapping-term-ms = <TAPPING_TERM>; quick-tap-ms = <QUICK_TAP_TERM>;
 #define ZMK_BEHAVIOR_CORE_caps_word       compatible = "zmk,behavior-caps-word";       #binding-cells = <0>
-//#define ZMK_BEHAVIOR_CORE_dynamic_macro   compatible = "zmk,behavior-dynamic-macro";   #binding-cells = <1>
 #define ZMK_BEHAVIOR_CORE_hold_tap        compatible = "zmk,behavior-hold-tap";        #binding-cells = <2>
-//#define ZMK_BEHAVIOR_CORE_key_repeat      compatible = "zmk,behavior-key-repeat";      #binding-cells = <0>
 #define ZMK_BEHAVIOR_CORE_macro           compatible = "zmk,behavior-macro";           #binding-cells = <0>
 #define ZMK_BEHAVIOR_CORE_macro_one_param compatible = "zmk,behavior-macro-one-param"; #binding-cells = <1>
 #define ZMK_BEHAVIOR_CORE_macro_two_param compatible = "zmk,behavior-macro-two-param"; #binding-cells = <2>
-//#define ZMK_BEHAVIOR_CORE_mod_morph       compatible = "zmk,behavior-mod-morph";       #binding-cells = <0>
 #define ZMK_BEHAVIOR_CORE_sticky_key      compatible = "zmk,behavior-sticky-key";      #binding-cells = <1>
 #define ZMK_BEHAVIOR_CORE_tap_dance       compatible = "zmk,behavior-tap-dance";       #binding-cells = <0>
 #define ZMK_BEHAVIOR_CORE_tri_state       compatible = "zmk,behavior-tri-state";       #binding-cells = <0>
+//#define ZMK_BEHAVIOR_CORE_dynamic_macro   compatible = "zmk,behavior-dynamic-macro";   #binding-cells = <1>
+//#define ZMK_BEHAVIOR_CORE_mod_morph       compatible = "zmk,behavior-mod-morph";       #binding-cells = <0>
+//#define ZMK_BEHAVIOR_CORE_key_repeat      compatible = "zmk,behavior-key-repeat";      #binding-cells = <0>
 
 #define ZMK_BEHAVIOR(NAME, TYPE, ...) 				\
     NAME: NAME { 									\
@@ -72,10 +74,8 @@
 #define BT3     	&bt BT_SEL 3
 #define BT4     	&bt BT_SEL 4
 
-//Hold Taps
+//Hold Taps. Tap for one key, hold to get another
 #define HT(holdkey, tapkey)		&ht 	holdkey	tapkey
-
-
 
 /*
 2023-08-24 
@@ -84,15 +84,27 @@ The below is temporary because Nick Conway started his dev branch before main zm
 #TODO remove this in the future
 */
 
-#define BRC(tapkey)	&brc 0 tapkey
-#define LGT(tapkey)	&lgt 0 tapkey
-#define BKT(tapkey)	&bkt 0 tapkey
-#define PAR(tapkey)	&par 0 tapkey
+// hold to insert preprogrammed brackets/quotes with the cursor inside or tap for specified key
+#define fBRC(tapkey)	&ht_brc 0 tapkey
+#define fLGT(tapkey)	&ht_lgt 0 tapkey
+#define fBKT(tapkey)	&ht_bkt 0 tapkey
+#define fPAR(tapkey)	&ht_par 0 tapkey
+#define fSQT(tapkey)	&ht_sqt 0 tapkey
+#define fDQT(tapkey)	&ht_dqt 0 tapkey
 
-#define BSLH(tapkey) &bslh 0 tapkey
-#define FSLH(tapkey) &fslh 0 tapkey
 
-#define NE(tapkey) &ne 0 tapkey
+// hold to double tap a preprogrammed key, tap for specified key
+#define fBSLH(tapkey) 	&ht_bslh 0 tapkey
+#define fFSLH(tapkey) 	&ht_fslh 0 tapkey
+#define fUND(tapkey) 	&ht_und 0 tapkey
+#define fPIPE(tapkey) 	&ht_pipe 0 tapkey
+#define fHASH(tapkey) 	&ht_hash 0 tapkey
+#define fEQL(tapkey) 	&ht_eql 0 tapkey
+#define fAMP(tapkey) 	&ht_amp 0 tapkey
+
+// hold for custom macro, tap for specified key
+#define fNEQL(tapkey) 	&ht_neql 0 tapkey
+#define fGRV(tapkey) 	&ht_grv 0 tapkey
 
 &sk {
     release-after-ms = <STICKYKEY_TIMEOUT>;
