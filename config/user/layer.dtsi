@@ -1,0 +1,11 @@
+#define TRILAYER(IFLAYERS, THENLAYER)	\
+	tri_layer {	                		\
+	    if-layers = <IFLAYERS>;			\
+		then-layer = <THENLAYER>;		\
+	};
+
+combos {
+	compatible = "zmk, conditional-layers";
+	
+	TRILAYER(NUMBER NAVI, SYMBOL)
+};

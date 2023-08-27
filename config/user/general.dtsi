@@ -6,18 +6,17 @@
 
 #define ZMK_HELPER_STRINGIFY(x) #x
 
-
 #define ZMK_HOLDTAP_CORE		          flavor = "tap-preferred"; tapping-term-ms = <TAPPING_TERM>; quick-tap-ms = <QUICK_TAP_TERM>;
 #define ZMK_MACRO_CORE			          wait-ms = <MACRO_WAIT_TERM>; tap-ms = <MACRO_TAP_TERM>;
 
-#define ZMK_BEHAVIOR_CORE_caps_word       compatible = "zmk,behavior-caps-word";       #binding-cells = <0>
+//#define ZMK_BEHAVIOR_CORE_caps_word       compatible = "zmk,behavior-caps-word";       #binding-cells = <0>
 #define ZMK_BEHAVIOR_CORE_hold_tap        compatible = "zmk,behavior-hold-tap";        #binding-cells = <2>
 #define ZMK_BEHAVIOR_CORE_macro           compatible = "zmk,behavior-macro";           #binding-cells = <0>
-#define ZMK_BEHAVIOR_CORE_macro_one_param compatible = "zmk,behavior-macro-one-param"; #binding-cells = <1>
-#define ZMK_BEHAVIOR_CORE_macro_two_param compatible = "zmk,behavior-macro-two-param"; #binding-cells = <2>
-#define ZMK_BEHAVIOR_CORE_sticky_key      compatible = "zmk,behavior-sticky-key";      #binding-cells = <1>
+//#define ZMK_BEHAVIOR_CORE_macro_one_param compatible = "zmk,behavior-macro-one-param"; #binding-cells = <1>
+//#define ZMK_BEHAVIOR_CORE_macro_two_param compatible = "zmk,behavior-macro-two-param"; #binding-cells = <2>
+//#define ZMK_BEHAVIOR_CORE_sticky_key      compatible = "zmk,behavior-sticky-key";      #binding-cells = <1>
 #define ZMK_BEHAVIOR_CORE_tap_dance       compatible = "zmk,behavior-tap-dance";       #binding-cells = <0>
-#define ZMK_BEHAVIOR_CORE_tri_state       compatible = "zmk,behavior-tri-state";       #binding-cells = <0>
+//#define ZMK_BEHAVIOR_CORE_tri_state       compatible = "zmk,behavior-tri-state";       #binding-cells = <0>
 //#define ZMK_BEHAVIOR_CORE_dynamic_macro   compatible = "zmk,behavior-dynamic-macro";   #binding-cells = <1>
 //#define ZMK_BEHAVIOR_CORE_mod_morph       compatible = "zmk,behavior-mod-morph";       #binding-cells = <0>
 //#define ZMK_BEHAVIOR_CORE_key_repeat      compatible = "zmk,behavior-key-repeat";      #binding-cells = <0>
@@ -38,26 +37,39 @@
 #define MOUSE	5
 #define CONFIG  6
 
-//Feature Configuration
+// Feature Configuration: Tapping
+#define TAPPING_TERM 	200
+#define MOUSE_TAP_TERM	170
+#define NAV_TAP_TERM	125
+#define QUICK_TAP_TERM 	100
+
+// Feature Configuration: Combos
+#define COMBO_TIMEOUT 50
+
+// Feature Configuration: Sicky Keys
 #define STICKYKEY_TIMEOUT 	2000
 
+// Feature Configuration: Macros
+#define MACRO_TAP_TERM 10
+#define MACRO_WAIT_TERM 10
+
+// Feature Configuration: Mouse (beta)
 #define U_MOUSE_MOVE_DELAY 0
 #define U_MOUSE_MOVE_EXPONENT 1
 #define U_MOUSE_MOVE_TIME 750
-
 #define U_MOUSE_SCROLL_DELAY 0
 #define U_MOUSE_SCROLL_EXPONENT 1
 #define U_MOUSE_SCROLL_TIME 0
 
-//custom layer taps
+// Custom layer taps
 #define MOU(keycode)	&mou MOUSE 	keycode
 #define NAV(keycode)	&nav NAVI 	keycode
 
-//To Layer
+// Switch base layer
 #define DEFAULT		&to QWERTY
 #define CLMAKDH 	&to	COLEMAK
 
-//Shortcuts
+// Windows Shortcuts
 #define W_UNDO  	&kp LC(Z)
 #define W_CUT   	&kp LC(X)
 #define W_COPY  	&kp LC(C)
@@ -65,10 +77,9 @@
 #define W_REDO  	&kp LC(Y)
 #define W_SNIP  	&kp LS(LG(S))
 #define W_FILE  	&kp LG(E)
-
 #define NEXTTAB 	&kp LC(TAB)
 
-//Bluetooth
+// Bluetooth
 #define BTClear 	&bt BT_CLR
 #define BT0     	&bt BT_SEL 0
 #define BT1     	&bt BT_SEL 1
@@ -76,7 +87,7 @@
 #define BT3     	&bt BT_SEL 3
 #define BT4     	&bt BT_SEL 4
 
-//Hold Taps. Tap for one key, hold to get another
+// Hold Taps. Tap for one key, hold to get another
 #define HT(holdkey, tapkey)		&ht 	holdkey	tapkey
 
 /*
@@ -108,6 +119,8 @@ The below is temporary because Nick Conway started his dev branch before main zm
 #define fNEQL(tapkey) 	&ht_neql 0 tapkey
 #define fGRV(tapkey) 	&ht_grv 0 tapkey
 
+
+// customizaiton of stock ZMK features
 &sk {
     release-after-ms = <STICKYKEY_TIMEOUT>;
     quick-release;

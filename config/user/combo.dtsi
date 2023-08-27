@@ -7,8 +7,6 @@
   ╰───────╮ LH0 LH1 LH2 │ │ RH0 RH1 RH2 ╭───────╯
           ╰─────────────╯ ╰─────────────╯ */
 
-#define COMBO_TIMEOUT 50
-
 #define COMBO(NAME, TIMEOUT, LAYER, POSITION, BINDINGS )  \
 	combo_##NAME {                      		\
 	    timeout-ms    = <TIMEOUT>;				\
