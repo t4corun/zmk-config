@@ -4,7 +4,7 @@
 		then-layer = <THENLAYER>;		\
 	};
 
-conditional_layers  {
+conditional_layers {
 	compatible = "zmk, conditional-layers";
 	
 	TRILAYER(NUMBER NAVI, SYMBOL)
