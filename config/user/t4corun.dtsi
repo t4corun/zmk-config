@@ -140,7 +140,7 @@
 		*   +------+------+------+------+------|    +------+------+------+------+------+
 		*   | &    | {    | }    | @    | ;    |    | Bksp | ?    | [    | ]    | '    |
 		*   +------+------+------+------+------|    +------+------+------+------+------+
-		*   |      | <    | >    | \    | !    |    | _    | /    | (    | )    | -    |
+		*   | ~    | <    | >    | \    | !    |    | _    | /    | (    | )    | -    |
 		*   `------+------+------+------+------+    +------+------+------+------+------'
 		*                 |      | NUM  |      |    |      | NAV  |      |              
 		*                 `------+------+------'    `------+------+------'
@@ -160,7 +160,7 @@
             bindings = <
                 &kp PRCNT	&kp CARET	&kp DLLR	&kp PLUS	fGRV(GRAVE)		fEQL(EQUAL)	fHASH(HASH)	&kp STAR	fPIPE(PIPE)	fDQT(DQT)
                 &none		fBRC(RBRC)	&kp RBRC	&kp AT		HT(COLON, SEMI)	&kp BSPC	&kp QMARK	fBKT(RBKT)	&kp RBKT	fSQT(SQT)
-                &none		fLGT(GT)	&kp GT		fBSLH(BSLH)	fNEQL(EXCL)		fUND(UNDER)	fFSLH(FSLH)	fPAR(RPAR)	&kp RPAR	HT(UNDER, MINUS)
+                &kp TILDE	fLGT(GT)	&kp GT		fBSLH(BSLH)	fNEQL(EXCL)		fUND(UNDER)	fFSLH(FSLH)	fPAR(RPAR)	&kp RPAR	HT(UNDER, MINUS)
                             	    	&none   	&trans  	&none   		&none   	&trans  	&none
             >;
 
