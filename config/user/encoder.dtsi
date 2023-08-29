@@ -53,21 +53,21 @@ ZMK_BEHAVIOR(downmm2, mod_morph,
 
 
 ZMK_BEHAVIOR(leftenc, sensor_rotate,
-	bindings = <&rightmm1, &leftmm1>;
+	bindings = <&rightmm1 &leftmm1>;
 )
 
 ZMK_BEHAVIOR(rightenc, sensor_rotate,
-	bindings = <&upmm1, &downmm1>;
+	bindings = <&upmm1 &downmm1>;
 )
 
 ZMK_BEHAVIOR(leftmouenc, sensor_rotate,
-	bindings = <&mwh SCROLL_RIGHT, &mwh SCROLL_LEFT>;
+	bindings = <&mwh SCROLL_RIGHT &mwh SCROLL_LEFT>;
 )
 
 ZMK_BEHAVIOR(rightmouenc, sensor_rotate,
-	bindings = <&mwh SCROLL_UP, &mwh SCROLL_DOWN>;
+	bindings = <&mwh SCROLL_UP &mwh SCROLL_DOWN>;
 )
 
 ZMK_BEHAVIOR(noneenc, sensor_rotate,
-	bindings = <&none, &none>;
+	bindings = <&none &none>;
 )
