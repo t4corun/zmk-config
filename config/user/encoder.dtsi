@@ -10,7 +10,7 @@ ZMK_BEHAVIOR(rightmm1, mod_morph,
 
 ZMK_BEHAVIOR(rightmm2, mod_morph,
 	bindings = <&kp RIGHT &kp LC(RIGHT)>;
-	mods = <MOD_LCTRL>;
+	mods = <MOD_LCTL>;
 )
 
 ZMK_BEHAVIOR(leftmm1, mod_morph,
@@ -20,7 +20,7 @@ ZMK_BEHAVIOR(leftmm1, mod_morph,
 
 ZMK_BEHAVIOR(leftmm2, mod_morph,
 	bindings = <&kp LEFT &kp LC(LEFT)>;
-	mods = <MOD_LCTRL>;
+	mods = <MOD_LCTL>;
 )
 
 
@@ -31,7 +31,7 @@ ZMK_BEHAVIOR(leftmm2, mod_morph,
 //hold ctrl: ctrl = and ctrl -
 ZMK_BEHAVIOR(upmm1, mod_morph,
 	bindings = <&upmm2 &kp LC(EQUAL)>;
-	mods = <MOD_LCTRL>;
+	mods = <MOD_LCTL>;
 )
 
 ZMK_BEHAVIOR(upmm2, mod_morph,
@@ -41,7 +41,7 @@ ZMK_BEHAVIOR(upmm2, mod_morph,
 
 ZMK_BEHAVIOR(downmm1, mod_morph,
 	bindings = <&downmm2 &kp LC(MINUS)>;
-	mods = <MOD_LCTRL>;
+	mods = <MOD_LCTL>;
 )
 
 ZMK_BEHAVIOR(downmm2, mod_morph,
