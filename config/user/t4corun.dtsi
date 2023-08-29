@@ -7,7 +7,7 @@
 	#include "holdtap.dtsi"
 	#include "tapdance.dtsi"
 	#include "layer.dtsi"
-	#include "encoer.dtsi"
+	#include "encoder.dtsi"
 
     keymap {
         compatible = "zmk,keymap";
