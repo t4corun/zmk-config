@@ -54,7 +54,7 @@ ZMK_BEHAVIOR(ht_bkt, hold_tap,
 ZMK_BEHAVIOR(ht_par, hold_tap, 
 	ZMK_HOLDTAP_CORE
 	bindings = <&m_par>, <&kp>;	
-),.
+)
 
 ZMK_BEHAVIOR(ht_sqt, hold_tap, 
 	ZMK_HOLDTAP_CORE
