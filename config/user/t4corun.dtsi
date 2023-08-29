@@ -159,7 +159,7 @@
         *   Encoder Right: none <-> none
 		*/        
 
-		symbol_layer {.
+		symbol_layer {
 
 			label = "Symbol";
 
