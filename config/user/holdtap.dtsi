@@ -1,3 +1,5 @@
+
+// hold to get a key, tap to get another
 ZMK_BEHAVIOR(ht, hold_tap, 
 	flavor = "tap-preferred";
 	tapping-term-ms = <TAPPING_TERM>;
@@ -5,6 +7,7 @@ ZMK_BEHAVIOR(ht, hold_tap,
 	bindings = <&kp>, <&kp>;	
 )
 
+// basically layer taps with custom tapping terms
 ZMK_BEHAVIOR(mou, hold_tap, 
 	flavor = "tap-preferred";
 	tapping-term-ms = <MOUSE_TAP_TERM>;
@@ -21,10 +24,14 @@ ZMK_BEHAVIOR(nav, hold_tap,
 
 
 /*
-2023-08-24 
-The below is temporary because Nick Conway started his dev branch before main zmk released parameterized macros
+2023-08-24
 
-#TODO remove this in the future
+Hold Tap architecture
+- this file: each behavior fires a macro when it is held or taps a parameterized keycode
+- macro.dtsi: contains macro defintions. For example we may have a macro that sends two ## when the key is held
+- general.dtsi: define a hold tap function for each behavior. It looks like layer 0 will be enabled when held, but the heavior fires a macro instead a zero
+
+The below is temporary because Nick Conway started his dev branch before main zmk released parameterized macros. Once parameterized macros are here, we should be able to combine all these macros into like 3-4. #TODO remove this in the future
 */
 
 // brackets, quotes then put cursor inside
@@ -47,7 +54,7 @@ ZMK_BEHAVIOR(ht_bkt, hold_tap,
 ZMK_BEHAVIOR(ht_par, hold_tap, 
 	ZMK_HOLDTAP_CORE
 	bindings = <&m_par>, <&kp>;	
-)
+),.
 
 ZMK_BEHAVIOR(ht_sqt, hold_tap, 
 	ZMK_HOLDTAP_CORE
@@ -74,6 +81,11 @@ ZMK_BEHAVIOR(ht_fslh, hold_tap,
 ZMK_BEHAVIOR(ht_und, hold_tap, 
 	ZMK_HOLDTAP_CORE
 	bindings = <&m_und>, <&kp>;	
+)
+
+ZMK_BEHAVIOR(ht_min, hold_tap, 
+	ZMK_HOLDTAP_CORE
+	bindings = <&m_min>, <&kp>;	
 )
 
 ZMK_BEHAVIOR(ht_pipe, hold_tap, 

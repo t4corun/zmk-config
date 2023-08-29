@@ -11,50 +11,32 @@ macros {
 
 	ZMK_BEHAVIOR(m_brc, macro,
 		ZMK_MACRO_CORE
-		bindings = 
-			<&kp LBRC>
-			, <&kp RBRC>
-			, <&kp LEFT>;
+		bindings = <&kp LBRC> , <&kp RBRC> , <&kp LEFT>;
 	)
 
 	ZMK_BEHAVIOR(m_lgt, macro,
 		ZMK_MACRO_CORE
-		bindings = 
-			<&kp LT>
-			, <&kp GT>
-			, <&kp LEFT>;
+		bindings = <&kp LT>, <&kp GT>, <&kp LEFT>;
 	)
 
 	ZMK_BEHAVIOR(m_bkt, macro,
 		ZMK_MACRO_CORE
-		bindings = 
-			<&kp LBKT>
-			, <&kp RBKT>
-			, <&kp LEFT>;
+		bindings = <&kp LBKT>, <&kp RBKT>, <&kp LEFT>;
 	)
 
 	ZMK_BEHAVIOR(m_par, macro,
 		ZMK_MACRO_CORE
-		bindings = 
-			<&kp LPAR>
-			, <&kp RPAR>
-			, <&kp LEFT>;
+		bindings = <&kp LPAR>, <&kp RPAR>, <&kp LEFT>;
 	)
 
 	ZMK_BEHAVIOR(m_sqt, macro,
 		ZMK_MACRO_CORE
-		bindings = 
-			<&kp SQT>
-			, <&kp SQT>
-			, <&kp LEFT>;
+		bindings = <&kp SQT>, <&kp SQT>, <&kp LEFT>;
 	)
 
 	ZMK_BEHAVIOR(m_dqt, macro,
 		ZMK_MACRO_CORE
-		bindings = 
-			<&kp DQT>
-			, <&kp DQT>
-			, <&kp LEFT>;
+		bindings = <&kp DQT>, <&kp DQT>, <&kp LEFT>;
 	)
 
 
@@ -62,67 +44,53 @@ macros {
 
 	ZMK_BEHAVIOR(m_bslh, macro,
 		ZMK_MACRO_CORE
-		bindings = 
-			<&kp BSLH>
-			, <&kp BSLH>;
+		bindings = <&kp BSLH>, <&kp BSLH>;
 	)
 
 	ZMK_BEHAVIOR(m_fslh, macro,
 		ZMK_MACRO_CORE
-		bindings = 
-			<&kp FSLH>
-			, <&kp FSLH>;
+		bindings = <&kp FSLH>, <&kp FSLH>;
 	)
 
 	ZMK_BEHAVIOR(m_und, macro,
 		ZMK_MACRO_CORE
-		bindings = 
-			<&kp UNDER>
-			, <&kp UNDER>;
+		bindings = <&kp UNDER>, <&kp UNDER>;
+	)
+
+	ZMK_BEHAVIOR(m_min, macro,
+		ZMK_MACRO_CORE
+		bindings = <&kp MINUS>, <&kp MINUS>;
 	)
 
 	ZMK_BEHAVIOR(m_pipe, macro,
 		ZMK_MACRO_CORE
-		bindings = 
-			<&kp PIPE>
-			, <&kp PIPE>;
+		bindings = <&kp PIPE>, <&kp PIPE>;
 	)
 
 	ZMK_BEHAVIOR(m_hash, macro,
 		ZMK_MACRO_CORE
-		bindings = 
-			<&kp HASH>
-			, <&kp HASH>;
+		bindings = <&kp HASH>, <&kp HASH>;
 	)
 
 	ZMK_BEHAVIOR(m_eql, macro,
 		ZMK_MACRO_CORE
-		bindings = 
-			<&kp EQUAL>
-			, <&kp EQUAL>;
+		bindings = <&kp EQUAL>, <&kp EQUAL>;
 	)
 
 	ZMK_BEHAVIOR(m_amp, macro,
 		ZMK_MACRO_CORE
-		bindings = 
-			<&kp AMPS>
-			, <&kp AMPS>;
+		bindings = <&kp AMPS>, <&kp AMPS>;
 	)
 
 	// custom macros
 
 	ZMK_BEHAVIOR(m_neql, macro,
 		ZMK_MACRO_CORE
-		bindings = 
-			<&kp EXCL>
-			, <&kp EQUAL>;
+		bindings = <&kp EXCL>, <&kp EQUAL>;
 	)
 
 	ZMK_BEHAVIOR(m_grv, macro,
 		ZMK_MACRO_CORE
-		bindings = 
-			<&kp GRAVE>
-			, <&kp GRAVE>
-			, <&kp GRAVE>;
+		bindings = <&kp GRAVE>, <&kp GRAVE>, <&kp GRAVE>;
 	)
 };

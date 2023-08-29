@@ -1,3 +1,4 @@
+// this allows us to mimic QMK's DOUBLE_TAP_SHIFT_TURNS_ON_CAPS_WORD
 ZMK_BEHAVIOR(ss_cw, tap_dance,
     tapping-term-ms = <TAPPING_TERM>;
     bindings = <&sk LSHFT>, <&caps_word>;

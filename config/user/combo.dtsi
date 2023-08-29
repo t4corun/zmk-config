@@ -18,5 +18,5 @@
 combos {
 	compatible = "zmk,combos";
 	
-	COMBO(config, COMBO_TIMEOUT, QWERTY, RT4 RB4, &mo CONFIG)
+	COMBO(config, COMBO_TIMEOUT, QWERTY, LH2 RH0, &mo CONFIG)
 };

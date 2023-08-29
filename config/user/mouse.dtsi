@@ -1,3 +1,4 @@
+/*
 inc_dec_mwh: behavior_sensor_rotate_mouse_wheel {
 	compatible = "zmk,behavior-sensor-rotate-var";
 	label = "ENC_MOUSE_WHEEL";
@@ -5,7 +6,7 @@ inc_dec_mwh: behavior_sensor_rotate_mouse_wheel {
  	bindings = <&mwh>, <&mwh>;
 };
 
-/*
+
 inc_dec_mmv: behavior_sensor_rotate_mouse_movement {
 	compatible = "zmk,behavior-sensor-rotate-var";
 	label = "ENC_MOUSE_MOVEMENT";

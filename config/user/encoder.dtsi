@@ -1,0 +1,73 @@
+
+//encoder behavior with mod morph
+//no mods: left and right
+//hold alt; volume up and down
+//hold ctrl: prev word and next work
+ZMK_BEHAVIOR(rightmm1, mod_morph,
+	bindings = <&rightmm2 &kp C_VOL_UP>;
+	mods = <MOD_LALT>;
+)
+
+ZMK_BEHAVIOR(rightmm2, mod_morph,
+	bindings = <&kp RIGHT &kp LC(RIGHT)>;
+	mods = <MOD_LCTRL>;
+)
+
+ZMK_BEHAVIOR(leftmm1, mod_morph,
+	bindings = <&leftmm2 &kp C_VOL_DN>;
+	mods = <MOD_LALT>;
+)
+
+ZMK_BEHAVIOR(leftmm2, mod_morph,
+	bindings = <&kp LEFT &kp LC(LEFT)>;
+	mods = <MOD_LCTRL>;
+)
+
+
+
+//encoder behavior with mod morph
+//no mods: up and down
+//hold alt; scroll up and down
+//hold ctrl: ctrl = and ctrl -
+ZMK_BEHAVIOR(upmm1, mod_morph,
+	bindings = <&upmm2 &kp LC(EQUAL)>;
+	mods = <MOD_LCTRL>;
+)
+
+ZMK_BEHAVIOR(upmm2, mod_morph,
+	bindings = <&kp UP &mwh SCROLL_UP>;
+	mods = <MOD_LALT>;
+)
+
+ZMK_BEHAVIOR(downmm1, mod_morph,
+	bindings = <&downmm2 &kp LC(MINUS)>;
+	mods = <MOD_LCTRL>;
+)
+
+ZMK_BEHAVIOR(downmm2, mod_morph,
+	bindings = <&kp DOWN &mwh SCROLL_DOWN>;
+	mods = <MOD_LALT>;
+)
+
+
+
+
+ZMK_BEHAVIOR(leftenc, sensor_rotate,
+	bindings = <&rightmm1, &leftmm1>;
+)
+
+ZMK_BEHAVIOR(rightenc, sensor_rotate,
+	bindings = <&upmm1, &downmm1>;
+)
+
+ZMK_BEHAVIOR(leftmouenc, sensor_rotate,
+	bindings = <&mwh SCROLL_RIGHT, &mwh SCROLL_LEFT>;
+)
+
+ZMK_BEHAVIOR(rightmouenc, sensor_rotate,
+	bindings = <&mwh SCROLL_UP, &mwh SCROLL_DOWN>;
+)
+
+ZMK_BEHAVIOR(noneenc, sensor_rotate,
+	bindings = <&none, &none>;
+)
