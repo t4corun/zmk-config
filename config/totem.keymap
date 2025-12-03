@@ -1,5 +1,5 @@
-#include "./t4corun/t4corun.dtsi"
-#include "./t4corun/t4corun.h"
+#include "include/t4corun.dtsi"
+#include "include/t4corun.h"
 
 / {
     keymap {
