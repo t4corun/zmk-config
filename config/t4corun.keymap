@@ -7,8 +7,9 @@
 
 // put the default base layers first
 #define _QWERTY     0
-#define _NUMBER     1
-#define _NAVIGATION 2
+#define _NAVIGATION 1
+#define _NUMBER     2
+#define _SYMBOL     3
 
 // layer changes
 #define NUM                  &mo _NUMBER
@@ -21,8 +22,10 @@
 #define HRML(k1, k2, k3, k4) &mt LGUI k1   &mt LALT k2   &mt LCTRL k3  &mt LSHFT k4
 #define HRMR(k1, k2, k3, k4) &mt RSHFT k1  &mt RCTRL k2  &mt RALT k3   &mt RGUI  k4
 
-#define OR(hold, tap)        &or hold tap
-#define OR_COMM              OR(LPAR, COMMA)
+#define KO(hold, tap)        &ko hold tap
+#define KO_COMMA             KO(LPAR,  COMMA)
+#define KO_DOT               KO(RPAR,  DOT)
+#define KO_MINUS             KO(UNDER, MINUS)
 
 //                                                             xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx
 
@@ -30,7 +33,13 @@
 #define ____xx____                                             &none
 #define _BASE_L4________________________                       &kp TAB    NUM        &kp LSHFT
 #define _BASE_R4________________________                       &kp SPACE  NAV        &kp BSPC
-#define _UCCPR________________________________________________ &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LC(Y)
+#define _LAYER_TRANS____________________                       ____xx____ __________ ____xx____
+#define _MODS_GACS_________________________________            &kp LGUI   &kp LALT   &kp LCTRL  &kp LSHFT
+#define _MODS_SCAG_________________________________            &kp RSHFT  &kp RCTRL  &kp RALT   &kp RGUI
+#define _SHORTCUTS_UCCPR______________________________________ &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LC(Y)
+#define _NONE_5_______________________________________________ ____xx____ ____xx____ ____xx____ ____xx____ ____xx____
+
+
 
 //-----------------------------------
 
@@ -47,15 +56,22 @@
 };
 
 / {
-
     behaviors {
-        or: key_override {
+        ko: key_override {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-			tapping-term-ms = <135>;
+			tapping-term-ms = <TAPPING_TERM>;
 			quick_tap_ms = <0>;
             bindings = <&kp>, <&kp>;
+        };
+    };
+
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+        tri_layer {
+            if-layers = <_NUMBER _NAVIGATION>;
+            then-layer = <_SYMBOL>;
         };
     };
 
@@ -68,17 +84,35 @@
 			bindings = <
                            &kp Q      &kp W      &kp E      &kp R      &kp T                &kp Y      &kp U      &kp I      &kp O      &kp P
                            HRML(A,    S,         D,         F)         &kp G                &kp H      HRMR(J,    K,         L,         SQT)
-	            &kp Z      &kp Z      &kp X      &kp C      &kp V      &kp B                &kp N      &kp M      OR_COMM    &kp DOT    &kp SLASH  &kp APOSTROPHE
+	            &kp Z      &kp Z      &kp X      &kp C      &kp V      &kp B                &kp N      &kp M      OR_COMM    KO_DOT     KO_MINUS   &kp APOSTROPHE
 				                                 _BASE_L4________________________           _BASE_R4________________________
 			>;
 		};
 
 		navigation {
 			bindings = <
-                           ____xx____ &kp HOME   &kp UP     &kp END    &kp PG_UP            &kp Y      &kp U      &kp I      &kp O      &kp P
-                           ____xx____ &kp LEFT   &kp DOWN   &kp RIGHT  &kp PG_DN            &kp H      HRMR(J,    K,         L,         SQT)
-	            &kp Z      _UCCPR________________________________________________           &kp N      &kp M      &kp COMMA  &kp DOT    &kp SLASH  &kp APOSTROPHE
-				                                 _BASE_L4________________________           _BASE_R4________________________
+                           ____xx____ &kp HOME   &kp UP     &kp END    &kp PG_UP            &kp INS    ____xx____ ____xx____ ____xx____   ____xx____
+                           ____xx____ &kp LEFT   &kp DOWN   &kp RIGHT  &kp PG_DN            &kp BSPC   _MODS_SCAG_________________________________
+	            __________ _SHORTCUTS_UCCPR______________________________________           &kp DEL    ____xx____ ____xx____ &kp C_VOL_DN &kp C_VOL_UP &kp C_MUTE
+				                                 &kp TAB    __________ &kp ENTER            _LAYER_TRANS____________________
+			>;
+		};
+
+		number {
+			bindings = <
+                           &kp ESC    ____xx____ ____xx____ ____xx____ ____xx____           &kp COMMA  &kp N7     &kp N8     &kp N9     ____xx____
+                           ____xx____ _MODS_GACS_________________________________           &kp DOT    &kp N4     &kp N5     &kp N6     ____xx____
+	            __________ _NONE_5_______________________________________________           &kp MINUS  &kp N1     &kp N2     &kp N3     ____xx____ &kp C_MUTE
+				                                 _LAYER_TRANS____________________           &kp N0     __________ &kp BSPC
+			>;
+		};
+
+		symbol {
+			bindings = <
+                           &kp ESC    ____xx____ ____xx____ ____xx____ ____xx____           &kp COMMA  &kp N7     &kp N8     &kp N9     ____xx____
+                           ____xx____ _MODS_GACS_________________________________           &kp DOT    &kp N4     &kp N5     &kp N6     ____xx____
+	            __________ _NONE_5_______________________________________________           &kp MINUS  &kp N1     &kp N2     &kp N3     ____xx____ &kp C_MUTE
+				                                 _LAYER_TRANS____________________           _LAYER_TRANS____________________
 			>;
 		};
     };
