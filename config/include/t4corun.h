@@ -10,8 +10,8 @@
 #define HRMR(k1, k2, k3, k4) &mt RSHFT k1    &mt RCTRL k2    &mt RALT k3     &mt RGUI  k4
 
 // layer changes
-#define NUM                  &lt _NUMBER
-#define NAV                  &lt _NAVIGATION
+#define NUM                  &mo _NUMBER
+#define NAV                  &mo _NAVIGATION
 
 //Behavior Configuration
 #define TAPPING_TERM 200
