@@ -1,4 +1,4 @@
-#include "include/t4corun.dtsi"
+#include "t4corun.dtsi"
 
 / {
     keymap {
