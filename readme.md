@@ -20,3 +20,10 @@ ZMK's latest structure.
 
 - Go over totem.dtsi, it seems like I need to create a separate totem-layouts.dtsi if I want to be able to use zmk studio
 - If I want to test if Geist's will compile, remove the physical layout section in `default_layout: default_layout {` in `totem.dtsi` and see if it will build
+- I can have t4corun.conf to have global settings but I don't know if I need it
+
+### Files that are blank that could be added back
+
+config/t4corun.conf
+boards/shields/totem/totem_left.conf
+boards/shields/totem/totem_right.conf

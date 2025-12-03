@@ -12,10 +12,10 @@
 
 &lt {
     flavor = "tap-preferred";
-    tapping-term-ms = <CONFIG_ZMK_BEHAVIOR_TAPPING_TERM_MS>;
+    tapping-term-ms = <TAPPING_TERM>; // this works because ZMK processes C before devicetree files
 };
 
 &mt {
     flavor = "tap-preferred";
-    tapping-term-ms = <CONFIG_ZMK_BEHAVIOR_TAPPING_TERM_HELLO>;
+    tapping-term-ms = <TAPPING_TERM>;
 };
