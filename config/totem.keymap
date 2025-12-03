@@ -14,6 +14,6 @@
 	            &kp Z     	    &kp Z		    &kp X		    &kp C			&kp V 		    &kp B                     &kp N           &kp M           &kp COMMA       &kp DOT         &kp SLASH       &kp APOSTROPHE
 				                                                &kp TAB         &kp V           &kp LSHFT                 &kp SPACE       &kp V           &kp C_MUTE
 			>;
-		}
+		};
     };
 };
