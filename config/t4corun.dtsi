@@ -17,5 +17,5 @@
 
 &mt {
     flavor = "tap-preferred";
-    tapping-term-ms = <TAPPING_TERM>;
+    tapping-term-ms = <CONFIG_ZMK_BEHAVIOR_TAPPING_TERM_MS>;
 };
