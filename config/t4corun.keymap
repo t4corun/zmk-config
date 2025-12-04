@@ -22,11 +22,16 @@
 #define HRML(k1, k2, k3, k4) &mt LGUI k1   &mt LALT k2   &mt LCTRL k3  &mt LSHFT k4
 #define HRMR(k1, k2, k3, k4) &mt RSHFT k1  &mt RCTRL k2  &mt RALT k3   &mt RGUI  k4
 
-#define KO(hold, tap)        &ko hold tap
-#define KO_COMMA             KO(LPAR,     COMMA)
-#define KO_DOT               KO(RPAR,     DOT)
-#define KO_MINUS             KO(UNDER,    MINUS)
-#define KO_BKPRN             KO(&mac_prn, LPAR)
+//#define HT(hold, tap)        &ht hold tap
+#define KO_COMMA             &ht LPAR      COMMA
+#define KO_DOT               &ht RPAR      DOT
+#define KO_MINUS             &ht UNDER     MINUS
+
+#define MACRO_BRC            &ht brc_macro LBRC
+#define MACRO_LGT            &ht lgt_macro LT
+#define MACRO_BKT            &ht bkt_macro LBKT
+#define MACRO_PRN            &ht prn_macro LPAR
+
 //                                                             xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx
 
 #define __________                                             &trans
@@ -57,7 +62,7 @@
 
 / {
     behaviors {
-        ko: key_override {
+        ht: hold_tap {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
@@ -68,13 +73,44 @@
     };
 
     macros {
-        mac_prn: parenthesis_macro {
+        brc_macro: brace_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings
-				= <&macro_tap &kp LPRN>, 
-				  <&macro_tap &kp RPRN>,
-				  <&macro_tap &kp LEFT>;
+            bindings = <
+				&kp LBRC
+				&kp RBRC
+				&kp LEFT
+			>;
+        };
+
+        lgt_macro: lessthan_greaterthan_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+				&kp LT
+				&kp GT	
+				&kp LEFT
+			>;
+        };
+
+        bkt_macro: bracket_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+				&kp LBKT
+				&kp RBKT
+				&kp LEFT
+			>;
+        };
+
+        prn_macro: parenthesis_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+				&kp LPRN
+				&kp RPRN
+				&kp LEFT
+			>;
         };
     };
 
@@ -121,8 +157,8 @@
 		symbol {
 			bindings = <
                            &kp CARET  &kp AMPS   &kp AT     &kp DLLR   &kp GRAVE            &kp TILDE  &kp POUND  &kp ASTRK  &kp PLUS   ____xx____
-                           &kp PRCNT  ____xx____ &kp RBRC   ____xx____ &kp SEMI             &kp COLON  &kp EQUAL  &kp N5     &kp RBKT   ____xx____
-	            __________ ____xx____ ____xx____ &kp GT     ____xx____ &kp EXCL             &kp QMARK  &kp N1     KO_BKPRN   &kp RPAR   ____xx____ &kp C_MUTE
+                           &kp PRCNT  MACRO_BRC  &kp RBRC   ____xx____ &kp SEMI             &kp COLON  &kp EQUAL  MACRO_BKT  &kp RBKT   ____xx____
+	            __________ ____xx____ MACRO_LGT  &kp GT     ____xx____ &kp EXCL             &kp QMARK  &kp N1     MACRO_PRN  &kp RPAR   ____xx____ &kp C_MUTE
 				                                 _LAYER_TRANS____________________           _LAYER_TRANS____________________
 			>;
 		};
