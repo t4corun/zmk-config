@@ -27,7 +27,7 @@
 #define KO_DOT               &ht RPAR      DOT
 #define KO_MINUS             &ht UNDER     MINUS
 
-#define MACRO_PAR            &ht &insert_braces LPAR RPAR LPAR
+#define MACRO_PAR 			 &insert_braces LPAR RPAR
 
 
 //                                                             xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx
