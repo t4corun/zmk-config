@@ -112,13 +112,6 @@
 				&kp LEFT
 			>;
         };
-
-		my_two_param_macro: my_two_param_macro {
-            // ...
-            compatible = "zmk,behavior-macro-two-param";
-            #binding-cells = <2>; // Must be 2
-            bindings = /* ... */;
-        };
     };
 
     conditional_layers {
