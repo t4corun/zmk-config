@@ -122,7 +122,7 @@
 			bindings = <
                            &kp CARET  &kp AMPS   &kp AT     &kp DLLR   &kp GRAVE            &kp TILDE  &kp POUND  &kp ASTRK  &kp PLUS   ____xx____
                            &kp PRCNT  ____xx____ &kp RBRC   ____xx____ &kp SEMI             &kp COLON  &kp EQUAL  &kp N5     &kp RBKT   ____xx____
-	            __________ ____xx____ ____xx____ &kp GT     ____xx____ &kp EXCL             &kp QMARK  &kp N1     &KO_BKPRN  &kp RPAR   ____xx____ &kp C_MUTE
+	            __________ ____xx____ ____xx____ &kp GT     ____xx____ &kp EXCL             &kp QMARK  &kp N1     KO_BKPRN   &kp RPAR   ____xx____ &kp C_MUTE
 				                                 _LAYER_TRANS____________________           _LAYER_TRANS____________________
 			>;
 		};
