@@ -30,9 +30,7 @@
 #define MACRO_BRC            &ht &brc_macro LBRC
 #define MACRO_LGT            &ht &lgt_macro LT
 #define MACRO_BKT            &ht &bkt_macro LBKT
-//#define MACRO_PAR            &ht &par_macro LPAR
-
-#define MACRO_PAR            &ht &braces_macro LPAR RPAR LPAR
+#define MACRO_PAR            &ht (&braces_macro LPAR RPAR) LPAR
 
 
 //                                                             xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx
