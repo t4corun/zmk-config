@@ -32,7 +32,7 @@
 #define MACRO_BKT            &ht &bkt_macro LBKT
 //#define MACRO_PAR            &ht &par_macro LPAR
 
-#define MACRO_PAR            &ht &brace_macro LPAR RPAR LPAR
+#define MACRO_PAR            &ht &braces_macro LPAR RPAR LPAR
 
 
 //                                                             xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx
@@ -116,7 +116,7 @@
 			>;
         };
 
-		brace_macro: brace_macro {
+		braces_macro: braces_macro {
             // ...
             compatible = "zmk,behavior-macro-two-param";
             #binding-cells = <2>;
