@@ -118,9 +118,9 @@
             compatible = "zmk,behavior-macro-two-param";
             #binding-cells = <2>;
             bindings = 
-				<&macro_tap &kp MACRO_PLACEHOLDER>,
-				<&macro_tap &kp MACRO_PLACEHOLDER>,
-				<&macro_tap &kp LEFT>;
+				<&kp>,
+				<&kp>,
+				<&kp LEFT>;
         };
 
     };
