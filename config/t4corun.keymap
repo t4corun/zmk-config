@@ -10,10 +10,12 @@
 #define _NAVIGATION 1
 #define _NUMBER     2
 #define _SYMBOL     3
+#define _FUNCTION   4
 
 // layer changes
 #define NUM                  &mo _NUMBER
 #define NAV                  &mo _NAVIGATION
+#define FUNC                 &mo _FUNCTION
 
 //Behavior Configuration
 #define TAPPING_TERM 200
@@ -37,6 +39,16 @@
 #define MACRO_FSLH           &ht &double_tap_fslash FSLH
 #define MACRO_BSLH           &ht &double_tap_bslash BSLH
 #define MACRO_PIPE           &ht &double_tap_pipe   PIPE
+
+
+#define BT1                  &bt BT_SEL 1
+#define BT2                  &bt BT_SEL 2
+#define BT3                  &bt BT_SEL 3
+#define BT4                  &bt BT_SEL 4
+#define BT5                  &bt BT_SEL 5
+
+#define BT_CLEAR             &bt BT_CLR
+
 
 
 //                                                             xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx
@@ -85,9 +97,9 @@
 
 		ZMK_MACRO(double_tap_squote, wait-ms = <0>; tap-ms = <5>; bindings = <&kp SQT  &kp SQT  &kp LEFT>;)
 		ZMK_MACRO(double_tap_dquote, wait-ms = <0>; tap-ms = <5>; bindings = <&kp DQT  &kp DQT  &kp LEFT>;)
-		ZMK_MACRO(double_tap_fslash, wait-ms = <0>; tap-ms = <5>; bindings = <&kp FSLH &kp FSLH &kp LEFT>;)
-		ZMK_MACRO(double_tap_bslash, wait-ms = <0>; tap-ms = <5>; bindings = <&kp BSLH &kp BSLH &kp LEFT>;)
-		ZMK_MACRO(double_tap_pipe,   wait-ms = <0>; tap-ms = <5>; bindings = <&kp PIPE &kp PIPE &kp LEFT>;)
+		ZMK_MACRO(double_tap_fslash, wait-ms = <0>; tap-ms = <5>; bindings = <&kp FSLH &kp FSLH >;)
+		ZMK_MACRO(double_tap_bslash, wait-ms = <0>; tap-ms = <5>; bindings = <&kp BSLH &kp BSLH >;)
+		ZMK_MACRO(double_tap_pipe,   wait-ms = <0>; tap-ms = <5>; bindings = <&kp PIPE &kp PIPE >;)
     };
 
     conditional_layers {
@@ -107,7 +119,7 @@
 			bindings = <
                            &kp Q      &kp W      &kp E      &kp R      &kp T                &kp Y      &kp U      &kp I      &kp O      &kp P
                            HRML(A,    S,         D,         F)         &kp G                &kp H      HRMR(J,    K,         L,         SQT)
-	            &kp Z      &kp Z      &kp X      &kp C      &kp V      &kp B                &kp N      &kp M      KO_COMMA   KO_DOT     KO_MINUS   &kp APOSTROPHE
+	            FUNC       &kp Z      &kp X      &kp C      &kp V      &kp B                &kp N      &kp M      KO_COMMA   KO_DOT     KO_MINUS   &kp C_MUTE
 				                                 _BASE_L4________________________           _BASE_R4________________________
 			>;
 		};
@@ -136,6 +148,15 @@
                            &kp PRCNT  MACRO_BRC  &kp RBRC   MACRO_PIPE &kp SEMI             &kp COLON  &kp EQUAL  MACRO_BKT  &kp RBKT   MACRO_SQUO
 	            __________ ____xx____ MACRO_LGT  &kp GT     MACRO_BSLH &kp EXCL             &kp QMARK  MACRO_FSLH MACRO_PAR  &kp RPAR   ____xx____ &kp C_MUTE
 				                                 _LAYER_TRANS____________________           _LAYER_TRANS____________________
+			>;
+		};
+
+		function {
+			bindings = <
+                           BT1        BT2        BT3        BT4        BT5                  ____xx____ &kp F7     &kp F8     &kp F9     &kp F10
+                           ____xx____ _MODS_GACS_________________________________           ____xx____ &kp F4     &kp F5     &kp F6     &kp F11
+	            __________ ____xx____ ____xx____ ____xx____ ____xx____ BT_CLEAR             ____xx____ &kp F1     &kp F2     &kp F3     &kp F12    &kp C_MUTE
+				                                 _LAYER_TRANS____________________           ____xx____ ____xx____ ____xx____
 			>;
 		};
     };
