@@ -26,7 +26,7 @@
 #define KO_COMMA             KO(LPAR,  COMMA)
 #define KO_DOT               KO(RPAR,  DOT)
 #define KO_MINUS             KO(UNDER, MINUS)
-
+#define KO_BKPRN             KO(&zed_em_kay, LPAR)
 //                                                             xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx
 
 #define __________                                             &trans
@@ -64,6 +64,17 @@
 			tapping-term-ms = <TAPPING_TERM>;
 			quick_tap_ms = <0>;
             bindings = <&kp>, <&kp>;
+        };
+    };
+
+    macros {
+        mac_prn: parenthesis_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+				= <&macro_tap &kp LPRN>, 
+				  <&macro_tap &kp RPRN>,
+				  <&macro_tap &kp LEFT>;
         };
     };
 
@@ -109,9 +120,9 @@
 
 		symbol {
 			bindings = <
-                           &kp ESC    ____xx____ ____xx____ ____xx____ ____xx____           &kp COMMA  &kp N7     &kp N8     &kp N9     ____xx____
-                           ____xx____ _MODS_GACS_________________________________           &kp DOT    &kp N4     &kp N5     &kp N6     ____xx____
-	            __________ _NONE_5_______________________________________________           &kp MINUS  &kp N1     &kp N2     &kp N3     ____xx____ &kp C_MUTE
+                           &kp CARET  &kp AMPS   &kp AT     &kp DLLR   &kp GRAVE            &kp TILDE  &kp POUND  &kp ASTRK  &kp PLUS   ____xx____
+                           &kp PRCNT  ____xx____ &kp RBRC   ____xx____ &kp SEMI             &kp COLON  &kp EQUAL  &kp N5     &kp RBKT   ____xx____
+	            __________ ____xx____ ____xx____ &kp GT     ____xx____ &kp EXCL             &kp QMARK  &kp N1     &KO_BKPRN  &kp RPAR   ____xx____ &kp C_MUTE
 				                                 _LAYER_TRANS____________________           _LAYER_TRANS____________________
 			>;
 		};
