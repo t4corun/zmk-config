@@ -27,7 +27,8 @@
 #define KO_DOT               &ht RPAR      DOT
 #define KO_MINUS             &ht UNDER     MINUS
 
-#define MACRO_PAR 			 &insert_braces LPAR RPAR
+#define SOMETHING 			 &insert_braces LPAR RPAR
+#define MACRO_PAR            &ht SOMETHING LPAR
 
 
 //                                                             xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx
@@ -136,4 +137,4 @@
 			>;
 		};
     };
-};
+};'l
