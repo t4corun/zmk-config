@@ -30,7 +30,7 @@
 #define MACRO_BRC            &ht brc_macro LBRC
 #define MACRO_LGT            &ht lgt_macro LT
 #define MACRO_BKT            &ht bkt_macro LBKT
-#define MACRO_PRN            &ht prn_macro LPAR
+#define MACRO_PAR            &ht par_macro LPAR
 
 //                                                             xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx
 
@@ -103,12 +103,12 @@
 			>;
         };
 
-        prn_macro: parenthesis_macro {
+        par_macro: parenthesis_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <
-				&kp LPRN
-				&kp RPRN
+				&kp LPAR
+				&kp RPAR
 				&kp LEFT
 			>;
         };
@@ -158,7 +158,7 @@
 			bindings = <
                            &kp CARET  &kp AMPS   &kp AT     &kp DLLR   &kp GRAVE            &kp TILDE  &kp POUND  &kp ASTRK  &kp PLUS   ____xx____
                            &kp PRCNT  MACRO_BRC  &kp RBRC   ____xx____ &kp SEMI             &kp COLON  &kp EQUAL  MACRO_BKT  &kp RBKT   ____xx____
-	            __________ ____xx____ MACRO_LGT  &kp GT     ____xx____ &kp EXCL             &kp QMARK  &kp N1     MACRO_PRN  &kp RPAR   ____xx____ &kp C_MUTE
+	            __________ ____xx____ MACRO_LGT  &kp GT     ____xx____ &kp EXCL             &kp QMARK  &kp N1     MACRO_PAR  &kp RPAR   ____xx____ &kp C_MUTE
 				                                 _LAYER_TRANS____________________           _LAYER_TRANS____________________
 			>;
 		};
