@@ -30,7 +30,10 @@
 #define MACRO_BRC            &ht &brc_macro LBRC
 #define MACRO_LGT            &ht &lgt_macro LT
 #define MACRO_BKT            &ht &bkt_macro LBKT
-#define MACRO_PAR            &ht &par_macro LPAR
+//#define MACRO_PAR            &ht &par_macro LPAR
+
+#define MACRO_PAR            &ht &brace_macro LPAR RPAR LPAR
+
 
 //                                                             xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx
 
@@ -112,6 +115,17 @@
 				&kp LEFT
 			>;
         };
+
+		brace_macro: brace_macro {
+            // ...
+            compatible = "zmk,behavior-macro-two-param";
+            #binding-cells = <2>;
+            bindings = 
+				<&kp MACRO_PLACEHOLDER>,
+				<&kp MACRO_PLACEHOLDER>,
+				<&kp LEFT>;
+        };
+
     };
 
     conditional_layers {
