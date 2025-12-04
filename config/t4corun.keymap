@@ -28,20 +28,6 @@
 #define KO_MINUS             &ht UNDER     MINUS
 
 
-// macros
-ZMK_MACRO(insert_braces_par,
-    wait-ms = <30>;
-    tap-ms = <40>;
-    bindings = <
-		&kp LPAR 
-		&kp RPAR 
-		&kp LEFT
-	>;
-)
-
-
-
-
 #define MACRO_BRC            &ht &brc_macro LBRC
 #define MACRO_LGT            &ht &lgt_macro LT
 #define MACRO_BKT            &ht &bkt_macro LBKT
@@ -87,6 +73,18 @@ ZMK_MACRO(insert_braces_par,
     };
 
     macros {
+
+		// macros
+		ZMK_MACRO(insert_braces_par,
+		    wait-ms = <30>;
+		    tap-ms = <40>;
+		    bindings = <
+				&kp LPAR 
+				&kp RPAR 
+				&kp LEFT
+			>;
+		)
+
         brc_macro: brace_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
