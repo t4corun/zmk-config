@@ -23,10 +23,10 @@
 #define HRMR(k1, k2, k3, k4) &mt RSHFT k1  &mt RCTRL k2  &mt RALT k3   &mt RGUI  k4
 
 #define KO(hold, tap)        &ko hold tap
-#define KO_COMMA             KO(LPAR,  COMMA)
-#define KO_DOT               KO(RPAR,  DOT)
-#define KO_MINUS             KO(UNDER, MINUS)
-#define KO_BKPRN             KO(&zed_em_kay, LPAR)
+#define KO_COMMA             KO(LPAR,     COMMA)
+#define KO_DOT               KO(RPAR,     DOT)
+#define KO_MINUS             KO(UNDER,    MINUS)
+#define KO_BKPRN             KO(&mac_prn, LPAR)
 //                                                             xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx
 
 #define __________                                             &trans
