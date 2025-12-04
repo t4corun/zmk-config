@@ -1,0 +1,12 @@
+#include <zmk/behavior.h>
+#include <zmk/macro.h>
+
+ZMK_MACRO(insert_braces_par,
+    wait-ms = <30>;
+    tap-ms = <40>;
+    bindings = <
+		&kp LPAR 
+		&kp RPAR 
+		&kp LEFT
+	>;
+)

@@ -3,6 +3,9 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
 
+#include "t4corun_macro.dtsi"
+
+
 //-----------------------------------
 
 // put the default base layers first
@@ -30,7 +33,7 @@
 #define MACRO_BRC            &ht &brc_macro LBRC
 #define MACRO_LGT            &ht &lgt_macro LT
 #define MACRO_BKT            &ht &bkt_macro LBKT
-#define MACRO_PAR            &ht &insert_braces LPAR RPAR LPAR
+#define MACRO_PAR            &ht &insert_braces_par LPAR
 
 
 //                                                             xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx
@@ -48,8 +51,6 @@
 
 
 //-----------------------------------
-
-
 
 &lt {
     flavor = "tap-preferred";
