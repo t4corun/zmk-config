@@ -27,7 +27,16 @@
 #define KO_DOT               &ht RPAR      DOT
 #define KO_MINUS             &ht UNDER     MINUS
 
+#define MACRO_BRC            &ht &insert_braces_brc LBRC
+#define MACRO_LGT            &ht &insert_braces_lgt LT
+#define MACRO_BKT            &ht &insert_braces_bkt LBKT
 #define MACRO_PAR            &ht &insert_braces_par LPAR
+
+#define MACRO_SQUO           &ht &double_tap_squote SQT
+#define MACRO_DQUO           &ht &double_tap_dquote DQT
+#define MACRO_FSLH           &ht &double_tap_fslash FSLH
+#define MACRO_BSLH           &ht &double_tap_bslash BSLH
+#define MACRO_PIPE           &ht &double_tap_pipe   PIPE
 
 
 //                                                             xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx
@@ -69,7 +78,16 @@
     };
 
     macros {
+		ZMK_MACRO(insert_braces_brc, wait-ms = <0>; tap-ms = <5>; bindings = <&kp LBRC &kp RBRC &kp LEFT>;)
+		ZMK_MACRO(insert_braces_lgt, wait-ms = <0>; tap-ms = <5>; bindings = <&kp LT   &kp GT   &kp LEFT>;)
+		ZMK_MACRO(insert_braces_bkt, wait-ms = <0>; tap-ms = <5>; bindings = <&kp LBKT &kp RBKT &kp LEFT>;)
 		ZMK_MACRO(insert_braces_par, wait-ms = <0>; tap-ms = <5>; bindings = <&kp LPAR &kp RPAR &kp LEFT>;)
+
+		ZMK_MACRO(double_tap_squote, wait-ms = <0>; tap-ms = <5>; bindings = <&kp SQT  &kp SQT  &kp LEFT>;)
+		ZMK_MACRO(double_tap_dquote, wait-ms = <0>; tap-ms = <5>; bindings = <&kp DQT  &kp DQT  &kp LEFT>;)
+		ZMK_MACRO(double_tap_fslash, wait-ms = <0>; tap-ms = <5>; bindings = <&kp FSLH &kp FSLH &kp LEFT>;)
+		ZMK_MACRO(double_tap_bslash, wait-ms = <0>; tap-ms = <5>; bindings = <&kp BSLH &kp BSLH &kp LEFT>;)
+		ZMK_MACRO(double_tap_pipe,   wait-ms = <0>; tap-ms = <5>; bindings = <&kp PIPE &kp PIPE &kp LEFT>;)
     };
 
     conditional_layers {
@@ -114,9 +132,9 @@
 
 		symbol {
 			bindings = <
-                           &kp CARET  &kp AMPS   &kp AT     &kp DLLR   &kp GRAVE            &kp TILDE  &kp POUND  &kp ASTRK  &kp PLUS   ____xx____
-                           &kp PRCNT  ____xx____ &kp RBRC   ____xx____ &kp SEMI             &kp COLON  &kp EQUAL  ____xx____ &kp RBKT   ____xx____
-	            __________ ____xx____ ____xx____ &kp GT     ____xx____ &kp EXCL             &kp QMARK  ____xx____ MACRO_PAR  &kp RPAR   ____xx____ &kp C_MUTE
+                           &kp CARET  &kp AMPS   &kp AT     &kp DLLR   &kp GRAVE            &kp TILDE  &kp POUND  &kp ASTRK  &kp PLUS   MACRO_DQUO
+                           &kp PRCNT  MACRO_BRC  &kp RBRC   MACRO_PIPE &kp SEMI             &kp COLON  &kp EQUAL  MACRO_BKT  &kp RBKT   MACRO_SQUO
+	            __________ ____xx____ MACRO_LGT  &kp GT     MACRO_BSLH &kp EXCL             &kp QMARK  MACRO_FSLH MACRO_PAR  &kp RPAR   ____xx____ &kp C_MUTE
 				                                 _LAYER_TRANS____________________           _LAYER_TRANS____________________
 			>;
 		};
