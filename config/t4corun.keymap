@@ -140,6 +140,7 @@
 				<&macro_release &kp MACRO_PLACEHOLDER>,
 				<&macro_param_1to1>, 
 				<&macro_release &kp MACRO_PLACEHOLDER>;
+		};
     };
 
     conditional_layers {
