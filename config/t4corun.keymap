@@ -136,8 +136,8 @@
 		number {
 			bindings = <
                            &kp ESC    ____xx____ ____xx____ ____xx____ ____xx____           &kp COMMA  &kp N7     &kp N8     &kp N9     ____xx____
-                           ____xx____ _MODS_GACS_________________________________           &kp DOT    &kp N4     &kp N5     &kp N6     ____xx____
-	            __________ _NONE_5_______________________________________________           &kp MINUS  &kp N1     &kp N2     &kp N3     ____xx____ __________
+                           _MODS_GACS_________________________________ ____xx____           &kp DOT    &kp N4     &kp N5     &kp N6     ____xx____
+	            __________ _SHORTCUTS_UCCPR______________________________________           &kp MINUS  &kp N1     &kp N2     &kp N3     ____xx____ __________
 				                                 _LAYER_TRANS____________________           &kp N0     __________ &kp BSPC
 			>;
 		};
@@ -154,8 +154,8 @@
 		function {
 			bindings = <
                            BT1        BT2        BT3        BT4        BT5                  ____xx____ &kp F7     &kp F8     &kp F9     &kp F10
-                           ____xx____ _MODS_GACS_________________________________           ____xx____ &kp F4     &kp F5     &kp F6     &kp F11
-	            __________ OUT_TOGGLE ____xx____ ____xx____ ____xx____ BT_CLEAR             ____xx____ &kp F1     &kp F2     &kp F3     &kp F12    __________
+                           _MODS_GACS_________________________________ ____xx____           ____xx____ &kp F4     &kp F5     &kp F6     &kp F11
+	            __________ BT_CLEAR   OUT_TOGGLE ____xx____ ____xx____ ____xx____           ____xx____ &kp F1     &kp F2     &kp F3     &kp F12    __________
 				                                 _LAYER_TRANS____________________           ____xx____ ____xx____ ____xx____
 			>;
 		};
