@@ -34,7 +34,7 @@
 #define MACRO_BKT            &ht &insert_braces_bkt LBKT
 #define MACRO_PAR            &ht &insert_braces_par LPAR
 
-#define MACRO_SQUO           &ht double_tap_squote SQT
+#define MACRO_SQUO           &ht &double_tap_squote SQT
 #define MACRO_DQUO           &ht &double_tap_dquote DQT
 #define MACRO_FSLH           &ht &double_tap_fslash FSLH
 #define MACRO_BSLH           &ht &double_tap_bslash BSLH
@@ -155,7 +155,7 @@
             bindings = <
                            BT1        BT2        BT3        BT4        BT5                  ____xx____ &kp F7     &kp F8     &kp F9     &kp F10
                            _MODS_GACS_________________________________ ____xx____           ____xx____ &kp F4     &kp F5     &kp F6     &kp F11
-                __________ BT_CLEAR   OUT_TOGGLE ____xx____ ____xx____ MACRO_SQUO           ____xx____ &kp F1     &kp F2     &kp F3     &kp F12    __________
+                __________ BT_CLEAR   OUT_TOGGLE ____xx____ ____xx____ &ht &double_tap_squote SQT           ____xx____ &kp F1     &kp F2     &kp F3     &kp F12    __________
                                                  _LAYER_TRANS____________________           ____xx____ ____xx____ ____xx____
             >;
         };
