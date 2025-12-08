@@ -47,7 +47,7 @@
 #define BT5                  &bt BT_SEL 4
 
 #define BT_CLEAR             &bt BT_CLR
-#define OUT_TOGGLE           &bt OUT_TOG
+#define OUT_TOGGLE           &out OUT_TOG
 
 
 
@@ -155,7 +155,7 @@
 			bindings = <
                            BT1        BT2        BT3        BT4        BT5                  ____xx____ &kp F7     &kp F8     &kp F9     &kp F10
                            _MODS_GACS_________________________________ ____xx____           ____xx____ &kp F4     &kp F5     &kp F6     &kp F11
-	            __________ &bt BT_CLR &bt OUT_TOG &kp GT &kp AT &kp DLLR           ____xx____ &kp F1     &kp F2     &kp F3     &kp F12    __________
+	            __________ &bt BT_CLR &out OUT_TOG &kp GT &kp AT &kp DLLR           ____xx____ &kp F1     &kp F2     &kp F3     &kp F12    __________
 				                                 _LAYER_TRANS____________________           ____xx____ ____xx____ ____xx____
 			>;
 		};
