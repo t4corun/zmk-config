@@ -83,23 +83,35 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-			tapping-term-ms = <TAPPING_TERM>;
-			quick_tap_ms = <0>;
+            tapping-term-ms = <TAPPING_TERM>;
+            quick_tap_ms = <0>;
             bindings = <&kp>, <&kp>;
         };
+
+        ht_sqt: hold_tap_single_quotes {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <0>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <TAPPING_TERM>;
+            quick_tap_ms = <0>;
+            bindings = <
+                &double_tap_squote
+                &kp SQT
+            >;
+        }
     };
 
     macros {
-		ZMK_MACRO(insert_braces_brc, wait-ms = <0>; tap-ms = <5>; bindings = <&kp LBRC &kp RBRC &kp LEFT>;)
-		ZMK_MACRO(insert_braces_lgt, wait-ms = <0>; tap-ms = <5>; bindings = <&kp LT   &kp GT   &kp LEFT>;)
-		ZMK_MACRO(insert_braces_bkt, wait-ms = <0>; tap-ms = <5>; bindings = <&kp LBKT &kp RBKT &kp LEFT>;)
-		ZMK_MACRO(insert_braces_par, wait-ms = <0>; tap-ms = <5>; bindings = <&kp LPAR &kp RPAR &kp LEFT>;)
+        ZMK_MACRO(insert_braces_brc, wait-ms = <0>; tap-ms = <5>; bindings = <&kp LBRC &kp RBRC &kp LEFT>;)
+        ZMK_MACRO(insert_braces_lgt, wait-ms = <0>; tap-ms = <5>; bindings = <&kp LT   &kp GT   &kp LEFT>;)
+        ZMK_MACRO(insert_braces_bkt, wait-ms = <0>; tap-ms = <5>; bindings = <&kp LBKT &kp RBKT &kp LEFT>;)
+        ZMK_MACRO(insert_braces_par, wait-ms = <0>; tap-ms = <5>; bindings = <&kp LPAR &kp RPAR &kp LEFT>;)
 
-		ZMK_MACRO(double_tap_squote, wait-ms = <0>; tap-ms = <5>; bindings = <&kp SQT  &kp SQT  &kp LEFT>;)
-		ZMK_MACRO(double_tap_dquote, wait-ms = <0>; tap-ms = <5>; bindings = <&kp DQT  &kp DQT  &kp LEFT>;)
-		ZMK_MACRO(double_tap_fslash, wait-ms = <0>; tap-ms = <5>; bindings = <&kp FSLH &kp FSLH >;)
-		ZMK_MACRO(double_tap_bslash, wait-ms = <0>; tap-ms = <5>; bindings = <&kp BSLH &kp BSLH >;)
-		ZMK_MACRO(double_tap_pipe,   wait-ms = <0>; tap-ms = <5>; bindings = <&kp PIPE &kp PIPE >;)
+        ZMK_MACRO(double_tap_squote, wait-ms = <0>; tap-ms = <5>; bindings = <&kp SQT  &kp SQT  &kp LEFT>;)
+        ZMK_MACRO(double_tap_dquote, wait-ms = <0>; tap-ms = <5>; bindings = <&kp DQT  &kp DQT  &kp LEFT>;)
+        ZMK_MACRO(double_tap_fslash, wait-ms = <0>; tap-ms = <5>; bindings = <&kp FSLH &kp FSLH >;)
+        ZMK_MACRO(double_tap_bslash, wait-ms = <0>; tap-ms = <5>; bindings = <&kp BSLH &kp BSLH >;)
+        ZMK_MACRO(double_tap_pipe,   wait-ms = <0>; tap-ms = <5>; bindings = <&kp PIPE &kp PIPE >;)
     };
 
     conditional_layers {
@@ -113,51 +125,51 @@
     keymap {
         compatible = "zmk,keymap";
 
-// 				xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx           xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx
+//              xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx           xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx
 
-		qwerty {
-			bindings = <
+        qwerty {
+            bindings = <
                            &kp Q      &kp W      &kp E      &kp R      &kp T                &kp Y      &kp U      &kp I      &kp O      &kp P
                            HRML(A,    S,         D,         F)         &kp G                &kp H      HRMR(J,    K,         L,         SQT)
-	            FUNC       &kp Z      &kp X      &kp C      &kp V      &kp B                &kp N      &kp M      KO_COMMA   KO_DOT     KO_MINUS   &kp C_MUTE
-				                                 _BASE_L4________________________           _BASE_R4________________________
-			>;
-		};
+                FUNC       &kp Z      &kp X      &kp C      &kp V      &kp B                &kp N      &kp M      KO_COMMA   KO_DOT     KO_MINUS   &kp C_MUTE
+                                                 _BASE_L4________________________           _BASE_R4________________________
+            >;
+        };
 
-		navigation {
-			bindings = <
-                           ____xx____ &kp HOME   &kp UP     &kp END    &kp PG_UP            &kp INS    ____xx____ ____xx____ ____xx____   ____xx____
+        navigation {
+            bindings = <
+                           ____xx____ &kp HOME   &kp UP     &kp END    &kp PG_UP            &kp INS    &kp K_APP  ____xx____ ____xx____   ____xx____
                            ____xx____ &kp LEFT   &kp DOWN   &kp RIGHT  &kp PG_DN            &kp BSPC   _MODS_SCAG_________________________________
-	            __________ _SHORTCUTS_UCCPR______________________________________           &kp DEL    ____xx____ ____xx____ &kp C_VOL_DN &kp C_VOL_UP __________
-				                                 &kp TAB    __________ &kp ENTER            _LAYER_TRANS____________________
-			>;
-		};
+                __________ _SHORTCUTS_UCCPR______________________________________           &kp DEL    ____xx____ ____xx____ &kp C_VOL_DN &kp C_VOL_UP __________
+                                                 &kp TAB    __________ &kp ENTER            _LAYER_TRANS____________________
+            >;
+        };
 
-		number {
-			bindings = <
+        number {
+            bindings = <
                            &kp ESC    ____xx____ ____xx____ ____xx____ ____xx____           &kp COMMA  &kp N7     &kp N8     &kp N9     ____xx____
                            _MODS_GACS_________________________________ ____xx____           &kp DOT    &kp N4     &kp N5     &kp N6     ____xx____
-	            __________ _SHORTCUTS_UCCPR______________________________________           &kp MINUS  &kp N1     &kp N2     &kp N3     ____xx____ __________
-				                                 _LAYER_TRANS____________________           &kp N0     __________ &kp BSPC
-			>;
-		};
+                __________ _SHORTCUTS_UCCPR______________________________________           &kp MINUS  &kp N1     &kp N2     &kp N3     ____xx____ __________
+                                                 _LAYER_TRANS____________________           &kp N0     __________ &kp BSPC
+            >;
+        };
 
-		symbol {
-			bindings = <
+        symbol {
+            bindings = <
                            &kp CARET  &kp AMPS   &kp AT     &kp DLLR   &kp GRAVE            &kp TILDE  &kp POUND  &kp ASTRK  &kp PLUS   MACRO_DQUO
                            &kp PRCNT  MACRO_BRC  &kp RBRC   MACRO_PIPE &kp SEMI             &kp COLON  &kp EQUAL  MACRO_BKT  &kp RBKT   MACRO_SQUO
-	            __________ ____xx____ MACRO_LGT  &kp GT     MACRO_BSLH &kp EXCL             &kp QMARK  MACRO_FSLH MACRO_PAR  &kp RPAR   ____xx____ __________
-				                                 _LAYER_TRANS____________________           _LAYER_TRANS____________________
-			>;
-		};
+                __________ ____xx____ MACRO_LGT  &kp GT     MACRO_BSLH &kp EXCL             &kp QMARK  MACRO_FSLH MACRO_PAR  &kp RPAR   ____xx____ __________
+                                                 _LAYER_TRANS____________________           _LAYER_TRANS____________________
+            >;
+        };
 
-		function {
-			bindings = <
+        function {
+            bindings = <
                            BT1        BT2        BT3        BT4        BT5                  ____xx____ &kp F7     &kp F8     &kp F9     &kp F10
                            _MODS_GACS_________________________________ ____xx____           ____xx____ &kp F4     &kp F5     &kp F6     &kp F11
-	            __________ BT_CLEAR   OUT_TOGGLE ____xx____ ____xx____ &double_tap_squote           ____xx____ &kp F1     &kp F2     &kp F3     &kp F12    __________
-				                                 _LAYER_TRANS____________________           ____xx____ ____xx____ ____xx____
-			>;
-		};
+                __________ BT_CLEAR   OUT_TOGGLE ____xx____ ____xx____ &ht_sqt           ____xx____ &kp F1     &kp F2     &kp F3     &kp F12    __________
+                                                 _LAYER_TRANS____________________           ____xx____ ____xx____ ____xx____
+            >;
+        };
     };
 };
