@@ -98,7 +98,7 @@
                 &double_tap_squote
                 &kp SQT
             >;
-        }
+        };
     };
 
     macros {
