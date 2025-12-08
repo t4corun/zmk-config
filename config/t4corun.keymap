@@ -90,14 +90,11 @@
 
         ht_sqt: hold_tap_single_quotes {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <TAPPING_TERM>;
             quick_tap_ms = <0>;
-            bindings = <
-                &double_tap_squote
-                &kp SQT
-            >;
+            bindings = <&double_tap_squote>, <&kp SQT>;
         };
     };
 
