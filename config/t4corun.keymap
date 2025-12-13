@@ -5,6 +5,35 @@
 
 #include <behaviors/rgbled_widget.dtsi>
 
+#define MACRO(NAME, BINDINGS) \
+    NAME: NAME { \
+        compatible = "zmk,behavior-macro"; \
+        #binding-cells = <0>; \
+        wait-ms = <5>; \
+        tap-ms = <5>; \
+        bindings = <BINDINGS>; \
+    };
+
+#define TAPHOLD_TP(NAME, TAP, HOLD) \
+    NAME: NAME { \
+        compatible = "zmk,behavior-hold-tap"; \
+        flavor = "tap-preferred"; \
+        #binding-cells = <2>; \
+        tapping-term-ms = 200; \
+        quick-tap-ms = 125; \
+        require-prior-idle-ms = 125; \
+        bindings = <HOLD>, <TAP>; \
+    };
+
+/ {
+    stuff {
+        MACRO(mc_lgt,           &kp LT   &kp GT   &kp LEFT)
+        TAPHOLD_TP(th_lgt,      &mc_lgt, &kp LT)
+    }
+
+};
+
+
 //-----------------------------------
 
 // put the default base layers first
@@ -138,7 +167,7 @@
 
         number {
             bindings = <
-                           &kp ESC    ____xx____ ____xx____ ____xx____ ____xx____           &kp COMMA  &kp N7     &kp N8     &kp N9     ____xx____
+                           &kp ESC    ____xx____ ____xx____ ____xx____ &th_lgt           &kp COMMA  &kp N7     &kp N8     &kp N9     ____xx____
                            _MODS_GACS_________________________________ ____xx____           &kp DOT    &kp N4     &kp N5     &kp N6     ____xx____
                 __________ _SHORTCUTS_UCCPR______________________________________           &kp MINUS  &kp N1     &kp N2     &kp N3     ____xx____ __________
                                                  _LAYER_TRANS____________________           &kp N0     __________ &kp BSPC
