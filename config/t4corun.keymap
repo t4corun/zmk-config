@@ -5,6 +5,47 @@
 
 #include <behaviors/rgbled_widget.dtsi>
 
+// put the default base layers first
+#define _QWERTY     0
+#define _NAVIGATION 1
+#define _NUMBER     2
+#define _SYMBOL     3
+#define _FUNCTION   4
+
+//Behavior Configuration
+#define TAPPING_TERM 200
+
+&lt {
+    flavor = "tap-preferred";
+    tapping-term-ms = <TAPPING_TERM>; // this works because ZMK processes C before devicetree files
+};
+
+&mt {
+    flavor = "tap-preferred";
+    tapping-term-ms = <TAPPING_TERM>;
+};
+
+/ {
+    behaviors {
+        ht: hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <TAPPING_TERM>;
+            quick_tap_ms = <0>;
+            bindings = <&kp>, <&kp>;
+        };
+    };
+
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+        tri_layer {
+            if-layers = <_NUMBER _NAVIGATION>;
+            then-layer = <_SYMBOL>;
+        };
+    };
+};
+
 #define MACRO(NAME, BINDINGS) \
     NAME: NAME { \
         compatible = "zmk,behavior-macro"; \
@@ -19,57 +60,80 @@
         compatible = "zmk,behavior-hold-tap"; \
         flavor = "tap-preferred"; \
         #binding-cells = <2>; \
-        tapping-term-ms = <200>; \
+        tapping-term-ms = <TAPPING_TERM>; \
         quick-tap-ms = <125>; \
         require-prior-idle-ms = <125>; \
         bindings = <HOLD>, <TAP>; \
     };
 
 / {
-    stuff {
+    symbols {
+        MACRO(mc_lbrc,          &kp LBRC)
+        MACRO(mc_brc,           &kp LBRC  &kp RBRC   &kp LEFT)
+        HOLDTAP(ht_brc,         &mc_brc,  &mc_lbrc)
+
         MACRO(mc_lt,            &kp LT)
-        MACRO(mc_lgt,           &kp LT   &kp GT   &kp LEFT)
-        HOLDTAP(th_lgt,         &mc_lgt,  &mc_lt)
+        MACRO(mc_lgt,           &kp LT    &kp GT   &kp LEFT)
+        HOLDTAP(ht_lgt,         &mc_lgt,  &mc_lt)
+
+        MACRO(mc_lbkt,          &kp LBKT)
+        MACRO(mc_bkt,           &kp LBKT  &kp RBKT   &kp LEFT)
+        HOLDTAP(ht_bkt,         &mc_bkt,  &mc_lbkt)
+
+        MACRO(mc_lpar,          &kp LPAR)
+        MACRO(mc_par,           &kp LPAR  &kp RPAR   &kp LEFT)
+        HOLDTAP(ht_bkt,         &mc_par,  &mc_lpar)
+
+        MACRO(mc_sqt,           &kp SQT)
+        MACRO(mc_squo,          &kp SQT    &kp SQT   &kp LEFT)
+        HOLDTAP(ht_sqt,         &mc_squo,  &mc_sqt)
+
+        MACRO(mc_dqt,           &kp DQT)
+        MACRO(mc_dquo,          &kp DQT    &kp DQT   &kp LEFT)
+        HOLDTAP(ht_dqt,         &mc_dquo,  &mc_dqt)
+
+        MACRO(mc_fslh,          &kp FSLH)
+        MACRO(mc_dfslh,         &kp FSLH   &kp FSLH)
+        HOLDTAP(ht_fslh,        &mc_dfslh, &mc_fslh)
+
+        MACRO(mc_bslh,          &kp BSLH)
+        MACRO(mc_dbslh,         &kp BSLH   &kp BSLH)
+        HOLDTAP(ht_bslh,        &mc_dbslh, &mc_bslh)
+
+        MACRO(mc_pipe,          &kp PIPE)
+        MACRO(mc_dpip,          &kp PIPE   &kp PIPE)
+        HOLDTAP(ht_pipe,        &mc_dpipe, &mc_pipe)
     };
 };
 
 
 //-----------------------------------
 
-// put the default base layers first
-#define _QWERTY     0
-#define _NAVIGATION 1
-#define _NUMBER     2
-#define _SYMBOL     3
-#define _FUNCTION   4
-
 // layer changes
 #define NUM                  &mo _NUMBER
 #define NAV                  &mo _NAVIGATION
 #define FUNC                 &mo _FUNCTION
 
-//Behavior Configuration
-#define TAPPING_TERM 200
 
 //                           xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx
 #define HRML(k1, k2, k3, k4) &mt LGUI k1   &mt LALT k2   &mt LCTRL k3  &mt LSHFT k4
 #define HRMR(k1, k2, k3, k4) &mt RSHFT k1  &mt RCTRL k2  &mt RALT k3   &mt RGUI  k4
 
-//#define HT(hold, tap)        &ht hold tap
+//#define HT(hold, tap)      &ht hold tap
 #define KO_COMMA             &ht LPAR      COMMA
 #define KO_DOT               &ht RPAR      DOT
 #define KO_MINUS             &ht UNDER     MINUS
 
-#define MACRO_BRC            &ht &insert_braces_brc LBRC
-#define MACRO_LGT            &ht &insert_braces_lgt LT
-#define MACRO_BKT            &ht &insert_braces_bkt LBKT
-#define MACRO_PAR            &ht &insert_braces_par LPAR
+#define MACRO_BRC            &ht_brc  0 0
+#define MACRO_LGT            &ht_lgt  0 0
+#define MACRO_BKT            &ht_bkt  0 0
+#define MACRO_PAR            &ht_par  0 0
 
-#define MACRO_SQUO           &ht &double_tap_squote SQT
-#define MACRO_DQUO           &ht &double_tap_dquote DQT
-#define MACRO_FSLH           &ht &double_tap_fslash FSLH
-#define MACRO_BSLH           &ht &double_tap_bslash BSLH
-#define MACRO_PIPE           &ht &double_tap_pipe   PIPE
+#define MACRO_SQUO           &ht_sqt  0 0
+#define MACRO_DQUO           &ht_dqt  0 0
+#define MACRO_FSLH           &ht_fslh 0 0 
+#define MACRO_BSLH           &ht_bslh 0 0
+#define MACRO_PIPE           &ht_pipe 0 0
 
 #define BT1                  &bt BT_SEL 0
 #define BT2                  &bt BT_SEL 1
@@ -99,49 +163,8 @@
 
 //-----------------------------------
 
-&lt {
-    flavor = "tap-preferred";
-    tapping-term-ms = <TAPPING_TERM>; // this works because ZMK processes C before devicetree files
-};
-
-&mt {
-    flavor = "tap-preferred";
-    tapping-term-ms = <TAPPING_TERM>;
-};
 
 / {
-    behaviors {
-        ht: hold_tap {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <TAPPING_TERM>;
-            quick_tap_ms = <0>;
-            bindings = <&kp>, <&kp>;
-        };
-    };
-
-    macros {
-        ZMK_MACRO(insert_braces_brc, wait-ms = <0>; tap-ms = <5>; bindings = <&kp LBRC &kp RBRC &kp LEFT>;)
-        ZMK_MACRO(insert_braces_lgt, wait-ms = <0>; tap-ms = <5>; bindings = <&kp LT   &kp GT   &kp LEFT>;)
-        ZMK_MACRO(insert_braces_bkt, wait-ms = <0>; tap-ms = <5>; bindings = <&kp LBKT &kp RBKT &kp LEFT>;)
-        ZMK_MACRO(insert_braces_par, wait-ms = <0>; tap-ms = <5>; bindings = <&kp LPAR &kp RPAR &kp LEFT>;)
-
-        ZMK_MACRO(double_tap_squote, wait-ms = <0>; tap-ms = <5>; bindings = <&kp SQT  &kp SQT  &kp LEFT>;)
-        ZMK_MACRO(double_tap_dquote, wait-ms = <0>; tap-ms = <5>; bindings = <&kp DQT  &kp DQT  &kp LEFT>;)
-        ZMK_MACRO(double_tap_fslash, wait-ms = <0>; tap-ms = <5>; bindings = <&kp FSLH &kp FSLH >;)
-        ZMK_MACRO(double_tap_bslash, wait-ms = <0>; tap-ms = <5>; bindings = <&kp BSLH &kp BSLH >;)
-        ZMK_MACRO(double_tap_pipe,   wait-ms = <0>; tap-ms = <5>; bindings = <&kp PIPE &kp PIPE >;)
-    };
-
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-        tri_layer {
-            if-layers = <_NUMBER _NAVIGATION>;
-            then-layer = <_SYMBOL>;
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
@@ -167,7 +190,7 @@
 
         number {
             bindings = <
-                           &kp ESC    ____xx____ ____xx____ ____xx____ &th_lgt 0 0           &kp COMMA  &kp N7     &kp N8     &kp N9     ____xx____
+                           &kp ESC    ____xx____ ____xx____ ____xx____ ____xx____           &kp COMMA  &kp N7     &kp N8     &kp N9     ____xx____
                            _MODS_GACS_________________________________ ____xx____           &kp DOT    &kp N4     &kp N5     &kp N6     ____xx____
                 __________ _SHORTCUTS_UCCPR______________________________________           &kp MINUS  &kp N1     &kp N2     &kp N3     ____xx____ __________
                                                  _LAYER_TRANS____________________           &kp N0     __________ &kp BSPC
@@ -188,7 +211,7 @@
                            BT1        BT2        BT3        BT4        BT5                  ____xx____ &kp F7     &kp F8     &kp F9     &kp F10
                            _MODS_GACS_________________________________ ____xx____           ____xx____ &kp F4     &kp F5     &kp F6     &kp F11
                 __________ BT_CLEAR   OUTPUT_BLE OUTPUT_USB &ind_con   &ind_bat             ____xx____ &kp F1     &kp F2     &kp F3     &kp F12    __________
-                                                 _LAYER_TRANS____________________           ____xx____ ____xx____ ____xx____
+                                                 ____xx____ ____xx____ BT_CLEAR             ____xx____ ____xx____ ____xx____
             >;
         };
     };
