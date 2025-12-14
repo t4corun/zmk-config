@@ -34,7 +34,7 @@
 #define MACRO_SQUO           &ht_sqt  0 0
 #define MACRO_DQUO           &ht_dqt  0 0
 
-#define MACRO_TEST           &ht &mc_par  &mc_lpar
+#define MACRO_TEST           &ht &mc_par  &mc_lpar 0 0
 
 #define BT1                  &bt BT_SEL 0
 #define BT2                  &bt BT_SEL 1
