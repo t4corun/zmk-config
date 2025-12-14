@@ -5,7 +5,7 @@
 
 #include <behaviors/rgbled_widget.dtsi>
 
-#include keypos.h
+#include "keypos.h"
 
 // put the default base layers first
 #define _QWERTY     0
