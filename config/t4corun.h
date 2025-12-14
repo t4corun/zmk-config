@@ -5,20 +5,23 @@
 #pragma once
 
 // put the default base layers first
-#define _QWERTY      0
-#define _NAVIGATION  1
-#define _NUMBER      2
-#define _SYMBOL      3
-#define _FUNCTION    4
+#define _QWERTY        0
+#define _NAVIGATION    1
+#define _NUMBER        2
+#define _SYMBOL        3
+#define _FUNCTION      4
 
-#define TAPPING_TERM   200
 // Behavior Configuration
+#define TAPPING_TERM   200
 #define QUICK_TAP_TERM 125
 
 // layer changes
-#define NUM          &mo _NUMBER
-#define NAV          &mo _NAVIGATION
-#define FUNC         &mo _FUNCTION
+#define NUM            &mo _NUMBER
+#define NAV            &mo _NAVIGATION
+#define FUNC           &mo _FUNCTION
+
+// windows shortcuts
+#define W_SNIP         LG(LS(S))
 
 // homerow mods
 #define HRML(k1, k2, k3, k4) &hml LGUI k1   &hml LALT k2   &hml LCTRL k3  &hml LSHFT k4
@@ -73,6 +76,7 @@
         bindings = <BINDINGS>; \
     };
 
+//require prior idle ms used to be 125
 #define HOLDTAP(NAME, HOLD, TAP) \
     NAME: NAME { \
         compatible = "zmk,behavior-hold-tap"; \
@@ -80,7 +84,7 @@
         #binding-cells = <2>; \
         tapping-term-ms = <TAPPING_TERM>; \
         quick-tap-ms = <QUICK_TAP_TERM>; \
-        require-prior-idle-ms = <50>; \ //used to be 125
+        require-prior-idle-ms = <50>; \
         bindings = <HOLD>, <TAP>; \
     };
 
