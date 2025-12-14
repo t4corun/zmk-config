@@ -11,8 +11,9 @@
 #define _SYMBOL      3
 #define _FUNCTION    4
 
+#define TAPPING_TERM   200
 // Behavior Configuration
-#define TAPPING_TERM 200
+#define QUICK_TAP_TERM 125
 
 // layer changes
 #define NUM          &mo _NUMBER
@@ -23,19 +24,12 @@
 #define HRML(k1, k2, k3, k4) &hml LGUI k1   &hml LALT k2   &hml LCTRL k3  &hml LSHFT k4
 #define HRMR(k1, k2, k3, k4) &hmr RSHFT k1  &hmr RCTRL k2  &hmr RALT k3   &hmr RGUI  k4
 
+// key overrides
 #define KO_COMMA             &ht LPAR      COMMA
 #define KO_DOT               &ht RPAR      DOT
 #define KO_MINUS             &ht UNDER     MINUS
 
-#define MACRO_BRC            &ht_brc  0 0   // copied this from rafaelromao. I do not know why we need the 0 0 for it to work
-#define MACRO_LGT            &ht_lgt  0 0
-#define MACRO_BKT            &ht_bkt  0 0
-#define MACRO_PAR            &ht_par  0 0
-#define MACRO_SQUO           &ht_sqt  0 0
-#define MACRO_DQUO           &ht_dqt  0 0
-
-#define MACRO_TEST           &ht &mc_par  &mc_lpar 0 0
-
+// wireless connectivity and output modes
 #define BT1                  &bt BT_SEL 0
 #define BT2                  &bt BT_SEL 1
 #define BT3                  &bt BT_SEL 2
@@ -46,6 +40,7 @@
 #define OUTPUT_BLE           &out OUT_BLE
 #define OUTPUT_USB           &out OUT_USB
 
+// keymap macros
 #define __________                                             &trans
 #define ____xx____                                             &none
 #define _BASE_L4________________________                       &kp TAB    NUM        &kp LSHFT
@@ -84,10 +79,19 @@
         flavor = "tap-preferred"; \
         #binding-cells = <2>; \
         tapping-term-ms = <TAPPING_TERM>; \
-        quick-tap-ms = <125>; \
-        require-prior-idle-ms = <125>; \
+        quick-tap-ms = <QUICK_TAP_TERM>; \
+        require-prior-idle-ms = <50>; \ //used to be 125
         bindings = <HOLD>, <TAP>; \
     };
+
+
+// The 0 0 is required but I do not know the reasoning behind it
+#define MACRO_BRC  &ht_brc 0 0
+#define MACRO_LGT  &ht_lgt 0 0
+#define MACRO_BKT  &ht_bkt 0 0
+#define MACRO_PAR  &ht_par 0 0
+#define MACRO_SQUO &ht_sqt 0 0
+#define MACRO_DQUO &ht_dqt 0 0
 
 /*
  * Position definition for timerless home row mods

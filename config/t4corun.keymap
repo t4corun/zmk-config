@@ -7,16 +7,6 @@
 
 #include "t4corun.h"
 
-&lt {
-    flavor = "tap-preferred";
-    tapping-term-ms = <TAPPING_TERM>; // this works because ZMK processes C before devicetree files
-};
-
-&mt {
-    flavor = "tap-preferred";
-    tapping-term-ms = <TAPPING_TERM>;
-};
-
 / {
     behaviors {
         ht: hold_tap {
@@ -24,7 +14,7 @@
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <TAPPING_TERM>;
-            quick_tap_ms = <0>;
+            quick_tap_ms = <QUICK_TAP_TERM>;
             bindings = <&kp>, <&kp>;
         };
 
@@ -52,7 +42,9 @@
             hold-trigger-on-release;
         };
     };
+};
 
+/ {
     conditional_layers {
         compatible = "zmk,conditional-layers";
         tri_layer {
@@ -117,7 +109,7 @@
 
         number {
             bindings = <
-                           &kp ESC    ____xx____ ____xx____ ____xx____ MACRO_TEST           &kp COMMA  &kp N7     &kp N8     &kp N9     ____xx____
+                           &kp ESC    ____xx____ ____xx____ ____xx____ ____xx____           &kp COMMA  &kp N7     &kp N8     &kp N9     ____xx____
                            _MODS_GACS_________________________________ ____xx____           &kp DOT    &kp N4     &kp N5     &kp N6     ____xx____
                 __________ _SHORTCUTS_UCCPR______________________________________           &kp MINUS  &kp N1     &kp N2     &kp N3     ____xx____ __________
                                                  _LAYER_TRANS____________________           &kp N0     __________ &kp BSPC
