@@ -18,29 +18,11 @@
             bindings = <&kp>, <&kp>;
         };
 
-        hml: home_row_mod_left {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "balanced";
-            require-prior-idle-ms = <150>;
-            tapping-term-ms = <280>;
-            quick-tap-ms = <175>;
-            bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = < KEYS_R >; // List of keys on the right side of the keyboard
-            hold-trigger-on-release;
-        };
+		HRM(hml,  TAPPING_TERM,    KEY_L)
+		HRM(hmlo, TAPPING_TERM+50, KEY_L)
+		HRM(hmr,  TAPPING_TERM,    KEY_R)
+		HRM(hmro, TAPPING_TERM+50, KEY_R)
 
-        hmr: home_row_mod_right {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "balanced";
-            require-prior-idle-ms = <150>;
-            tapping-term-ms = <280>;
-            quick-tap-ms = <175>;
-            bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = < KEYS_L >; // List of keys on the left side of the keyboard
-            hold-trigger-on-release;
-        };
     };
 };
 
@@ -98,6 +80,15 @@
             >;
         };
 
+        gallium {
+            bindings = <
+                           &kp Q      &kp W      &kp E      &kp R      &kp T                &kp Y      &kp U      &kp I      &kp O      &kp P
+                           HRML(A,    S,         D,         F)         &kp G                &kp H      HRMR(J,    K,         L,         SQT)
+                FUNC       &kp Z      &kp X      &kp C      &kp V      &kp B                &kp N      &kp M      KO_COMMA   KO_DOT     KO_MINUS   &kp C_MUTE
+                                                 _BASE_L4________________________           _BASE_R4________________________
+            >;
+        };
+
         navigation {
             bindings = <
                            ____xx____ &kp HOME   &kp UP     &kp END    &kp PG_UP            &kp INS    &kp K_APP  ____xx____ ____xx____   ____xx____
@@ -129,8 +120,8 @@
             bindings = <
                            BT1        BT2        BT3        BT4        BT5                  ____xx____ &kp F7     &kp F8     &kp F9     &kp F10
                            _MODS_GACS_________________________________ ____xx____           ____xx____ &kp F4     &kp F5     &kp F6     &kp F11
-                __________ BT_CLEAR   OUTPUT_BLE OUTPUT_USB &ind_con   &ind_bat             ____xx____ &kp F1     &kp F2     &kp F3     &kp F12    __________
-                                                 ____xx____ ____xx____ BT_CLEAR             ____xx____ ____xx____ ____xx____
+                __________ ____xx____ OUTPUT_BLE OUTPUT_USB &ind_con   &ind_bat             ____xx____ &kp F1     &kp F2     &kp F3     &kp F12    __________
+                                                 ____xx____ ____xx____ BT_CLEAR             QWERTY     GALLIUM    ____xx____
             >;
         };
     };

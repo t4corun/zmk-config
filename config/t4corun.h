@@ -6,26 +6,31 @@
 
 // put the default base layers first
 #define _QWERTY        0
-#define _NAVIGATION    1
-#define _NUMBER        2
-#define _SYMBOL        3
-#define _FUNCTION      4
+#define _GALLIUM       1
+#define _NAVIGATION    2
+#define _NUMBER        3
+#define _SYMBOL        4
+#define _FUNCTION      5
 
 // Behavior Configuration
-#define TAPPING_TERM   200
-#define QUICK_TAP_TERM 125
+#define TAPPING_TERM   280
+#define QUICK_TAP_TERM 175
+#define IDLE_TERM      150
 
 // layer changes
 #define NUM            &mo _NUMBER
 #define NAV            &mo _NAVIGATION
 #define FUNC           &mo _FUNCTION
 
+#define QWERTY         &to _QWERTY
+#define GALLIUM        &to _GALLIUM
+
 // windows shortcuts
 #define W_SNIP         &kp LG(LS(S))
 
 // homerow mods
-#define HRML(k1, k2, k3, k4) &hml LGUI k1   &hml LALT k2   &hml LCTRL k3  &hml LSHFT k4
-#define HRMR(k1, k2, k3, k4) &hmr RSHFT k1  &hmr RCTRL k2  &hmr RALT k3   &hmr RGUI  k4
+#define HRML(k1, k2, k3, k4) &hmlo LGUI k1   &hmlo LALT k2   &hml  LCTRL k3  &hml  LSHFT k4
+#define HRMR(k1, k2, k3, k4) &hmr  RSHFT k1  &hmr  RCTRL k2  &hmro RALT k3   &hmro RGUI  k4
 
 // key overrides
 #define KO_COMMA             &ht LPAR      COMMA
@@ -55,6 +60,22 @@
 #define _NONE_5_______________________________________________ ____xx____ ____xx____ ____xx____ ____xx____ ____xx____
 
 
+/*
+ * Behavior Macros
+ */
+
+#define HRM(NAME, TAP_TERM, KEY_POSITIONS) \
+    NAME: NAME { \
+        compatible = "zmk,behavior-hold-tap"; \
+        #binding-cells = <2>; \
+        flavor = "balance"; \
+        require-prior-idle-ms = <IDLE_TERM>; \
+        tapping-term-ms = <TAP_TERM>; \
+        quick-tap-ms = <QUICK_TAP_TERM>; \
+        bindings = <&kp>, <&kp>; \
+        hold-trigger-key-positions = <KEY_POSITIONS>; \
+        hold-trigger-on-release; \
+    };
 
 /*
  * Macros - borrowed from RafaelRomao
