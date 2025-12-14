@@ -82,7 +82,7 @@
 
         MACRO(mc_lpar,          &kp LPAR)
         MACRO(mc_par,           &kp LPAR  &kp RPAR   &kp LEFT)
-        HOLDTAP(ht_bkt,         &mc_par,  &mc_lpar)
+        HOLDTAP(ht_par,         &mc_par,  &mc_lpar)
 
         MACRO(mc_sqt,           &kp SQT)
         MACRO(mc_squo,          &kp SQT    &kp SQT   &kp LEFT)
