@@ -5,17 +5,7 @@
 
 #include <behaviors/rgbled_widget.dtsi>
 
-#include "keypos.h"
-
-// put the default base layers first
-#define _QWERTY     0
-#define _NAVIGATION 1
-#define _NUMBER     2
-#define _SYMBOL     3
-#define _FUNCTION   4
-
-//Behavior Configuration
-#define TAPPING_TERM 200
+#include "t4corun.h"
 
 &lt {
     flavor = "tap-preferred";
@@ -72,26 +62,6 @@
     };
 };
 
-#define MACRO(NAME, BINDINGS) \
-    NAME: NAME { \
-        compatible = "zmk,behavior-macro"; \
-        #binding-cells = <0>; \
-        wait-ms = <5>; \
-        tap-ms = <5>; \
-        bindings = <BINDINGS>; \
-    };
-
-#define HOLDTAP(NAME, HOLD, TAP) \
-    NAME: NAME { \
-        compatible = "zmk,behavior-hold-tap"; \
-        flavor = "tap-preferred"; \
-        #binding-cells = <2>; \
-        tapping-term-ms = <TAPPING_TERM>; \
-        quick-tap-ms = <125>; \
-        require-prior-idle-ms = <125>; \
-        bindings = <HOLD>, <TAP>; \
-    };
-
 / {
     symbols {
         MACRO(mc_lbrc,          &kp LBRC)
@@ -119,60 +89,6 @@
         HOLDTAP(ht_dqt,         &mc_dquo,  &mc_dqt)
     };
 };
-
-
-//-----------------------------------
-
-// layer changes
-#define NUM                  &mo _NUMBER
-#define NAV                  &mo _NAVIGATION
-#define FUNC                 &mo _FUNCTION
-
-#define HRML(k1, k2, k3, k4) &hml LGUI k1   &hml LALT k2   &hml LCTRL k3  &hml LSHFT k4
-#define HRMR(k1, k2, k3, k4) &hmr RSHFT k1  &hmr RCTRL k2  &hmr RALT k3   &hmr RGUI  k4
-
-//#define HT(hold, tap)      &ht hold tap
-#define KO_COMMA             &ht LPAR      COMMA
-#define KO_DOT               &ht RPAR      DOT
-#define KO_MINUS             &ht UNDER     MINUS
-
-#define MACRO_BRC            &ht_brc  0 0   // copied this from rafaelromao. I do not know why we need the 0 0 for it to work
-#define MACRO_LGT            &ht_lgt  0 0
-#define MACRO_BKT            &ht_bkt  0 0
-#define MACRO_PAR            &ht_par  0 0
-#define MACRO_SQUO           &ht_sqt  0 0
-#define MACRO_DQUO           &ht_dqt  0 0
-
-
-#define MACRO_TEST           &ht &mc_par  &mc_lpar
-
-#define BT1                  &bt BT_SEL 0
-#define BT2                  &bt BT_SEL 1
-#define BT3                  &bt BT_SEL 2
-#define BT4                  &bt BT_SEL 3
-#define BT5                  &bt BT_SEL 4
-
-#define BT_CLEAR             &bt BT_CLR
-#define OUTPUT_BLE           &out OUT_BLE
-#define OUTPUT_USB           &out OUT_USB
-
-
-
-//                                                             xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx
-
-#define __________                                             &trans
-#define ____xx____                                             &none
-#define _BASE_L4________________________                       &kp TAB    NUM        &kp LSHFT
-#define _BASE_R4________________________                       &kp SPACE  NAV        &kp BSPC
-#define _LAYER_TRANS____________________                       ____xx____ __________ ____xx____
-#define _MODS_GACS_________________________________            &kp LGUI   &kp LALT   &kp LCTRL  &kp LSHFT
-#define _MODS_SCAG_________________________________            &kp RSHFT  &kp RCTRL  &kp RALT   &kp RGUI
-#define _SHORTCUTS_UCCPR______________________________________ &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LC(Y)
-#define _NONE_5_______________________________________________ ____xx____ ____xx____ ____xx____ ____xx____ ____xx____
-
-
-
-//-----------------------------------
 
 
 / {
