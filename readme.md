@@ -18,18 +18,16 @@ My keymap is designed with SQL and Powershell in mind. It features:
 - The totem is a composite board 
 - The two outer pinky keys are part of the outer column, bottom row
 - The order of includes isn't strict.
+- These were removed because they were blank. They are not needed
+  - config/t4corun.conf
+  - boards/shields/totem/totem_left.conf
+  - boards/shields/totem/totem_right.conf
 
-## Next
+## Wishlist
 
+- Make the keyboard work when not in the OS
 - Add alternate base layer for gallium, graphite, or colemak dh
-
-### Files that were removed because they were blank
-
-These could be added back
-
-- config/t4corun.conf
-- boards/shields/totem/totem_left.conf
-- boards/shields/totem/totem_right.conf
+- Can we do OS mod swap like QMK?
 
 ### Special Thanks
 
