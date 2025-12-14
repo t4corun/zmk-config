@@ -73,7 +73,7 @@
         HOLDTAP(ht_brc,         &mc_brc,  &mc_lbrc)
 
         MACRO(mc_lt,            &kp LT)
-        MACRO(mc_lgt,           &kp LT    &kp GT   &kp LEFT)
+        MACRO(mc_lgt,           &kp LT    &kp GT     &kp LEFT)
         HOLDTAP(ht_lgt,         &mc_lgt,  &mc_lt)
 
         MACRO(mc_lbkt,          &kp LBKT)
@@ -101,7 +101,7 @@
         HOLDTAP(ht_bslh,        &mc_dbslh, &mc_bslh)
 
         MACRO(mc_pipe,          &kp PIPE)
-        MACRO(mc_dpip,          &kp PIPE   &kp PIPE)
+        MACRO(mc_dpipe,         &kp PIPE   &kp PIPE)
         HOLDTAP(ht_pipe,        &mc_dpipe, &mc_pipe)
     };
 };
