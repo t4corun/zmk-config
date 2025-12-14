@@ -91,18 +91,6 @@
         MACRO(mc_dqt,           &kp DQT)
         MACRO(mc_dquo,          &kp DQT    &kp DQT   &kp LEFT)
         HOLDTAP(ht_dqt,         &mc_dquo,  &mc_dqt)
-
-        MACRO(mc_fslh,          &kp FSLH)
-        MACRO(mc_dfslh,         &kp FSLH   &kp FSLH)
-        HOLDTAP(ht_fslh,        &mc_dfslh, &mc_fslh)
-
-        MACRO(mc_bslh,          &kp BSLH)
-        MACRO(mc_dbslh,         &kp BSLH   &kp BSLH)
-        HOLDTAP(ht_bslh,        &mc_dbslh, &mc_bslh)
-
-        MACRO(mc_pipe,          &kp PIPE)
-        MACRO(mc_dpipe,         &kp PIPE   &kp PIPE)
-        HOLDTAP(ht_pipe,        &mc_dpipe, &mc_pipe)
     };
 };
 
@@ -124,16 +112,15 @@
 #define KO_DOT               &ht RPAR      DOT
 #define KO_MINUS             &ht UNDER     MINUS
 
-#define MACRO_BRC            &ht_brc  0 0
+#define MACRO_BRC            &ht_brc  0 0   // copied this from rafaelromao. I do not know why we need the 0 0 for it to work
 #define MACRO_LGT            &ht_lgt  0 0
 #define MACRO_BKT            &ht_bkt  0 0
 #define MACRO_PAR            &ht_par  0 0
-
 #define MACRO_SQUO           &ht_sqt  0 0
 #define MACRO_DQUO           &ht_dqt  0 0
-#define MACRO_FSLH           &ht_fslh 0 0 
-#define MACRO_BSLH           &ht_bslh 0 0
-#define MACRO_PIPE           &ht_pipe 0 0
+
+
+#define MACRO_TEST           &ht mc_par  mc_lpar
 
 #define BT1                  &bt BT_SEL 0
 #define BT2                  &bt BT_SEL 1
@@ -190,7 +177,7 @@
 
         number {
             bindings = <
-                           &kp ESC    ____xx____ ____xx____ ____xx____ ____xx____           &kp COMMA  &kp N7     &kp N8     &kp N9     ____xx____
+                           &kp ESC    ____xx____ ____xx____ ____xx____ MACRO_TEST           &kp COMMA  &kp N7     &kp N8     &kp N9     ____xx____
                            _MODS_GACS_________________________________ ____xx____           &kp DOT    &kp N4     &kp N5     &kp N6     ____xx____
                 __________ _SHORTCUTS_UCCPR______________________________________           &kp MINUS  &kp N1     &kp N2     &kp N3     ____xx____ __________
                                                  _LAYER_TRANS____________________           &kp N0     __________ &kp BSPC
@@ -200,8 +187,8 @@
         symbol {
             bindings = <
                            &kp CARET  &kp AMPS   &kp AT     &kp DLLR   &kp GRAVE            &kp TILDE  &kp POUND  &kp ASTRK  &kp PLUS   MACRO_DQUO
-                           &kp PRCNT  MACRO_BRC  &kp RBRC   MACRO_PIPE &kp SEMI             &kp COLON  &kp EQUAL  MACRO_BKT  &kp RBKT   MACRO_SQUO
-                __________ ____xx____ MACRO_LGT  &kp GT     MACRO_BSLH &kp EXCL             &kp QMARK  MACRO_FSLH MACRO_PAR  &kp RPAR   ____xx____ __________
+                           &kp PRCNT  MACRO_BRC  &kp RBRC   &kp PIPE   &kp SEMI             &kp COLON  &kp EQUAL  MACRO_BKT  &kp RBKT   MACRO_SQUO
+                __________ ____xx____ MACRO_LGT  &kp GT     &kp BSLH   &kp EXCL             &kp QMARK  &kp FSLH   MACRO_PAR  &kp RPAR   ____xx____ __________
                                                  _LAYER_TRANS____________________           _LAYER_TRANS____________________
             >;
         };
