@@ -6,12 +6,12 @@ This won't be a straight fork of [GEIGEIGEIST's](https://github.com/GEIGEIGEIST/
 
 ## Features
 
-My keymap is designed with SQL and Powershell in mind. It features:
+My keymap is inspired by Miryoku and designed with SQL and Powershell in mind. It features:
 
 - Dongle support
-- Minimal configuration. Leverage the documented defaults when possible
 - Timerless homerow mods
 - Macros for bracket symbols
+- Enables Dongle RGB LED to show wireless connectivity and battery status
 
 ## Learnings
 
