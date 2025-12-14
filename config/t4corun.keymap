@@ -29,7 +29,7 @@
     stuff {
         MACRO(mc_lt,            &kp LT)
         MACRO(mc_lgt,           &kp LT   &kp GT   &kp LEFT)
-        TAPHOLD_TP(th_lgt,      &mc_lgt,  &mc_lt)
+        TAPHOLD_TP(th_lgt,      &mc_lt,  &mc_lgt)
     };
 };
 
