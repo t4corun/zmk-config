@@ -1,13 +1,17 @@
 # t4corun ZMK Config
 
-Relearning ZMK after a long hiatus (2023). The main reason for doing this is the dongle. Setting up a XIAO Dongle setup for a GEIST Totem. 
+Relearning ZMK after a long hiatus (2023), primarily for the dongle. Setting up a XIAO Dongle setup for a GEIST Totem and porting over my QMK keymap
 
 This won't be a straight fork of [GEIGEIGEIST's](https://github.com/GEIGEIGEIST/zmk-config-totem) or [eigatech's](https://github.com/eigatech/zmk-config) repositories as I want to make it per ZMK's latest structure.
 
-## Goals
+## Features
 
+My keymap is designed with SQL and Powershell in mind. It features:
+
+- Dongle support
 - Minimal configuration. Leverage the documented defaults when possible
-- ZMK Studio support?
+- Timerless homerow mods
+- Macros for bracket symbols
 
 ## Learnings
 
@@ -17,7 +21,7 @@ This won't be a straight fork of [GEIGEIGEIST's](https://github.com/GEIGEIGEIST/
 
 ## Next
 
-- If I want to test if Geist's will compile, remove the physical layout section in `default_layout: default_layout {` in `totem.dtsi` and see if it will build. removed `#include "totem-layouts.dtsi"` from that file
+- Add alternate base layer for gallium, graphite, or colemak dh
 
 ### Files that were removed because they were blank
 
