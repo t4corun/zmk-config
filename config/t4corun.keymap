@@ -5,6 +5,8 @@
 
 #include <behaviors/rgbled_widget.dtsi>
 
+#include keypos.h
+
 // put the default base layers first
 #define _QWERTY     0
 #define _NAVIGATION 1
@@ -34,6 +36,30 @@
             tapping-term-ms = <TAPPING_TERM>;
             quick_tap_ms = <0>;
             bindings = <&kp>, <&kp>;
+        };
+
+        hml: home_row_mod_left {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            require-prior-idle-ms = <150>;
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = < KEYS_R >; // List of keys on the right side of the keyboard
+            hold-trigger-on-release;
+        };
+
+        hmr: home_row_mod_right {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            require-prior-idle-ms = <150>;
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = < KEYS_L >; // List of keys on the left side of the keyboard
+            hold-trigger-on-release;
         };
     };
 
@@ -102,10 +128,8 @@
 #define NAV                  &mo _NAVIGATION
 #define FUNC                 &mo _FUNCTION
 
-
-//                           xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx
-#define HRML(k1, k2, k3, k4) &mt LGUI k1   &mt LALT k2   &mt LCTRL k3  &mt LSHFT k4
-#define HRMR(k1, k2, k3, k4) &mt RSHFT k1  &mt RCTRL k2  &mt RALT k3   &mt RGUI  k4
+#define HRML(k1, k2, k3, k4) &hml LGUI k1   &hml LALT k2   &hml LCTRL k3  &hml LSHFT k4
+#define HRMR(k1, k2, k3, k4) &hmr RSHFT k1  &hmr RCTRL k2  &hmr RALT k3   &hmr RGUI  k4
 
 //#define HT(hold, tap)      &ht hold tap
 #define KO_COMMA             &ht LPAR      COMMA
@@ -120,7 +144,7 @@
 #define MACRO_DQUO           &ht_dqt  0 0
 
 
-#define MACRO_TEST           &ht mc_par  mc_lpar 0 0
+#define MACRO_TEST           &ht &mc_par  &mc_lpar
 
 #define BT1                  &bt BT_SEL 0
 #define BT2                  &bt BT_SEL 1
