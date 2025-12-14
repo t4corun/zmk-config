@@ -21,7 +21,7 @@
 #define FUNC           &mo _FUNCTION
 
 // windows shortcuts
-#define W_SNIP         LG(LS(S))
+#define W_SNIP         &kp LG(LS(S))
 
 // homerow mods
 #define HRML(k1, k2, k3, k4) &hml LGUI k1   &hml LALT k2   &hml LCTRL k3  &hml LSHFT k4
