@@ -1,9 +1,8 @@
 # t4corun ZMK Config
 
-Relearning ZMK after a long hiatus (2023) because of the dongle. Setting up a XIAO Dongle setup for a GEIST Totem. 
+Relearning ZMK after a long hiatus (2023). The main reason for doing this is the dongle. Setting up a XIAO Dongle setup for a GEIST Totem. 
 
-This won't be a straight fork of [GEIGEIGEIST's](https://github.com/GEIGEIGEIST/zmk-config-totem) or [eigatech's](https://github.com/eigatech/zmk-config) repositories as I want to make it per 
-ZMK's latest structure.
+This won't be a straight fork of [GEIGEIGEIST's](https://github.com/GEIGEIGEIST/zmk-config-totem) or [eigatech's](https://github.com/eigatech/zmk-config) repositories as I want to make it per ZMK's latest structure.
 
 ## Goals
 
@@ -12,18 +11,26 @@ ZMK's latest structure.
 
 ## Learnings
 
-- `boards` are now under zmk-config root instead of inside `/config/`. Why?
 - The totem is a composite board 
 - The two outer pinky keys are part of the outer column, bottom row
+- The order of includes isn't strict.
 
 ## Next
 
-- Go over totem.dtsi, it seems like I need to create a separate totem-layouts.dtsi if I want to be able to use zmk studio
-- If I want to test if Geist's will compile, remove the physical layout section in `default_layout: default_layout {` in `totem.dtsi` and see if it will build
-- I can have t4corun.conf to have global settings but I don't know if I need it
+- If I want to test if Geist's will compile, remove the physical layout section in `default_layout: default_layout {` in `totem.dtsi` and see if it will build. removed `#include "totem-layouts.dtsi"` from that file
 
-### Files that are blank that could be added back
+### Files that were removed because they were blank
 
-config/t4corun.conf
-boards/shields/totem/totem_left.conf
-boards/shields/totem/totem_right.conf
+These could be added back
+
+- config/t4corun.conf
+- boards/shields/totem/totem_left.conf
+- boards/shields/totem/totem_right.conf
+
+### Special Thanks
+
+geigeigeist, for making a beautiful, well documented keyboard, and making it free
+eigatech, for sharing the dongle code
+rafaelromao, for the macro helpers
+urob, for the timerless setup
+caksoylar, for the general organization and rgbled widget
