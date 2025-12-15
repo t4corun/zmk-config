@@ -18,11 +18,53 @@
             bindings = <&kp>, <&kp>;
         };
 
-		HRM(hml,  &kp, &kp, 280,    KEY_L)
-		HRM(hmlo, &kp, &kp, 280+50, KEY_L)
-		HRM(hmr,  &kp, &kp, 280,    KEY_R)
-		HRM(hmro, &kp, &kp, 280+50, KEY_R)
+        hml: home_row_mod_left {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            require-prior-idle-ms = <IDLE_TERM>;
+            tapping-term-ms = <TAPPING_TERM>;
+            quick-tap-ms = <QUICK_TAP_TERM>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = < KEYS_R >; // List of keys on the right side of the keyboard
+            hold-trigger-on-release;
+        };
 
+        hmlo: home_row_mod_left_outer {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            require-prior-idle-ms = <IDLE_TERM>;
+            tapping-term-ms = <TAPPING_TERM+50>;
+            quick-tap-ms = <QUICK_TAP_TERM>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = < KEYS_R >; // List of keys on the right side of the keyboard
+            hold-trigger-on-release;
+        };
+
+        hmr: home_row_mod_right {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            require-prior-idle-ms = <IDLE_TERM>;
+            tapping-term-ms = <TAPPING_TERM>;
+            quick-tap-ms = <QUICK_TAP_TERM>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = < KEYS_L >; // List of keys on the left side of the keyboard
+            hold-trigger-on-release;
+        };
+
+        hmro: home_row_mod_right_outer {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            require-prior-idle-ms = <IDLE_TERM>;
+            tapping-term-ms = <TAPPING_TERM+50>;
+            quick-tap-ms = <QUICK_TAP_TERM>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = < KEYS_L >; // List of keys on the left side of the keyboard
+            hold-trigger-on-release;
+        };
     };
 };
 

@@ -17,6 +17,10 @@
 #define QUICK_TAP_TERM 175
 #define IDLE_TERM      150
 
+#define HRM_TAPPING_TERM    280
+#define HRM_QUICK_TAP_TERM  175
+#define HRM_PRIOR_IDLE_TERM 150
+
 // layer changes
 #define NUM            &mo _NUMBER
 #define NAV            &mo _NAVIGATION
@@ -60,22 +64,6 @@
 #define _NONE_5_______________________________________________ ____xx____ ____xx____ ____xx____ ____xx____ ____xx____
 
 
-/*
- * Behavior Macros
- */
-
-#define HRM(NAME, HOLD, TAP, TERM, POSITIONS) \
-    NAME: NAME { \
-        compatible = "zmk,behavior-hold-tap"; \
-        #binding-cells = <2>; \
-        flavor = "balanced"; \
-        bindings = <HOLD>, <TAP>; \
-        tapping-term-ms = TERM; \
-        hold-trigger-key-positions = <POSITIONS>; \
-        require-prior-idle-ms = <IDLE_TERM>; \
-        quick-tap-ms = <QUICK_TAP_TERM>; \
-        hold-trigger-on-release; \
-    };
 
 /*
  * Macros - borrowed from RafaelRomao
