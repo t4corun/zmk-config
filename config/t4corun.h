@@ -70,7 +70,7 @@
         #binding-cells = <2>; \
         flavor = "balanced"; \
         bindings = <HOLD>, <TAP>; \
-        tapping-term-ms = <TERM>; \
+        tapping-term-ms = TERM; \
         hold-trigger-key-positions = <POSITIONS>; \
         require-prior-idle-ms = <IDLE_TERM>; \
         quick-tap-ms = <QUICK_TAP_TERM>; \
