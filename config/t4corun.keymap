@@ -107,6 +107,23 @@
 };
 
 
+/ {
+	testarena {
+		tht: tapholdtest {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            require-prior-idle-ms = <HRM_PRIOR_IDLE_TERM>;
+            tapping-term-ms = <HRM_TAPPING_TERM_SLOW>;
+            quick-tap-ms = <HRM_QUICK_TAP_TERM>;
+            bindings = <&>, <&kp>;
+        };
+	};
+};
+
+
+#define TEST &tht mc_lgt LT
+
 //              xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx           xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx
 
 / {
@@ -142,7 +159,7 @@
 
         number {
             bindings = <
-                           &kp ESC    W_SNIP     ____xx____ ____xx____ ____xx____           &kp COMMA  &kp N7     &kp N8     &kp N9     ____xx____
+                           &kp ESC    W_SNIP     ____xx____ ____xx____ TEST                 &kp COMMA  &kp N7     &kp N8     &kp N9     ____xx____
                            _MODS_GACS_________________________________ ____xx____           &kp DOT    &kp N4     &kp N5     &kp N6     ____xx____
                 __________ _SHORTCUTS_UCCPR______________________________________           &kp MINUS  &kp N1     &kp N2     &kp N3     ____xx____ __________
                                                  _LAYER_TRANS____________________           &kp N0     __________ &kp BSPC
