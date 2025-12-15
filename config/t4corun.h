@@ -69,13 +69,15 @@
         compatible = "zmk,behavior-hold-tap"; \
         #binding-cells = <2>; \
         flavor = "balanced"; \
-        tapping-term-ms = <TERM>; \
-        hold-trigger-key-positions = <POSITIONS>; \
+        tapping-term-ms = TERM; \
+        hold-trigger-key-positions = POSITIONS; \
         hold-trigger-on-release; \
         require-prior-idle-ms = <IDLE_TERM>; \
         quick-tap-ms = <QUICK_TAP_TERM>; \
         bindings = <&kp>, <&kp>; \
     };
+
+hml: hml {         compatible = "zmk,behavior-hold-tap";         #binding-cells = <2>;         flavor = "balanced";         tapping-term-ms = <TERM>; 
 
 /*
  * Macros - borrowed from RafaelRomao
