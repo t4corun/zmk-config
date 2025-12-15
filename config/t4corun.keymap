@@ -80,29 +80,23 @@
 
 / {
     symbols {
-        MACRO(mc_lbrc,          &kp LBRC)
         MACRO(mc_brc,           &kp LBRC  &kp RBRC   &kp LEFT)
-        HOLDTAP(ht_brc,         &mc_brc,  &mc_lbrc)
+        HOLDTAP(ht_brc,         &mc_brc,  &kp LBRC)
 
-        MACRO(mc_lt,            &kp LT)
         MACRO(mc_lgt,           &kp LT    &kp GT     &kp LEFT)
-        HOLDTAP(ht_lgt,         &mc_lgt,  &mc_lt)
+        HOLDTAP(ht_lgt,         &mc_lgt,  &kp LT)
 
-        MACRO(mc_lbkt,          &kp LBKT)
         MACRO(mc_bkt,           &kp LBKT  &kp RBKT   &kp LEFT)
-        HOLDTAP(ht_bkt,         &mc_bkt,  &mc_lbkt)
+        HOLDTAP(ht_bkt,         &mc_bkt,  &kp LBKT)
 
-        MACRO(mc_lpar,          &kp LPAR)
         MACRO(mc_par,           &kp LPAR  &kp RPAR   &kp LEFT)
-        HOLDTAP(ht_par,         &mc_par,  &mc_lpar)
+        HOLDTAP(ht_par,         &mc_par,  &kp LPAR)
 
-        MACRO(mc_sqt,           &kp SQT)
         MACRO(mc_squo,          &kp SQT    &kp SQT   &kp LEFT)
-        HOLDTAP(ht_sqt,         &mc_squo,  &mc_sqt)
+        HOLDTAP(ht_sqt,         &mc_squo,  &kp SQT)
 
-        MACRO(mc_dqt,           &kp DQT)
         MACRO(mc_dquo,          &kp DQT    &kp DQT   &kp LEFT)
-        HOLDTAP(ht_dqt,         &mc_dquo,  &mc_dqt)
+        HOLDTAP(ht_dqt,         &mc_dquo,  &kp DQT)
     };
 };
 
