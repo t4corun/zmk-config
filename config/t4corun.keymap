@@ -18,10 +18,10 @@
             bindings = <&kp>, <&kp>;
         };
 
-		HRM(hml,  TAPPING_TERM,    KEY_L)
-		HRM(hmlo, TAPPING_TERM+50, KEY_L)
-		HRM(hmr,  TAPPING_TERM,    KEY_R)
-		HRM(hmro, TAPPING_TERM+50, KEY_R)
+		HRM(hml,  TAPPING_TERM,      KEY_L)
+		HRM(hmlo, TAPPING_TERM + 50, KEY_L)
+		HRM(hmr,  TAPPING_TERM,      KEY_R)
+		HRM(hmro, TAPPING_TERM + 50, KEY_R)
 
     };
 };

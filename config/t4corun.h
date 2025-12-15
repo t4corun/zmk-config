@@ -68,7 +68,7 @@
     NAME: NAME { \
         compatible = "zmk,behavior-hold-tap"; \
         #binding-cells = <2>; \
-        flavor = "balance"; \
+        flavor = "balanced"; \
         require-prior-idle-ms = <IDLE_TERM>; \
         tapping-term-ms = <TAP_TERM>; \
         quick-tap-ms = <QUICK_TAP_TERM>; \
