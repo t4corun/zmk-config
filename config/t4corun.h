@@ -96,7 +96,18 @@
     };
 
 
-// The 0 0 is required because we are hard coding the bindings but the behavior
+#define HOLDTAP2(NAME, HOLD, TAP)                  \
+    NAME: NAME {                                   \
+        compatible = "zmk,behavior-hold-tap";      \
+        flavor = "tap-preferred";                  \
+        #binding-cells = <2>;                      \
+        tapping-term-ms = <TAPPING_TERM>;          \
+        quick-tap-ms = <QUICK_TAP_TERM>;           \
+        require-prior-idle-ms = <PRIOR_IDLE_TERM>; \
+        bindings = <HOLD>, <TAP>;                  \
+    };
+
+// The 0 is required because we are hard coding the macro but the behavior
 // still wants two parameters
 #define MACRO_BRC  &ht_brc 0 LBRC
 #define MACRO_LGT  &ht_lgt 0 LT
