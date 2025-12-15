@@ -22,9 +22,9 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "balanced";
-            require-prior-idle-ms = <IDLE_TERM>;
-            tapping-term-ms = <TAPPING_TERM>;
-            quick-tap-ms = <QUICK_TAP_TERM>;
+            require-prior-idle-ms = <HRM_PRIOR_IDLE_TERM>;
+            tapping-term-ms = <HRM_TAPPING_TERM>;
+            quick-tap-ms = <HRM_QUICK_TAP_TERM>;
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = < KEYS_R >; // List of keys on the right side of the keyboard
             hold-trigger-on-release;
@@ -34,9 +34,9 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "balanced";
-            require-prior-idle-ms = <IDLE_TERM>;
-            tapping-term-ms = <TAPPING_TERM+50>;
-            quick-tap-ms = <QUICK_TAP_TERM>;
+            require-prior-idle-ms = <HRM_PRIOR_IDLE_TERM>;
+            tapping-term-ms = <HRM_TAPPING_TERM+50>;
+            quick-tap-ms = <HRM_QUICK_TAP_TERM>;
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = < KEYS_R >; // List of keys on the right side of the keyboard
             hold-trigger-on-release;
@@ -46,9 +46,9 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "balanced";
-            require-prior-idle-ms = <IDLE_TERM>;
-            tapping-term-ms = <TAPPING_TERM>;
-            quick-tap-ms = <QUICK_TAP_TERM>;
+            require-prior-idle-ms = <HRM_PRIOR_IDLE_TERM>;
+            tapping-term-ms = <HRM_TAPPING_TERM>;
+            quick-tap-ms = <HRM_QUICK_TAP_TERM>;
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = < KEYS_L >; // List of keys on the left side of the keyboard
             hold-trigger-on-release;
@@ -58,9 +58,9 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "balanced";
-            require-prior-idle-ms = <IDLE_TERM>;
-            tapping-term-ms = <TAPPING_TERM+50>;
-            quick-tap-ms = <QUICK_TAP_TERM>;
+            require-prior-idle-ms = <HRM_PRIOR_IDLE_TERM>;
+            tapping-term-ms = <HRM_TAPPING_TERM+50>;
+            quick-tap-ms = <HRM_QUICK_TAP_TERM>;
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = < KEYS_L >; // List of keys on the left side of the keyboard
             hold-trigger-on-release;
