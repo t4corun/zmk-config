@@ -69,7 +69,7 @@
         compatible = "zmk,behavior-hold-tap"; \
         #binding-cells = <2>; \
         flavor = "balanced"; \
-        tapping-term-ms = TERM; \
+        tapping-term-ms = <TERM>; \
         hold-trigger-key-positions = POSITIONS; \
         hold-trigger-on-release; \
         require-prior-idle-ms = <IDLE_TERM>; \
