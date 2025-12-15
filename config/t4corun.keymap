@@ -18,10 +18,10 @@
             bindings = <&kp>, <&kp>;
         };
 
-		HRM(hml,  <280>,    KEY_L)
-		HRM(hmlo, <280+50>, KEY_L)
-		HRM(hmr,  <280>,    KEY_R)
-		HRM(hmro, <280+50>, KEY_R)
+		HRM(hml,  &kp, &kp, 280,    KEY_L)
+		HRM(hmlo, &kp, &kp, 280+50, KEY_L)
+		HRM(hmr,  &kp, &kp, 280,    KEY_R)
+		HRM(hmro, &kp, &kp, 280+50, KEY_R)
 
     };
 };

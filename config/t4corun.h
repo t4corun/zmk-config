@@ -64,17 +64,17 @@
  * Behavior Macros
  */
 
-#define HRM(NAME, TERM, POSITIONS) \
+#define HRM(NAME, HOLD, TAP, TERM, POSITIONS) \
     NAME: NAME { \
         compatible = "zmk,behavior-hold-tap"; \
         #binding-cells = <2>; \
         flavor = "balanced"; \
+        bindings = <HOLD>, <TAP>; \
         tapping-term-ms = <TERM>; \
-        hold-trigger-key-positions = POSITIONS; \
-        hold-trigger-on-release; \
+        hold-trigger-key-positions = <POSITIONS>; \
         require-prior-idle-ms = <IDLE_TERM>; \
         quick-tap-ms = <QUICK_TAP_TERM>; \
-        bindings = <&kp>, <&kp>; \
+        hold-trigger-on-release; \
     };
 
 /*
@@ -171,5 +171,5 @@
 #define R36 36
 #define R37 37
 
-#define KEYS_L <L00 L01 L02 L03 L04 L10 L11 L12 L13 L14 L30 L20 L21 L22 L23 L24 L32 L33 L34>
-#define KEYS_R <R05 R06 R07 R08 R09 R15 R16 R17 R18 R19 R25 R26 R27 R28 R29 R39 R35 R36 R37>
+#define KEYS_L L00 L01 L02 L03 L04 L10 L11 L12 L13 L14 L30 L20 L21 L22 L23 L24 L32 L33 L34
+#define KEYS_R R05 R06 R07 R08 R09 R15 R16 R17 R18 R19 R25 R26 R27 R28 R29 R39 R35 R36 R37
