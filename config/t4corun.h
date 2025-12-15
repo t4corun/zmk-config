@@ -16,9 +16,10 @@
 #define TAPPING_TERM   280
 #define QUICK_TAP_TERM 175
 
-#define HRM_TAPPING_TERM    280
-#define HRM_QUICK_TAP_TERM  175
-#define HRM_PRIOR_IDLE_TERM 150
+#define HRM_TAPPING_TERM      280
+#define HRM_TAPPING_TERM_SLOW HRM_TAPPING_TERM + 75
+#define HRM_QUICK_TAP_TERM    175
+#define HRM_PRIOR_IDLE_TERM   150
 
 // layer changes
 #define NUM            &mo _NUMBER
