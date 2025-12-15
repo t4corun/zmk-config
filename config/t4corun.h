@@ -76,33 +76,34 @@
  * HOLDTAP
  */
 
-#define MACRO(NAME, BINDINGS) \
-    NAME: NAME { \
+#define MACRO(NAME, BINDINGS)              \
+    NAME: NAME {                           \
         compatible = "zmk,behavior-macro"; \
-        #binding-cells = <0>; \
-        bindings = <BINDINGS>; \
+        #binding-cells = <0>;              \
+        bindings = <BINDINGS>;             \
     };
 
 //require prior idle ms used to be 125
-#define HOLDTAP(NAME, HOLD, TAP) \
-    NAME: NAME { \
-        compatible = "zmk,behavior-hold-tap"; \
-        flavor = "tap-preferred"; \
-        #binding-cells = <2>; \
-        tapping-term-ms = <TAPPING_TERM>; \
-        quick-tap-ms = <QUICK_TAP_TERM>; \
+#define HOLDTAP(NAME, HOLD)                        \
+    NAME: NAME {                                   \
+        compatible = "zmk,behavior-hold-tap";      \
+        flavor = "tap-preferred";                  \
+        #binding-cells = <2>;                      \
+        tapping-term-ms = <TAPPING_TERM>;          \
+        quick-tap-ms = <QUICK_TAP_TERM>;           \
         require-prior-idle-ms = <PRIOR_IDLE_TERM>; \
-        bindings = <HOLD>, <TAP>; \
+        bindings = <HOLD>, <&kp>;                  \
     };
 
 
-// The 0 0 is required but I do not know the reasoning behind it
-#define MACRO_BRC  &ht_brc 0 0
-#define MACRO_LGT  &ht_lgt 0 0
-#define MACRO_BKT  &ht_bkt 0 0
-#define MACRO_PAR  &ht_par 0 0
-#define MACRO_SQUO &ht_sqt 0 0
-#define MACRO_DQUO &ht_dqt 0 0
+// The 0 0 is required because we are hard coding the bindings but the behavior
+// still wants two parameters
+#define MACRO_BRC  &ht_brc 0 LBRC
+#define MACRO_LGT  &ht_lgt 0 LT
+#define MACRO_BKT  &ht_bkt 0 LBKT
+#define MACRO_PAR  &ht_par 0 LPAR
+#define MACRO_SQUO &ht_sqt 0 SQT
+#define MACRO_DQUO &ht_dqt 0 DQT
 
 /*
  * Position definition for timerless home row mods
