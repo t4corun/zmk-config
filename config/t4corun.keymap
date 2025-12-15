@@ -81,22 +81,22 @@
 / {
     symbols {
         MACRO(mc_brc,           &kp LBRC  &kp RBRC   &kp LEFT)
-        HOLDTAP(ht_brc,         &mc_brc,  &kp LBRC)
+        HOLDTAP(ht_brc,         &mc_brc)
 
         MACRO(mc_lgt,           &kp LT    &kp GT     &kp LEFT)
-        HOLDTAP(ht_lgt,         &mc_lgt,  &kp LT)
+        HOLDTAP(ht_lgt,         &mc_lgt)
 
         MACRO(mc_bkt,           &kp LBKT  &kp RBKT   &kp LEFT)
-        HOLDTAP(ht_bkt,         &mc_bkt,  &kp LBKT)
+        HOLDTAP(ht_bkt,         &mc_bkt)
 
         MACRO(mc_par,           &kp LPAR  &kp RPAR   &kp LEFT)
-        HOLDTAP(ht_par,         &mc_par,  &kp LPAR)
+        HOLDTAP(ht_par,         &mc_par)
 
         MACRO(mc_squo,          &kp SQT    &kp SQT   &kp LEFT)
-        HOLDTAP(ht_sqt,         &mc_squo,  &kp SQT)
+        HOLDTAP(ht_sqt,         &mc_squo)
 
         MACRO(mc_dquo,          &kp DQT    &kp DQT   &kp LEFT)
-        HOLDTAP(ht_dqt,         &mc_dquo,  &kp DQT)
+        HOLDTAP(ht_dqt,         &mc_dquo)
     };
 };
 
