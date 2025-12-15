@@ -66,14 +66,15 @@
 
 
 /*
- * Macros - borrowed from RafaelRomao
+ * Macros - inspired by RafaelRomao
  *
- * This is the only way I found to get my cursor macros to work
- * For example doing '()' and putting the cursor inside
+ * Desire:  Want to be able to hold to type a bracket pair with the cursor inside
+ * Example: tapping to get '(' and hold to get '()' with the cursor inside
  * 
- * What happens is that we define a macro for the tap '(' and a
- * macro for the hold '( ) left'. Then send both macros into the
- * HOLDTAP
+ * Implementation:
+ * - Define macro for the bracket pair
+ * - Define new tap hold behavior with the hold hardcoded to the macro
+ * - Define new keycode with that taphold behaviorks
  */
 
 #define MACRO(NAME, BINDINGS)                      \
