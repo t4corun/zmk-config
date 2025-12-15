@@ -13,9 +13,9 @@
 #define _FUNCTION      5
 
 // Behavior Configuration
-#define TAPPING_TERM          280
-#define QUICK_TAP_TERM        175
-#define PRIOR_IDLE_TERM       150
+#define TAPPING_TERM          200
+#define QUICK_TAP_TERM        150
+#define PRIOR_IDLE_TERM       100
 
 #define HRM_TAPPING_TERM      280
 #define HRM_TAPPING_TERM_SLOW 330
@@ -76,15 +76,15 @@
  * HOLDTAP
  */
 
-#define MACRO(NAME, BINDINGS)              \
-    NAME: NAME {                           \
-        compatible = "zmk,behavior-macro"; \
-        #binding-cells = <0>;              \
-        bindings = <BINDINGS>;             \
+#define MACRO(NAME, BINDINGS)                      \
+    NAME: NAME {                                   \
+        compatible = "zmk,behavior-macro";         \
+        #binding-cells = <0>;                      \
+        bindings = <BINDINGS>;                     \
     };
 
 //require prior idle ms used to be 125
-#define HOLDTAP(NAME, HOLD)                        \
+#define HOLDTAP_MACRO(NAME, HOLD_MACRO)            \
     NAME: NAME {                                   \
         compatible = "zmk,behavior-hold-tap";      \
         flavor = "tap-preferred";                  \
@@ -92,20 +92,9 @@
         tapping-term-ms = <TAPPING_TERM>;          \
         quick-tap-ms = <QUICK_TAP_TERM>;           \
         require-prior-idle-ms = <PRIOR_IDLE_TERM>; \
-        bindings = <HOLD>, <&kp>;                  \
+        bindings = <HOLD_MACRO>, <&kp>;            \
     };
 
-
-#define HOLDTAP2(NAME, HOLD, TAP)                  \
-    NAME: NAME {                                   \
-        compatible = "zmk,behavior-hold-tap";      \
-        flavor = "tap-preferred";                  \
-        #binding-cells = <2>;                      \
-        tapping-term-ms = <TAPPING_TERM>;          \
-        quick-tap-ms = <QUICK_TAP_TERM>;           \
-        require-prior-idle-ms = <PRIOR_IDLE_TERM>; \
-        bindings = <HOLD TAP>;                  \
-    };
 
 // The 0 is required because we are hard coding the macro but the behavior
 // still wants two parameters
