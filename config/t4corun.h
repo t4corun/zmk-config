@@ -104,7 +104,7 @@
         tapping-term-ms = <TAPPING_TERM>;          \
         quick-tap-ms = <QUICK_TAP_TERM>;           \
         require-prior-idle-ms = <PRIOR_IDLE_TERM>; \
-        bindings = <HOLD>, <TAP>;                  \
+        bindings = <HOLD TAP>;                  \
     };
 
 // The 0 is required because we are hard coding the macro but the behavior
