@@ -26,7 +26,7 @@
             tapping-term-ms = <HRM_TAPPING_TERM>;
             quick-tap-ms = <HRM_QUICK_TAP_TERM>;
             bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = < KEYS_R >; // List of keys on the right side of the keyboard
+            hold-trigger-key-positions = <KEYS_R THUMBS>; // List of keys on the right side of the keyboard
             hold-trigger-on-release;
         };
 
@@ -38,7 +38,7 @@
             tapping-term-ms = <HRM_TAPPING_TERM_SLOW>;
             quick-tap-ms = <HRM_QUICK_TAP_TERM>;
             bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = < KEYS_R >; // List of keys on the right side of the keyboard
+            hold-trigger-key-positions = <KEYS_R THUMBS>; // List of keys on the right side of the keyboard
             hold-trigger-on-release;
         };
 
@@ -50,7 +50,7 @@
             tapping-term-ms = <HRM_TAPPING_TERM>;
             quick-tap-ms = <HRM_QUICK_TAP_TERM>;
             bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = < KEYS_L >; // List of keys on the left side of the keyboard
+            hold-trigger-key-positions = <KEYS_L THUMBS>; // List of keys on the left side of the keyboard
             hold-trigger-on-release;
         };
 
@@ -62,7 +62,7 @@
             tapping-term-ms = <HRM_TAPPING_TERM_SLOW>;
             quick-tap-ms = <HRM_QUICK_TAP_TERM>;
             bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = < KEYS_L >; // List of keys on the left side of the keyboard
+            hold-trigger-key-positions = <KEYS_L THUMBS>; // List of keys on the left side of the keyboard
             hold-trigger-on-release;
         };
     };
@@ -107,11 +107,11 @@
 };
 
 
+//              xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx           xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx
+
 / {
     keymap {
         compatible = "zmk,keymap";
-
-//              xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx           xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx
 
         qwerty {
             bindings = <
@@ -124,9 +124,9 @@
 
         gallium {
             bindings = <
-                           &kp Q      &kp W      &kp E      &kp R      &kp T                &kp Y      &kp U      &kp I      &kp O      &kp P
-                           HRML(A,    S,         D,         F)         &kp G                &kp H      HRMR(J,    K,         L,         SQT)
-                FUNC       &kp Z      &kp X      &kp C      &kp V      &kp B                &kp N      &kp M      KO_COMMA   KO_DOT     KO_MINUS   &kp C_MUTE
+                           &kp B      &kp L      &kp D      &kp C      &kp V                &kp Z      &kp Y      &kp O      &kp U      &kp SQT
+                           HRML(N,    R,         S,         T)         &kp G                &kp P      HRMR(H,    A,         E,         I)
+                FUNC       &kp Q      &kp X      &kp M      &kp W      &kp J                &kp K      &kp F      KO_MINUS   KO_COMMA   KO_DOT     &kp C_MUTE
                                                  _BASE_L4________________________           _BASE_R4________________________
             >;
         };

@@ -13,11 +13,12 @@
 #define _FUNCTION      5
 
 // Behavior Configuration
-#define TAPPING_TERM   280
-#define QUICK_TAP_TERM 175
+#define TAPPING_TERM          280
+#define QUICK_TAP_TERM        175
+#define PRIOR_IDLE_TERM       150
 
 #define HRM_TAPPING_TERM      280
-#define HRM_TAPPING_TERM_SLOW 355
+#define HRM_TAPPING_TERM_SLOW 330
 #define HRM_QUICK_TAP_TERM    175
 #define HRM_PRIOR_IDLE_TERM   150
 
@@ -64,7 +65,6 @@
 #define _NONE_5_______________________________________________ ____xx____ ____xx____ ____xx____ ____xx____ ____xx____
 
 
-
 /*
  * Macros - borrowed from RafaelRomao
  *
@@ -80,8 +80,6 @@
     NAME: NAME { \
         compatible = "zmk,behavior-macro"; \
         #binding-cells = <0>; \
-        wait-ms = <5>; \
-        tap-ms = <5>; \
         bindings = <BINDINGS>; \
     };
 
@@ -93,7 +91,7 @@
         #binding-cells = <2>; \
         tapping-term-ms = <TAPPING_TERM>; \
         quick-tap-ms = <QUICK_TAP_TERM>; \
-        require-prior-idle-ms = <50>; \
+        require-prior-idle-ms = <PRIOR_IDLE_TERM>; \
         bindings = <HOLD>, <TAP>; \
     };
 
@@ -111,53 +109,62 @@
  * Borred from urob and caksoylar
  *
  * The naming matches the totem's matrx-transform positions
+ *
+ *   ╭─────────────────────────┬─────────────────────────╮
+ *   │     LT4 LT3 LT2 LT1 LT0 │ RT0 RT1 RT2 RT3 RT4     │
+ *   │     LM4 LM3 LM2 LM1 LM0 │ RM0 RM1 RM2 RM3 RM4     │
+ *   │ LB5 LB4 LB3 LB2 LB1 LB0 │ RB0 RB1 RB2 RB3 RB4 RB5 │
+ *   ╰───────────╮ LH2 LH1 LH0 │ RH0 RH1 RH2 ╭───────────╯
+ *               ╰─────────────┴─────────────╯
  */
 
-#define L00 0
-#define L01 1
-#define L02 2
-#define L03 3
-#define L04 4
+#define LT4 0
+#define LT3 1
+#define LT2 2
+#define LT1 3
+#define LT0 4
 
-#define R05 5
-#define R06 6
-#define R07 7
-#define R08 8
-#define R09 9
+#define RT0 5
+#define RT1 6
+#define RT2 7
+#define RT3 8
+#define RT4 9
 
-#define L10 10
-#define L11 11
-#define L12 12
-#define L13 13
-#define L14 14
+#define LM4 10
+#define LM3 11
+#define LM2 12
+#define LM1 13
+#define LM0 14
 
-#define R15 15
-#define R16 16
-#define R17 17
-#define R18 18
-#define R19 19
+#define RM0 15
+#define RM1 16
+#define RM2 17
+#define RM3 18
+#define RM4 19
 
-#define L30 20
-#define L20 21
-#define L21 22
-#define L22 23
-#define L23 24
-#define L24 25
+#define LB5 20
+#define LB4 21
+#define LB3 22
+#define LB2 23
+#define LB1 24
+#define LB0 25
 
-#define R25 26
-#define R26 27
-#define R27 28
-#define R28 29
-#define R29 30
-#define R39 31
+#define RB0 26
+#define RB1 27
+#define RB2 28
+#define RB3 29
+#define RB4 30
+#define RB5 31
 
-#define L32 32
-#define L33 33
-#define L34 34
+#define LH2 32
+#define LH1 33
+#define LH0 34
 
-#define R35 35
-#define R36 36
-#define R37 37
+#define RH0 35
+#define RH1 36
+#define RH2 37
 
-#define KEYS_L L00 L01 L02 L03 L04 L10 L11 L12 L13 L14 L30 L20 L21 L22 L23 L24 L32 L33 L34
-#define KEYS_R R05 R06 R07 R08 R09 R15 R16 R17 R18 R19 R25 R26 R27 R28 R29 R39 R35 R36 R37
+#define KEYS_L LT4 LT3 LT2 LT1 LT0 LM4 LM3 LM2 LM1 LM0 LB5 LB4 LB3 LB2 LB1 LB0
+#define KEYS_R RT0 RT1 RT2 RT3 RT4 RM0 RM1 RM2 RM3 RM4 RB0 RB1 RB2 RB3 RB4 RB5
+#define THUMBS LH2 LH1 LH0 RH0 RH1 RH2
+
