@@ -64,17 +64,17 @@
  * Behavior Macros
  */
 
-#define HRM(NAME, TAP_TERM, KEY_POSITIONS) \
+#define HRM(NAME, TERM, POSITIONS) \
     NAME: NAME { \
         compatible = "zmk,behavior-hold-tap"; \
         #binding-cells = <2>; \
         flavor = "balanced"; \
+        tapping-term-ms = <TERM>; \
+        hold-trigger-key-positions = <POSITIONS>; \
+        hold-trigger-on-release; \
         require-prior-idle-ms = <IDLE_TERM>; \
-        tapping-term-ms = <TAP_TERM>; \
         quick-tap-ms = <QUICK_TAP_TERM>; \
         bindings = <&kp>, <&kp>; \
-        hold-trigger-key-positions = <KEY_POSITIONS>; \
-        hold-trigger-on-release; \
     };
 
 /*
