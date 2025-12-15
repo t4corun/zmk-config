@@ -116,13 +116,13 @@
             require-prior-idle-ms = <HRM_PRIOR_IDLE_TERM>;
             tapping-term-ms = <HRM_TAPPING_TERM_SLOW>;
             quick-tap-ms = <HRM_QUICK_TAP_TERM>;
-            bindings = <&>, <&kp>;
+            bindings = <&mc_lgt>, <&kp>;
         };
 	};
 };
 
 
-#define TEST &tht mc_lgt LT
+#define TEST &tht 0 LT
 
 //              xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx           xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx
 
