@@ -30,18 +30,6 @@
             hold-trigger-on-release;
         };
 
-        hmlo: home_row_mod_left_outer {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "balanced";
-            require-prior-idle-ms = <HRM_PRIOR_IDLE_TERM>;
-            tapping-term-ms = <HRM_TAPPING_TERM_SLOW>;
-            quick-tap-ms = <HRM_QUICK_TAP_TERM>;
-            bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <KEYS_R THUMBS>; // List of keys on the right side of the keyboard
-            hold-trigger-on-release;
-        };
-
         hmr: home_row_mod_right {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -54,17 +42,6 @@
             hold-trigger-on-release;
         };
 
-        hmro: home_row_mod_right_outer {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "balanced";
-            require-prior-idle-ms = <HRM_PRIOR_IDLE_TERM>;
-            tapping-term-ms = <HRM_TAPPING_TERM_SLOW>;
-            quick-tap-ms = <HRM_QUICK_TAP_TERM>;
-            bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <KEYS_L THUMBS>; // List of keys on the left side of the keyboard
-            hold-trigger-on-release;
-        };
     };
 };
 

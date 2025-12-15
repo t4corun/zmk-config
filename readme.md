@@ -10,7 +10,7 @@ My keymap is inspired by Miryoku and designed with SQL and Powershell in mind. I
 
 - Dongle support
 - Timerless homerow mods
-- Macros for bracket symbols
+- Macros for brackets (e.g. type {} and placed the cursor inside)
 - Enables Dongle RGB LED to show wireless connectivity and battery status
 
 ## Learnings

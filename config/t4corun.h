@@ -18,7 +18,6 @@
 #define PRIOR_IDLE_TERM       100
 
 #define HRM_TAPPING_TERM      280
-#define HRM_TAPPING_TERM_SLOW 330
 #define HRM_QUICK_TAP_TERM    175
 #define HRM_PRIOR_IDLE_TERM   150
 
@@ -34,8 +33,8 @@
 #define W_SNIP         &kp LG(LS(S))
 
 // homerow mods
-#define HRML(k1, k2, k3, k4) &hmlo LGUI k1   &hmlo LALT k2   &hml  LCTRL k3  &hml  LSHFT k4
-#define HRMR(k1, k2, k3, k4) &hmr  RSHFT k1  &hmr  RCTRL k2  &hmro RALT k3   &hmro RGUI  k4
+#define HRML(k1, k2, k3, k4) &hml LGUI k1   &hml LALT k2   &hml LCTRL k3  &hml LSHFT k4
+#define HRMR(k1, k2, k3, k4) &hmr RSHFT k1  &hmr RCTRL k2  &hmr RALT k3   &hmr RGUI  k4
 
 // key overrides
 #define KO_COMMA             &ht LPAR      COMMA
@@ -57,7 +56,7 @@
 #define __________                                             &trans
 #define ____xx____                                             &none
 #define _BASE_L4________________________                       &kp TAB    NUM        &kp LSHFT
-#define _BASE_R4________________________                       &kp SPACE  NAV        &kp BSPC
+#define _BASE_R4________________________                       &kp SPACE  NAV        &key_repeat
 #define _LAYER_TRANS____________________                       ____xx____ __________ ____xx____
 #define _MODS_GACS_________________________________            &kp LGUI   &kp LALT   &kp LCTRL  &kp LSHFT
 #define _MODS_SCAG_________________________________            &kp RSHFT  &kp RCTRL  &kp RALT   &kp RGUI
@@ -108,9 +107,6 @@
 
 /*
  * Position definition for timerless home row mods
- * Borred from urob and caksoylar
- *
- * The naming matches the totem's matrx-transform positions
  *
  *   ╭─────────────────────────┬─────────────────────────╮
  *   │     LT4 LT3 LT2 LT1 LT0 │ RT0 RT1 RT2 RT3 RT4     │
