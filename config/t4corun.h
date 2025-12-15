@@ -77,8 +77,6 @@
         bindings = <&kp>, <&kp>; \
     };
 
-hml: hml {         compatible = "zmk,behavior-hold-tap";         #binding-cells = <2>;         flavor = "balanced";         tapping-term-ms = <TERM>; 
-
 /*
  * Macros - borrowed from RafaelRomao
  *
