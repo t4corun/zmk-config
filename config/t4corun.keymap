@@ -21,7 +21,7 @@
         hml: home_row_mod_left {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "balanced";
+            flavor = "tap-preferred";
             require-prior-idle-ms = <HRM_PRIOR_IDLE_TERM>;
             tapping-term-ms = <HRM_TAPPING_TERM>;
             quick-tap-ms = <HRM_QUICK_TAP_TERM>;
@@ -33,7 +33,7 @@
         hmr: home_row_mod_right {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "balanced";
+            flavor = "tap-preferred";
             require-prior-idle-ms = <HRM_PRIOR_IDLE_TERM>;
             tapping-term-ms = <HRM_TAPPING_TERM>;
             quick-tap-ms = <HRM_QUICK_TAP_TERM>;
@@ -106,7 +106,7 @@
             bindings = <
                            ____xx____ &kp HOME   &kp UP     &kp END    &kp PG_UP            &kp INS    &kp K_APP  ____xx____ ____xx____   ____xx____
                            &caps_word &kp LEFT   &kp DOWN   &kp RIGHT  &kp PG_DN            &kp BSPC   _MODS_SCAG_________________________________
-                __________ _SHORTCUTS_UCCPR______________________________________           &kp DEL    ____xx____ ____xx____ &kp C_VOL_DN &kp C_VOL_UP __________
+                __________ _SHORTCUTS_UCCPR______________________________________           &kp DEL    ____xx____ &kp C_VOL_DN &kp C_VOL_UP ____xx____ __________
                                                  &kp TAB    __________ &kp ENTER            _LAYER_TRANS____________________
             >;
         };

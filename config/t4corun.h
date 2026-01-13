@@ -15,11 +15,10 @@
 // Behavior Configuration
 #define TAPPING_TERM          200
 #define QUICK_TAP_TERM        150
-#define PRIOR_IDLE_TERM       100
 
 #define HRM_TAPPING_TERM      280
 #define HRM_QUICK_TAP_TERM    175
-#define HRM_PRIOR_IDLE_TERM   150
+#define HRM_PRIOR_IDLE_TERM   130   // 10500/80 wpm
 
 // layer changes
 #define NUM            &mo _NUMBER
