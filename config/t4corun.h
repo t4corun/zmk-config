@@ -18,7 +18,7 @@
 
 #define HRM_TAPPING_TERM      280
 #define HRM_QUICK_TAP_TERM    175
-#define HRM_PRIOR_IDLE_TERM   130   // 10500/80 wpm
+#define HRM_PRIOR_IDLE_TERM   130
 
 // layer changes
 #define NUM            &mo _NUMBER
