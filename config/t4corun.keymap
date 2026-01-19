@@ -91,7 +91,7 @@
                                                  _BASE_L4________________________           _BASE_R4________________________
             >;
         };
-d
+
         gallium {
 			display-name = "Gallium";
             bindings = <
