@@ -83,7 +83,7 @@
         compatible = "zmk,keymap";
 
         qwerty {
-			display-name = "Qwerty";
+			display-name = "Base";
             bindings = <
                            &kp Q      &kp W      &kp E      &kp R      &kp T                &kp Y      &kp U      &kp I      &kp O      &kp P
                            HRML(A,    S,         D,         F)         &kp G                &kp H      HRMR(J,    K,         L,         SQT)
@@ -91,7 +91,7 @@
                                                  _BASE_L4________________________           _BASE_R4________________________
             >;
         };
-
+d
         gallium {
 			display-name = "Gallium";
             bindings = <
@@ -103,7 +103,7 @@
         };
 
         navigation {
-			display-name = "Navigation";
+			display-name = "Nav";
             bindings = <
                            ____xx____ &kp HOME   &kp UP     &kp END    &kp PG_UP            &kp INS    &kp K_APP  ____xx____ ____xx____   ____xx____
                            &caps_word &kp LEFT   &kp DOWN   &kp RIGHT  &kp PG_DN            &kp BSPC   _MODS_SCAG_________________________________
@@ -133,7 +133,7 @@
         };
 
         function {
-			display-name = "Function";
+			display-name = "Func";
             bindings = <
                            BT1        BT2        BT3        BT4        BT5                  ____xx____ &kp F7     &kp F8     &kp F9     &kp F10
                            _MODS_GACS_________________________________ ____xx____           ____xx____ &kp F4     &kp F5     &kp F6     &kp F11
