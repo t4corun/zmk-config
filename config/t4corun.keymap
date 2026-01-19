@@ -103,7 +103,7 @@
         };
 
         navigation {
-			display-name = "Nav";
+			display-name = "Navigation";
             bindings = <
                            ____xx____ &kp HOME   &kp UP     &kp END    &kp PG_UP            &kp INS    &kp K_APP  ____xx____ ____xx____   ____xx____
                            &caps_word &kp LEFT   &kp DOWN   &kp RIGHT  &kp PG_DN            &kp BSPC   _MODS_SCAG_________________________________
@@ -113,7 +113,7 @@
         };
 
         number {
-			display-name = "Num";
+			display-name = "Number";
             bindings = <
                            &kp ESC    W_SNIP     ____xx____ ____xx____ ____xx____           &kp COMMA  &kp N7     &kp N8     &kp N9     ____xx____
                            _MODS_GACS_________________________________ ____xx____           &kp DOT    &kp N4     &kp N5     &kp N6     ____xx____
@@ -123,7 +123,7 @@
         };
 
         symbol {
-			display-name = "Sym";
+			display-name = "Symbol";
             bindings = <
                            &kp CARET  &kp AMPS   &kp AT     &kp DLLR   &kp GRAVE            &kp TILDE  &kp POUND  &kp ASTRK  &kp PLUS   MACRO_DQUO
                            &kp PRCNT  MACRO_BRC  &kp RBRC   &kp PIPE   &kp SEMI             &kp COLON  &kp EQUAL  MACRO_BKT  &kp RBKT   MACRO_SQUO
@@ -133,7 +133,7 @@
         };
 
         function {
-			display-name = "Func";
+			display-name = "Function";
             bindings = <
                            BT1        BT2        BT3        BT4        BT5                  ____xx____ &kp F7     &kp F8     &kp F9     &kp F10
                            _MODS_GACS_________________________________ ____xx____           ____xx____ &kp F4     &kp F5     &kp F6     &kp F11
