@@ -4,11 +4,10 @@
  * SPDX-License-Identifier: MIT
  */
 
-#include <dt-bindings/zmk/matrix_transform.h>
 #include "totem-layouts.dtsi"
 
 &physical_layout0 {
-    transform = <&default_transform>;
+    transform = <&dongle_transform>;
 };
 
 / {
@@ -24,7 +23,7 @@
         events = <0>;
     };
 
-    default_transform: keymap_transform_0 {
+    dongle_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";
         columns = <10>;
         rows = <4>;
