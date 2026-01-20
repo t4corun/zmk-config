@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: MIT
  */
 
+#include "totem.dtsi"
 #include "totem-layouts.dtsi"
 
 &physical_layout0 {
