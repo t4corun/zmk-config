@@ -6,7 +6,7 @@
 
 // put the default base layers first
 #define _QWERTY        0
-#define _GALLIUM       1
+#define _GRAPHITE      1
 #define _NAVIGATION    2
 #define _NUMBER        3
 #define _SYMBOL        4
@@ -22,12 +22,12 @@
 #define HRM_PRIOR_IDLE_TERM   130
 
 // layer changes
-#define NUM            &mo _NUMBER
-#define NAV            &mo _NAVIGATION
-#define FUNC           &mo _FUNCTION
+#define NUMBER         &mo _NUMBER
+#define NAVIGATION     &mo _NAVIGATION
+#define FUNCTION       &mo _FUNCTION
 
 #define QWERTY         &to _QWERTY
-#define GALLIUM        &to _GALLIUM
+#define GRAPHITE       &to _GRAPHITE
 
 // windows shortcuts
 #define W_SNIP         &kp LG(LS(S))
@@ -38,8 +38,11 @@
 
 // key overrides
 #define KO_COMMA             &ht LPAR      COMMA
+#define KO_COMMAG            &ht RPAR      COMMA
 #define KO_DOT               &ht RPAR      DOT
+#define KO_DOTG              &ht RPAR      DOT
 #define KO_MINUS             &ht UNDER     MINUS
+#define KO_SQT               &ht DQT       SQT
 
 // wireless connectivity and output modes
 #define BT1                  &bt BT_SEL 0
@@ -61,8 +64,8 @@
 // keymap macros
 #define __________                                             &trans
 #define ____xx____                                             &none
-#define _BASE_L4________________________                       &kp TAB    NUM        &kp LSHFT
-#define _BASE_R4________________________                       &kp SPACE  NAV        &key_repeat
+#define _BASE_L4________________________                       &mkp MB1   NUMBER     &kp LSHFT
+#define _BASE_R4________________________                       &kp SPACE  NAVIGATION &mkp MB4
 #define _LAYER_TRANS____________________                       ____xx____ __________ ____xx____
 #define _MODS_GACS_________________________________            &kp LGUI   &kp LALT   &kp LCTRL  &kp LSHFT
 #define _MODS_SCAG_________________________________            &kp RSHFT  &kp RCTRL  &kp RALT   &kp RGUI
