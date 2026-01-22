@@ -103,12 +103,32 @@
             >;
         };
 
+        game {
+			display-name = "Game";
+            bindings = <
+                           &kp TAB    &kp Q      &kp W      &kp E      &kp R                _NONE_5_______________________________________________
+                           &kp LCTRL  &kp A      &kp S      &kp D      &kp F                _NONE_5_______________________________________________
+                GAMENUM    &kp Z      &kp X      &kp C      &kp V      &kp B                ____xx____  ____xx____ VOL_DOWN   VOL_UP     ____xx____ &kp C_MUTE
+                                                 &kp ENTER  &kp SPACE  &kp LSHIFT           _BASE_R4________________________
+            >;
+        };
+
+        gamenum {
+			display-name = "GameNum";
+            bindings = <
+                           &kp T      &kp N7     &kp N8     &kp N9     &kp ESC              _NONE_5_______________________________________________
+                           &kp G      &kp N1     &kp N2     &kp N3     &kp GRAVE            _NONE_5_______________________________________________
+                __________ ____xx____ &kp N4     &kp N5     &kp N6     ____xx____           _NONE_5_______________________________________________ ____xx____
+                                                 ____xx____ ____xx____ &kp LALT             QWERTY     GRAPHITE   ____xx____
+            >;
+        };
+
         navigation {
 			display-name = "Nav";
             bindings = <
-                           ____xx____ &kp HOME   &kp UP     &kp END    &kp PG_UP            &kp INS    &kp K_APP  ____xx____ ____xx____   ____xx____
+                           ____xx____ &kp HOME   &kp UP     &kp END    &kp PG_UP            &kp INS    &kp K_APP  ____xx____ ____xx____ ____xx____
                            &caps_word &kp LEFT   &kp DOWN   &kp RIGHT  &kp PG_DN            &kp BSPC   _MODS_SCAG_________________________________
-                __________ _SHORTCUTS_UCCPR______________________________________           &kp DEL    ____xx____ &kp C_VOL_DN &kp C_VOL_UP ____xx____ __________
+                __________ _SHORTCUTS_UCCPR______________________________________           &kp DEL    ____xx____ VOL_DOWN   VOL_UP     ____xx____ __________
                                                  &kp TAB    __________ &kp ENTER            _LAYER_TRANS____________________
             >;
         };
@@ -139,7 +159,7 @@
                            BT1        BT2        BT3        BT4        BT5                  ____xx____ &kp F7     &kp F8     &kp F9     &kp F10
                            _MODS_GACS_________________________________ BT6                  ____xx____ &kp F4     &kp F5     &kp F6     &kp F11
                 __________ ____xx____ OUTPUT_BLE OUTPUT_USB ____xx____ BT_CLEAR             ____xx____ &kp F1     &kp F2     &kp F3     &kp F12    __________
-                                                 YADS_SCR   YADS_DOWN  YADS_UP              QWERTY     GRAPHITE   ____xx____
+                                                 YADS_SCR   YADS_DOWN  YADS_UP              QWERTY     GRAPHITE   GAME
             >;
         };
     };

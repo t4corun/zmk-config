@@ -7,10 +7,12 @@
 // put the default base layers first
 #define _QWERTY        0
 #define _GRAPHITE      1
-#define _NAVIGATION    2
-#define _NUMBER        3
-#define _SYMBOL        4
-#define _FUNCTION      5
+#define _GAME          2
+#define _GAMENUM       3
+#define _NAVIGATION    4
+#define _NUMBER        5
+#define _SYMBOL        6
+#define _FUNCTION      7
 
 // Behavior Configuration
 #define TAPPING_TERM          200
@@ -25,9 +27,11 @@
 #define NUMBER         &mo _NUMBER
 #define NAVIGATION     &mo _NAVIGATION
 #define FUNCTION       &mo _FUNCTION
+#define GAMENUM        &mo _GAMENUM
 
 #define QWERTY         &to _QWERTY
 #define GRAPHITE       &to _GRAPHITE
+#define GAME           &to _GAME
 
 // windows shortcuts
 #define W_SNIP         &kp LG(LS(S))
@@ -43,6 +47,10 @@
 #define KO_DOTG              &ht RPAR      DOT
 #define KO_MINUS             &ht UNDER     MINUS
 #define KO_SQT               &ht DQT       SQT
+
+// other shortcuts
+#define VOL_UP               &kp C_VOL_UP
+#define VOL_DOWN             &kp C_VOL_DN
 
 // wireless connectivity and output modes
 #define BT1                  &bt BT_SEL 0
