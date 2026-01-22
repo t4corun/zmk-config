@@ -19,11 +19,11 @@
 #
 ---
 include:
-  - board: seeeduino_xiao_ble
+  - board: xiao_ble
     shield: totem_left
-  - board: seeeduino_xiao_ble
+  - board: xiao_ble
     shield: totem_right
-  - board: seeeduino_xiao_ble
+  - board: xiao_ble
     shield: totem_dongle dongle_screen
-  - board: seeeduino_xiao_ble
+  - board: xiao_ble
     shield: settings_reset
