@@ -44,13 +44,14 @@
 #define KO_COMMA             &ht LPAR      COMMA
 #define KO_COMMAG            &ht RPAR      COMMA
 #define KO_DOT               &ht RPAR      DOT
-#define KO_DOTG              &ht RPAR      DOT
+#define KO_DOTG              &ht LPAR      DOT
 #define KO_MINUS             &ht UNDER     MINUS
 #define KO_SQT               &ht DQT       SQT
 
 // other shortcuts
 #define VOL_UP               &kp C_VOL_UP
 #define VOL_DOWN             &kp C_VOL_DN
+#define VOL_MUTE             &kp C_MUTE
 
 // wireless connectivity and output modes
 #define BT1                  &bt BT_SEL 0
