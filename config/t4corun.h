@@ -47,10 +47,16 @@
 #define BT3                  &bt BT_SEL 2
 #define BT4                  &bt BT_SEL 3
 #define BT5                  &bt BT_SEL 4
+#define BT6                  &bt BT_SEL 5
 
 #define BT_CLEAR             &bt BT_CLR
 #define OUTPUT_BLE           &out OUT_BLE
 #define OUTPUT_USB           &out OUT_USB
+
+// YADS Screen Control
+#define YADS_SCR             &kp F22
+#define YADS_DOWN            &kp F23
+#define YADS_UP              &kp F24
 
 // keymap macros
 #define __________                                             &trans
