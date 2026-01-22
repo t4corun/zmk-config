@@ -75,8 +75,8 @@
 #define _BASE_L4________________________                       &mkp MB1   NUMBER     &kp LSHFT
 #define _BASE_R4________________________                       &kp SPACE  NAVIGATION &mkp MB4
 #define _LAYER_TRANS____________________                       ____xx____ __________ ____xx____
-#define _MODS_GACS_________________________________            &kp LGUI   &kp LALT   &kp LCTRL  &kp LSHFT
-#define _MODS_SCAG_________________________________            &kp RSHFT  &kp RCTRL  &kp RALT   &kp RGUI
+#define _MODS_GACS_________________________________            &sk LGUI   &sk LALT   &sk LCTRL  &sk LSHFT
+#define _MODS_SCAG_________________________________            &sk RSHFT  &sk RCTRL  &sk RALT   &sk RGUI
 #define _SHORTCUTS_UCCPR______________________________________ &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LC(Y)
 #define _NONE_5_______________________________________________ ____xx____ ____xx____ ____xx____ ____xx____ ____xx____
 
