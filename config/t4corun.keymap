@@ -136,8 +136,8 @@
         number {
 			display-name = "number";
             bindings = <
-                           &kp ESC    W_SNIP     ____xx____ ____xx____ ____xx____           &kp COMMA  &kp N7     &kp N8     &kp N9     ____xx____
-                           _MODS_GACS_________________________________ ____xx____           &kp DOT    &kp N4     &kp N5     &kp N6     ____xx____
+                           &kp ESC    W_SNIP     &mkp MB3   &mkp MB4   ____xx____           &kp COMMA  &kp N7     &kp N8     &kp N9     ____xx____
+                           _MODS_GACS_________________________________ &mkp MB2             &kp DOT    &kp N4     &kp N5     &kp N6     ____xx____
                 __________ _SHORTCUTS_UCCPR______________________________________           &kp MINUS  &kp N1     &kp N2     &kp N3     ____xx____ __________
                                                  _LAYER_TRANS____________________           &kp N0     __________ &mkp MB5
             >;
