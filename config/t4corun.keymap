@@ -84,7 +84,7 @@
         compatible = "zmk,keymap";
 
         qwerty {
-			display-name = "Totem";
+			display-name = "totem";
             bindings = <
                            &kp Q      &kp W      &kp E      &kp R      &kp T                &kp Y      &kp U      &kp I      &kp O      &kp P
                            HRML(A,    S,         D,         F)         &kp G                &kp H      HRMR(J,    K,         L,         SQT)
@@ -94,7 +94,7 @@
         };
 
         gallium {
-			display-name = "Graphite";
+			display-name = "graphite";
             bindings = <
                            &kp B      &kp L      &kp D      &kp W      &kp Z                KO_SQT     &kp F      &kp O      &kp U      &kp J
                            HRML(N,    R,         T,         S)         &kp G                &kp Y      HRMR(H,    A,         E,         I)
@@ -104,27 +104,27 @@
         };
 
         game {
-			display-name = "Game";
+			display-name = "game";
             bindings = <
                            &kp TAB    &kp Q      &kp W      &kp E      &kp R                _NONE_5_______________________________________________
                            &kp LCTRL  &kp A      &kp S      &kp D      &kp F                _NONE_5_______________________________________________
-                GAMENUM    &kp Z      &kp X      &kp C      &kp V      &kp B                ____xx____  ____xx____ VOL_DOWN   VOL_UP     ____xx____ VOL_MUTE
+                GAMENUM    &kp Z      &kp X      &kp C      &kp V      &kp B                ____xx____  ____xx____ VOL_DOWN   VOL_UP    VOL_MUTE   FUNCTION
                                                  &kp ENTER  &kp SPACE  &kp LSHIFT           _BASE_R4________________________
             >;
         };
 
         gamenum {
-			display-name = "Game Num";
+			display-name = "g.numpad";
             bindings = <
-                           &kp T      &kp N7     &kp N8     &kp N9     &kp ESC              _NONE_5_______________________________________________
-                           &kp G      &kp N1     &kp N2     &kp N3     &kp GRAVE            _NONE_5_______________________________________________
-                __________ ____xx____ &kp N4     &kp N5     &kp N6     ____xx____           _NONE_5_______________________________________________ ____xx____
-                                                 ____xx____ ____xx____ &kp LALT             QWERTY     GRAPHITE   ____xx____
+                           &kp N7     &kp N8     &kp N9     &kp T      &kp ESC              _NONE_5_______________________________________________
+                           &kp N1     &kp N2     &kp N3     &kp G      &kp GRAVE            _NONE_5_______________________________________________
+                __________ &kp N4     &kp N5     &kp N6     ____xx____ ____xx____           _NONE_5_______________________________________________ ____xx____
+                                                 &kp LALT   ____xx____ ____xx____           QWERTY     GRAPHITE   ____xx____
             >;
         };
 
         navigation {
-			display-name = "Navigation";
+			display-name = "navigation";
             bindings = <
                            ____xx____ &kp HOME   &kp UP     &kp END    &kp PG_UP            &kp INS    &kp K_APP  ____xx____ ____xx____ ____xx____
                            &caps_word &kp LEFT   &kp DOWN   &kp RIGHT  &kp PG_DN            &kp BSPC   _MODS_SCAG_________________________________
@@ -134,7 +134,7 @@
         };
 
         number {
-			display-name = "Number";
+			display-name = "number";
             bindings = <
                            &kp ESC    W_SNIP     ____xx____ ____xx____ ____xx____           &kp COMMA  &kp N7     &kp N8     &kp N9     ____xx____
                            _MODS_GACS_________________________________ ____xx____           &kp DOT    &kp N4     &kp N5     &kp N6     ____xx____
@@ -144,7 +144,7 @@
         };
 
         symbol {
-			display-name = "Symbol";
+			display-name = "symbol";
             bindings = <
                            &kp CARET  &kp AMPS   &kp AT     &kp DLLR   &kp GRAVE            &kp TILDE  &kp POUND  &kp ASTRK  &kp PLUS   MACRO_DQUO
                            &kp PRCNT  MACRO_BRC  &kp RBRC   &kp PIPE   &kp SEMI             &kp COLON  &kp EQUAL  MACRO_BKT  &kp RBKT   MACRO_SQUO
@@ -154,7 +154,7 @@
         };
 
         function {
-			display-name = "Function";
+			display-name = "function";
             bindings = <
                            BT1        BT2        BT3        BT4        BT5                  ____xx____ &kp F7     &kp F8     &kp F9     &kp F10
                            _MODS_GACS_________________________________ BT6                  ____xx____ &kp F4     &kp F5     &kp F6     &kp F11
