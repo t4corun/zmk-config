@@ -6,11 +6,13 @@
 
 // put the default base layers first
 #define _QWERTY        0
-#define _GALLIUM       1
-#define _NAVIGATION    2
-#define _NUMBER        3
-#define _SYMBOL        4
-#define _FUNCTION      5
+#define _GRAPHITE      1
+#define _GAME          2
+#define _GAMENUM       3
+#define _NAVIGATION    4
+#define _NUMBER        5
+#define _SYMBOL        6
+#define _FUNCTION      7
 
 // Behavior Configuration
 #define TAPPING_TERM          200
@@ -22,12 +24,14 @@
 #define HRM_PRIOR_IDLE_TERM   130
 
 // layer changes
-#define NUM            &mo _NUMBER
-#define NAV            &mo _NAVIGATION
-#define FUNC           &mo _FUNCTION
+#define NUMBER         &mo _NUMBER
+#define NAVIGATION     &mo _NAVIGATION
+#define FUNCTION       &mo _FUNCTION
+#define GAMENUM        &mo _GAMENUM
 
 #define QWERTY         &to _QWERTY
-#define GALLIUM        &to _GALLIUM
+#define GRAPHITE       &to _GRAPHITE
+#define GAME           &to _GAME
 
 // windows shortcuts
 #define W_SNIP         &kp LG(LS(S))
@@ -38,8 +42,16 @@
 
 // key overrides
 #define KO_COMMA             &ht LPAR      COMMA
+#define KO_COMMAG            &ht RPAR      COMMA
 #define KO_DOT               &ht RPAR      DOT
+#define KO_DOTG              &ht LPAR      DOT
 #define KO_MINUS             &ht UNDER     MINUS
+#define KO_SQT               &ht DQT       SQT
+
+// other shortcuts
+#define VOL_UP               &kp C_VOL_UP
+#define VOL_DOWN             &kp C_VOL_DN
+#define VOL_MUTE             &kp C_MUTE
 
 // wireless connectivity and output modes
 #define BT1                  &bt BT_SEL 0
@@ -47,19 +59,25 @@
 #define BT3                  &bt BT_SEL 2
 #define BT4                  &bt BT_SEL 3
 #define BT5                  &bt BT_SEL 4
+#define BT6                  &bt BT_SEL 5
 
 #define BT_CLEAR             &bt BT_CLR
 #define OUTPUT_BLE           &out OUT_BLE
 #define OUTPUT_USB           &out OUT_USB
 
+// YADS Screen Control
+#define YADS_SCR             &kp F22
+#define YADS_DOWN            &kp F23
+#define YADS_UP              &kp F24
+
 // keymap macros
 #define __________                                             &trans
 #define ____xx____                                             &none
-#define _BASE_L4________________________                       &kp TAB    NUM        &kp LSHFT
-#define _BASE_R4________________________                       &kp SPACE  NAV        &key_repeat
+#define _BASE_L4________________________                       &mkp MB1   NUMBER     &kp LSHFT
+#define _BASE_R4________________________                       &kp SPACE  NAVIGATION &mkp MB4
 #define _LAYER_TRANS____________________                       ____xx____ __________ ____xx____
-#define _MODS_GACS_________________________________            &kp LGUI   &kp LALT   &kp LCTRL  &kp LSHFT
-#define _MODS_SCAG_________________________________            &kp RSHFT  &kp RCTRL  &kp RALT   &kp RGUI
+#define _MODS_GACS_________________________________            &sk LGUI   &sk LALT   &sk LCTRL  &sk LSHFT
+#define _MODS_SCAG_________________________________            &sk RSHFT  &sk RCTRL  &sk RALT   &sk RGUI
 #define _SHORTCUTS_UCCPR______________________________________ &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LC(Y)
 #define _NONE_5_______________________________________________ ____xx____ ____xx____ ____xx____ ____xx____ ____xx____
 
