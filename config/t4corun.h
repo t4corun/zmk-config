@@ -62,8 +62,8 @@
 // keymap macros
 #define __________                                             &trans
 #define ____xx____                                             &none
-#define _BASE_L4________________________                       &mkp MB1   NAVIGATION     &sk LSHFT
-#define _BASE_R4________________________                       &kp SPACE  NUMBER         &kp ENTER
+#define _BASE_L4________________________                       &mkp MB1   NUMBER     &sk LSHFT
+#define _BASE_R4________________________                       &kp SPACE  NAVIGATION &kp ENTER
 #define _LAYER_TRANS____________________                       ____xx____ __________ ____xx____
 #define _MODS_GACS_________________________________            &sk LGUI   &sk LALT   &sk LCTRL  &sk LSHFT
 #define _MODS_SCAG_________________________________            &sk RSHFT  &sk RCTRL  &sk RALT   &sk RGUI
