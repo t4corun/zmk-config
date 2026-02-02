@@ -7,38 +7,35 @@
 // put the default base layers first
 #define _QWERTY        0
 #define _GRAPHITE      1
-#define _GAME          2
-#define _GAMENUM       3
-#define _NAVIGATION    4
-#define _NUMBER        5
-#define _SYMBOL        6
-#define _FUNCTION      7
+#define _NAVIGATION    2
+#define _NUMBER        3
+#define _SYMBOL        4
+#define _FUNCTION      5
 
 // Behavior Configuration
 #define TAPPING_TERM          200
 #define QUICK_TAP_TERM        150
 #define PRIOR_IDLE_TERM       100
 
-#define HRM_TAPPING_TERM      280
-#define HRM_QUICK_TAP_TERM    175
-#define HRM_PRIOR_IDLE_TERM   130
+//#define HRM_TAPPING_TERM      280
+//#define HRM_QUICK_TAP_TERM    175
+//#define HRM_PRIOR_IDLE_TERM   130
 
 // layer changes
 #define NUMBER         &mo _NUMBER
 #define NAVIGATION     &mo _NAVIGATION
 #define FUNCTION       &mo _FUNCTION
-#define GAMENUM        &mo _GAMENUM
 
 #define QWERTY         &to _QWERTY
 #define GRAPHITE       &to _GRAPHITE
-#define GAME           &to _GAME
 
-// windows shortcuts
-#define W_SNIP         &kp LG(LS(S))
+// navigation
+#define NEXT_TAB       &kp LC(TAB)
+#define PREV_TAB       &kp LS(LC(TAB))
 
 // homerow mods
-#define HRML(k1, k2, k3, k4) &hml LGUI k1   &hml LALT k2   &hml LCTRL k3  &hml LSHFT k4
-#define HRMR(k1, k2, k3, k4) &hmr RSHFT k1  &hmr RCTRL k2  &hmr RALT k3   &hmr RGUI  k4
+//#define HRML(k1, k2, k3, k4) &hml LGUI k1   &hml LALT k2   &hml LCTRL k3  &hml LSHFT k4
+//#define HRMR(k1, k2, k3, k4) &hmr RSHFT k1  &hmr RCTRL k2  &hmr RALT k3   &hmr RGUI  k4
 
 // key overrides
 #define KO_COMMA             &ht LPAR      COMMA
@@ -73,8 +70,8 @@
 // keymap macros
 #define __________                                             &trans
 #define ____xx____                                             &none
-#define _BASE_L4________________________                       &mkp MB1   NUMBER     &kp LSHFT
-#define _BASE_R4________________________                       &kp SPACE  NAVIGATION &mkp MB4
+#define _BASE_L4________________________                       &mkp MB1   NAVIGATION     &sk LSHFT
+#define _BASE_R4________________________                       &kp SPACE  NUMBER         &kp ENTER
 #define _LAYER_TRANS____________________                       ____xx____ __________ ____xx____
 #define _MODS_GACS_________________________________            &sk LGUI   &sk LALT   &sk LCTRL  &sk LSHFT
 #define _MODS_SCAG_________________________________            &sk RSHFT  &sk RCTRL  &sk RALT   &sk RGUI
@@ -134,6 +131,7 @@
  *               ╰─────────────┴─────────────╯
  */
 
+/*
 #define LT4 0
 #define LT3 1
 #define LT2 2
@@ -183,4 +181,4 @@
 #define KEYS_L LT4 LT3 LT2 LT1 LT0 LM4 LM3 LM2 LM1 LM0 LB5 LB4 LB3 LB2 LB1 LB0
 #define KEYS_R RT0 RT1 RT2 RT3 RT4 RM0 RM1 RM2 RM3 RM4 RB0 RB1 RB2 RB3 RB4 RB5
 #define THUMBS LH2 LH1 LH0 RH0 RH1 RH2
-
+*/
