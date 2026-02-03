@@ -1,0 +1,1 @@
+COMBO_MACRO(cb_enter, RB1 RB2, &kp ENTER)

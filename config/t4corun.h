@@ -112,12 +112,17 @@
         bindings = <HOLD_MACRO>, <&kp>;            \
     };
 
-#define COMBO_MACRO(NAME, POSITIONS, BINDING)      \
-    NAME: NAME {                                   \
-        compatible = "zmk,combos";                 \
-        timeout-ms = <COMBO_TIMEOUT>;              \
-        key-positions = <POSITIONS>;               \
-        bindings = <&kp>;                          \
+#define COMBO_MACRO(NAME, POSITIONS, BINDINGS)             \
+    / {                                                    \
+        combos {                                           \
+            compatible = "zmk,combos";                     \
+            combo_ ## NAME {                               \
+                timeout-ms = <COMBO_TIMEOUT>;              \
+                key-positions = <POSITIONS>;               \
+                bindings = <BINDINGS>;                     \
+                require-prior-idle-ms = <PRIOR_IDLE_TERM>; \
+            };                                             \
+        };                                                 \
     };
 
 

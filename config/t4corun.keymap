@@ -5,6 +5,7 @@
 #include <dt-bindings/zmk/pointing.h>
 
 #include "t4corun.h"
+#include "combos.dtsi"
 
 / {
     behaviors {
@@ -75,11 +76,8 @@
     };
 };
 
-/ {
-    combos {
-        COMBO_MACRO(cb_enter, RB1 RB2, ENTER)
-    };
-};
+
+
 
 //              xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx           xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx
 
