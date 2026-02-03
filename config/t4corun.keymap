@@ -75,7 +75,11 @@
     };
 };
 
-
+/ {
+    combos {
+        COMBO_MACRO(cb_enter, RB1 RB2, ENTER)
+    }
+}
 
 //              xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx           xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx
 
