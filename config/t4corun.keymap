@@ -135,13 +135,23 @@
             >;
         };
 
+        symbol {
+            display-name = "symbol";
+            bindings = <
+                           &kp CARET  &kp AMPS   &kp AT     &kp DLLR   &kp TILDE            &kp GRAVE  &kp POUND  &kp ASTRK  &kp PLUS   MACRO_DQUO
+                           &kp PRCNT  MACRO_BRC  &kp RBRC   &kp PIPE   &kp SEMI             &kp COLON  &kp EQUAL  MACRO_BKT  &kp RBKT   MACRO_SQUO
+                &kp LCTRL  ____xx____ MACRO_LGT  &kp GT     &kp BSLH   &kp EXCL             &kp QMARK  &kp FSLH   MACRO_PAR  &kp RPAR   ____xx____ &kp LSHIFT
+                                                 _LAYER_TRANS____________________           _LAYER_TRANS____________________
+            >;
+        };
+
         function {
             display-name = "function";
             bindings = <
-                           BT1        BT2        BT3        BT4        BT5                  ____xx____ &kp F7     &kp F8     &kp F9     &kp F10
-                           _MODS_GACS_________________________________ BT6                  ____xx____ &kp F4     &kp F5     &kp F6     &kp F11
-                __________ BT_CLEAR   ____xx____ OUTPUT_USB OUTPUT_BLE ____xx____           ____xx____ &kp F1     &kp F2     &kp F3     &kp F12    __________
-                                                 YADS_SCR   YADS_DOWN  YADS_UP              QWERTY     GRAPHITE   ____xx____
+                           YADS_SCR   YADS_DOWN  YADS_UP    ____xx____ ____xx____           ____xx____ &kp F7     &kp F8     &kp F9     &kp F10
+                           _MODS_GACS_________________________________ ____xx____           ____xx____ &kp F4     &kp F5     &kp F6     &kp F11
+                __________ BT_CLEAR   ____xx____ ____xx____ ____xx____ ____xx____           ____xx____ &kp F1     &kp F2     &kp F3     &kp F12    __________
+                                                 OUTPUT_TOG BT_PREV    BT_NEXT              QWERTY     GRAPHITE   ____xx____
             >;
         };
     };

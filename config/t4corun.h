@@ -53,16 +53,12 @@
 #define VOL_MUTE             &kp C_MUTE
 
 // wireless connectivity and output modes
-#define BT1                  &bt BT_SEL 0
-#define BT2                  &bt BT_SEL 1
-#define BT3                  &bt BT_SEL 2
-#define BT4                  &bt BT_SEL 3
-#define BT5                  &bt BT_SEL 4
-#define BT6                  &bt BT_SEL 5
-
+// cycles through profiles 1-6
 #define BT_CLEAR             &bt BT_CLR
-#define OUTPUT_BLE           &out OUT_BLE
-#define OUTPUT_USB           &out OUT_USB
+#define BT_NEXT              &bt BT_NXT
+#define BT_PREV              &bt BT_PRV
+#define OUTPUT_TOG           &out OUT_TOG
+
 
 // YADS Screen Control
 #define YADS_SCR             &kp F22
