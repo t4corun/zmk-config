@@ -118,7 +118,7 @@
         timeout-ms = <COMBO_TIMEOUT>;              \
         key-positions = <POSITIONS>;               \
         bindings = <&kp>;                          \
-    }
+    };
 
 
 
