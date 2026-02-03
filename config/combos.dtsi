@@ -12,4 +12,4 @@
 COMBO_MACRO(enter,    RM1 RM2, &kp ENTER)
 COMBO_MACRO(tab,      LM1 LM2, &kp TAB)
 COMBO_MACRO(capsword, LH0 RH0, &caps_word)
-COMBO_MACRO(at,       LT2 LT1, &kp AT)
+COMBO_MACRO(at,       LB2 LB1, &kp AT)
