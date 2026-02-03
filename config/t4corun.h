@@ -115,9 +115,9 @@
 #define COMBO_MACRO(NAME, POSITIONS, BINDING)      \
     NAME: NAME {                                   \
         compatible = "zmk,combos";                 \
-        timeout-ms = <COMBO_TIMEOUT>               \
-        key-positions = <POSITIONS>                \
-        bindings = <&kp>                           \
+        timeout-ms = <COMBO_TIMEOUT>;              \
+        key-positions = <POSITIONS>;               \
+        bindings = <&kp>;                          \
     }
 
 
