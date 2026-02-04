@@ -12,6 +12,8 @@
 #define _SYMBOL        4
 #define _FUNCTION      5
 
+#define _BASELAYERS _QWERTY _GRAPHITE
+
 // Behavior Configuration
 #define TAPPING_TERM          200
 #define QUICK_TAP_TERM        150
@@ -108,13 +110,14 @@
         bindings = <HOLD_MACRO>, <&kp>;            \
     };
 
-#define COMBO_MACRO(NAME, POSITIONS, BINDINGS)             \
+#define COMBO_MACRO(NAME, POSITIONS, LAYERS, BINDINGS)     \
     / {                                                    \
         combos {                                           \
             compatible = "zmk,combos";                     \
             combo_ ## NAME {                               \
                 timeout-ms = <COMBO_TIMEOUT>;              \
                 key-positions = <POSITIONS>;               \
+                layers = <LAYERS>;                         \
                 bindings = <BINDINGS>;                     \
                 require-prior-idle-ms = <PRIOR_IDLE_TERM>; \
             };                                             \
@@ -131,8 +134,6 @@
 #define MACRO_PAR  &ht_par 0 LPAR
 #define MACRO_SQUO &ht_sqt 0 SQT
 #define MACRO_DQUO &ht_dqt 0 DQT
-
-
 
 /*
  * Position definition for timerless home row mods

@@ -90,7 +90,7 @@
             bindings = <
                            &kp Q      &kp W      &kp E      &kp R      &kp T                &kp Y      &kp U      &kp I      &kp O      &kp P
                            HRML(A,    S,         D,         F)         &kp G                &kp H      HRMR(J,    K,         L,         SQT)
-                FUNCTION   &kp Z      &kp X      &kp C      &kp V      &kp B                &kp N      &kp M      KO_COMMA   KO_DOT     KO_MINUS   NEXT_TAB
+                FUNCTION   &kp Z      &kp X      &kp C      &kp V      &kp B                &kp N      &kp M      KO_COMMA   KO_DOT     KO_MINUS   VOL_MUTE
                                                  _BASE_L4________________________           _BASE_R4________________________
             >;
         };
@@ -100,7 +100,7 @@
             bindings = <
                            &kp B      &kp L      &kp D      &kp W      &kp Z                KO_SQT     &kp F      &kp O      &kp U      &kp J
                            HRML(N,    R,         T,         S)         &kp G                &kp Y      HRMR(H,    A,         E,         I)
-                FUNCTION   &kp Q      &kp X      &kp M      &kp C      &kp V                &kp K      &kp P      KO_DOTG    KO_MINUS   KO_COMMAG  NEXT_TAB
+                FUNCTION   &kp Q      &kp X      &kp M      &kp C      &kp V                &kp K      &kp P      KO_DOTG    KO_MINUS   KO_COMMAG  VOL_MUTE
                                                  _BASE_L4________________________           _BASE_R4________________________
             >;
         };
@@ -110,7 +110,7 @@
             bindings = <
                            ____xx____ &kp HOME   &kp UP     &kp END    &kp PG_UP            &kp INS    &kp K_APP  ____xx____ ____xx____ ____xx____
                            ____xx____ &kp LEFT   &kp DOWN   &kp RIGHT  &kp PG_DN            &kp BSPC   _MODS_SCAG_________________________________
-                __________ _SHORTCUTS_UCCPR______________________________________           &kp DEL    ____xx____ VOL_DOWN   VOL_UP     VOL_MUTE   __________
+                __________ _SHORTCUTS_UCCPR______________________________________           &kp DEL    ____xx____ VOL_DOWN   VOL_UP     ____xx____ __________
                                                  &kp TAB    __________ &kp ENTER            _LAYER_TRANS____________________
             >;
         };
@@ -118,9 +118,9 @@
         number {
             display-name = "number";
             bindings = <
-                           &kp ESC    &mkp MB5   &mkp MB3   &mkp MB4   ____xx____           &kp COMMA  &kp N7     &kp N8     &kp N9     ____xx____
-                           _MODS_GACS_________________________________ &mkp MB2             &kp DOT    &kp N4     &kp N5     &kp N6     ____xx____
-                __________ _SHORTCUTS_UCCPR______________________________________           &kp MINUS  &kp N1     &kp N2     &kp N3     ____xx____ __________
+                           &kp ESC    &mkp MB5   &mkp MB3   &mkp MB4   ____xx____           &kp COMMA  &kp N7     &kp N8     &kp N9     &kp FSLH
+                           _MODS_GACS_________________________________ &mkp MB2             &kp DOT    &kp N4     &kp N5     &kp N6     &kp ASTRK
+                __________ _SHORTCUTS_UCCPR______________________________________           &kp MINUS  &kp N1     &kp N2     &kp N3     &kp PLUS   &kp EQL
                                                  _LAYER_TRANS____________________           &kp N0     __________ __________
             >;
         };
@@ -130,7 +130,7 @@
             bindings = <
                            &kp CARET  MACRO_LGT  &kp GT     KO_MINUS   &kp PIPE             &kp GRAVE  MACRO_BRC  &kp RBRC   &kp DLLR   MACRO_DQUO
                            &kp EXCL   &kp ASTRK  &kp FSLH   &kp EQL    &kp AMPS             &kp POUND  MACRO_PAR  &kp RPAR   &kp SEMI   MACRO_SQUO
-                &kp LCTRL  &kp TILDE  &kp PLUS   MACRO_BKT  &kp RBKT   &kp PRCNT            &kp AT     &kp COLON  &kp COMMA  &kp DOT    &kp BSLH   &kp LSHIFT
+                &sk LCTRL  &kp TILDE  &kp PLUS   MACRO_BKT  &kp RBKT   &kp PRCNT            &kp BSLH   &kp COLON  &kp QMARK  ____xx____ ____xx____ &sk LSHIFT
                                                  _LAYER_TRANS____________________           _LAYER_TRANS____________________
             >;
         };
