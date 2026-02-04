@@ -16,6 +16,6 @@ manifest:
       revision: upgrade-4.1
     - name: zmk-auto-layer
       remote: urob
-      revision: v0.4
+      revision: v0.3
   self:
     path: config
