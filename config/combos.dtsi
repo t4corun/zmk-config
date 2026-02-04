@@ -18,4 +18,4 @@ COMBO_MACRO(enter,    RM1 RM2, _BASELAYERS _NUMBER _SYMBOL, &kp ENTER)
 
 // both sides
 COMBO_MACRO(capsword, LH0 RH0, _BASELAYERS,                 &caps_word)
-COMBO_MACRO(numword,  LH2 RH2, _BASELAYERS,                 &numword _NUMBER)
+COMBO_MACRO(numword,  LH2 RH2, _BASELAYERS,                 &num_word _NUMBER)
