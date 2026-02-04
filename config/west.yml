@@ -4,6 +4,8 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: janpfischer
       url-base: https://github.com/janpfischer
+    - name: urob
+      url-base: https://github.com/urob
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -12,5 +14,8 @@ manifest:
     - name: zmk-dongle-screen
       remote: janpfischer
       revision: upgrade-4.1
+    - name: zmk-auto-layer
+      remote: urob
+      revision: v0.4
   self:
     path: config
