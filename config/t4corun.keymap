@@ -89,8 +89,8 @@
             display-name = "totem";
             bindings = <
                            &kp Q      &kp W      &kp E      &kp R      &kp T                &kp Y      &kp U      &kp I      &kp O      &kp P
-                           HRML(A,    S,         D,         F)         &kp G                &kp H      HRMR(J,    K,         L,         SQT)
-                FUNCTION   &kp Z      &kp X      &kp C      &kp V      &kp B                &kp N      &kp M      KO_COMMA   KO_DOT     KO_MINUS   VOL_MUTE
+                           &kp A      &kp S      &kp D      &kp F      &kp G                &kp H      &kp J      &kp K      &kp L      &kp SQT
+                FUNCTION   HRML(Z,    X,         C,         V)         &kp B                &kp N      HRMR(M,    COMMA,     DOT,       MINUS)     VOL_MUTE
                                                  _BASE_L4________________________           _BASE_R4________________________
             >;
         };
@@ -98,9 +98,9 @@
         graphite {
             display-name = "graphite";
             bindings = <
-                           &kp B      &kp L      &kp D      &kp W      &kp Z                KO_SQT     &kp F      &kp O      &kp U      &kp J
-                           HRML(N,    R,         T,         S)         &kp G                &kp Y      HRMR(H,    A,         E,         I)
-                FUNCTION   &kp Q      &kp X      &kp M      &kp C      &kp V                &kp K      &kp P      KO_DOTG    KO_MINUS   KO_COMMAG  VOL_MUTE
+                           &kp B      &kp L      &kp D      &kp W      &kp Z                &kp SQT    &kp F      &kp O      &kp U      &kp J
+                           &kp N      &kp R      &kp T      &kp S      &kp G                &kp Y      &kp H      &kp A      &kp E      &kp I
+                FUNCTION   HRML(Q,    X,         M,         C)         &kp V                &kp K      HRMR(P,    DOT,       MINUS,     COMMA)     VOL_MUTE
                                                  _BASE_L4________________________           _BASE_R4________________________
             >;
         };
@@ -108,9 +108,9 @@
         navigation {
             display-name = "navigation";
             bindings = <
-                           ____xx____ &kp HOME   &kp UP     &kp END    &kp PG_UP            &kp INS    &kp K_APP  ____xx____ ____xx____ ____xx____
-                           ____xx____ &kp LEFT   &kp DOWN   &kp RIGHT  &kp PG_DN            &kp BSPC   _MODS_SCAG_________________________________
-                __________ _SHORTCUTS_UCCPR______________________________________           &kp DEL    ____xx____ VOL_DOWN   VOL_UP     ____xx____ __________
+                           ____xx____ &kp HOME   &kp UP     &kp END    &kp PG_UP            &kp INS    &kp K_APP  ____xx____ VOL_DOWN   VOL_UP
+                           ____xx____ &kp LEFT   &kp DOWN   &kp RIGHT  &kp PG_DN            &kp BSPC   _SHORTCUTS_PCCU____________________________
+                __________ _NONE_5_______________________________________________           &kp DEL    _MODS_SCAG_________________________________ __________
                                                  &kp TAB    __________ &kp ENTER            _LAYER_TRANS____________________
             >;
         };
@@ -119,11 +119,12 @@
             display-name = "number";
             bindings = <
                            &kp ESC    &mkp MB5   &mkp MB3   &mkp MB4   ____xx____           &kp COMMA  &kp N7     &kp N8     &kp N9     &kp FSLH
-                           _MODS_GACS_________________________________ &mkp MB2             &kp DOT    &kp N4     &kp N5     &kp N6     &kp ASTRK
-                __________ _SHORTCUTS_UCCPR______________________________________           &kp MINUS  &kp N1     &kp N2     &kp N3     &kp PLUS   &kp EQL
+                           _SHORTCUTS_UCCPR______________________________________           &kp DOT    &kp N4     &kp N5     &kp N6     &kp ASTRK
+                __________ _MODS_GACS_________________________________ &mkp MB2             &kp MINUS  &kp N1     &kp N2     &kp N3     &kp PLUS   &kp EQL
                                                  &kp TAB    __________ &kp SPACE            &kp N0     __________ __________
             >;
         };
+
 
         symbol {
             display-name = "symbol";
@@ -138,9 +139,9 @@
         function {
             display-name = "function";
             bindings = <
-                           YADS_SCR   YADS_DOWN  YADS_UP    ____xx____ ____xx____           ____xx____ &kp F7     &kp F8     &kp F9     &kp F10
-                           _MODS_GACS_________________________________ ____xx____           ____xx____ &kp F4     &kp F5     &kp F6     &kp F11
-                __________ BT_CLEAR   ____xx____ ____xx____ ____xx____ ____xx____           ____xx____ &kp F1     &kp F2     &kp F3     &kp F12    __________
+                           YADS_SCR   YADS_DOWN  YADS_UP    ____xx____ BT_CLEAR             ____xx____ &kp F7     &kp F8     &kp F9     &kp F10
+                           _NONE_5_______________________________________________           ____xx____ &kp F4     &kp F5     &kp F6     &kp F11
+                __________ _MODS_GACS_________________________________ ____xx____           ____xx____ &kp F1     &kp F2     &kp F3     &kp F12    __________
                                                  OUTPUT_TOG BT_PREV    BT_NEXT              QWERTY     GRAPHITE   ____xx____
             >;
         };

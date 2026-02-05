@@ -75,6 +75,7 @@
 #define _LAYER_TRANS____________________                       ____xx____ __________ ____xx____
 #define _MODS_GACS_________________________________            &sk LGUI   &sk LALT   &sk LCTRL  &sk LSHFT
 #define _MODS_SCAG_________________________________            &sk RSHFT  &sk RCTRL  &sk RALT   &sk RGUI
+#define _SHORTCUTS_PCCU____________________________            &kp LC(V)  &kp LC(C)  &kp LC(X)  &kp LC(Z)
 #define _SHORTCUTS_UCCPR______________________________________ &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LC(Y)
 #define _NONE_5_______________________________________________ ____xx____ ____xx____ ____xx____ ____xx____ ____xx____
 
