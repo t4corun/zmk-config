@@ -130,7 +130,7 @@
             bindings = <
                            &kp CARET  MACRO_LGT  &kp GT     KO_MINUS   &kp PIPE             &kp GRAVE  MACRO_BRC  &kp RBRC   &kp DLLR   MACRO_DQUO
                            &kp EXCL   &kp ASTRK  &kp FSLH   &kp EQL    &kp AMPS             &kp POUND  MACRO_PAR  &kp RPAR   &kp SEMI   MACRO_SQUO
-                &sk LCTRL  &kp TILDE  &kp PLUS   MACRO_BKT  &kp RBKT   &kp PRCNT            &kp BSLH   &kp COLON  &kp QMARK  ____xx____ ____xx____ &sk LSHIFT
+                &sk LCTRL  &kp TILDE  MACRO_BKT  &kp RBKT   &kp PLUS   &kp PRCNT            &kp BSLH   &kp COLON  &kp QMARK  ____xx____ ____xx____ &sk LSHIFT
                                                  _LAYER_TRANS____________________           _LAYER_TRANS____________________
             >;
         };
