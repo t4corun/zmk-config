@@ -34,10 +34,10 @@
             hold-trigger-on-release;
         };
 
-		MOD_MORPH(ko_comma,  &kp COMMA, &kp LPAR, MOD_LSFT);
-		MOD_MORPH(ko_dot,    &kp DOT,   &kp RPAR, MOD_LSFT);
-		MOD_MORPH(ko_gcomma, &kp COMMA, &kp RPAR, MOD_LSFT);
-		MOD_MORPH(ko_gdot,   &kp DOT,   &kp LPAR, MOD_LSFT);
+		MOD_MORPH(ko_comma,  &kp COMMA, &kp LPAR, MOD_LSFT)
+		MOD_MORPH(ko_dot,    &kp DOT,   &kp RPAR, MOD_LSFT)
+		MOD_MORPH(ko_gcomma, &kp COMMA, &kp RPAR, MOD_LSFT)
+		MOD_MORPH(ko_gdot,   &kp DOT,   &kp LPAR, MOD_LSFT)
 
     };
 };
