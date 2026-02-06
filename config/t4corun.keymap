@@ -10,15 +10,6 @@
 
 / {
     behaviors {
-        ht: hold_tap {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <TAPPING_TERM>;
-            quick_tap_ms = <QUICK_TAP_TERM>;
-            bindings = <&kp>, <&kp>;
-        };
-
         hml: home_row_mod_left {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -42,6 +33,12 @@
             hold-trigger-key-positions = <KEYS_L THUMBS>; // List of keys on the left side of the keyboard
             hold-trigger-on-release;
         };
+
+		MOD_MORPH(ko_comma,  &kp COMMA, &kp LPAR, MOD_LSFT);
+		MOD_MORPH(ko_dot,    &kp DOT,   &kp RPAR, MOD_LSFT);
+		MOD_MORPH(ko_gcomma, &kp COMMA, &kp RPAR, MOD_LSFT);
+		MOD_MORPH(ko_gdot,   &kp DOT,   &kp LPAR, MOD_LSFT);
+
     };
 };
 
@@ -90,7 +87,7 @@
             bindings = <
                            &kp Q      &kp W      &kp E      &kp R      &kp T                &kp Y      &kp U      &kp I      &kp O      &kp P
                            HRML(A,    S,         D,         F)         &kp G                &kp H      HRMR(J,    K,         L,         SQT)
-                FUNCTION   &kp Z      &kp X      &kp C      &kp V      &kp B                &kp N      &kp M      KO_COMMA   KO_DOT     KO_MINUS   VOL_MUTE
+                FUNCTION   &kp Z      &kp X      &kp C      &kp V      &kp B                &kp N      &kp M      &ko_comma  &ko_dot    &kp MINUS  VOL_MUTE
                                                  _BASE_L4________________________           _BASE_R4________________________
             >;
         };
@@ -100,7 +97,7 @@
             bindings = <
                            &kp B      &kp L      &kp D      &kp W      &kp Z                &kp SQT    &kp F      &kp O      &kp U      &kp J
                            HRML(N,    R,         T,         S)         &kp G                &kp Y      HRMR(H,    A,         E,         I)
-                FUNCTION   &kp Q      &kp X      &kp M      &kp C      &kp V                &kp K      &kp P      KO_DOTG    KO_MINUS   KO_COMMAG  VOL_MUTE
+                FUNCTION   &kp Q      &kp X      &kp M      &kp C      &kp V                &kp K      &kp P      &ko_gdot   &kp MINUS  &ko_gcomma VOL_MUTE
                                                  _BASE_L4________________________           _BASE_R4________________________
             >;
         };
@@ -130,7 +127,7 @@
             bindings = <
                            &kp CARET  MACRO_LGT  &kp GT     KO_MINUS   &kp PIPE             &kp GRAVE  MACRO_BRC  &kp RBRC   &kp DLLR   MACRO_DQUO
                            &kp EXCL   &kp ASTRK  &kp FSLH   &kp EQL    &kp AMPS             &kp POUND  MACRO_PAR  &kp RPAR   &kp SEMI   MACRO_SQUO
-                &sk LCTRL  &kp TILDE  MACRO_BKT  &kp RBKT   &kp PLUS   &kp PRCNT            &kp BSLH   &kp COLON  &kp QMARK  ____xx____ ____xx____ &sk LSHIFT
+                &sk LCTRL  &kp TILDE  &kp PLUS   MACRO_BKT  &kp RBKT   &kp PRCNT            &kp BSLH   &kp COLON  &kp QMARK  &kp AT     ____xx____ &sk LSHIFT
                                                  _LAYER_TRANS____________________           _LAYER_TRANS____________________
             >;
         };

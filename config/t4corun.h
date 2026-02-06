@@ -4,6 +4,8 @@
 
 #pragma once
 
+#include "helper.h"
+
 // put the default base layers first
 #define _QWERTY        0
 #define _GRAPHITE      1
@@ -19,7 +21,7 @@
 #define QUICK_TAP_TERM        150
 #define PRIOR_IDLE_TERM       100
 
-#define HRM_TAPPING_TERM      280
+#define HRM_TAPPING_TERM      320
 #define HRM_QUICK_TAP_TERM    175
 #define HRM_PRIOR_IDLE_TERM   130
 
@@ -42,12 +44,12 @@
 #define PREV_TAB             &kp LS(LC(TAB))
 
 // key overrides
-#define KO_COMMA             &ht LPAR      COMMA
-#define KO_COMMAG            &ht RPAR      COMMA
-#define KO_DOT               &ht RPAR      DOT
-#define KO_DOTG              &ht LPAR      DOT
-#define KO_MINUS             &ht UNDER     MINUS
-#define KO_SQT               &ht DQT       SQT
+//#define KO_COMMA             &ht LPAR      COMMA
+//#define KO_COMMAG            &ht RPAR      COMMA
+//#define KO_DOT               &ht RPAR      DOT
+//#define KO_DOTG              &ht LPAR      DOT
+//#define KO_MINUS             &ht UNDER     MINUS
+//#define KO_SQT               &ht DQT       SQT
 
 // other shortcuts
 #define VOL_UP               &kp C_VOL_UP
@@ -77,54 +79,6 @@
 #define _MODS_SCAG_________________________________            &sk RSHFT  &sk RCTRL  &sk RALT   &sk RGUI
 #define _SHORTCUTS_UCCPR______________________________________ &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LC(Y)
 #define _NONE_5_______________________________________________ ____xx____ ____xx____ ____xx____ ____xx____ ____xx____
-
-
-/*
- * Macros - inspired by RafaelRomao
- *
- * Desire:  Want to be able to hold to type a bracket pair with the cursor inside
- * Example: tapping to get '(' and hold to get '()' with the cursor inside
- * 
- * Implementation:
- * - Define macro for the bracket pair
- * - Define new tap hold behavior with the hold hardcoded to the macro
- * - Define new keycode with that taphold behaviorks
- */
-
-#define MACRO(NAME, BINDINGS)                      \
-    NAME: NAME {                                   \
-        compatible = "zmk,behavior-macro";         \
-        #binding-cells = <0>;                      \
-        bindings = <BINDINGS>;                     \
-    };
-
-//require prior idle ms used to be 125
-#define HOLDTAP_MACRO(NAME, HOLD_MACRO)            \
-    NAME: NAME {                                   \
-        compatible = "zmk,behavior-hold-tap";      \
-        flavor = "tap-preferred";                  \
-        #binding-cells = <2>;                      \
-        tapping-term-ms = <TAPPING_TERM>;          \
-        quick-tap-ms = <QUICK_TAP_TERM>;           \
-        require-prior-idle-ms = <PRIOR_IDLE_TERM>; \
-        bindings = <HOLD_MACRO>, <&kp>;            \
-    };
-
-#define COMBO_MACRO(NAME, POSITIONS, LAYERS, BINDINGS)     \
-    / {                                                    \
-        combos {                                           \
-            compatible = "zmk,combos";                     \
-            combo_ ## NAME {                               \
-                timeout-ms = <COMBO_TIMEOUT>;              \
-                key-positions = <POSITIONS>;               \
-                layers = <LAYERS>;                         \
-                bindings = <BINDINGS>;                     \
-                require-prior-idle-ms = <PRIOR_IDLE_TERM>; \
-            };                                             \
-        };                                                 \
-    };
-
-
 
 // The 0 is required because we are hard coding the macro but the behavior
 // still wants two parameters
