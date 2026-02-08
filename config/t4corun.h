@@ -44,6 +44,9 @@
 #define VOL_DOWN             &kp C_VOL_DN
 #define VOL_MUTE             &kp C_MUTE
 
+// windows shortcuts
+#define W_SNIP               &kp LG(LS(S))
+
 // wireless connectivity and output modes. Cycles through profiles 1-6
 #define BT_CLEAR             &bt BT_CLR
 #define BT_NEXT              &bt BT_NXT
@@ -56,7 +59,7 @@
 #define YADS_UP              &kp F24
 
 // keymap macros
-    #define __________                                             &trans
+#define __________                                             &trans
 #define ____xx____                                             &none
 #define _BASE_L4________________________                       &mkp MB1   NUMBER     &sk LSHFT
 #define _BASE_R4________________________                       &kp SPACE  NAVIGATION &kp BSPC
