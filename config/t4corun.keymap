@@ -13,7 +13,7 @@
         hml: home_row_mod_left {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "tap-preferred";
+            flavor = "balanced";
             require-prior-idle-ms = <HRM_PRIOR_IDLE_TERM>;
             tapping-term-ms = <HRM_TAPPING_TERM>;
             quick-tap-ms = <HRM_QUICK_TAP_TERM>;
@@ -25,7 +25,7 @@
         hmr: home_row_mod_right {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "tap-preferred";
+            flavor = "balanced";
             require-prior-idle-ms = <HRM_PRIOR_IDLE_TERM>;
             tapping-term-ms = <HRM_TAPPING_TERM>;
             quick-tap-ms = <HRM_QUICK_TAP_TERM>;
@@ -38,7 +38,6 @@
 		MOD_MORPH(ko_dot,    &kp DOT,   &kp RPAR, MOD_LSFT)
 		MOD_MORPH(ko_gcomma, &kp COMMA, &kp RPAR, MOD_LSFT)
 		MOD_MORPH(ko_gdot,   &kp DOT,   &kp LPAR, MOD_LSFT)
-
     };
 };
 
@@ -125,7 +124,7 @@
         symbol {
             display-name = "symbol";
             bindings = <
-                           &kp CARET  MACRO_LGT  &kp GT     &kp MINUS  &kp PIPE            &kp GRAVE  MACRO_BRC  &kp RBRC   &kp DLLR   MACRO_DQUO
+                           &kp CARET  MACRO_LGT  &kp GT     &kp MINUS  &kp GRAVE            &kp PIPE   MACRO_BRC  &kp RBRC   &kp DLLR   MACRO_DQUO
                            &kp EXCL   &kp ASTRK  &kp FSLH   &kp EQL    &kp AMPS             &kp POUND  MACRO_PAR  &kp RPAR   &kp SEMI   MACRO_SQUO
                 &sk LCTRL  &kp TILDE  &kp PLUS   MACRO_BKT  &kp RBKT   &kp PRCNT            &kp BSLH   &kp COLON  &kp QMARK  &kp AT     ____xx____ &sk LSHIFT
                                                  _LAYER_TRANS____________________           _LAYER_TRANS____________________
