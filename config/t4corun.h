@@ -21,9 +21,9 @@
 #define QUICK_TAP_TERM        150
 #define PRIOR_IDLE_TERM       100
 
-#define HRM_TAPPING_TERM      320
-#define HRM_QUICK_TAP_TERM    175
-#define HRM_PRIOR_IDLE_TERM   130
+#define HRM_TAPPING_TERM      280
+#define HRM_QUICK_TAP_TERM    180
+#define HRM_PRIOR_IDLE_TERM   165
 
 #define COMBO_TIMEOUT         50
 
