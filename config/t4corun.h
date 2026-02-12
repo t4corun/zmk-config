@@ -17,13 +17,13 @@
 #define _BASELAYERS _QWERTY _GRAPHITE
 
 // Behavior Configuration
-#define TAPPING_TERM          200
+#define TAPPING_TERM          220
 #define QUICK_TAP_TERM        150
-#define PRIOR_IDLE_TERM       100
+#define PRIOR_IDLE_TERM       125
 
-#define HRM_TAPPING_TERM      280
-#define HRM_QUICK_TAP_TERM    180
-#define HRM_PRIOR_IDLE_TERM   165
+#define HRM_TAPPING_TERM      TAPPING_TERM
+#define HRM_QUICK_TAP_TERM    QUICK_TAP_TERM
+#define HRM_PRIOR_IDLE_TERM   PRIOR_IDLE_TERM
 
 #define COMBO_TIMEOUT         50
 
@@ -32,12 +32,15 @@
 #define HRMR(k1, k2, k3, k4) &hmr RSHFT k1  &hmr RCTRL k2  &hmr RALT k3   &hmr RGUI  k4
 
 // layer changes
-#define NUMBER               &mo _NUMBER
-#define NAVIGATION           &mo _NAVIGATION
-#define FUNCTION             &mo _FUNCTION
+#define NUMBER               &mo  _NUMBER
+#define NAVIGATION           &mo  _NAVIGATION
+#define FUNCTION             &mo  _FUNCTION
 
-#define QWERTY               &to _QWERTY
-#define GRAPHITE             &to _GRAPHITE
+#define QWERTY               &to  _QWERTY
+#define GRAPHITE             &to  _GRAPHITE
+
+#define NUMBLOCK             &tog _NUMBER
+#define NAVILOCK             &tog _NAVIGATION
 
 // other shortcuts
 #define VOL_UP               &kp C_VOL_UP
