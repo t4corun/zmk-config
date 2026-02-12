@@ -11,9 +11,9 @@
 
 // left side combos
 COMBO_MACRO(tab,      LB2 LB1, _BASELAYERS _SYMBOL,         &kp TAB)
-COMBO_MACRO(at,       LM2 LM0, _BASELAYERS _SYMBOL,         &kp AT)
 
 // right side combos
+COMBO_MACRO(at,       RM1 RM2, _BASELAYERS _SYMBOL,         &kp AT)
 COMBO_MACRO(enter,    RB1 RB2, _BASELAYERS _NUMBER _SYMBOL, &kp ENTER)
 
 // both sides
