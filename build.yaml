@@ -25,5 +25,6 @@ include:
     shield: totem_right
   - board: xiao_ble//zmk
     shield: totem_dongle prospector_adapter
+    artifact-name: totem_prospector_dongle
   - board: xiao_ble
     shield: settings_reset
