@@ -1,22 +1,15 @@
 #include <behaviors.dtsi>
+#include <behaviors/num_word.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
 
 #include "t4corun.h"
+#include "combos.dtsi"
 
 / {
     behaviors {
-        ht: hold_tap {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <TAPPING_TERM>;
-            quick_tap_ms = <QUICK_TAP_TERM>;
-            bindings = <&kp>, <&kp>;
-        };
-
         hml: home_row_mod_left {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -41,6 +34,10 @@
             hold-trigger-on-release;
         };
 
+        MOD_MORPH(ko_comma,  &kp COMMA, &kp QMARK, MOD_LSFT)
+        MOD_MORPH(ko_dot,    &kp DOT,   &kp EXCL,  MOD_LSFT)
+        MOD_MORPH(ko_gcomma, &kp COMMA, &kp QMARK, MOD_LSFT)
+        MOD_MORPH(ko_gdot,   &kp DOT,   &kp EXCL,  MOD_LSFT)
     };
 };
 
@@ -77,6 +74,7 @@
 };
 
 
+
 //              xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx           xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx
 
 / {
@@ -84,82 +82,62 @@
         compatible = "zmk,keymap";
 
         qwerty {
-			display-name = "totem";
+            display-name = "totem";
             bindings = <
                            &kp Q      &kp W      &kp E      &kp R      &kp T                &kp Y      &kp U      &kp I      &kp O      &kp P
                            HRML(A,    S,         D,         F)         &kp G                &kp H      HRMR(J,    K,         L,         SQT)
-                FUNCTION   &kp Z      &kp X      &kp C      &kp V      &kp B                &kp N      &kp M      KO_COMMA   KO_DOT     KO_MINUS   VOL_MUTE
+                FUNCTION   &kp Z      &kp X      &kp C      &kp V      &kp B                &kp N      &kp M      &ko_comma  &ko_dot    &kp MINUS  VOL_MUTE
                                                  _BASE_L4________________________           _BASE_R4________________________
             >;
         };
 
-        gallium {
-			display-name = "graphite";
+        graphite {
+            display-name = "graphite";
             bindings = <
-                           &kp B      &kp L      &kp D      &kp W      &kp Z                KO_SQT     &kp F      &kp O      &kp U      &kp J
+                           &kp B      &kp L      &kp D      &kp W      &kp Z                &kp SQT    &kp F      &kp O      &kp U      &kp J
                            HRML(N,    R,         T,         S)         &kp G                &kp Y      HRMR(H,    A,         E,         I)
-                FUNCTION   &kp Q      &kp X      &kp M      &kp C      &kp V                &kp K      &kp P      KO_DOTG    KO_MINUS   KO_COMMAG  VOL_MUTE
+                FUNCTION   &kp Q      &kp X      &kp M      &kp C      &kp V                &kp K      &kp P      &ko_gdot   &kp MINUS  &ko_gcomma VOL_MUTE
                                                  _BASE_L4________________________           _BASE_R4________________________
-            >;
-        };
-
-        game {
-			display-name = "game";
-            bindings = <
-                           &kp TAB    &kp Q      &kp W      &kp E      &kp R                _NONE_5_______________________________________________
-                           &kp LCTRL  &kp A      &kp S      &kp D      &kp F                _NONE_5_______________________________________________
-                GAMENUM    &kp Z      &kp X      &kp C      &kp V      &kp B                ____xx____  ____xx____ VOL_DOWN   VOL_UP    VOL_MUTE   FUNCTION
-                                                 &kp ENTER  &kp SPACE  &kp LSHIFT           _BASE_R4________________________
-		>;
-        };
-
-        gamenum {
-			display-name = "g.numpad";
-            bindings = <
-                           &kp N7     &kp N8     &kp N9     &kp T      &kp ESC              _NONE_5_______________________________________________
-                           &kp N1     &kp N2     &kp N3     &kp G      &kp GRAVE            _NONE_5_______________________________________________
-                __________ &kp N4     &kp N5     &kp N6     ____xx____ ____xx____           _NONE_5_______________________________________________ ____xx____
-                                                 &kp LALT   ____xx____ ____xx____           QWERTY     GRAPHITE   ____xx____
             >;
         };
 
         navigation {
-			display-name = "navigation";
+            display-name = "navigation";
             bindings = <
                            ____xx____ &kp HOME   &kp UP     &kp END    &kp PG_UP            &kp INS    &kp K_APP  ____xx____ ____xx____ ____xx____
-                           &caps_word &kp LEFT   &kp DOWN   &kp RIGHT  &kp PG_DN            &kp BSPC   _MODS_SCAG_________________________________
-                __________ _SHORTCUTS_UCCPR______________________________________           &kp DEL    ____xx____ VOL_DOWN   VOL_UP     ____xx____ __________
+                           ____xx____ &kp LEFT   &kp DOWN   &kp RIGHT  &kp PG_DN            &kp BSPC   _MODS_SCAG_________________________________
+                NAVILOCK   _SHORTCUTS_UCCPR______________________________________           &kp DEL    ____xx____ VOL_DOWN   VOL_UP     ____xx____ __________
                                                  &kp TAB    __________ &kp ENTER            _LAYER_TRANS____________________
             >;
         };
 
         number {
-			display-name = "number";
+            display-name = "number";
             bindings = <
-                           &kp ESC    W_SNIP     &mkp MB3   ____xx____ ____xx____           &kp COMMA  &kp N7     &kp N8     &kp N9     ____xx____
-                           _MODS_GACS_________________________________ &mkp MB2             &kp DOT    &kp N4     &kp N5     &kp N6     ____xx____
-                __________ _SHORTCUTS_UCCPR______________________________________           &kp MINUS  &kp N1     &kp N2     &kp N3     ____xx____ __________
-                                                 _LAYER_TRANS____________________           &kp N0     __________ &mkp MB5
+                           &kp ESC    W_SNIP     &mkp MB3   &mkp MB4   &mkp MB5             &kp COMMA  &kp N7     &kp N8     &kp N9     &kp FSLH
+                           _MODS_GACS_________________________________ &mkp MB2             &kp DOT    &kp N4     &kp N5     &kp N6     &kp ASTRK
+                NUMBLOCK   _SHORTCUTS_UCCPR______________________________________           &kp MINUS  &kp N1     &kp N2     &kp N3     &kp PLUS   &kp EQL
+                                                 &kp TAB    __________ &kp SPACE            &kp N0     __________ __________
             >;
         };
 
         symbol {
-			display-name = "symbol";
+            display-name = "symbol";
             bindings = <
-                           &kp CARET  &kp AMPS   &kp AT     &kp DLLR   &kp GRAVE            &kp TILDE  &kp POUND  &kp ASTRK  &kp PLUS   MACRO_DQUO
-                           &kp PRCNT  MACRO_BRC  &kp RBRC   &kp PIPE   &kp SEMI             &kp COLON  &kp EQUAL  MACRO_BKT  &kp RBKT   MACRO_SQUO
-                __________ ____xx____ MACRO_LGT  &kp GT     &kp BSLH   &kp EXCL             &kp QMARK  &kp FSLH   MACRO_PAR  &kp RPAR   ____xx____ __________
+                           &kp CARET  MACRO_LGT  &kp GT     &kp MINUS  &kp GRAVE            &kp PIPE   MACRO_BRC  &kp RBRC   &kp DLLR   MACRO_DQUO
+                           &kp EXCL   &kp ASTRK  &kp FSLH   &kp EQL    &kp AMPS             &kp POUND  MACRO_PAR  &kp RPAR   &kp SEMI   MACRO_SQUO
+                &sk LCTRL  &kp TILDE  &kp PLUS   MACRO_BKT  &kp RBKT   &kp PRCNT            &kp BSLH   &kp COLON  &kp QMARK  &kp AT     ____xx____ &sk LSHIFT
                                                  _LAYER_TRANS____________________           _LAYER_TRANS____________________
             >;
         };
 
         function {
-			display-name = "function";
+            display-name = "function";
             bindings = <
-                           BT1        BT2        BT3        BT4        BT5                  ____xx____ &kp F7     &kp F8     &kp F9     &kp F10
-                           _MODS_GACS_________________________________ BT6                  ____xx____ &kp F4     &kp F5     &kp F6     &kp F11
-                __________ BT_CLEAR   ____xx____ OUTPUT_USB OUTPUT_BLE ____xx____           ____xx____ &kp F1     &kp F2     &kp F3     &kp F12    __________
-                                                 YADS_SCR   YADS_DOWN  YADS_UP              QWERTY     GRAPHITE   GAME
+                           YADS_SCR   YADS_DOWN  YADS_UP    ____xx____ BT_CLEAR             ____xx____ &kp F7     &kp F8     &kp F9     &kp F10
+                           _MODS_GACS_________________________________ ____xx____           ____xx____ &kp F4     &kp F5     &kp F6     &kp F11
+                __________ _NONE_5_______________________________________________           ____xx____ &kp F1     &kp F2     &kp F3     &kp F12    __________
+                                                 OUTPUT_TOG BT_PREV    BT_NEXT              QWERTY     GRAPHITE   ____xx____
             >;
         };
     };

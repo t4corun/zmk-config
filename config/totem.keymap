@@ -1,1 +1,2 @@
+#include "totem.h"
 #include "t4corun.keymap"

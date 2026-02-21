@@ -1,0 +1,21 @@
+/*
+ * Position definition for timerless home row mods
+ *
+ *   ╭─────────────────────────┬─────────────────────────╮
+ *   │     LT4 LT3 LT2 LT1 LT0 │ RT0 RT1 RT2 RT3 RT4     │
+ *   │     LM4 LM3 LM2 LM1 LM0 │ RM0 RM1 RM2 RM3 RM4     │
+ *   │ LB5 LB4 LB3 LB2 LB1 LB0 │ RB0 RB1 RB2 RB3 RB4 RB5 │
+ *   ╰───────────╮ LH2 LH1 LH0 │ RH0 RH1 RH2 ╭───────────╯
+ *               ╰─────────────┴─────────────╯
+ */
+
+// left side combos
+COMBO_MACRO(tab,      LB2 LB1, _BASELAYERS _SYMBOL,         &kp TAB)
+COMBO_MACRO(at,       LM1 LM0, _BASELAYERS _SYMBOL,         &kp AT)
+
+// right side combos
+COMBO_MACRO(enter,    RB1 RB2, _BASELAYERS _NUMBER _SYMBOL, &kp ENTER)
+
+// both sides
+COMBO_MACRO(capsword, LH0 RH0, _BASELAYERS,                 &caps_word)
+COMBO_MACRO(numword,  LH2 RH2, _BASELAYERS,                 &num_word _NUMBER)
