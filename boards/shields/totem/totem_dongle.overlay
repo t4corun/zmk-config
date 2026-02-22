@@ -7,18 +7,18 @@
 #include "totem-layouts.dtsi"
 
 &physical_layout0 {
-	kscan = <&mock_kscan>;
+    kscan = <&mock_kscan>;
     transform = <&default_transform>;
 };
 
 / {
-	chosen {
+    chosen {
         zmk,kscan = &mock_kscan;
         zmk,physical-layout = &physical_layout0;
     };
 
     mock_kscan: mock_kscan_0 {
-		compatible = "zmk,kscan-mock";
+        compatible = "zmk,kscan-mock";
         columns = <0>;
         rows = <0>;
         events = <0>;
