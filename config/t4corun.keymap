@@ -134,7 +134,7 @@
         function {
             display-name = "function";
             bindings = <
-                           YADS_SCR   YADS_DOWN  YADS_UP    ____xx____ BT_CLEAR             ____xx____ &kp F7     &kp F8     &kp F9     &kp F10
+                           ____xx____ ____xx____ ____xx____ ____xx____ BT_CLEAR             ____xx____ &kp F7     &kp F8     &kp F9     &kp F10
                            _MODS_GACS_________________________________ ____xx____           ____xx____ &kp F4     &kp F5     &kp F6     &kp F11
                 __________ _NONE_5_______________________________________________           ____xx____ &kp F1     &kp F2     &kp F3     &kp F12    __________
                                                  OUTPUT_TOG BT_PREV    BT_NEXT              QWERTY     GRAPHITE   ____xx____

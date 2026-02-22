@@ -57,9 +57,9 @@
 #define OUTPUT_TOG           &out OUT_TOG
 
 // YADS Screen Control
-#define YADS_SCR             &kp F22
-#define YADS_DOWN            &kp F23
-#define YADS_UP              &kp F24
+//#define YADS_SCR             &kp F22
+//#define YADS_DOWN            &kp F23
+//#define YADS_UP              &kp F24
 
 // keymap macros
 #define __________                                             &trans

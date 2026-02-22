@@ -28,3 +28,4 @@ include:
     artifact-name: totem_dongle
   - board: xiao_ble
     shield: settings_reset
+    artifact-name: totem_settings_reset
