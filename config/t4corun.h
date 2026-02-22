@@ -47,7 +47,7 @@
 #define VOL_DOWN             &kp C_VOL_DN
 #define VOL_MUTE             &kp C_MUTE
 
-eeeee// windows shortcuts
+// windows shortcuts
 #define W_SNIP               &kp LG(LS(S))
 
 // wireless connectivity and output modes. Cycles through profiles 1-6
