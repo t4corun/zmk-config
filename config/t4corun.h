@@ -47,7 +47,7 @@
 #define VOL_DOWN             &kp C_VOL_DN
 #define VOL_MUTE             &kp C_MUTE
 
-// windows shortcuts
+eeeee// windows shortcuts
 #define W_SNIP               &kp LG(LS(S))
 
 // wireless connectivity and output modes. Cycles through profiles 1-6
@@ -55,11 +55,6 @@
 #define BT_NEXT              &bt BT_NXT
 #define BT_PREV              &bt BT_PRV
 #define OUTPUT_TOG           &out OUT_TOG
-
-// YADS Screen Control
-//#define YADS_SCR             &kp F22
-//#define YADS_DOWN            &kp F23
-//#define YADS_UP              &kp F24
 
 // keymap macros
 #define __________                                             &trans
