@@ -9,12 +9,14 @@
 // put the default base layers first
 #define _QWERTY        0
 #define _GRAPHITE      1
-#define _NAVIGATION    2
-#define _NUMBER        3
-#define _SYMBOL        4
-#define _FUNCTION      5
+#define _GAME          2
+#define _GAMENUM       3
+#define _NAVIGATION    4
+#define _NUMBER        5
+#define _SYMBOL        6
+#define _FUNCTION      7
 
-#define _BASELAYERS _QWERTY _GRAPHITE
+#define _BASELAYERS _QWERTY _GRAPHITE _GAME
 
 // Behavior Configuration
 #define TAPPING_TERM         220
@@ -33,12 +35,14 @@
 #define NUMBER               &mo  _NUMBER
 #define NAVIGATION           &mo  _NAVIGATION
 #define FUNCTION             &mo  _FUNCTION
+#define GAMENUM              &mo  _GAMENUM
 
 #define QWERTY               &to  _QWERTY
 #define GRAPHITE             &to  _GRAPHITE
+#define GAME                 &to  _GAME
 
-#define NUMBLOCK             &tog _NUMBER
-#define NAVILOCK             &tog _NAVIGATION
+#define NUMLOCK              &tog _NUMBER
+#define NAVLOCK              &tog _NAVIGATION
 
 // other shortcuts
 #define VOL_UP               &kp C_VOL_UP
@@ -58,22 +62,23 @@
 #define BT_5                 &bt BT_SEL 5
 #define OUTPUT_TOG           &out OUT_TOG
 
+// hold tap macros
+// The 0 is required because we are hard coding the macro but the behavior
+// still wants two parameters
+#define MACRO_BRC            &ht_brc 0 LBRC
+#define MACRO_LGT            &ht_lgt 0 LT
+#define MACRO_BKT            &ht_bkt 0 LBKT
+#define MACRO_PAR            &ht_par 0 LPAR
+#define MACRO_SQUO           &ht_sqt 0 SQT
+#define MACRO_DQUO           &ht_dqt 0 DQT
+
 // keymap macros
 #define __________                                             &trans
 #define ____xx____                                             &none
-#define _BASE_L4________________________                       &mkp MB1   NUMBER     &sk LSHFT
-#define _BASE_R4________________________                       &kp SPACE  NAVIGATION &kp BSPC
-#define _LAYER_TRANS____________________                       ____xx____ __________ ____xx____
-#define _MODS_GACS_________________________________            &kp LGUI   &kp LALT   &kp LCTRL  &kp LSHFT
-#define _MODS_SCAG_________________________________            &kp RSHFT  &kp RCTRL  &kp RALT   &kp RGUI
-#define _SHORTCUTS_UCCPR______________________________________ &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LC(Y)
-#define _NONE_5_______________________________________________ ____xx____ ____xx____ ____xx____ ____xx____ ____xx____
-
-// The 0 is required because we are hard coding the macro but the behavior
-// still wants two parameters
-#define MACRO_BRC  &ht_brc 0 LBRC
-#define MACRO_LGT  &ht_lgt 0 LT
-#define MACRO_BKT  &ht_bkt 0 LBKT
-#define MACRO_PAR  &ht_par 0 LPAR
-#define MACRO_SQUO &ht_sqt 0 SQT
-#define MACRO_DQUO &ht_dqt 0 DQT
+#define BASE_L4_________________________                       &mkp MB1   NUMBER     &sk LSHFT
+#define BASE_R4_________________________                       &kp SPACE  NAVIGATION &kp BSPC
+#define LAYER_TRANS_____________________                       ____xx____ __________ ____xx____
+#define MODS_GACS__________________________________            &kp LGUI   &kp LALT   &kp LCTRL  &kp LSHFT
+#define MODS_SCAG__________________________________            &kp RSHFT  &kp RCTRL  &kp RALT   &kp RGUI
+#define SHORTCUTS_UCCPR_______________________________________ &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LC(Y)
+#define NONE_5________________________________________________ ____xx____ ____xx____ ____xx____ ____xx____ ____xx____
