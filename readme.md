@@ -1,29 +1,38 @@
 # t4corun ZMK Config
 
-Relearning ZMK after a long hiatus (2023) because of the dongle. Setting up a XIAO Dongle setup for a GEIST Totem. 
+Relearning ZMK after a long hiatus (2023), primarily for the dongle. Setting up a XIAO Dongle setup for a GEIST Totem and porting over my QMK keymap
 
-This won't be a straight fork of [GEIGEIGEIST's](https://github.com/GEIGEIGEIST/zmk-config-totem) or [eigatech's](https://github.com/eigatech/zmk-config) repositories as I want to make it per 
-ZMK's latest structure.
+This won't be a straight fork of [GEIGEIGEIST's](https://github.com/GEIGEIGEIST/zmk-config-totem) or [eigatech's](https://github.com/eigatech/zmk-config) repositories as I want to make it per ZMK's latest structure.
 
-## Goals
+## Features
 
-- Minimal configuration. Leverage the documented defaults when possible
-- ZMK Studio support?
+My keymap is inspired by Miryoku and designed with SQL and Powershell in mind. It features:
+
+- Dongle support
+- Timerless homerow mods
+- Macros for brackets (e.g. type {} and placed the cursor inside)
+- Enables Dongle RGB LED to show wireless connectivity and battery status
 
 ## Learnings
 
-- `boards` are now under zmk-config root instead of inside `/config/`. Why?
 - The totem is a composite board 
 - The two outer pinky keys are part of the outer column, bottom row
+- The order of includes isn't strict.
+- These were removed because they were blank. They are not needed
+  - config/t4corun.conf
+  - boards/shields/totem/totem_left.conf
+  - boards/shields/totem/totem_right.conf
 
-## Next
+## Wishlist
 
-- Go over totem.dtsi, it seems like I need to create a separate totem-layouts.dtsi if I want to be able to use zmk studio
-- If I want to test if Geist's will compile, remove the physical layout section in `default_layout: default_layout {` in `totem.dtsi` and see if it will build
-- I can have t4corun.conf to have global settings but I don't know if I need it
+- Make the keyboard work when not in the OS
+- Add alternate base layer for gallium, graphite, or colemak dh
+- Can we do OS mod swap like QMK?
 
-### Files that are blank that could be added back
+### Special Thanks
 
-config/t4corun.conf
-boards/shields/totem/totem_left.conf
-boards/shields/totem/totem_right.conf
+geigeigeist, for making a beautiful, well documented keyboard, and making it free
+eigatech, for sharing the dongle code
+rafaelromao, for the macro helpers
+urob, for the timerless setup
+caksoylar, for the general organization and rgbled widget
