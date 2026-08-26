@@ -28,9 +28,20 @@ include:
   - board: xiao_ble//zmk
     shield: totem_prospector prospector_adapter
     artifact-name: totem_prospector
+
+  - board: nice_nano//zmk
+    shield: temporal_left nice_view
+    artifact-name: temporal_left
+  - board: nice_nano//zmk
+    shield: temporal_right nice_view
+    artifact-name: temporal_right
   - board: xiao_ble//zmk
-    shield: totem_rgbdongle rgbled_adapter
-    artifact-name: totem_rgbdongle
+    shield: temporal_rgbdongle rgbled_adapter
+    artifact-name: temporal_rgbdongle
+
   - board: xiao_ble//zmk
     shield: settings_reset
-    artifact-name: totem_settings_reset
+    artifact-name: xiao_settings_reset
+  - board: nice_nano//zmk
+    shield: settings_reset
+    artifact-name: nice_nano_settings_reset

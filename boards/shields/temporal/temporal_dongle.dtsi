@@ -1,0 +1,35 @@
+/*
+ * Copyright (c) 2026 Victor Nguyen
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include "temporal_layouts.dtsi"
+
+/ {
+    chosen {
+        zmk,kscan = &mock_kscan;
+        zmk,matrix-transform = &default_transform;
+    };
+
+    mock_kscan: mock_kscan_0 {
+        compatible = "zmk,kscan-mock";
+        columns = <0>;
+        rows = <0>;
+        events = <0>;
+    };
+
+    left_encoder: encoder_left {
+        status = "disabled";
+    };
+
+    right_encoder: encoder_right {
+        status = "disabled";
+    };
+
+    sensors: sensors {
+        compatible = "zmk,keymap-sensors";
+        sensors = <&left_encoder &right_encoder>;
+        triggers-per-rotation = <24>;
+    };
+};

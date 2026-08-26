@@ -1,12 +1,12 @@
 /*
- * Copyright (c) 2022 The ZMK Contributors
+ * Copyright (c) 2026 Victor Nguyen
  *
  * SPDX-License-Identifier: MIT
  */
 
- #include "totem.dtsi"
+#include "totem.dtsi"
 
- &kscan0 {
+&kscan0 {
     col-gpios
         = <&xiao_d 4 GPIO_ACTIVE_HIGH>
         , <&xiao_d 5 GPIO_ACTIVE_HIGH>
@@ -14,4 +14,4 @@
         , <&xiao_d 9 GPIO_ACTIVE_HIGH>
         , <&xiao_d 8 GPIO_ACTIVE_HIGH>
         ;
- };
+};

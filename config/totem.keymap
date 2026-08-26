@@ -1,2 +1,98 @@
 #include "totem.h"
 #include "t4corun.keymap"
+
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+
+        qwerty {
+            display-name = "totem";
+            bindings = <
+                /* See totem.h for postitions */
+                /* Main 3x5x3, LB5, RB5       */
+                TOTEM_WRAPPER(
+                    LAYER_QWERTY,
+                    FUNCTION,
+                    VOL_MUTE
+                )
+            >;
+        };
+
+        graphite {
+            display-name = "graphite";
+            bindings = <
+                TOTEM_WRAPPER(
+                    LAYER_GRAPHITE,
+                    FUNCTION,
+                    VOL_MUTE
+                )
+            >;
+        };
+
+        game {
+            display-name = "game";
+            bindings = <
+                TOTEM_WRAPPER(
+                    LAYER_GAME,
+                    &kp ENTER,
+                    VOL_MUTE
+                )
+            >;
+        };
+
+        gamenum {
+            display-name = "g.num";
+            bindings = <
+                TOTEM_WRAPPER(
+                    LAYER_GAMENUM,
+                    &kp ENTER,
+                    ____xx____
+                )
+            >;
+        };
+
+        navigation {
+            display-name = "navigation";
+            bindings = <
+                TOTEM_WRAPPER(
+                    LAYER_NAVIGATION,
+                    NAVLOCK,
+                    __________
+                )
+            >;
+        };
+
+        number {
+            display-name = "number";
+            bindings = <
+                TOTEM_WRAPPER(
+                    LAYER_NUMBER,
+                    NUMLOCK,
+                    &kp EQUAL
+                )
+            >;
+        };
+
+        symbol {
+            display-name = "symbol";
+            bindings = <
+                TOTEM_WRAPPER(
+                    LAYER_SYMBOL,
+                    &sk LCTRL,
+                    &sk LSHIFT
+                )
+            >;
+        };
+
+        function {
+            display-name = "function";
+            bindings = <
+                TOTEM_WRAPPER(
+                    LAYER_FUNCTION,
+                    __________,
+                    __________
+                )
+            >;
+        };
+    };
+};

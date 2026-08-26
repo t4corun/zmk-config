@@ -1,0 +1,163 @@
+#include "temporal.h"
+#include "t4corun.keymap"
+
+/ {
+    behaviors {
+        MOD_TAP_MACRO(zoom_in,  LCTRL,     EQUAL, 30, 10)
+        MOD_TAP_MACRO(zoom_out, LCTRL,     MINUS, 30, 10)
+
+        ROTATE_MACRO(enc_zoom,  &zoom_in,  &zoom_out, 30)
+
+        enc_mousescroll: encoder_mouse_scroll {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            tap-ms = <120>;
+            bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+        };
+    };
+};
+
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+
+        qwerty {
+            display-name = "temporal";
+            bindings = <
+                /* See temporal.h for postitions              */
+                /* Main 3x5x3, LT5, LM5, LH3, RH3, RT5, RM5   */
+                /* LH3, RH3, RT5, RM5 do not physically exist */
+                TEMPORAL_WRAPPER(
+                    LAYER_QWERTY,
+                    FUNCTION,
+                    ____xx____,
+                    __NONE_4__
+                )
+            >;
+
+            sensor-bindings = <
+                ENC_NONE
+                ENC_VOL
+            >;
+        };
+
+        graphite {
+            display-name = "graphite";
+            bindings = <
+                TEMPORAL_WRAPPER(
+                    LAYER_GRAPHITE,
+                    FUNCTION,
+                    ____xx____,
+                    __NONE_4__
+                )
+            >;
+
+            sensor-bindings = <
+                ENC_NONE
+                ENC_VOL
+            >;
+        };
+
+        game {
+            display-name = "game";
+            bindings = <
+                TEMPORAL_WRAPPER(
+                    LAYER_GAME,
+                    &kp ENTER,
+                    ____xx____,
+                    __NONE_4__
+                )
+            >;
+
+            sensor-bindings = <
+                ENC_NONE
+                ENC_VOL
+            >;
+        };
+
+        gamenum {
+            display-name = "g.num";
+            bindings = <
+                TEMPORAL_WRAPPER(
+                    LAYER_GAMENUM,
+                    &kp ENTER,
+                    ____xx____,
+                    __NONE_4__
+                )
+            >;
+
+            sensor-bindings = <
+                ENC_NONE
+                ENC_VOL
+            >;
+        };
+
+        navigation {
+            display-name = "navigation";
+            bindings = <
+                TEMPORAL_WRAPPER(
+                    LAYER_NAVIGATION,
+                    NAVLOCK,
+                    ____xx____,
+                    __NONE_4__
+                )
+            >;
+
+            sensor-bindings = <
+                ENC_NONE
+                &enc_mousescroll
+            >;
+        };
+
+        number {
+            display-name = "number";
+            bindings = <
+                TEMPORAL_WRAPPER(
+                    LAYER_NUMBER,
+                    NUMLOCK,
+                    ____xx____,
+                    __NONE_4__
+                )
+            >;
+
+            sensor-bindings = <
+                ENC_NONE
+                &enc_zoom
+            >;
+        };
+
+        symbol {
+            display-name = "symbol";
+            bindings = <
+                TEMPORAL_WRAPPER(
+                    LAYER_SYMBOL,
+                    &sk LCTRL,
+                    ____xx____,
+                    __NONE_4__
+                )
+            >;
+
+            sensor-bindings = <
+                ENC_NONE
+                ENC_NONE
+            >;
+        };
+
+        function {
+            display-name = "function";
+            bindings = <
+                TEMPORAL_WRAPPER(
+                    LAYER_FUNCTION,
+                    __________,
+                    ____xx____,
+                    __NONE_4__
+                )
+            >;
+
+            sensor-bindings = <
+                ENC_NONE
+                &inc_dec_kp TAB LS(TAB)
+            >;
+        };
+    };
+};

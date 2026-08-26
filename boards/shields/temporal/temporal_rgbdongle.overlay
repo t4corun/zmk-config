@@ -4,4 +4,4 @@
  * SPDX-License-Identifier: MIT
  */
 
-#include "totem_dongle.dtsi"
+#include "temporal_dongle.dtsi"

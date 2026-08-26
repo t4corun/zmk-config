@@ -1,4 +1,27 @@
 /*
+ * Wrapper to expand my keymap into keyboard specific keymaps
+ *
+ * This makes it easier to change the keymap in one place (t4corun.h)
+ * and reduces duplication
+ */
+
+#define TOTEM_WRAPPER(...) \
+    TOTEM_LAYOUT(__VA_ARGS__)
+
+#define TOTEM_LAYOUT(                                         \
+     lt4, lt3, lt2, lt1, lt0,    rt0, rt1, rt2, rt3, rt4,     \
+     lm4, lm3, lm2, lm1, lm0,    rm0, rm1, rm2, rm3, rm4,     \
+     lb4, lb3, lb2, lb1, lb0,    rb0, rb1, rb2, rb3, rb4,     \
+               lh2, lh1, lh0,    rh0, rh1, rh2,               \
+                         lb5,    rb5                          \
+)                                                             \
+     lt4  lt3  lt2  lt1  lt0     rt0  rt1  rt2  rt3  rt4      \
+     lm4  lm3  lm2  lm1  lm0     rm0  rm1  rm2  rm3  rm4      \
+lb5  lb4  lb3  lb2  lb1  lb0     rb0  rb1  rb2  rb3  rb4  rb5 \
+               lh2  lh1  lh0     rh0  rh1  rh2
+
+
+/*
  * Position definition for timerless home row mods
  *
  *   ╭─────────────────────────┬─────────────────────────╮
