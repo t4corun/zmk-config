@@ -11,20 +11,18 @@
 
 / {
     behaviors {
-        HRM_MACRO(hrmleft, TAPPING_TERM,     KEYS_R)
-        HRM_MACRO(hrmrght, TAPPING_TERM,     KEYS_L)
-        HRM_MACRO(hrmlalt, HRM_TAPPING_TERM, HRM_NONE)
-        HRM_MACRO(hrmralt, HRM_TAPPING_TERM, HRM_RALT)
-        HRM_MACRO(hrmgui,  HRM_TAPPING_TERM, HRM_GUI)
+        HRM_MACRO(hrmleft,   TAPPING_TERM,         KEYS_R)
+        HRM_MACRO(hrmrght,   TAPPING_TERM,         KEYS_L)
+        HRM_MACRO(hrmlalt,   HRM_TAPPING_TERM,     HRM_NONE)
+        HRM_MACRO(hrmralt,   HRM_TAPPING_TERM,     HRM_RALT)
+        HRM_MACRO(hrmgui,    HRM_TAPPING_TERM,     HRM_GUI)
 
-        MOD_MORPH(ko_comma,  &kp COMMA, &kp QMARK, MOD_LSFT)
+        MOD_MORPH(ko_com,    &kp COMMA, &kp QMARK, MOD_LSFT)
         MOD_MORPH(ko_dot,    &kp DOT,   &kp EXCL,  MOD_LSFT)
-        MOD_MORPH(ko_gcomma, &kp COMMA, &kp QMARK, MOD_LSFT)
-        MOD_MORPH(ko_gdot,   &kp DOT,   &kp EXCL,  MOD_LSFT)
+        MOD_MORPH(ko_gcom,   &kp COMMA, &kp EXCL,  MOD_LSFT)
+        MOD_MORPH(ko_gdot,   &kp DOT,   &kp QMARK, MOD_LSFT)
     };
-};
 
-/ {
     conditional_layers {
         compatible = "zmk,conditional-layers";
         tri_layer {
@@ -32,9 +30,6 @@
             then-layer = <_SYMBOL>;
         };
     };
-};
-
-/ {
     symbols {
         MACRO(        mc_brc,  &kp LBRC  &kp RBRC   &kp LEFT)
         HOLDTAP_MACRO(ht_brc,  &mc_brc)
@@ -57,7 +52,9 @@
 };
 
 
-//              xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx           xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx
+
+
+//   xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|----|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx
 
 / {
     keymap {
@@ -66,60 +63,80 @@
         qwerty {
             display-name = "totem";
             bindings = <
-                           &kp Q      &kp W      &kp E      &kp R      &kp T                &kp Y      &kp U      &kp I      &kp O      &kp P
-                           HRML(A,    S,         D,         F)         &kp G                &kp H      HRMR(J,    K,         L,         SQT)
-                FUNCTION   &kp Z      &kp X      &kp C      &kp V      &kp B                &kp N      &kp M      &ko_comma  &ko_dot    &kp MINUS  VOL_MUTE
-                                                 _BASE_L4________________________           _BASE_R4________________________
+                &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P
+                HRML(A,    S,         D,         F)         &kp G          &kp H      HRMR(J,    K,         L,         SQT)
+     FUNCTION   &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &ko_com    &ko_dot    &kp MINUS  VOL_MUTE
+                                      BASE_L4_________________________     BASE_R4_________________________
             >;
         };
 
         graphite {
             display-name = "graphite";
             bindings = <
-                           &kp B      &kp L      &kp D      &kp W      &kp Z                &kp SQT    &kp F      &kp O      &kp U      &kp J
-                           HRML(N,    R,         T,         S)         &kp G                &kp Y      HRMR(H,    A,         E,         I)
-                FUNCTION   &kp Q      &kp X      &kp M      &kp C      &kp V                &kp K      &kp P      &ko_gdot   &kp MINUS  &ko_gcomma VOL_MUTE
-                                                 _BASE_L4________________________           _BASE_R4________________________
+                &kp B      &kp L      &kp D      &kp W      &kp Z           &kp SQT    &kp F      &kp O      &kp U      &kp J
+                HRML(N,    R,         T,         S)         &kp G           &kp Y      HRMR(H,    A,         E,         I)
+     FUNCTION   &kp Q      &kp X      &kp M      &kp C      &kp V           &kp K      &kp P      &ko_gdot   &kp MINUS  &ko_gcom  VOL_MUTE
+                                      BASE_L4_________________________      BASE_R4_________________________
+            >;
+        };
+
+        game {
+            display-name = "game";
+            bindings = <
+                &kp TAB    &kp Q      &kp W      &kp E      &kp R           NONE_5________________________________________________
+                &kp LCTRL  &kp A      &kp S      &kp D      &kp F           NONE_5________________________________________________
+     &kp ENTER  &kp Z      &kp X      &kp C      &kp V      &kp B           &kp ENTER  ____xx____ VOL_DOWN   VOL_UP     VOL_MUTE   VOL_MUTE
+                                      GAMENUM    &kp SPACE  &kp LSHFT       BASE_R4_________________________
+            >;
+        };
+
+        gamenum {
+            display-name = "g.num";
+            bindings = <
+                &kp N8     &kp N7     &kp N6     &kp N5     &kp T           NONE_5________________________________________________
+                &kp N4     &kp N3     &kp N2     &kp N1     &kp G           NONE_5________________________________________________
+     &kp ENTER  &kp GRAVE  &kp ESC    ____xx____ &kp ENTER  &kp LALT        NONE_5________________________________________________ ____xx____
+                                      __________ ____xx____ ____xx____      QWERTY     GRAPHITE   ____xx____
             >;
         };
 
         navigation {
             display-name = "navigation";
             bindings = <
-                           &kp ESC    &kp HOME   &kp UP     &kp END    &kp PG_UP            &kp INS    &kp K_APP  ____xx____ ____xx____ ____xx____
-                           ____xx____ &kp LEFT   &kp DOWN   &kp RIGHT  &kp PG_DN            &kp BSPC   _MODS_SCAG_________________________________
-                NAVILOCK   _SHORTCUTS_UCCPR______________________________________           &kp DEL    ____xx____ VOL_DOWN   VOL_UP     ____xx____ __________
-                                                 &kp TAB    __________ ____xx____           _LAYER_TRANS____________________
+                &kp ESC    &kp HOME   &kp UP     &kp END    &kp PG_UP       &kp INS    &kp K_APP  ____xx____ ____xx____ ____xx____
+                ____xx____ &kp LEFT   &kp DOWN   &kp RIGHT  &kp PG_DN       &kp BSPC   MODS_SCAG__________________________________
+     NAVLOCK    SHORTCUTS_UCCPR_______________________________________      &kp DEL    ____xx____ VOL_DOWN   VOL_UP     ____xx____ __________
+                                      &kp TAB    __________ ____xx____      LAYER_TRANS_____________________
             >;
         };
 
         number {
             display-name = "number";
             bindings = <
-                           &kp ESC    &mkp MB5   &mkp MB3   &mkp MB4   W_SNIP               &kp COMMA  &kp N7     &kp N8     &kp N9     &kp FSLH
-                           _MODS_GACS_________________________________ &mkp MB2             &kp DOT    &kp N4     &kp N5     &kp N6     &kp ASTRK
-                NUMBLOCK   _SHORTCUTS_UCCPR______________________________________           &kp MINUS  &kp N1     &kp N2     &kp N3     &kp PLUS   __________
-                                                 &kp TAB    __________ &kp SPACE            &kp N0     __________ &kp EQL
+                &kp ESC    &mkp MB5   &mkp MB3   &mkp MB4   W_SNIP          &kp COMMA  &kp N7     &kp N8     &kp N9     &kp FSLH
+                MODS_GACS__________________________________ &mkp MB2        &kp DOT    &kp N4     &kp N5     &kp N6     &kp ASTRK
+     NUMLOCK   SHORTCUTS_UCCPR_______________________________________       &kp MINUS  &kp N1     &kp N2     &kp N3     &kp PLUS   &kp EQL
+                                      &kp TAB    __________ &kp SPACE       &kp N0     __________ __________
             >;
         };
 
         symbol {
             display-name = "symbol";
             bindings = <
-                           &kp CARET  &kp AT     MACRO_LGT  &kp GT     &kp GRAVE            &kp PIPE   MACRO_BRC  &kp RBRC   &kp DLLR   MACRO_DQUO
-                           ____xx____ &kp ASTRK  &kp FSLH   &kp EQL    &kp AMPS             &kp POUND  MACRO_PAR  &kp RPAR   &kp SEMI   MACRO_SQUO
-                &sk LCTRL  &kp TILDE  &kp PLUS   MACRO_BKT  &kp RBKT   &kp PRCNT            &kp BSLH   &kp COLON  &kp QMARK  &kp EXCL   &kp MINUS  &sk LSHIFT
-                                                 _LAYER_TRANS____________________           _LAYER_TRANS____________________
+                &kp CARET  &kp AT     MACRO_LGT  &kp GT     &kp GRAVE       &kp PIPE   MACRO_BRC  &kp RBRC   &kp DLLR   MACRO_DQUO
+                ____xx____ &kp ASTRK  &kp FSLH   &kp EQL    &kp AMPS        &kp POUND  MACRO_PAR  &kp RPAR   &kp SEMI   MACRO_SQUO
+     &sk LCTRL  &kp TILDE  &kp PLUS   MACRO_BKT  &kp RBKT   &kp PRCNT       &kp BSLH   &kp COLON  &kp QMARK  &kp EXCL   &kp MINUS  &sk LSHIFT
+                                      LAYER_TRANS_____________________      LAYER_TRANS_____________________
             >;
         };
 
         function {
             display-name = "function";
             bindings = <
-                           BT_1       BT_2       BT_3       BT_4       BT_5                 ____xx____ &kp F7     &kp F8     &kp F9     &kp F10
-                           _MODS_GACS_________________________________ BT_0                 ____xx____ &kp F4     &kp F5     &kp F6     &kp F11
-                __________ BT_CLEAR   &kp KP_NUM &kp CAPS   &kp SLCK   ____xx____           ____xx____ &kp F1     &kp F2     &kp F3     &kp F12    __________
-                                                 OUTPUT_TOG &ind_con   &ind_bat             QWERTY     GRAPHITE   &kp PSCRN
+                BT_1       BT_2       BT_3       BT_4       BT_5            ____xx____ &kp F7     &kp F8     &kp F9     &kp F10
+                MODS_GACS__________________________________ BT_0            ____xx____ &kp F4     &kp F5     &kp F6     &kp F11
+     __________ BT_CLEAR   &kp KP_NUM &kp CAPS   &kp SLCK   &kp PSCRN       ____xx____ &kp F1     &kp F2     &kp F3     &kp F12    __________
+                                      OUTPUT_TOG &ind_con   &ind_bat        QWERTY     GRAPHITE   GAME
             >;
         };
     };
