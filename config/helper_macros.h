@@ -29,6 +29,19 @@
         bindings = <HOLD_MACRO>, <&kp>;                    \
     };
 
+#define HRM_MACRO(NAME, TAP_TERM, POSITIONS)               \
+    NAME: NAME {                                           \
+        compatible = "zmk,behavior-hold-tap";              \
+        #binding-cells = <2>;                              \
+        flavor = "balanced";                               \
+        require-prior-idle-ms = <PRIOR_IDLE_TERM>;         \
+        tapping-term-ms = <TAP_TERM>;                      \
+        quick-tap-ms = <QUICK_TAP_TERM>;                   \
+        bindings = <&kp>, <&kp>;                           \
+        hold-trigger-key-positions = <POSITIONS>;          \
+        hold-trigger-on-release;                           \
+    };
+
 #define MOD_MORPH(NAME, TAP, MORPH, MODS)                  \
     NAME: NAME {                                           \
         compatible = "zmk,behavior-mod-morph";             \

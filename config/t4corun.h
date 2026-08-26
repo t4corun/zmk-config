@@ -17,19 +17,17 @@
 #define _BASELAYERS _QWERTY _GRAPHITE
 
 // Behavior Configuration
-#define TAPPING_TERM          220
-#define QUICK_TAP_TERM        150
-#define PRIOR_IDLE_TERM       125
+#define TAPPING_TERM         220
+#define QUICK_TAP_TERM       150
+#define PRIOR_IDLE_TERM      125
 
-#define HRM_TAPPING_TERM      TAPPING_TERM
-#define HRM_QUICK_TAP_TERM    QUICK_TAP_TERM
-#define HRM_PRIOR_IDLE_TERM   PRIOR_IDLE_TERM
+#define HRM_TAPPING_TERM     (TAPPING_TERM + 100)
 
-#define COMBO_TIMEOUT         50
+#define COMBO_TIMEOUT        50
 
 // homerow mods
-#define HRML(k1, k2, k3, k4) &hml LGUI k1   &hml LALT k2   &hml LCTRL k3  &hml LSHFT k4
-#define HRMR(k1, k2, k3, k4) &hmr RSHFT k1  &hmr RCTRL k2  &hmr RALT k3   &hmr RGUI  k4
+#define HRML(k1, k2, k3, k4) &hrmgui  LGUI k1   &hrmlalt LALT k2   &hrmleft LCTRL k3  &hrmleft LSHFT k4
+#define HRMR(k1, k2, k3, k4) &hrmrght RSHFT k1  &hrmrght RCTRL k2  &hrmralt RALT k3   &hrmgui  RGUI  k4
 
 // layer changes
 #define NUMBER               &mo  _NUMBER
@@ -55,11 +53,6 @@
 #define BT_NEXT              &bt BT_NXT
 #define BT_PREV              &bt BT_PRV
 #define OUTPUT_TOG           &out OUT_TOG
-
-// YADS Screen Control
-#define YADS_SCR             &kp F22
-#define YADS_DOWN            &kp F23
-#define YADS_UP              &kp F24
 
 // keymap macros
 #define __________                                             &trans
