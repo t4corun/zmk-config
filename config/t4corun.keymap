@@ -1,5 +1,6 @@
 #include <behaviors.dtsi>
 #include <behaviors/num_word.dtsi>
+#include <behaviors/rgbled_widget.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
@@ -97,8 +98,8 @@
             bindings = <
                            &kp ESC    &mkp MB5   &mkp MB3   &mkp MB4   W_SNIP               &kp COMMA  &kp N7     &kp N8     &kp N9     &kp FSLH
                            _MODS_GACS_________________________________ &mkp MB2             &kp DOT    &kp N4     &kp N5     &kp N6     &kp ASTRK
-                NUMBLOCK   _SHORTCUTS_UCCPR______________________________________           &kp MINUS  &kp N1     &kp N2     &kp N3     &kp PLUS   &kp EQL
-                                                 &kp TAB    __________ &kp SPACE            &kp N0     __________ __________
+                NUMBLOCK   _SHORTCUTS_UCCPR______________________________________           &kp MINUS  &kp N1     &kp N2     &kp N3     &kp PLUS   __________
+                                                 &kp TAB    __________ &kp SPACE            &kp N0     __________ &kp EQL
             >;
         };
 
@@ -115,10 +116,10 @@
         function {
             display-name = "function";
             bindings = <
-                           BT_CLEAR   ____xx____ ____xx____ ____xx____ &kp PSCRN            ____xx____ &kp F7     &kp F8     &kp F9     &kp F10
-                           _MODS_GACS_________________________________ ____xx____           ____xx____ &kp F4     &kp F5     &kp F6     &kp F11
-                __________ ____xx____ &kp KP_NUM &kp CAPS   &kp SLCK   ____xx____           ____xx____ &kp F1     &kp F2     &kp F3     &kp F12    __________
-                                                 OUTPUT_TOG BT_PREV    BT_NEXT              QWERTY     GRAPHITE   ____xx____
+                           BT_1       BT_2       BT_3       BT_4       BT_5                 ____xx____ &kp F7     &kp F8     &kp F9     &kp F10
+                           _MODS_GACS_________________________________ BT_0                 ____xx____ &kp F4     &kp F5     &kp F6     &kp F11
+                __________ BT_CLEAR   &kp KP_NUM &kp CAPS   &kp SLCK   ____xx____           ____xx____ &kp F1     &kp F2     &kp F3     &kp F12    __________
+                                                 OUTPUT_TOG &ind_con   &ind_bat             QWERTY     GRAPHITE   &kp PSCRN
             >;
         };
     };

@@ -8,4 +8,4 @@ config SHIELD_TOTEM_RIGHT
     def_bool $(shields_list_contains,totem_right)
 
 config SHIELD_TOTEM_DONGLE
-    def_bool $(shields_list_contains,totem_dongle)
+    def_bool $(shields_list_contains,totem_prospector) || $(shields_list_contains,totem_rgbdongle)

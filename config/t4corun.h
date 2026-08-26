@@ -50,8 +50,12 @@
 
 // wireless connectivity and output modes. Cycles through profiles 1-6
 #define BT_CLEAR             &bt BT_CLR
-#define BT_NEXT              &bt BT_NXT
-#define BT_PREV              &bt BT_PRV
+#define BT_0                 &bt BT_SEL 0
+#define BT_1                 &bt BT_SEL 1
+#define BT_2                 &bt BT_SEL 2
+#define BT_3                 &bt BT_SEL 3
+#define BT_4                 &bt BT_SEL 4
+#define BT_5                 &bt BT_SEL 5
 #define OUTPUT_TOG           &out OUT_TOG
 
 // keymap macros

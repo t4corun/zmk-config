@@ -9,4 +9,5 @@ features:
 siblings:
   - totem_left
   - totem_right
-  - totem_dongle
+  - totem_prospector
+  - totem_rgbdongle
