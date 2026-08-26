@@ -5,80 +5,7 @@
 
 #include <behaviors/rgbled_widget.dtsi>
 
-//-----------------------------------
-
-// put the default base layers first
-#define _QWERTY     0
-#define _NAVIGATION 1
-#define _NUMBER     2
-#define _SYMBOL     3
-#define _FUNCTION   4
-
-// layer changes
-#define NUM                  &mo _NUMBER
-#define NAV                  &mo _NAVIGATION
-#define FUNC                 &mo _FUNCTION
-
-//Behavior Configuration
-#define TAPPING_TERM 200
-
-//                           xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx
-#define HRML(k1, k2, k3, k4) &mt LGUI k1   &mt LALT k2   &mt LCTRL k3  &mt LSHFT k4
-#define HRMR(k1, k2, k3, k4) &mt RSHFT k1  &mt RCTRL k2  &mt RALT k3   &mt RGUI  k4
-
-//#define HT(hold, tap)        &ht hold tap
-#define KO_COMMA             &ht LPAR      COMMA
-#define KO_DOT               &ht RPAR      DOT
-#define KO_MINUS             &ht UNDER     MINUS
-
-#define MACRO_BRC            &ht &insert_braces_brc LBRC
-#define MACRO_LGT            &ht &insert_braces_lgt LT
-#define MACRO_BKT            &ht &insert_braces_bkt LBKT
-#define MACRO_PAR            &ht &insert_braces_par LPAR
-
-#define MACRO_SQUO           &ht &double_tap_squote SQT
-#define MACRO_DQUO           &ht &double_tap_dquote DQT
-#define MACRO_FSLH           &ht &double_tap_fslash FSLH
-#define MACRO_BSLH           &ht &double_tap_bslash BSLH
-#define MACRO_PIPE           &ht &double_tap_pipe   PIPE
-
-#define BT1                  &bt BT_SEL 0
-#define BT2                  &bt BT_SEL 1
-#define BT3                  &bt BT_SEL 2
-#define BT4                  &bt BT_SEL 3
-#define BT5                  &bt BT_SEL 4
-
-#define BT_CLEAR             &bt BT_CLR
-#define OUTPUT_BLE           &out OUT_BLE
-#define OUTPUT_USB           &out OUT_USB
-
-
-
-//                                                             xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx
-
-#define __________                                             &trans
-#define ____xx____                                             &none
-#define _BASE_L4________________________                       &kp TAB    NUM        &kp LSHFT
-#define _BASE_R4________________________                       &kp SPACE  NAV        &kp BSPC
-#define _LAYER_TRANS____________________                       ____xx____ __________ ____xx____
-#define _MODS_GACS_________________________________            &kp LGUI   &kp LALT   &kp LCTRL  &kp LSHFT
-#define _MODS_SCAG_________________________________            &kp RSHFT  &kp RCTRL  &kp RALT   &kp RGUI
-#define _SHORTCUTS_UCCPR______________________________________ &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LC(Y)
-#define _NONE_5_______________________________________________ ____xx____ ____xx____ ____xx____ ____xx____ ____xx____
-
-
-
-//-----------------------------------
-
-&lt {
-    flavor = "tap-preferred";
-    tapping-term-ms = <TAPPING_TERM>; // this works because ZMK processes C before devicetree files
-};
-
-&mt {
-    flavor = "tap-preferred";
-    tapping-term-ms = <TAPPING_TERM>;
-};
+#include "t4corun.h"
 
 / {
     behaviors {
@@ -87,24 +14,38 @@
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <TAPPING_TERM>;
-            quick_tap_ms = <0>;
+            quick_tap_ms = <QUICK_TAP_TERM>;
             bindings = <&kp>, <&kp>;
         };
+
+        hml: home_row_mod_left {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            require-prior-idle-ms = <HRM_PRIOR_IDLE_TERM>;
+            tapping-term-ms = <HRM_TAPPING_TERM>;
+            quick-tap-ms = <HRM_QUICK_TAP_TERM>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <KEYS_R THUMBS>; // List of keys on the right side of the keyboard
+            hold-trigger-on-release;
+        };
+
+        hmr: home_row_mod_right {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            require-prior-idle-ms = <HRM_PRIOR_IDLE_TERM>;
+            tapping-term-ms = <HRM_TAPPING_TERM>;
+            quick-tap-ms = <HRM_QUICK_TAP_TERM>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <KEYS_L THUMBS>; // List of keys on the left side of the keyboard
+            hold-trigger-on-release;
+        };
+
     };
+};
 
-    macros {
-        ZMK_MACRO(insert_braces_brc, wait-ms = <0>; tap-ms = <5>; bindings = <&kp LBRC &kp RBRC &kp LEFT>;)
-        ZMK_MACRO(insert_braces_lgt, wait-ms = <0>; tap-ms = <5>; bindings = <&kp LT   &kp GT   &kp LEFT>;)
-        ZMK_MACRO(insert_braces_bkt, wait-ms = <0>; tap-ms = <5>; bindings = <&kp LBKT &kp RBKT &kp LEFT>;)
-        ZMK_MACRO(insert_braces_par, wait-ms = <0>; tap-ms = <5>; bindings = <&kp LPAR &kp RPAR &kp LEFT>;)
-
-        ZMK_MACRO(double_tap_squote, wait-ms = <0>; tap-ms = <5>; bindings = <&kp SQT  &kp SQT  &kp LEFT>;)
-        ZMK_MACRO(double_tap_dquote, wait-ms = <0>; tap-ms = <5>; bindings = <&kp DQT  &kp DQT  &kp LEFT>;)
-        ZMK_MACRO(double_tap_fslash, wait-ms = <0>; tap-ms = <5>; bindings = <&kp FSLH &kp FSLH >;)
-        ZMK_MACRO(double_tap_bslash, wait-ms = <0>; tap-ms = <5>; bindings = <&kp BSLH &kp BSLH >;)
-        ZMK_MACRO(double_tap_pipe,   wait-ms = <0>; tap-ms = <5>; bindings = <&kp PIPE &kp PIPE >;)
-    };
-
+/ {
     conditional_layers {
         compatible = "zmk,conditional-layers";
         tri_layer {
@@ -112,11 +53,36 @@
             then-layer = <_SYMBOL>;
         };
     };
+};
 
-    keymap {
-        compatible = "zmk,keymap";
+/ {
+    symbols {
+        MACRO(        mc_brc,  &kp LBRC  &kp RBRC   &kp LEFT)
+        HOLDTAP_MACRO(ht_brc,  &mc_brc)
+
+        MACRO(        mc_lgt,  &kp LT    &kp GT     &kp LEFT)
+        HOLDTAP_MACRO(ht_lgt,  &mc_lgt)
+
+        MACRO(        mc_bkt,  &kp LBKT  &kp RBKT   &kp LEFT)
+        HOLDTAP_MACRO(ht_bkt,  &mc_bkt)
+
+        MACRO(        mc_par,  &kp LPAR  &kp RPAR   &kp LEFT)
+        HOLDTAP_MACRO(ht_par,  &mc_par)
+
+        MACRO(        mc_squo, &kp SQT    &kp SQT   &kp LEFT)
+        HOLDTAP_MACRO(ht_sqt,  &mc_squo)
+
+        MACRO(        mc_dquo, &kp DQT    &kp DQT   &kp LEFT)
+        HOLDTAP_MACRO(ht_dqt,  &mc_dquo)
+    };
+};
+
 
 //              xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx           xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx|xxxxxxxxxx
+
+/ {
+    keymap {
+        compatible = "zmk,keymap";
 
         qwerty {
             bindings = <
@@ -127,18 +93,27 @@
             >;
         };
 
+        gallium {
+            bindings = <
+                           &kp B      &kp L      &kp D      &kp C      &kp V                &kp Z      &kp Y      &kp O      &kp U      &kp SQT
+                           HRML(N,    R,         S,         T)         &kp G                &kp P      HRMR(H,    A,         E,         I)
+                FUNC       &kp Q      &kp X      &kp M      &kp W      &kp J                &kp K      &kp F      KO_MINUS   KO_COMMA   KO_DOT     &kp C_MUTE
+                                                 _BASE_L4________________________           _BASE_R4________________________
+            >;
+        };
+
         navigation {
             bindings = <
                            ____xx____ &kp HOME   &kp UP     &kp END    &kp PG_UP            &kp INS    &kp K_APP  ____xx____ ____xx____   ____xx____
                            &caps_word &kp LEFT   &kp DOWN   &kp RIGHT  &kp PG_DN            &kp BSPC   _MODS_SCAG_________________________________
-                __________ _SHORTCUTS_UCCPR______________________________________           &kp DEL    ____xx____ ____xx____ &kp C_VOL_DN &kp C_VOL_UP __________
+                __________ _SHORTCUTS_UCCPR______________________________________           &kp DEL    ____xx____ &kp C_VOL_DN &kp C_VOL_UP ____xx____ __________
                                                  &kp TAB    __________ &kp ENTER            _LAYER_TRANS____________________
             >;
         };
 
         number {
             bindings = <
-                           &kp ESC    ____xx____ ____xx____ ____xx____ ____xx____           &kp COMMA  &kp N7     &kp N8     &kp N9     ____xx____
+                           &kp ESC    W_SNIP     ____xx____ ____xx____ ____xx____           &kp COMMA  &kp N7     &kp N8     &kp N9     ____xx____
                            _MODS_GACS_________________________________ ____xx____           &kp DOT    &kp N4     &kp N5     &kp N6     ____xx____
                 __________ _SHORTCUTS_UCCPR______________________________________           &kp MINUS  &kp N1     &kp N2     &kp N3     ____xx____ __________
                                                  _LAYER_TRANS____________________           &kp N0     __________ &kp BSPC
@@ -148,8 +123,8 @@
         symbol {
             bindings = <
                            &kp CARET  &kp AMPS   &kp AT     &kp DLLR   &kp GRAVE            &kp TILDE  &kp POUND  &kp ASTRK  &kp PLUS   MACRO_DQUO
-                           &kp PRCNT  MACRO_BRC  &kp RBRC   MACRO_PIPE &kp SEMI             &kp COLON  &kp EQUAL  MACRO_BKT  &kp RBKT   MACRO_SQUO
-                __________ ____xx____ MACRO_LGT  &kp GT     MACRO_BSLH &kp EXCL             &kp QMARK  MACRO_FSLH MACRO_PAR  &kp RPAR   ____xx____ __________
+                           &kp PRCNT  MACRO_BRC  &kp RBRC   &kp PIPE   &kp SEMI             &kp COLON  &kp EQUAL  MACRO_BKT  &kp RBKT   MACRO_SQUO
+                __________ ____xx____ MACRO_LGT  &kp GT     &kp BSLH   &kp EXCL             &kp QMARK  &kp FSLH   MACRO_PAR  &kp RPAR   ____xx____ __________
                                                  _LAYER_TRANS____________________           _LAYER_TRANS____________________
             >;
         };
@@ -158,8 +133,8 @@
             bindings = <
                            BT1        BT2        BT3        BT4        BT5                  ____xx____ &kp F7     &kp F8     &kp F9     &kp F10
                            _MODS_GACS_________________________________ ____xx____           ____xx____ &kp F4     &kp F5     &kp F6     &kp F11
-                __________ BT_CLEAR   OUTPUT_BLE OUTPUT_USB &ind_con   &ind_bat             ____xx____ &kp F1     &kp F2     &kp F3     &kp F12    __________
-                                                 _LAYER_TRANS____________________           ____xx____ ____xx____ ____xx____
+                __________ ____xx____ OUTPUT_BLE OUTPUT_USB &ind_con   &ind_bat             ____xx____ &kp F1     &kp F2     &kp F3     &kp F12    __________
+                                                 ____xx____ ____xx____ BT_CLEAR             QWERTY     GALLIUM    ____xx____
             >;
         };
     };
