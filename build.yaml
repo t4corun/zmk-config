@@ -26,8 +26,11 @@ include:
     shield: totem_right
     artifact-name: totem_right
   - board: xiao_ble//zmk
-    shield: totem_dongle prospector_adapter
-    artifact-name: totem_dongle
+    shield: totem_prospector prospector_adapter
+    artifact-name: totem_prospector
+  - board: xiao_ble//zmk
+    shield: totem_rgbdongle rgbled_adapter
+    artifact-name: totem_rgbdongle
   - board: xiao_ble//zmk
     shield: settings_reset
     artifact-name: totem_settings_reset

@@ -1,0 +1,57 @@
+layout:
+  qmk_keyboard: TOTEM
+  layout_name: LAYOUT_split_3x5_3
+layers:
+  BASE:
+    # rows 1-3
+    - [Q, W, E, R, T, Y, U, I, O, P]
+    - [{h: gui, t: A}, {h: Alt, t: S}, {h: Ctrl, t: D}, {h: Shift, t: F}, G, H, {h: Shift, t: J}, {h: Ctrl, t: K}, {h: Alt, t: L}, {h: Gui, t: "'"}]
+    - [FUNC, Z, X, C, V, B, N, M, {t: ",", s: "?"}, {t: ".", s: "!"}, "-", mute]
+    # thumbs
+    - [MB1, NUM, Shift, Space, NAV, Backspace]
+  GRAPHITE:
+    # rows 1-3
+    - [B, L, D, W, Z, "'", F, O, U, J]
+    - [{h: gui, t: N}, {h: Alt, t: R}, {h: Ctrl, t: T}, {h: Shift, t: S}, G, Y, {h: Shift, t: H}, {h: Ctrl, t: A}, {h: Alt, t: E}, {h: Gui, t: I}]
+    - [FUNC, Q, X, M, C, V, K, P, {t: ".", s: "!"}, -, {t: ",", s: "?"}, mute]
+    # thumbs
+    - [MB1, NUM, Shift, Space, NAV, Backspace]
+  NAV:
+    # rows 1-3
+    - [Escape, Home, ▲, End, Page Up, Insert, App, null, null, null ]
+    - [null, ◄, ▼, ►, Page Down, Back Space, Shift, Ctrl, Alt, Gui ]
+    - ["NAV Lock", Undo, Cut, Copy, Paste, Redo, Delete, null, Vol -, Vol +, null, mute ]
+    # common thumbs
+    - [Tab, NUM, null, null, type: held, null]
+  NUM:
+    # rows 1-3
+    - [Esc, MB5, MB3, MB4, "Snipping Tool", ",", "7", "8" ,"9", "/"]
+    - [Gui, Alt, Ctrl, Shift, MB2, ".", "4", "5" ,"6", "*"]
+    - ["NUM Lock", Undo, Cut, Copy, Paste, Redo, "-", "1", "2" ,"3", "+", mute]
+    # thumbs
+    - [Tab, type: held, Space, 0, NAV, "="]
+  SYM:
+    # rows 1-3
+    - ["^", "@", {t: "<", h: "<>"}, ">", "`", "|", {t: "{", h: "{}"}, "}", "$", {t: "\"", h: "\"\""}]
+    - [null, "*", "/", "=", "&", "#", {t: "(", h: "()"}, ")", ";", {t: "'", h: "''"}]
+    - [Ctrl, "~", "+", {t: "[", h: "[]"}, "]", "%", "\\", ":", "?", "!", "-", Shift]
+    # thumbs
+    - [null, type: held, null, null, type: held, null]
+  FUNC:
+    # rows 1-3
+    - [BT1, BT2, BT3, BT4, BT5, null, F7, F8, F9, F10]
+    - [Gui, Alt, Ctrl, Shift, BT0, null, F4, F5, F6, F11]
+    - [type: held, "BT Clear", "Num Lock", "Caps Lock", "Scroll Lock", null, null, F1, F2, F3, F12, mute]
+    # thumbs
+    - ["USB/BT Toggle", "Conn Status", "Battery Status", BASE, GRAPHITE, "Print screen"]
+combos:
+  - {p: [13, 14], k: "@", l: ["BASE"]}
+  - {p: [23, 24], k: Tab, l: ["BASE"]}
+  - {p: [27, 28], k: Enter, l: ["BASE"]}
+  - {p: [32, 37], k: "Numword", l: ["BASE"], a: top}
+  - {p: [34, 35], k: "Capsword", l: ["BASE"], a: top}
+  - {p: [13, 14], k: "@", l: ["GRAPHITE"]}
+  - {p: [23, 24], k: Tab, l: ["GRAPHITE"]}
+  - {p: [27, 28], k: Enter, l: ["GRAPHITE"]}
+  - {p: [32, 37], k: "Numword", l: ["GRAPHITE"], a: top}
+  - {p: [34, 35], k: "Capsword", l: ["GRAPHITE"], a: top}

@@ -14,6 +14,9 @@ manifest:
     - name: prospector-zmk-module
       remote: carrefinho
       revision: feat/new-status-screens
+    - name: zmk-rgbled-widget
+      url: https://github.com/caksoylar/zmk-rgbled-widget
+      revision: main
     - name: zmk-auto-layer
       remote: urob
       revision: main
