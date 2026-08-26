@@ -1,4 +1,4 @@
-# Copyright (c) 2022 The ZMK Contributors
+# Copyright (c) 2026 Victor Nguyen
 # SPDX-License-Identifier: MIT
 
 config SHIELD_TOTEM_LEFT
@@ -8,4 +8,6 @@ config SHIELD_TOTEM_RIGHT
     def_bool $(shields_list_contains,totem_right)
 
 config SHIELD_TOTEM_DONGLE
-    def_bool $(shields_list_contains,totem_prospector) || $(shields_list_contains,totem_rgbdongle)
+    def_bool \
+        $(shields_list_contains,totem_prospector) || \
+        $(shields_list_contains,totem_rgbdongle)

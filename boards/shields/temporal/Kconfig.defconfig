@@ -1,8 +1,8 @@
-# Copyright (c) 2026 Victor Nguyen
+# Copyright (c) 2024 Curtis Bollinger
 # SPDX-License-Identifier: MIT
 
-if SHIELD_TOTEM_LEFT || \
-    SHIELD_TOTEM_RIGHT
+if SHIELD_TEMPORAL_LEFT || \
+    SHIELD_TEMPORAL_RIGHT
 
 config ZMK_SPLIT_ROLE_CENTRAL
     default n
@@ -11,10 +11,11 @@ endif
 
 
 
-if SHIELD_TOTEM_DONGLE
+
+if SHIELD_TEMPORAL_DONGLE
 
 config ZMK_KEYBOARD_NAME
-    default "TOTEM"
+    default "Temporal"
 
 config ZMK_SPLIT_ROLE_CENTRAL
     default y	
@@ -40,9 +41,9 @@ endif
 
 
 
-if SHIELD_TOTEM_LEFT || \
-    SHIELD_TOTEM_RIGHT || \
-    SHIELD_TOTEM_DONGLE
+if SHIELD_TEMPORAL_LEFT || \
+    SHIELD_TEMPORAL_RIGHT || \
+    SHIELD_TEMPORAL_DONGLE
 
 config ZMK_SPLIT
     default y
