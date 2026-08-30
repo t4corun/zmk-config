@@ -25,8 +25,58 @@
     status = "okay";
 };
 
+
 /*
-&sensors {
-    sensors = <&right_encoder>;
+ * Azoteq Trackpad Configuration
+ * - Using the geeksville module
+ * - README: https://github.com/geeksville/zmk_driver_azoteq
+ *
+ * Comparing to Beekeeb Toucan 2
+ * - left side central, right side peripheral that has the trackpad
+ * - It uses a seeed xiao
+ *   https://github.com/beekeeb/zmk-keyboard-toucan2/blob/main/boards/shields/toucan/toucan_right.overlay
+ *
+ * For the temporal
+ * - we will use the default i2c pins as defined in zmk. No need to define again
+ *   https://github.com/zmkfirmware/zmk/blob/main/app/module/boards/nicekeyboards/nice_nano/nice_nano-pinctrl.dtsi
+ */
+
+&i2c0_trackpad {
+    status = "okay";
+    clock-frequency = <I2C_BITRATE_FAST>;
+    pinctrl-0 = <&i2c0_default>;
+    pinctrl-1 = <&i2c0_sleep>;
+    pinctrl-names = "default", "sleep";
+
+    tps43_trackpad: trackpad@74 {
+        compatible = "azoteq,tps43";
+        reg = <0x74>;
+        status = "okay";
+
+        /*
+         * nice!nano v2 free pins on this build:
+         * D2 (P0.17) -> RDY
+         * D3 (P0.20) -> RST
+         */
+        rdy-gpios = <&pro_micro 2 GPIO_ACTIVE_HIGH>;
+        rst-gpios = <&pro_micro 3 GPIO_ACTIVE_HIGH>;
+
+        enable-power-management;
+
+        zoom;
+        scroll;
+        two-finger-tap;
+        single-tap;
+        press-and-hold;
+        three-finger-swipe;
+        three-finger-swipe-throttle-ms = <800>;
+
+        switch-xy;
+        invert-scroll-y;
+    };
 };
-*/
+
+&trackpad_split {
+    device = <&tps43_trackpad>;
+};
+

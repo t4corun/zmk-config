@@ -7,6 +7,10 @@
 #include "temporal_layouts.dtsi"
 
 / {
+    /*
+     * mock scan
+     */
+
     chosen {
         zmk,kscan = &mock_kscan;
         zmk,matrix-transform = &default_transform;
@@ -18,6 +22,13 @@
         rows = <0>;
         events = <0>;
     };
+
+
+
+
+    /*
+     * Encoder configuration
+     */
 
     left_encoder: encoder_left {
         status = "disabled";
@@ -31,5 +42,28 @@
         compatible = "zmk,keymap-sensors";
         sensors = <&left_encoder &right_encoder>;
         triggers-per-rotation = <24>;
+    };
+
+
+
+
+    /*
+     * Trackpad Configuration configuration
+     */
+
+    split_inputs {
+        #address-cells = <1>;
+        #size-cells = <0>;
+
+        touchpad_split: touchpad_split@0 {
+            compatible = "zmk,input-split";
+            reg = <0>;
+        };
+    };
+
+    trackpad_listener: trackpad_listener {
+        compatible = "zmk,input-listener";
+        status = "disabled";
+        device = <&trackpad_split>;
     };
 };
