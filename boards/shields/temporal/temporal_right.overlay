@@ -26,6 +26,10 @@
 };
 
 
+
+
+
+
 /*
  * Azoteq Trackpad Configuration
  * - Using the geeksville module
@@ -53,13 +57,8 @@
         reg = <0x74>;
         status = "okay";
 
-        /*
-         * nice!nano v2 free pins on this build:
-         * D2 (P0.17) -> RDY
-         * D3 (P0.20) -> RST
-         */
-        rdy-gpios = <&pro_micro 2 GPIO_ACTIVE_HIGH>;
-        rst-gpios = <&pro_micro 3 GPIO_ACTIVE_HIGH>;
+        //rdy-gpios = <&pro_micro 16 GPIO_ACTIVE_HIGH>;
+        //rst-gpios = <&pro_micro 3 GPIO_ACTIVE_HIGH>;
 
         enable-power-management;
 
@@ -76,7 +75,14 @@
     };
 };
 
-&trackpad_split {
-    device = <&tps43_trackpad>;
+split_inputs {
+    #address-cells = <1>;
+    #size-cells = <0>;
+
+    trackpad_split: trackpad_split@0 {
+        compatible = "zmk,input-split";
+        reg = <0>;
+        device = <&tps43_trackpad>;
+    };
 };
 
