@@ -41,7 +41,7 @@
  *   https://github.com/zmkfirmware/zmk/blob/main/app/module/boards/nicekeyboards/nice_nano/nice_nano-pinctrl.dtsi
  */
 
-&i2c0_trackpad {
+&i2c0 {
     status = "okay";
     clock-frequency = <I2C_BITRATE_FAST>;
     pinctrl-0 = <&i2c0_default>;

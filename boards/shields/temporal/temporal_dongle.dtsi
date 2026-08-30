@@ -55,7 +55,7 @@
         #address-cells = <1>;
         #size-cells = <0>;
 
-        touchpad_split: touchpad_split@0 {
+        trackpad_split: trackpad_split@0 {
             compatible = "zmk,input-split";
             reg = <0>;
         };
