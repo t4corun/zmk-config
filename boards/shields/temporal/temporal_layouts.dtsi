@@ -25,6 +25,7 @@
      *   - 5,  6 = inner
      * - RC(3,2) and RC(3,9) can either be a switch or an encoder
      */
+
     default_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";
         columns = <12>;

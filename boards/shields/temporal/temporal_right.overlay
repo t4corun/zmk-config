@@ -32,20 +32,20 @@
 
 /*
  * Azoteq Trackpad Configuration
- * - Using the geeksville module
- * - README: https://github.com/geeksville/zmk_driver_azoteq
  *
- * Comparing to Beekeeb Toucan 2
- * - left side central, right side peripheral that has the trackpad
- * - It uses a seeed xiao
- *   https://github.com/beekeeb/zmk-keyboard-toucan2/blob/main/boards/shields/toucan/toucan_right.overlay
+ * decided to use the the geeksville module
+ * README: https://github.com/geeksville/zmk_driver_azoteq
  *
- * For the temporal
- * - we will use the default i2c pins as defined in zmk. No need to define again
- *   https://github.com/zmkfirmware/zmk/blob/main/app/module/boards/nicekeyboards/nice_nano/nice_nano-pinctrl.dtsi
+ * Beekeeb Toucan 2 is an example implementation, but note it uses a seeed xiao
+ * which has different i2c pins than the nice_nano. The Toucan 2 does not have a
+ * dongle, but it uses right side trackpad
+ * beekeeb/zmk-keyboard-toucan2/boards/shields/toucan/toucan_right.overlay
+ *
+ * This Temporal will use the default i2c pins as defined in zmk
+ * zmkfirmware/zmk/app/module/boards/nicekeyboards/nice_nano/nice_nano-pinctrl.dtsi
  */
 
-&i2c0 {
+trackpad: &i2c0 {
     status = "okay";
     clock-frequency = <I2C_BITRATE_FAST>;
     pinctrl-0 = <&i2c0_default>;
