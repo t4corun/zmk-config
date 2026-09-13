@@ -12,5 +12,5 @@ features:
 siblings:
   - temporal_left
   - temporal_right
-  - temporal_prospector
+  - temporal_right_trackpad
   - temporal_rgbdongle
