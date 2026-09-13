@@ -1,3 +1,5 @@
+#include <input/processors.dtsi>
+
 / {
     trackpad_behaviors {
         swipe_button_mapper: swipe_button_mapper {
