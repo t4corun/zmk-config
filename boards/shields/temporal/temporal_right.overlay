@@ -17,7 +17,9 @@
         , <&pro_micro 18 GPIO_ACTIVE_HIGH>  // col_middle
         , <&pro_micro 19 GPIO_ACTIVE_HIGH>  // col_ring
         , <&pro_micro 20 GPIO_ACTIVE_HIGH>  // col_pinky (also encoder switch)
-        , <&pro_micro 21 GPIO_ACTIVE_HIGH>  // col_extra
+
+        // I need this pin for the trackpad
+        //, <&pro_micro 21 GPIO_ACTIVE_HIGH>  // col_extra
         ;
 };
 
@@ -57,8 +59,8 @@ trackpad: &i2c0 {
         reg = <0x74>;
         status = "okay";
 
-        //rdy-gpios = <&pro_micro 16 GPIO_ACTIVE_HIGH>;
-        //rst-gpios = <&pro_micro 3 GPIO_ACTIVE_HIGH>;
+        rdy-gpios = <&pro_micro 21 GPIO_ACTIVE_HIGH>;
+        rst-gpios = <&pro_micro 16 GPIO_ACTIVE_HIGH>;
 
         enable-power-management;
 

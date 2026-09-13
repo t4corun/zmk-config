@@ -10,6 +10,8 @@
  * used for the trackpad. To make it a little easier to switch between the two
  * we will switch the display to spi1 and override the pin defaults in
  * zmkfirmware/zmk/app/module/boards/nicekeyboards/nice_nano/nice_nano-pinctrl.dtsi
+ *
+ * Both keyboard halves share this SPI configuration
  */
 
 
