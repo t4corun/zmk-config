@@ -43,7 +43,7 @@ include:
     artifact-name: temporal_right_trackpad
   - board: nice_nano//zmk
     shield: temporal_right_trackpad
-    cmake-args: -DCONFIG_LOG=y -DCONFIG_ZMK_USB_LOGGING=y -DCONFIG_LOG_MODE_IMMEDIATE=y
+    cmake-args: -DCONFIG_LOG=y -DCONFIG_LOG_MODE_IMMEDIATE=y -DCONFIG_ZMK_USB_LOGGING=n -DCONFIG_ZMK_USB=n -DCONFIG_ZMK_USB_BOOT=n -DCONFIG_ZMK_SPLIT_BLE_CENTRAL_BATTERY_LEVEL_FETCHING=n -DCONFIG_ZMK_SPLIT_BLE_CENTRAL_BATTERY_LEVEL_PROXY=n -DCONFIG_ZMK_WIDGET_OUTPUT_STATUS=n
     artifact-name: temporal_right_trackpad_dbglog
   - board: nice_nano//zmk
     shield: temporal_right_trackpad
@@ -55,6 +55,10 @@ include:
   - board: xiao_ble//zmk
     shield: temporal_rgbdongle rgbled_adapter
     artifact-name: temporal_rgbdongle
+  - board: xiao_ble//zmk
+    shield: temporal_rgbdongle rgbled_adapter
+    cmake-args: -DCONFIG_LOG=y -DCONFIG_ZMK_USB_LOGGING=y -DCONFIG_LOG_MODE_IMMEDIATE=y
+    artifact-name: temporal_rgbdongle_dbglog
 
   - board: xiao_ble//zmk
     shield: settings_reset
