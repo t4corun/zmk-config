@@ -11,16 +11,16 @@
      * mock scan
      */
 
+    chosen {
+        zmk,kscan = &mock_kscan;
+    };
+
     mock_kscan: mock_kscan_0 {
         compatible = "zmk,kscan-mock";
         columns = <0>;
         rows = <0>;
         events = <0>;
     };
-};
-
-&chosen {
-    zmk,kscan = &mock_kscan;
 };
 
 &trackpad_listener {
