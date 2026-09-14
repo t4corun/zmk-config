@@ -69,6 +69,8 @@ trackpad: &i2c0 {
         x-resolution = <2048>;           /* from TPS43 datasheet */
         y-resolution = <1792>;           /* from TPS43 datasheet */
 
+        filter-settings = <0x0B>;
+
         //tap-time = <50>;
         //tap-distance = <25>;
         hold-time = <300>;
@@ -93,16 +95,6 @@ trackpad: &i2c0 {
     };
 };
 
-/ {
-    split_inputs {
-        #address-cells = <1>;
-        #size-cells = <0>;
-
-        trackpad_split: trackpad_split@0 {
-            compatible = "zmk,input-split";
-            reg = <0>;
-            device = <&tps43_trackpad>;
-        };
-    };
+&trackpad_split {
+    device = <&tps43_trackpad>;
 };
-
