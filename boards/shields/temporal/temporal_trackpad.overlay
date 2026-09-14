@@ -24,6 +24,8 @@
 };
 
 &right_encoder {
+    a-gpios = <&pro_micro 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>; // P0.08 = Encoder Pin B
+    b-gpios = <&pro_micro 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>; // P0.06 = Encoder Pin A
     status = "okay";
 };
 
@@ -71,9 +73,9 @@ trackpad: &i2c0 {
 
         filter-settings = <0x0B>;
 
-        //tap-time = <50>;
-        //tap-distance = <25>;
-        hold-time = <300>;
+        tap-time = <150>;
+        tap-distance = <15>;
+        hold-time = <800>;
 
         scroll-initial-distance = <50>;
 
@@ -90,7 +92,7 @@ trackpad: &i2c0 {
 
         switch-xy;
         invert-x;
-        //invert-y;
+        invert-y;
         invert-scroll-y;
     };
 };

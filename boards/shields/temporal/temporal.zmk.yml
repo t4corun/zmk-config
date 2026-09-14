@@ -9,10 +9,10 @@ features:
   - keys
   - display
   - encoder
-  - trackpad
+  - pointer
 siblings:
   - temporal_left
   - temporal_right
-  - temporal_right_trackpad
+  - temporal_trackpad
   - temporal_rgbdongle
   - temporal_prospector

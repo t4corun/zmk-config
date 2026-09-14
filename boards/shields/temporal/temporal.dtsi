@@ -7,7 +7,6 @@
 #include "temporal_layouts.dtsi"
 
 / {
-
     /*
      * matrix scan
      */
@@ -30,28 +29,23 @@
             ;
     };
 
-
-
-
-
     /*
      * Encoder configuration
      *
      *   steps = 24 PPR x 4 quadrature transitions per pulse = 96
+     *
+     *   Pins are defined in the left and right overlay because the
+     *   perpiherals use a Nice!Nano and the central uses Seeed Xiao BLE
      */
 
     left_encoder: encoder_left {
         compatible = "alps,ec11";
-        a-gpios = <&pro_micro 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>; // P0.06 = Encoder Pin B
-        b-gpios = <&pro_micro 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>; // P0.08 = Encoder Pin A
         steps = <96>;
         status = "disabled";
     };
 
     right_encoder: encoder_right {
         compatible = "alps,ec11";
-        a-gpios = <&pro_micro 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>; // P0.08 = Encoder Pin B
-        b-gpios = <&pro_micro 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>; // P0.06 = Encoder Pin A
         steps = <96>;
         status = "disabled";
     };
@@ -61,7 +55,6 @@
         sensors = <&left_encoder &right_encoder>;
         triggers-per-rotation = <24>;
     };
-
 
 
     /*

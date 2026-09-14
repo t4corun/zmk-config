@@ -5,17 +5,11 @@
  */
 
 #include "temporal.dtsi"
-#include "temporal_layouts.dtsi"
 
 / {
     /*
      * mock scan
      */
-
-    chosen {
-        zmk,kscan = &mock_kscan;
-        zmk,matrix-transform = &default_transform;
-    };
 
     mock_kscan: mock_kscan_0 {
         compatible = "zmk,kscan-mock";
@@ -23,28 +17,10 @@
         rows = <0>;
         events = <0>;
     };
+}
 
-
-
-
-    /*
-     * Encoder configuration
-     */
-
-    //left_encoder: encoder_left {
-    //    status = "disabled";
-    //};
-
-    //right_encoder: encoder_right {
-    //    status = "disabled";
-    //};
-
-    //sensors: sensors {
-    //    compatible = "zmk,keymap-sensors";
-    //    sensors = <&left_encoder &right_encoder>;
-    //    triggers-per-rotation = <24>;
-    //};
-
+&chosen {
+    zmk,kscan = &mock_kscan;
 };
 
 &trackpad_listener {
