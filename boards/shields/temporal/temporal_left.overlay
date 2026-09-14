@@ -5,6 +5,7 @@
  */
 
 #include "temporal.dtsi"
+#include "temporal_promicro.dtsi"
 
 &kscan0 {
     col-gpios

@@ -9,10 +9,12 @@
 / {
     /*
      * mock scan
+     *   there is no temporal_seeedxiao because the dongle uses mock scan
      */
 
     chosen {
         zmk,kscan = &mock_kscan;
+        zmk,matrix-transform = &default_transform;
     };
 
     mock_kscan: mock_kscan_0 {

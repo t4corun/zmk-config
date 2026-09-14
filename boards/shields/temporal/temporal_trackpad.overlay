@@ -5,6 +5,7 @@
  */
 
 #include "temporal.dtsi"
+#include "temporal_promicro.dtsi"
 
 &default_transform {
     col-offset = <6>;
