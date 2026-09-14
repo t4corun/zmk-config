@@ -17,7 +17,7 @@
         rows = <0>;
         events = <0>;
     };
-}
+};
 
 &chosen {
     zmk,kscan = &mock_kscan;
