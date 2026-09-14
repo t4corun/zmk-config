@@ -25,12 +25,12 @@
             map = <INPUT_REL_MISC INPUT_REL_WHEEL>;
         };
     };
-};
 
-&trackpad_listener {
-    input-processors = <&zip_zoom_to_wheel>;
-                        //<&swipe_button_mapper>,
-                        //<&zip_zoom_mapper>,
-                        //<&zip_xy_scaler 1 1>,
-                        //<&zip_scroll_scaler 1 16>;
+    trackpad_listener {
+        input-processors = <&zip_zoom_to_wheel>;
+                            //<&swipe_button_mapper>,
+                            //<&zip_zoom_mapper>,
+                            //<&zip_xy_scaler 1 1>,
+                            //<&zip_scroll_scaler 1 16>;
+    };
 };
