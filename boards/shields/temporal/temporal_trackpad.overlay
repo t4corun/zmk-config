@@ -95,6 +95,17 @@ trackpad: &i2c0 {
     };
 };
 
-&trackpad_split {
-    device = <&tps43_trackpad>;
+
+/ {
+    split_inputs {
+        #address-cells = <1>;
+        #size-cells = <0>;
+
+        trackpad_split: trackpad_split@0 {
+            compatible = "zmk,input-split";
+            reg = <0>;
+            device = <&tps43_trackpad>;
+        };
+    };
 };
+
