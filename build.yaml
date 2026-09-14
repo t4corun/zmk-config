@@ -39,8 +39,8 @@ include:
     shield: temporal_right nice_view
     artifact-name: temporal_right
   - board: nice_nano//zmk
-    shield: temporal_trackpad nice_view
-    artifact-name: temporal_right_trackpad
+    shield: temporal_trackpad
+    artifact-name: temporal_trackpad
   - board: xiao_ble//zmk
     shield: temporal_prospector prospector_adapter
     artifact-name: temporal_prospector

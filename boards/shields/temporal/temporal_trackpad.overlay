@@ -40,6 +40,9 @@
  *
  * This Temporal will use the default i2c pins as defined in zmk
  * zmkfirmware/zmk/app/module/boards/nicekeyboards/nice_nano/nice_nano-pinctrl.dtsi
+ *
+ * C:\Repo\temp\zmk_driver_azoteq\dts\bindings\input\azoteq,tps43-common.yaml
+ *
  */
 
 trackpad: &i2c0 {
@@ -68,6 +71,8 @@ trackpad: &i2c0 {
         three-finger-swipe-throttle-ms = <800>;
 
         switch-xy;
+        invert-x;
+        invert-y;
         invert-scroll-y;
     };
 };
