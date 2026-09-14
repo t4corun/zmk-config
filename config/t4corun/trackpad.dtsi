@@ -9,19 +9,27 @@
             bindings = <&kp LG(TAB)>, <&kp LG(RIGHT)>, <&kp LG(D)>, <&kp LG(LEFT)>;
         };
 
-        zip_zoom_mapper: zip_zoom_mapper {
-            compatible = "zmk,input-processor-zoom";
+//        zip_zoom_mapper: zip_zoom_mapper {
+//            compatible = "zmk,input-processor-zoom";
+//            #input-processor-cells = <0>;
+//            event-code = <INPUT_REL_MISC>;
+//            sensitivity = <10>;
+//            bindings = <&kp LC(MINUS)>, <&kp LC(EQUAL)>;
+//            track-remainders;
+//        };
+
+        zip_zoom_to_wheel: zip_zoom_to_wheel {
+            compatible = "zmk,input-processor-code-mapper";
             #input-processor-cells = <0>;
-            event-code = <INPUT_REL_MISC>;
-            sensitivity = <10>;
-            bindings = <&kp LC(MINUS)>, <&kp LC(EQUAL)>;
-            track-remainders;
+            type = <INPUT_EV_REL>;
+            map = <INPUT_REL_MISC INPUT_REL_WHEEL>;
         };
     };
 
     trackpad_listener {
         input-processors =  <&swipe_button_mapper>,
-                            <&zip_zoom_mapper>,
+//                            <&zip_zoom_mapper>,
+                            <&zip_zoom_to_wheel>;
                             <&zip_xy_scaler 1 1>,
                             <&zip_scroll_scaler 1 20>;
     };
