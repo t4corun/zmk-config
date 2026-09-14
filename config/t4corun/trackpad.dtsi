@@ -27,9 +27,10 @@
     };
 
     trackpad_listener {
-        input-processors =  <&swipe_button_mapper>,
-//                            <&zip_zoom_mapper>,
-                            <&zip_zoom_to_wheel>,
+        input-processors =
+                            //<&swipe_button_mapper>,
+                            //<&zip_zoom_mapper>,
+                            //<&zip_zoom_to_wheel>,
                             <&zip_xy_scaler 1 1>,
                             <&zip_scroll_scaler 1 20>;
     };

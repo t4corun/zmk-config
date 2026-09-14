@@ -62,6 +62,10 @@ trackpad: &i2c0 {
 
         enable-power-management;
 
+        sensitivity = <100>;           /* 100% = normal state */
+        scroll-sensitivity = <50>;     /* 50% = normal state */
+        zoom-sensitivity = <50>;       /* 50% = normal state */
+
         zoom;
         scroll;
         two-finger-tap;
