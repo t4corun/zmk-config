@@ -2,12 +2,18 @@
 
 / {
     trackpad_behaviors {
-        swipe_button_mapper: swipe_button_mapper {
-            compatible = "zmk,input-processor-behaviors";
-            #input-processor-cells = <0>;
-            codes = <INPUT_BTN_NORTH INPUT_BTN_EAST INPUT_BTN_SOUTH INPUT_BTN_WEST>;
-            bindings = <&kp LG(TAB)>, <&kp LG(RIGHT)>, <&kp LG(D)>, <&kp LG(LEFT)>;
-        };
+//        touch_filter: touch_filter {
+//            compatible = "zmk,input-processor-key-filter";
+//            #input-processor-cells = <0>;
+//            codes = <INPUT_BTN_TOUCH>;
+//        };
+
+//        swipe_button_mapper: swipe_button_mapper {
+//            compatible = "zmk,input-processor-behaviors";
+//            #input-processor-cells = <0>;
+//            codes = <INPUT_BTN_NORTH INPUT_BTN_EAST INPUT_BTN_SOUTH INPUT_BTN_WEST>;
+//            bindings = <&kp LG(TAB)>, <&kp LG(RIGHT)>, <&kp LG(D)>, <&kp LG(LEFT)>;
+//        };
 
 //        zip_zoom_mapper: zip_zoom_mapper {
 //            compatible = "zmk,input-processor-zoom";
@@ -28,9 +34,10 @@
 };
 
 &trackpad_listener {
-    input-processors =  <&zip_zoom_to_wheel>,
+    input-processors =  //<&touch_filter>,
+                        //<&zip_zoom_to_wheel>,
                         //<&swipe_button_mapper>,
                         //<&zip_zoom_mapper>,
-                        <&zip_xy_scaler 1 1>,
-                        <&zip_scroll_scaler 1 16>;
+                        <&zip_xy_scaler 1 1>;
+                        //<&zip_scroll_scaler 1 16>;
 };
