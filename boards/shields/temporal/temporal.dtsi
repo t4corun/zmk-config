@@ -6,6 +6,16 @@
 
 #include <dt-bindings/zmk/matrix_transform.h>
 
+
+/*
+ * architecture
+ *
+ *   - minimize the amount of code needed
+ *   - define common code here, and expand/override in the overlay files
+ *   - customize in the user config
+ */
+
+
 / {
     /*
      * matrix scan
@@ -50,10 +60,9 @@
     /*
      * Encoder configuration
      *
-     *   steps = 24 PPR x 4 quadrature transitions per pulse = 96
-     *
-     *   Pins are defined in the left and right overlay because the
-     *   perpiherals use a Nice!Nano and the central uses Seeed Xiao BLE
+     *   - steps = 24 PPR x 4 quadrature transitions per pulse = 96
+     *   - enable the left and right encoder in their respective overlay
+     *   - define the pins in their peripheral overlay files
      */
 
     left_encoder: encoder_left {
@@ -77,6 +86,9 @@
 
     /*
      * Trackpad Configuration configuration
+     *
+     *   Define the trackpad_split device in the [right] trackpad overlay
+     *   Enable the trackpad_listener in the dongle overlay
      */
 
     split_inputs {
@@ -86,6 +98,7 @@
         trackpad_split: trackpad_split@0 {
             compatible = "zmk,input-split";
             reg = <0>;
+            status = "disabled";
         };
     };
 

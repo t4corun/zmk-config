@@ -25,6 +25,10 @@
     };
 };
 
+&trackpad_split {
+    status = "okay";
+};
+
 &trackpad_listener {
     status = "okay";
 };

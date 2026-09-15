@@ -27,3 +27,4 @@
     b-gpios = <&pro_micro 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>; // P0.06 = Encoder Pin A
     status = "okay";
 };
+
