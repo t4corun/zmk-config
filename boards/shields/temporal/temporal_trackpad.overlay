@@ -75,8 +75,8 @@ trackpad: &i2c0 {
         filter-settings = <0x0B>;
 
         tap-time = <150>;
-        tap-distance = <15>;
-        hold-time = <800>;
+        tap-distance = <10>;
+        hold-time = <1200>;
 
         scroll-initial-distance = <50>;
 
@@ -87,7 +87,7 @@ trackpad: &i2c0 {
         scroll;
         two-finger-tap;
         single-tap;
-        press-and-hold;
+        //press-and-hold;
         //three-finger-swipe;
         //three-finger-swipe-throttle-ms = <800>;
 
