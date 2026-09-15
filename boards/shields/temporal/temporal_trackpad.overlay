@@ -83,10 +83,10 @@ trackpad: &i2c0 {
         zoom-initial-distance = <50>;
         zoom-consecutive-distance = <25>;
 
-        //zoom;
-        //scroll;
-        //two-finger-tap;
-        //single-tap;
+        zoom;
+        scroll;
+        two-finger-tap;
+        single-tap;
         //press-and-hold;
         //three-finger-swipe;
         //three-finger-swipe-throttle-ms = <800>;
