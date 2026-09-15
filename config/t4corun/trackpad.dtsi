@@ -41,22 +41,23 @@
                         <&zip_xy_scaler 1 1>,
                         <&zip_scroll_scaler 1 16>,
                         <&is_touching_processor>,
-                        <&zip_zoom_mapper>;
+                        <&zip_zoom_to_wheel>;
 
 };
 
 
 /*
-with all the features disabled it seems like this works
-single tap
-two finger tap
-scroll
+with all the features disabled it seems like these work. there maybe some
+built in processing
+- single tap
+- two finger tap
+- scroll
 
 
 this might work too but the code mapper wasn't on
-zoom
+- zoom
 
 this doesn't seem to work at all
-press-and-hold
+- press-and-hold
 
 */
