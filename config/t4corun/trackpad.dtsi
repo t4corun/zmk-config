@@ -46,7 +46,7 @@
                         //<&zip_zoom_to_wheel>,
                         //<&swipe_button_mapper>,
                         //<&zip_zoom_mapper>,
-                        <&zip_xy_scaler 1 1>
+                        <&zip_xy_scaler 1 1>,
                         <&is_touching_processor>;
                         //<&zip_scroll_scaler 1 16>;
 };
