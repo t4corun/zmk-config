@@ -6,16 +6,6 @@
 
 #include <dt-bindings/zmk/matrix_transform.h>
 
-
-/*
- * architecture
- *
- *   - minimize the amount of code needed
- *   - define common code here, and expand/override in the overlay files
- *   - customize in the user config
- */
-
-
 / {
     /*
      * matrix scan
@@ -85,10 +75,10 @@
 
 
     /*
-     * Trackpad Configuration configuration
+     * Trackpad configuration
      *
-     *   Define the trackpad_split device in the [right] trackpad overlay
-     *   Enable the trackpad_listener in the dongle overlay
+     *   - Define the trackpad_split device in the [right] trackpad overlay
+     *   - Enable the trackpad_listener in the dongle overlay
      */
 
     split_inputs {

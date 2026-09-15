@@ -39,7 +39,8 @@
     input-processors =  //<&zip_zoom_to_wheel>,
                         //<&swipe_button_mapper>,
                         <&zip_xy_scaler 1 1>,
-                        <&zip_scroll_scaler 1 16>,
+                        <&zip_scroll_scaler 1 15>,
+                        <&zip_scroll_transform  INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT>, // match phone and laptop
                         <&is_touching_processor>,
                         <&zip_zoom_to_wheel>;
 
