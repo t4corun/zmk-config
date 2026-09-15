@@ -30,6 +30,14 @@
             type = <INPUT_EV_REL>;
             map = <INPUT_REL_MISC INPUT_REL_WHEEL>;
         };
+
+        is_touching_processor:is_touching_processor {
+            compatible = "zmk,input-processor-behaviors";
+            #input-processor-cells = <0>;
+
+            codes = <INPUT_BTN_TOUCH>;      // watch for the 'touch' pseudo button
+            bindings  = <&mo 4>;            // Activate Layer 4 while held &mo 4
+        };
     };
 };
 
@@ -38,6 +46,7 @@
                         //<&zip_zoom_to_wheel>,
                         //<&swipe_button_mapper>,
                         //<&zip_zoom_mapper>,
+                        <&is_touching_processor>,
                         <&zip_xy_scaler 1 1>;
                         //<&zip_scroll_scaler 1 16>;
 };
