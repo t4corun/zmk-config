@@ -94,7 +94,7 @@ trackpad: &i2c0 {
         switch-xy;
         invert-x;
         invert-y;
-        invert-scroll-y;
+        invert-scroll-x;
     };
 };
 

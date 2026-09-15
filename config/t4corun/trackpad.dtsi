@@ -34,15 +34,15 @@ with all the features disabled it seems like these work. there maybe some
 built in processing
 - single tap
 - two finger tap
-- scroll
+- scroll in both directions but i need to invert both axis to match the phone/laptop
 - zoom
 
 this doesn't seem to work at all
 - press-and-hold
 
-enabling
-- zoom
-- scroll
-- two-finger-tap
-- single-tap
+enabling these to see what happens
+- zoom works
+- scroll (invert y is not correct, invert x is correct to match phone)
+- two-finger-tap works
+- single-tapd works
 */
