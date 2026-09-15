@@ -2,12 +2,6 @@
 
 / {
     trackpad_behaviors {
-//        touch_filter: touch_filter {
-//            compatible = "zmk,input-processor-key-filter";
-//            #input-processor-cells = <0>;
-//            codes = <INPUT_BTN_TOUCH>;
-//        };
-
 //        swipe_button_mapper: swipe_button_mapper {
 //            compatible = "zmk,input-processor-behaviors";
 //            #input-processor-cells = <0>;
@@ -42,11 +36,27 @@
 };
 
 &trackpad_listener {
-    input-processors =  //<&touch_filter>,
-                        //<&zip_zoom_to_wheel>,
+    input-processors =  //<&zip_zoom_to_wheel>,
                         //<&swipe_button_mapper>,
-                        //<&zip_zoom_mapper>,
                         <&zip_xy_scaler 1 1>,
-                        <&is_touching_processor>;
-                        //<&zip_scroll_scaler 1 16>;
+                        <&zip_scroll_scaler 1 16>,
+                        <&is_touching_processor>,
+                        <&zip_zoom_mapper>;
+
 };
+
+
+/*
+with all the features disabled it seems like this works
+single tap
+two finger tap
+scroll
+
+
+this might work too but the code mapper wasn't on
+zoom
+
+this doesn't seem to work at all
+press-and-hold
+
+*/
