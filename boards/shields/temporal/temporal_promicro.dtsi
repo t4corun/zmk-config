@@ -6,8 +6,11 @@
 
 / {
     /*
-     * row definition
-     *   the columns are defined in the left and right overlays
+     * pro micro row definition
+     *   this file is required because we have different microcontrollers
+     *   between the peripherals (nice!nano v2) and the dongle (seeed xiao)
+     *
+     *   the columns are defined in the peripheral overlay files
      */
 
     kscan0: kscan {

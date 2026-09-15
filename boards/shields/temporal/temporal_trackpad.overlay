@@ -99,7 +99,7 @@ trackpad: &i2c0 {
 };
 
 &trackpad_split {
-    status = "okay";
+    device = <&tps43_trackpad>;
 };
 
 
