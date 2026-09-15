@@ -36,7 +36,7 @@
             #input-processor-cells = <0>;
 
             codes = <INPUT_BTN_TOUCH>;      // watch for the 'touch' pseudo button
-            bindings  = <&mo 4>;            // Activate Layer 4 while held &mo 4
+            bindings  = <&mo _NUMBER>;      // Activate number layer when touching the trackpad
         };
     };
 };
