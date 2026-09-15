@@ -65,31 +65,9 @@ trackpad: &i2c0 {
 
         enable-power-management;
 
-        sensitivity = <100>;           /* default 100 */
-        scroll-sensitivity = <25>;     /* default 50 */
-        zoom-sensitivity = <50>;       /* default 100 */
-
-        x-resolution = <2048>;           /* from TPS43 datasheet */
-        y-resolution = <1792>;           /* from TPS43 datasheet */
-
-        filter-settings = <0x0B>;
-
-        tap-time = <150>;
-        tap-distance = <10>;
-        hold-time = <1200>;
-
-        scroll-initial-distance = <50>;
-
-        zoom-initial-distance = <50>;
-        zoom-consecutive-distance = <25>;
-
-        zoom;
-        scroll;
-        two-finger-tap;
-        single-tap;
-        //press-and-hold;
-        //three-finger-swipe;
-        //three-finger-swipe-throttle-ms = <800>;
+        /* from TPS43 datasheet */
+        x-resolution = <2048>;
+        y-resolution = <1792>;
 
         switch-xy;
         invert-x;
