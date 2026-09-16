@@ -78,8 +78,8 @@ trackpad: &i2c0 {
         report-rate-lp2 = <250>;
 
         sensitivity = <75>;            /* default 100 */
-        scroll-sensitivity = <35>;     /* default 50 */
-        zoom-sensitivity = <25>;       /* default 100 */
+        scroll-sensitivity = <30>;     /* default 50 */
+        zoom-sensitivity = <45>;       /* default 100 */
 
         tap-time = <150>;
         tap-distance = <15>;
@@ -88,7 +88,7 @@ trackpad: &i2c0 {
         scroll-initial-distance = <50>;
 
         zoom-initial-distance = <50>;
-        zoom-consecutive-distance = <30>;
+        zoom-consecutive-distance = <25>;
 
         zoom;
         scroll;
