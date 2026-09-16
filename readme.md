@@ -4,6 +4,8 @@ Home of my firmware for the GEIST TOTEM and Curbol Temporal split keyboards
 
 ## Hardware
 
+<img src="images/totem_temporal.png" alt="the family" width="800">
+
 The TOTEM was built first and is a straight forward 38-key split keyboard with splay. The peripheral splits and central dongle all use a Seeed Xiao BLE MCU
 
 The Temporal came later. Mine is the 37-key version of this split keyboard with splay. The right side has an encoder and Azoteq TPS43 multi-touch trackpad. The left side has a Nice!View display. Both peripheral splits use a Nice!Nano v2 MCU and the dongle uses the Seeed Xiao BLE MCU. I built it for travel because it is smaller than the TOTEM, and I find its thumb cluster more comfortable (more splay).
@@ -23,7 +25,7 @@ I rewrote the shield defintions to make them as lean as possible
 ## Layout
 
 > Update this
-![keymap](images/totem.png)
+<img src="images/totem.png" alt="keymap" width="600">
 
 ## Learnings
 
