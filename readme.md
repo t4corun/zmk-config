@@ -1,8 +1,14 @@
 # t4corun ZMK Config
 
-Relearning ZMK after a long hiatus (2023), primarily to play with a XIAO Dongle and GEIST TOTEM combination
+Home of my firmware for the GEIST TOTEM and Curbol Temporal split keyboards
 
-## Features
+## Hardware
+
+The TOTEM was built first and is a straight forward 38-key split keyboard with splay. The peripheral splits and central dongle all use a Seeed Xiao BLE MCU
+
+The Temporal came later. Mine is the 37-key version of this split keyboard with splay. The right side has an encoder and Azoteq TPS43 multi-touch trackpad. The left side has a Nice!View display. Both peripheral splits use a Nice!Nano v2 MCU and the dongle uses the Seeed Xiao BLE MCU. I built it for travel because it is smaller than the TOTEM, and I find its thumb cluster more comfortable (more splay).
+
+## Firmware
 
 This is a port of my QMK Firmware keymap. It is inspired by Miryoku and designed with SQL and Powershell in mind. It features
 
@@ -12,19 +18,17 @@ This is a port of my QMK Firmware keymap. It is inspired by Miryoku and designed
 - urob's Timerless homerow mods
 - urob Numword
 
+I rewrote the shield defintions to make them as lean as possible
+
 ## Layout
 
-![keymap](totem.png)
+> Update this
+![keymap](images/totem.png)
 
 ## Learnings
 
-- The totem is a composite board
-- The two outer pinky keys are part of the outer column, bottom row
-- The order of includes isn't strict.
-- These were removed because they were blank. They are not needed
-  - config/t4corun.conf
-  - boards/shields/totem/totem_left.conf
-  - boards/shields/totem/totem_right.conf
+- The order of includes isn't strict
+- The trackpad must have a code remap behavior or mouse movements will act as a drag click
 
 ## Wishlist
 
@@ -32,8 +36,12 @@ This is a port of my QMK Firmware keymap. It is inspired by Miryoku and designed
 
 ### Special Thanks
 
-geigeigeist, for making a beautiful, well documented keyboard, and making it free
+geigeigeist and curbol for making a beautiful, well documented keyboard, and making it free
 eigatech, for sharing the dongle code
 rafaelromao, for the macro helpers
-urob, for the timerless setup, autolayer for numword
-caksoylar, for the general organization and rgbled widget
+urob for the timerless setup, autolayer for numword
+caksoylar for the general organization and rgbled widget
+holykeebs for making the azoteq tps43 trackpad kit
+geeksville for the trackpad driver
+beekeeb for the trackpad implementation example
+jlcpcb for the beautiful prints

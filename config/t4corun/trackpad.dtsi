@@ -16,6 +16,10 @@
             map = <INPUT_REL_MISC INPUT_REL_WHEEL>;
         };
 
+	/*
+	 * This is important or every touch will register as left click
+	 * so moving the cursor will act as a drag click
+	 */
         is_touching_processor:is_touching_processor {
             compatible = "zmk,input-processor-behaviors";
             #input-processor-cells = <0>;
