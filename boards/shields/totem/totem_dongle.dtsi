@@ -7,6 +7,7 @@
 #include "totem.dtsi"
 
 / {
+
     chosen {
         zmk,kscan = &mock_kscan;
         zmk,physical-layout = &physical_layout0;
@@ -18,6 +19,12 @@
         rows = <0>;
         events = <0>;
     };
+
+    row-gpios {
+        // delete this node from totem.dtsi because
+        // mock_kscan doesn't need any row-gpios
+        /delete-node/ kscan0;
+    }
 };
 
 &physical_layout0 {

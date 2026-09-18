@@ -60,8 +60,8 @@ trackpad: &i2c0 {
         reg = <0x74>;
         status = "okay";
 
-        rdy-gpios = <&pro_micro 21 GPIO_ACTIVE_HIGH>;
-        rst-gpios = <&pro_micro 16 GPIO_ACTIVE_HIGH>;
+        rdy-gpios = <&pro_micro 16 GPIO_ACTIVE_HIGH>;
+        rst-gpios = <&pro_micro 21 GPIO_ACTIVE_HIGH>;
 
         enable-power-management;
 
