@@ -45,11 +45,9 @@ include:
     artifact-name: temporal_trackpad
   - board: xiao_ble//zmk
     shield: temporal_dongle prospector_adapter
-    cmake-args: -DCONFIG_FILE=temporal_prospector.conf
     artifact-name: temporal_prospector
   - board: xiao_ble//zmk
     shield: temporal_dongle rgbled_adapter
-    cmake-args: -DCONFIG_FILE=temporal_rgbdongle.conf
     artifact-name: temporal_rgbdongle
 
   - board: xiao_ble//zmk
