@@ -24,7 +24,7 @@
         // delete this node from totem.dtsi because
         // mock_kscan doesn't need any row-gpios
         /delete-node/ kscan0;
-    }
+    };
 };
 
 &physical_layout0 {
