@@ -20,7 +20,7 @@ This is a port of my QMK Firmware keymap. It is inspired by Miryoku and designed
 - urob's Timerless homerow mods
 - urob Numword
 
-I rewrote the shield defintions to make them as lean as possible
+Wrote the sheild definitions and configuration files to make it as lean as possible. I have done more, however the seemingly duplicate files are there to mental load later figuring out what is going on
 
 ## Layout
 

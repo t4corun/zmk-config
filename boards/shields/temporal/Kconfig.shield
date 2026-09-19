@@ -10,4 +10,6 @@ config SHIELD_TEMPORAL_RIGHT
         $(shields_list_contains,temporal_trackpad)
 
 config SHIELD_TEMPORAL_DONGLE
-    def_bool $(shields_list_contains,temporal_dongle)
+    def_bool \
+        $(shields_list_contains,temporal_prospector) || \
+        $(shields_list_contains,temporal_rgbdongle)

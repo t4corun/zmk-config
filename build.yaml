@@ -26,30 +26,26 @@ include:
     shield: totem_right
     artifact-name: totem_right
   - board: xiao_ble//zmk
-    shield: totem_dongle prospector_adapter
-    extra-conf-file: config/totem_prospector.conf
+    shield: totem_prospector prospector_adapter
     artifact-name: totem_prospector
   - board: xiao_ble//zmk
-    shield: totem_dongle rgbled_adapter
+    shield: totem_rgbdongle rgbled_adapter
     artifact-name: totem_rgbdongle
 
   - board: nice_nano//zmk
     shield: temporal_left nice_view
-    extra-conf-file: config/temporal_split.conf
     artifact-name: temporal_left
   - board: nice_nano//zmk
     shield: temporal_right nice_view
-    extra-conf-file: config/temporal_split.conf
     artifact-name: temporal_right
   - board: nice_nano//zmk
     shield: temporal_trackpad
     artifact-name: temporal_trackpad
   - board: xiao_ble//zmk
-    shield: temporal_dongle prospector_adapter
-    extra-conf-file: config/temporal_prospector.conf
+    shield: temporal_prospector prospector_adapter
     artifact-name: temporal_prospector
   - board: xiao_ble//zmk
-    shield: temporal_dongle rgbled_adapter
+    shield: temporal_rgbdongle rgbled_adapter
     artifact-name: temporal_rgbdongle
 
   - board: xiao_ble//zmk
