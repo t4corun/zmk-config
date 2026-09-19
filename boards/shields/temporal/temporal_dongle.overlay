@@ -7,11 +7,6 @@
 #include "temporal.dtsi"
 
 / {
-    chosen {
-        zmk,kscan = &mock_kscan;
-        zmk,matrix-transform = &default_transform;
-    };
-
     mock_kscan: dongle_kscan {
         compatible = "zmk,kscan-mock";
         columns = <0>;
@@ -23,6 +18,11 @@
     // not need matrix gpio pins defined
     // in addition the dongle uses a seeed xiao
     /delete-node/ nice_nano_v2_kscan;
+};
+
+&chosen {
+    zmk,kscan = &mock_kscan;
+    zmk,matrix-transform = &default_transform;
 };
 
 &trackpad_split {
