@@ -28,7 +28,7 @@ include:
   - board: xiao_ble//zmk
     shield: totem_dongle prospector_adapter
     cmake-args: >
-      -CONFIG_BT_DEVICE_NAME="TOTEM Prospector BT"
+      -DCONFIG_BT_DEVICE_NAME="TOTEM Prospector BT"
       -DCONFIG_USB_DEVICE_PRODUCT="TOTEM Prospector USB"
     artifact-name: totem_prospector
   - board: xiao_ble//zmk
