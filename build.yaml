@@ -37,9 +37,11 @@ include:
 
   - board: nice_nano//zmk
     shield: temporal_left nice_view
+    extra-conf-file: config/temporal_split.conf
     artifact-name: temporal_left
   - board: nice_nano//zmk
     shield: temporal_right nice_view
+    extra-conf-file: config/temporal_split.conf
     artifact-name: temporal_right
   - board: nice_nano//zmk
     shield: temporal_trackpad
