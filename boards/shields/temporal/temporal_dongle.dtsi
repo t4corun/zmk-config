@@ -7,22 +7,22 @@
 #include "temporal.dtsi"
 
 / {
-    /*
-     * mock scan
-     *   there is no temporal_seeedxiao because the dongle uses mock scan
-     */
-
     chosen {
         zmk,kscan = &mock_kscan;
         zmk,matrix-transform = &default_transform;
     };
 
-    mock_kscan: mock_kscan_0 {
+    mock_kscan: dongle_kscan {
         compatible = "zmk,kscan-mock";
         columns = <0>;
         rows = <0>;
         events = <0>;
     };
+
+    // delete this because the dongle does
+    // not need matrix gpio pins defined
+    // in addition the dongle uses a seeed xiao
+    /delete-node/ nice_nano_v2_kscan;
 };
 
 &trackpad_split {

@@ -5,9 +5,9 @@
  */
 
 #include "temporal.dtsi"
-#include "temporal_promicro.dtsi"
+//#include "temporal_promicro.dtsi"
 
-&kscan0 {
+&kscan {
     col-gpios
         = <&pro_micro 21 GPIO_ACTIVE_HIGH>  // col_extra
         , <&pro_micro 20 GPIO_ACTIVE_HIGH>  // col_pinky

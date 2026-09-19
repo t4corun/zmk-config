@@ -5,13 +5,13 @@
  */
 
 #include "temporal.dtsi"
-#include "temporal_promicro.dtsi"
+//#include "temporal_promicro.dtsi"
 
 &default_transform {
     col-offset = <6>;
 };
 
-&kscan0 {
+&kscan {
     col-gpios
         = <&pro_micro 14 GPIO_ACTIVE_HIGH>  // col_inner
         , <&pro_micro 15 GPIO_ACTIVE_HIGH>  // col_index
