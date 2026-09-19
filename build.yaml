@@ -27,18 +27,18 @@ include:
     artifact-name: totem_right
   - board: xiao_ble//zmk
     shield: totem_dongle prospector_adapter
-    cmake-args: -DCONFIG_FILE=totem_prospector.conf
     artifact-name: totem_prospector
   - board: xiao_ble//zmk
     shield: totem_dongle rgbled_adapter
-    cmake-args: -DCONFIG_FILE=totem_rgbdongle.conf
     artifact-name: totem_rgbdongle
 
   - board: nice_nano//zmk
     shield: temporal_left nice_view
+    extra-kconfig-config: config/temporal_split.conf
     artifact-name: temporal_left
   - board: nice_nano//zmk
     shield: temporal_right nice_view
+    extra-kconfig-config: config/temporal_split.conf
     artifact-name: temporal_right
   - board: nice_nano//zmk
     shield: temporal_trackpad
