@@ -1,11 +1,10 @@
 /*
- * Copyright (c) 2024 Curtis Bollinger
+ * Copyright (c) 2026 Curtis Bollinger
  *
  * SPDX-License-Identifier: MIT
  */
 
 #include "temporal.dtsi"
-//#include "temporal_promicro.dtsi"
 
 &kscan {
     col-gpios

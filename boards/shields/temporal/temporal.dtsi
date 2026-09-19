@@ -7,10 +7,6 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 
 / {
-    /*
-     * matrix scan
-     */
-
     chosen {
         zmk,kscan = &kscan;
         zmk,matrix-transform = &default_transform;
@@ -47,8 +43,7 @@
      *   - 5,  6 = inner
      * - RC(3,2) and RC(3,9) can either be a switch or an encoder
      */
-
-    default_transform: temporal_38_transform {
+    default_transform: temporal_42_transform {
         compatible = "zmk,matrix-transform";
         columns = <12>;
         rows = <4>;
@@ -67,7 +62,6 @@
      *   - enable the left and right encoder in their respective overlay
      *   - define the pins in their peripheral overlay files
      */
-
     left_encoder: left_encoder {
         compatible = "alps,ec11";
         steps = <96>;
@@ -93,7 +87,6 @@
      *   - Define the trackpad_split device in the [right] trackpad overlay
      *   - Enable the trackpad_listener in the dongle overlay
      */
-
     split_inputs {
         #address-cells = <1>;
         #size-cells = <0>;
