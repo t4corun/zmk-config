@@ -4,6 +4,7 @@ Home of my firmware for the GEIST TOTEM and Curbol Temporal split keyboards
 
 ## Hardware
 
+<img src="images/temporal_twins.jpeg" alt="the twins" width="800">
 <img src="images/totem_temporal.png" alt="the family" width="800">
 
 The TOTEM was built first and is a straight forward 38-key split keyboard with splay. The peripheral splits and central dongle all use a Seeed Xiao BLE MCU
@@ -24,7 +25,6 @@ Wrote the sheild definitions and configuration files to make it as lean as possi
 
 ## Layout
 
-> Update this
 <img src="images/totem.png" alt="keymap" width="600">
 
 ## Learnings
