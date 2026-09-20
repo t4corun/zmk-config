@@ -28,6 +28,9 @@ include:
   - board: xiao_ble//zmk
     shield: totem_prospector prospector_adapter
     artifact-name: totem_prospector
+  - board: xiao_ble//zmk
+    shield: totem_rgbdongle rgbled_adapter
+    artifact-name: totem_rgbdongle
 
   - board: nice_nano//zmk
     shield: temporal_left nice_view
@@ -35,6 +38,12 @@ include:
   - board: nice_nano//zmk
     shield: temporal_right nice_view
     artifact-name: temporal_right
+  - board: nice_nano//zmk
+    shield: temporal_trackpad
+    artifact-name: temporal_trackpad
+  - board: xiao_ble//zmk
+    shield: temporal_prospector prospector_adapter
+    artifact-name: temporal_prospector
   - board: xiao_ble//zmk
     shield: temporal_rgbdongle rgbled_adapter
     artifact-name: temporal_rgbdongle

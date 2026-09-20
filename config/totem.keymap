@@ -1,5 +1,5 @@
 #include "totem.h"
-#include "t4corun.keymap"
+#include "t4corun/t4corun.keymap"
 
 / {
     keymap {

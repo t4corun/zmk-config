@@ -30,6 +30,7 @@
             then-layer = <_SYMBOL>;
         };
     };
+
     symbols {
         MACRO(        mc_brc,  &kp LBRC  &kp RBRC   &kp LEFT)
         HOLDTAP_MACRO(ht_brc,  &mc_brc)

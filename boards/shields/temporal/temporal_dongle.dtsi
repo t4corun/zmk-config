@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-#include "temporal_layouts.dtsi"
+#include "temporal.dtsi"
 
 / {
     chosen {
@@ -12,24 +12,23 @@
         zmk,matrix-transform = &default_transform;
     };
 
-    mock_kscan: mock_kscan_0 {
+    mock_kscan: dongle_kscan {
         compatible = "zmk,kscan-mock";
         columns = <0>;
         rows = <0>;
         events = <0>;
     };
 
-    left_encoder: encoder_left {
-        status = "disabled";
-    };
+    // delete this because the dongle does
+    // not need matrix gpio pins defined
+    // in addition the dongle uses a seeed xiao
+    /delete-node/ nice_nano_v2_kscan;
+};
 
-    right_encoder: encoder_right {
-        status = "disabled";
-    };
+&trackpad_split {
+    status = "okay";
+};
 
-    sensors: sensors {
-        compatible = "zmk,keymap-sensors";
-        sensors = <&left_encoder &right_encoder>;
-        triggers-per-rotation = <24>;
-    };
+&trackpad_listener {
+    status = "okay";
 };
