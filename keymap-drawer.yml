@@ -1,49 +1,49 @@
 layout:
-  qmk_keyboard: TOTEM
+  qmk_keyboard: Temporal
   layout_name: LAYOUT_split_3x5_3
 layers:
   BASE:
     # rows 1-3
     - [Q, W, E, R, T, Y, U, I, O, P]
-    - [{h: gui, t: A}, {h: Alt, t: S}, {h: Ctrl, t: D}, {h: Shift, t: F}, G, H, {h: Shift, t: J}, {h: Ctrl, t: K}, {h: Alt, t: L}, {h: Gui, t: "'"}]
-    - [FUNC, Z, X, C, V, B, N, M, {t: ",", s: "?"}, {t: ".", s: "!"}, "-", mute]
+    - [{h: GUI, t: A}, {h: Alt, t: S}, {h: Ctrl, t: D}, {h: Shift, t: F}, G, H, {h: Shift, t: J}, {h: Ctrl, t: K}, {h: Alt, t: L}, {h: GUI, t: "'"}]
+    - [Z, X, C, V, B, N, M, {t: ",", s: "?"}, {t: ".", s: "!"}, "-"]
     # thumbs
-    - [MB1, NUM, Shift, Space, NAV, Backspace]
+    - [FUNC, MB1, NUM, Shift, Space, NAV, Repeat, Encoder]
   GRAPHITE:
     # rows 1-3
     - [B, L, D, W, Z, "'", F, O, U, J]
-    - [{h: gui, t: N}, {h: Alt, t: R}, {h: Ctrl, t: T}, {h: Shift, t: S}, G, Y, {h: Shift, t: H}, {h: Ctrl, t: A}, {h: Alt, t: E}, {h: Gui, t: I}]
-    - [FUNC, Q, X, M, C, V, K, P, {t: ".", s: "!"}, -, {t: ",", s: "?"}, mute]
+    - [{h: GUI, t: N}, {h: Alt, t: R}, {h: Ctrl, t: T}, {h: Shift, t: S}, G, Y, {h: Shift, t: H}, {h: Ctrl, t: A}, {h: Alt, t: E}, {h: GUI, t: I}]
+    - [Q, X, M, C, V, K, P, {t: ".", s: "!"}, -, {t: ",", s: "?"}]
     # thumbs
-    - [MB1, NUM, Shift, Space, NAV, Backspace]
+    - [FUNC, MB1, NUM, Shift, Space, NAV, Repeat, Encoder]
   NAV:
     # rows 1-3
     - [Escape, Home, ▲, End, Page Up, Insert, App, null, null, null ]
-    - [null, ◄, ▼, ►, Page Down, Back Space, Shift, Ctrl, Alt, Gui ]
-    - ["NAV Lock", Undo, Cut, Copy, Paste, Redo, Delete, null, Vol -, Vol +, null, mute ]
+    - [null, ◄, ▼, ►, Page Down, Backspace, Shift, Ctrl, Alt, GUI ]
+    - [Undo, Cut, Copy, Paste, Redo, Delete, null, Vol -, Vol +, mute]
     # common thumbs
-    - [Tab, NUM, null, null, type: held, null]
+    - ["NAV Lock", Tab, NUM, null, null, type: held, null, Encoder]
   NUM:
     # rows 1-3
     - [Esc, MB5, MB3, MB4, "Snipping Tool", ",", "7", "8" ,"9", "/"]
-    - [Gui, Alt, Ctrl, Shift, MB2, ".", "4", "5" ,"6", "*"]
-    - ["NUM Lock", Undo, Cut, Copy, Paste, Redo, "-", "1", "2" ,"3", "+", mute]
+    - [GUI, Alt, Ctrl, Shift, MB2, ".", "4", "5" ,"6", "*"]
+    - [Undo, Cut, Copy, Paste, Redo, "-", "1", "2" ,"3", "+"]
     # thumbs
-    - [Tab, type: held, Space, 0, NAV, "="]
+    - ["NUM Lock", Tab, type: held, Space, 0, NAV, Repeat, Encoder]
   SYM:
     # rows 1-3
     - ["^", "@", {t: "<", h: "<>"}, ">", "`", "|", {t: "{", h: "{}"}, "}", "$", {t: "\"", h: "\"\""}]
     - [null, "*", "/", "=", "&", "#", {t: "(", h: "()"}, ")", ";", {t: "'", h: "''"}]
-    - [Ctrl, "~", "+", {t: "[", h: "[]"}, "]", "%", "\\", ":", "?", "!", "-", Shift]
+    - ["~", "+", {t: "[", h: "[]"}, "]", "%", "\\", ":", "?", "!", "-"]
     # thumbs
-    - [null, type: held, null, null, type: held, null]
+    - [Ctrl, null, type: held, null, null, type: held, null, Encoder]
   FUNC:
     # rows 1-3
     - [BT1, BT2, BT3, BT4, BT5, null, F7, F8, F9, F10]
-    - [Gui, Alt, Ctrl, Shift, BT0, null, F4, F5, F6, F11]
-    - [type: held, "BT Clear", "Num Lock", "Caps Lock", "Scroll Lock", null, null, F1, F2, F3, F12, mute]
+    - [GUI, Alt, Ctrl, Shift, BT0, null, F4, F5, F6, F11]
+    - ["BT Clear", "Num Lock", "Caps Lock", "Scroll Lock", null, null, F1, F2, F3, F12]
     # thumbs
-    - ["USB/BT Toggle", "Conn Status", "Battery Status", BASE, GRAPHITE, "Print screen"]
+    - [type: held, "USB/BT Toggle", "Conn Status", "Battery Status", BASE, GRAPHITE, GAME, Encoder]
 combos:
   - {p: [13, 14], k: "@", l: ["BASE"]}
   - {p: [23, 24], k: Tab, l: ["BASE"]}
