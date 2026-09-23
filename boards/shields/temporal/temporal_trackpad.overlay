@@ -63,6 +63,10 @@ trackpad: &i2c0 {
         rst-gpios = <&pro_micro 21 GPIO_ACTIVE_HIGH>;
 
         enable-power-management;
+    	idle-sleep;
+
+        timeout-active = <5>;
+        timeout-idle-touch = <10>;
 
         /* from TPS43 datasheet */
         x-resolution = <2048>;
