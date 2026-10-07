@@ -65,9 +65,6 @@ trackpad: &i2c0 {
         enable-power-management;
     	idle-sleep;
 
-        timeout-active = <5>;
-        timeout-idle-touch = <10>;
-
         /* from TPS43 datasheet */
         x-resolution = <2048>;
         y-resolution = <1792>;
@@ -75,10 +72,7 @@ trackpad: &i2c0 {
         filter-settings = <0x0B>;
 
         report-rate-active = <10>;
-        report-rate-idle-touch = <50>;
-        report-rate-idle = <50>;
-        report-rate-lp1 = <80>;
-        report-rate-lp2 = <250>;
+        report-rate-lp2 = <640>;
 
         sensitivity = <75>;            /* default 100 */
         scroll-sensitivity = <30>;     /* default 50 */
