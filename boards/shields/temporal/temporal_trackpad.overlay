@@ -63,7 +63,7 @@ trackpad: &i2c0 {
         rst-gpios = <&pro_micro 21 GPIO_ACTIVE_HIGH>;
 
         enable-power-management;
-        idle-sleep;
+        //idle-sleep;
 
         /* from TPS43 datasheet */
         x-resolution = <2048>;
@@ -72,14 +72,14 @@ trackpad: &i2c0 {
         filter-settings = <0x0B>;
 
         timeout-active = <5>;
-        timeout-idle-touch = <1>;
-        timeout-idle = <1>;
+        timeout-idle-touch = <5>;
+        timeout-idle = <5>;
         timeout-lp1 = <1>;
 
         report-rate-active = <10>;
         report-rate-idle-touch = <100>;
-        report-rate-idle = <500>;
-        report-rate-lp1 = <1000>;
+        report-rate-idle = <100>;
+        report-rate-lp1 = <500>;
         report-rate-lp2 = <1000>;
 
         sensitivity = <75>;            /* default 100 */
