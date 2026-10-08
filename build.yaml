@@ -40,7 +40,7 @@ include:
 #    artifact-name: temporal_right
   - board: nice_nano//zmk
     shield: temporal_trackpad
-    snippet: zmk-usb-logging
+#    snippet: zmk-usb-logging
     artifact-name: temporal_trackpad
 #  - board: xiao_ble//zmk
 #    shield: temporal_prospector prospector_adapter
