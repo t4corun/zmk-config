@@ -71,9 +71,9 @@ trackpad: &i2c0 {
 
         filter-settings = <0x0B>;
 
-        timeout-active = <3>;
-        timeout-idle-touch = <1>;
-        timeout-idle = <0>;
+        timeout-active = <5>;
+        timeout-idle-touch = <2>;
+        timeout-idle = <2>;
         timeout-lp1 = <1>;
 
         report-rate-active = <10>;
