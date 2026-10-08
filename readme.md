@@ -29,8 +29,30 @@ Wrote the sheild definitions and configuration files to make it as lean as possi
 
 ## Learnings
 
+General Learnings
+
 - The order of includes isn't strict
 - The trackpad must have a code remap behavior or mouse movements will act as a drag click
+
+The trackpad eats power. I had the below refresh rates with the default timeout settings and I would be dead after 3-4 days.
+
+```text
+report-rate-active = <10>;
+report-rate-idle-touch = <50>;
+report-rate-idle = <50>;
+report-rate-lp1 = <80>;
+report-rate-lp2 = <250>;
+
+0-5s: active 100Hz
+5-65s: idle-touch 20Hz
+65-75s: idle 20Hz
+75-95s: lp1 12.5Hz
+95s on: lp2 6.25Hz
+```
+
+
+
+
 
 ## Wishlist
 
