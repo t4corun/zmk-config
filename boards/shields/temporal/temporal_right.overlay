@@ -27,3 +27,11 @@
     status = "okay";
 };
 
+&asdc0 {
+    status = "okay";
+};
+
+&ssr0 {
+    status = "okay";
+};
+

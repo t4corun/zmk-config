@@ -94,7 +94,7 @@
         };
 
         navigation {
-            display-name = "navigation";
+            display-name = "nav";
             bindings = <
                 TEMPORAL_WRAPPER(
                     LAYER_NAVIGATION,

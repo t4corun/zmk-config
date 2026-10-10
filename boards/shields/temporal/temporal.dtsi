@@ -103,4 +103,16 @@
         device = <&trackpad_split>;
         status = "disabled";
     };
+
+    asdc0: split_data_channel {
+        compatible = "zmk,arbitrary-split-data-channel";
+        channel-id = <1>;
+        status = "disabled";
+    };
+
+    ssr0: split_status_relay {
+        compatible = "zmk,split-status-relay";
+        asdc-channel = <&asdc0>;
+        status = "disabled";
+    };
 };

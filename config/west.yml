@@ -10,6 +10,8 @@ manifest:
       url-base: https://github.com/caksoylar
     - name: geeksville
       url-base: https://github.com/geeksville
+    - name: dmhuisma
+      url-base: https://github.com/dmhuisma
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -27,5 +29,14 @@ manifest:
     - name: zmk_driver_azoteq
       remote: geeksville
       revision: master
+    - name: nice-view-battery-peripheral
+      remote: dmhuisma
+      revision: zmk_0.4
+    - name: zmk_arbitrary_split_data_channel
+      remote: dmhuisma
+      revision: main
+    - name: zmk-split-status-relay
+      remote: dmhuisma
+      revision: main
   self:
     path: config

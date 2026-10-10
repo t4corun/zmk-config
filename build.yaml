@@ -33,10 +33,10 @@ include:
     artifact-name: totem_rgbdongle
 
   - board: nice_nano//zmk
-    shield: temporal_left nice_view
+    shield: temporal_left nice_view_battery_peripheral
     artifact-name: temporal_left
   - board: nice_nano//zmk
-    shield: temporal_right nice_view
+    shield: temporal_right nice_view_battery_peripheral
     artifact-name: temporal_right
   - board: nice_nano//zmk
     shield: temporal_trackpad
