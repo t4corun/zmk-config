@@ -12,6 +12,8 @@ manifest:
       url-base: https://github.com/geeksville
     - name: dmhuisma
       url-base: https://github.com/dmhuisma
+    - name: t4corun
+      url-base: https://github.com/t4corun
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -33,8 +35,8 @@ manifest:
       remote: dmhuisma
       revision: zmk_0.4
     - name: zmk_arbitrary_split_data_channel
-      remote: dmhuisma
-      revision: main
+      remote: t4corun
+      revision: bugfix
     - name: zmk-split-status-relay
       remote: dmhuisma
       revision: main

@@ -5,11 +5,3 @@
  */
 
 #include "temporal_dongle.dtsi"
-
-&asdc0 {
-    status = "okay";
-};
-
-&ssr0 {
-    status = "okay";
-};
