@@ -127,14 +127,14 @@
     &kp ESC,    &kp HOME,   &kp UP,     &kp END,    &kp PG_UP,      &kp INS,    &kp K_APP,  ____xx____, ____xx____, ____xx____, \
     ____xx____, &kp LEFT,   &kp DOWN,   &kp RIGHT,  &kp PG_DN,      &kp BSPC,   MODS_SCAG_____________________________________, \
     SHORTCUTS_UCCPR___________________________________________,     &kp DEL,    ____xx____, VOL_DOWN,   VOL_UP,     VOL_MUTE,   \
-                            &kp TAB,    __________, ____xx____,     LAYER_TRANS_______________________
+                            __________, __________, ____xx____,     LAYER_TRANS_______________________
 
 
 #define LAYER_NUMBER                                                                                                            \
     &kp ESC,    &mkp MB5,   &mkp MB3,   &mkp MB4,   W_SNIP,         &kp COMMA,  &kp N7,     &kp N8,     &kp N9,     &kp FSLH,   \
     MODS_GACS_____________________________________, &mkp MB2,       &kp DOT,    &kp N4,     &kp N5,     &kp N6,     &kp ASTRK,  \
     SHORTCUTS_UCCPR___________________________________________,     &kp MINUS,  &kp N1,     &kp N2,     &kp N3,     &kp PLUS,   \
-                            &kp TAB,    __________, &kp SPACE,      &kp N0,     __________, __________
+                            __________, __________, &kp SPACE,      &kp N0,     __________, __________
 
 
 #define LAYER_SYMBOL                                                                                                            \

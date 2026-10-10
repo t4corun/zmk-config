@@ -15,7 +15,7 @@
 COMBO_MACRO(
     tab,
     LB2 LB1,
-    _BASELAYERS _SYMBOL,
+    _BASELAYERS _NUMBER _SYMBOL,
     &kp TAB
 )
 

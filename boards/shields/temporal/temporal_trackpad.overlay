@@ -63,6 +63,7 @@ trackpad: &i2c0 {
         rst-gpios = <&pro_micro 21 GPIO_ACTIVE_HIGH>;
 
         enable-power-management;
+        idle-sleep;
 
         /* from TPS43 datasheet */
         x-resolution = <2048>;
@@ -70,32 +71,31 @@ trackpad: &i2c0 {
 
         filter-settings = <0x0B>;
 
+        timeout-active = <5>;
+        timeout-idle-touch = <2>;
+        timeout-idle = <2>;
+        timeout-lp1 = <1>;
+
         report-rate-active = <10>;
-        report-rate-idle-touch = <50>;
-        report-rate-idle = <50>;
-        report-rate-lp1 = <80>;
-        report-rate-lp2 = <250>;
+        report-rate-idle-touch = <100>;
+        report-rate-idle = <100>;
+        report-rate-lp1 = <640>;
+        report-rate-lp2 = <640>;
 
         sensitivity = <75>;            /* default 100 */
         scroll-sensitivity = <30>;     /* default 50 */
         zoom-sensitivity = <45>;       /* default 100 */
 
-        tap-time = <150>;
         tap-distance = <15>;
-        hold-time = <800>;
-
-        scroll-initial-distance = <50>;
-
-        zoom-initial-distance = <50>;
-        zoom-consecutive-distance = <25>;
+        hold-time = <500>;
 
         zoom;
         scroll;
         two-finger-tap;
         single-tap;
         //press-and-hold;
-        three-finger-swipe;
-        three-finger-swipe-throttle-ms = <1200>;
+        //three-finger-swipe;
+        //three-finger-swipe-throttle-ms = <1200>;
 
         switch-xy;
         invert-x;
