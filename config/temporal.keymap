@@ -1,6 +1,9 @@
 #include "temporal.h"
 #include "t4corun/t4corun.keymap"
+
+#ifdef CONFIG_ENABLE_TRACKPAD
 #include "t4corun/trackpad.dtsi"
+#endif
 
 / {
     behaviors {
