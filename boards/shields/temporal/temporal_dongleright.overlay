@@ -5,7 +5,7 @@
  */
 
 #include "temporal.dtsi"
-#include "datarelay.dtsi"
+#include "splitdatachannel.dtsi"
 
 &default_transform {
     col-offset = <6>;

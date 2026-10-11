@@ -5,7 +5,7 @@
  */
 
 #include "dongle.dtsi"
-#include "splitdatarelay.dtsi"
+#include "splitdatachannel.dtsi"
 
 &asdc0 {
     status = "okay";
