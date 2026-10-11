@@ -7,6 +7,13 @@
 #include "temporal.dtsi"
 #include "trackpad.dtsi"
 
+/*
+ * This half has no display. boards/nice_nano_nrf52840_zmk.overlay is processed
+ * AFTER this file, so it can't be disabled by label from here; this macro tells
+ * it to skip the SPI/display definitions entirely.
+ */
+#define TEMPORAL_NO_DISPLAY
+
 &default_transform {
     col-offset = <6>;
 };
@@ -28,10 +35,6 @@
     a-gpios = <&pro_micro 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>; // P0.08 = Encoder Pin B
     b-gpios = <&pro_micro 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>; // P0.06 = Encoder Pin A
     status = "okay";
-};
-
-&nice_view_spi {
-    status = "disabled";
 };
 
 /*
