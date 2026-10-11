@@ -32,8 +32,8 @@ manifest:
       remote: geeksville
       revision: master
     - name: nice-view-battery-peripheral
-      remote: dmhuisma
-      revision: zmk_0.4
+      remote: t4corun
+      revision: t4co/singlebattery
     - name: zmk_arbitrary_split_data_channel
       remote: t4corun
       revision: bugfix
