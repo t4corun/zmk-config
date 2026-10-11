@@ -5,6 +5,7 @@
  */
 
 #include "temporal.dtsi"
+#include "trackpad.dtsi"
 
 &default_transform {
     col-offset = <6>;

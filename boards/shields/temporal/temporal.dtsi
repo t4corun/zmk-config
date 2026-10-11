@@ -79,40 +79,4 @@
         sensors = <&left_encoder &right_encoder>;
         triggers-per-rotation = <24>;
     };
-
-
-    /*
-     * Trackpad configuration
-     *
-     *   - Define the trackpad_split device in the [right] trackpad overlay
-     *   - Enable the trackpad_listener in the dongle overlay
-     */
-    split_inputs {
-        #address-cells = <1>;
-        #size-cells = <0>;
-
-        trackpad_split: tps43_split@0 {
-            compatible = "zmk,input-split";
-            reg = <0>;
-            status = "disabled";
-        };
-    };
-
-    trackpad_listener: tps43_listener {
-        compatible = "zmk,input-listener";
-        device = <&trackpad_split>;
-        status = "disabled";
-    };
-
-    asdc0: split_data_channel {
-        compatible = "zmk,arbitrary-split-data-channel";
-        channel-id = <1>;
-        status = "disabled";
-    };
-
-    ssr0: split_status_relay {
-        compatible = "zmk,split-status-relay";
-        asdc-channel = <&asdc0>;
-        status = "disabled";
-    };
 };

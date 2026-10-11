@@ -19,45 +19,58 @@
 #
 ---
 include:
-  - board: xiao_ble//zmk
-    shield: totem_left
-    artifact-name: totem_left
-  - board: xiao_ble//zmk
-    shield: totem_right
-    artifact-name: totem_right
+  # -------------------------
+  # TOTEM
+  # -------------------------
   - board: xiao_ble//zmk
     shield: totem_prospector prospector_adapter
     artifact-name: totem_prospector
+
   - board: xiao_ble//zmk
-    shield: totem_rgbdongle rgbled_adapter
-    artifact-name: totem_rgbdongle
+    shield: totem_dongle rgbled_adapter
+    artifact-name: totem_dongle
+
+  - board: xiao_ble//zmk
+    shield: totem_left
+    artifact-name: totem_left
+
+  - board: xiao_ble//zmk
+    shield: totem_right
+    artifact-name: totem_right
 
 
+  # -------------------------
+  # Temporal Dongle (RGB and split data channel)
+  # -------------------------
+  - board: xiao_ble//zmk
+    shield: temporal_dongle rgbled_adapter
+    artifact-name: temporal_dongle
   - board: nice_nano//zmk
-    shield: temporal_left nice_view_battery_peripheral
-    artifact-name: temporal_left
+    shield: temporal_dongleleft nice_view_battery_peripheral
+    artifact-name: temporal_dongle_left
   - board: nice_nano//zmk
-    shield: temporal_right nice_view_battery_peripheral
-    artifact-name: temporal_right
+    shield: temporal_dongleright nice_view_battery_peripheral
+    artifact-name: temporal_dongle_right
 
-  - board: nice_nano//zmk
-    shield: temporal_prospectorleft nice_view
-    artifact-name: temporal_prospectorleft
-  - board: nice_nano//zmk
-    shield: temporal_trackpad
-#    snippet: zmk-usb-logging
-    artifact-name: temporal_trackpad
 
+  # -------------------------
+  # Temporal Prospector (prospector screen and trackpad)
+  # -------------------------
   - board: xiao_ble//zmk
     shield: temporal_prospector prospector_adapter
     artifact-name: temporal_prospector
-  - board: xiao_ble//zmk
-    shield: temporal_rgbdongle rgbled_adapter
-    artifact-name: temporal_rgbdongle
+  - board: nice_nano//zmk
+    shield: temporal_prospectorleft nice_view
+    artifact-name: temporal_prospector_left
+  - board: nice_nano//zmk
+    shield: temporal_prospectorright
+#    snippet: zmk-usb-logging
+    artifact-name: temporal_prospector_right
 
 
-
-
+  # -------------------------
+  # Settings Reset
+  # -------------------------
   - board: xiao_ble//zmk
     shield: settings_reset
     artifact-name: xiao_settings_reset

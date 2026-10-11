@@ -5,6 +5,7 @@
  */
 
 #include "temporal.dtsi"
+#include "datarelay.dtsi"
 
 &kscan {
     col-gpios
