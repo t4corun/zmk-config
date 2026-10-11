@@ -1,0 +1,24 @@
+/*
+ * Copyright (c) 2026 Curtis Bollinger
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include "temporal.dtsi"
+
+&kscan {
+    col-gpios
+        = <&pro_micro 21 GPIO_ACTIVE_HIGH>  // col_extra
+        , <&pro_micro 20 GPIO_ACTIVE_HIGH>  // col_pinky
+        , <&pro_micro 19 GPIO_ACTIVE_HIGH>  // col_ring
+        , <&pro_micro 18 GPIO_ACTIVE_HIGH>  // col_middle
+        , <&pro_micro 15 GPIO_ACTIVE_HIGH>  // col_index
+        , <&pro_micro 14 GPIO_ACTIVE_HIGH>  // col_inner
+        ;
+};
+
+&left_encoder {
+    a-gpios = <&pro_micro 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>; // P0.06 = Encoder Pin B
+    b-gpios = <&pro_micro 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>; // P0.08 = Encoder Pin A
+    status = "okay";
+};
