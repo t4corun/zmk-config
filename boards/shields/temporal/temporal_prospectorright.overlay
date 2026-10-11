@@ -30,6 +30,10 @@
     status = "okay";
 };
 
+&nice_view_spi {
+    status = "disabled";
+};
+
 /*
  * Azoteq Trackpad Configuration
  *
