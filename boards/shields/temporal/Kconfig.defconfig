@@ -52,4 +52,9 @@ config ZMK_SPLIT
 config ZMK_BLE
     default y
 
+# custom variable to enable including keymap trackpad configuration
+config ENABLE_TRACKPAD
+    bool "Enable trackpad configuration"
+    default n
+
 endif
