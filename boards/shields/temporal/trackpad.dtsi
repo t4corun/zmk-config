@@ -1,3 +1,15 @@
+#ifndef TEMPORAL_TRACKPAD_DTSI
+#define TEMPORAL_TRACKPAD_DTSI
+
+/*
+ * Marker macro: shield overlays that include this file (temporal_prospector and
+ * temporal_prospectorright) define TEMPORAL_TRACKPAD_DTSI. The keymap is
+ * preprocessed after the shield overlays in the same cpp run, so
+ * config/temporal.keymap uses it to decide whether to include
+ * config/t4corun/trackpad.dtsi. Builds that don't include this file (dongle,
+ * dongleleft, dongleright, prospectorleft) never see the trackpad customizations.
+ */
+
 #include <input/processors.dtsi>
 
 
@@ -9,20 +21,6 @@
 
 / {
     trackpad_behaviors {
-        swipe_button_mapper: swipe_button_mapper {
-            compatible = "zmk,input-processor-behaviors";
-            #input-processor-cells = <0>;
-            codes = <INPUT_BTN_NORTH INPUT_BTN_EAST INPUT_BTN_SOUTH INPUT_BTN_WEST>;
-            bindings = <&kp LC(LS(TAB))>, <&mkp MB5>, <&kp LC(TAB)>, <&mkp MB4>;
-        };
-
-        zip_zoom_to_wheel: zip_zoom_to_wheel {
-            compatible = "zmk,input-processor-code-mapper";
-            #input-processor-cells = <0>;
-            type = <INPUT_EV_REL>;
-            map = <INPUT_REL_MISC INPUT_REL_WHEEL>;
-        };
-
     /*
      * This is important or every touch will register as left click
      * so moving the cursor will act as a drag click
@@ -32,7 +30,7 @@
             #input-processor-cells = <0>;
 
             codes = <INPUT_BTN_TOUCH>;      // watch for the 'touch' pseudo button
-            bindings  = <&mo _NUMBER>;      // Activate Number layer during touch
+            bindings  = <&mo 0>;
         };
     };
 
@@ -58,30 +56,8 @@
         device = <&trackpad_split>;
         status = "disabled";
 
-        input-processors =  <&zip_xy_scaler 1 1>,
-                            <&zip_scroll_scaler 1 15>,
-                            //<&zip_scroll_transform  (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>, // match phone and laptop
-                            <&is_touching_processor>,
-                            <&zip_zoom_to_wheel>;
-                            //<&swipe_button_mapper>;
+        input-processors =  <&is_touching_processor>;
     };
 };
 
-/*
-with all the features disabled it seems like these work. there maybe some
-built in processing
-- single tap
-- two finger tap
-- scroll in both directions but i need to invert both axis to match the phone/laptop
-- zoom
-
-this doesn't seem to work at all
-- press-and-hold
-
-enabling these to see what happens
-- zoom works
-- scroll (invert y is not correct, invert x is correct to match phone)
-- two-finger-tap works
-- single-tapd works
-*/
-
+#endif /* TEMPORAL_TRACKPAD_DTSI */
