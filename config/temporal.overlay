@@ -1,0 +1,3 @@
+#ifdef CONFIG_ENABLE_TRACKPAD
+#include "t4corun/trackpad.dtsi"
+#endif
