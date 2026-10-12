@@ -14,6 +14,11 @@
  * Both keyboard halves share this SPI configuration
  */
 
+/*
+ * Shield overlays that have no display (temporal_prospectorright) define
+ * TEMPORAL_NO_DISPLAY, which is processed before this file.
+ */
+#ifndef TEMPORAL_NO_DISPLAY
 
 &pinctrl {
     spi1_default: spi1_default {
@@ -56,3 +61,5 @@ nice_view_spi: &spi1 {
         zephyr,display = &nice_view;
     };
 };
+
+#endif /* TEMPORAL_NO_DISPLAY */

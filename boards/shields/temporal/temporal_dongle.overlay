@@ -1,0 +1,16 @@
+/*
+ * Copyright (c) 2026 Victor Nguyen
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include "dongle.dtsi"
+#include "splitdatachannel.dtsi"
+
+&asdc0 {
+    status = "okay";
+};
+
+&ssr0 {
+    status = "okay";
+};

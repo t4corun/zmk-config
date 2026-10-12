@@ -11,8 +11,9 @@ features:
   - encoder
   - pointer
 siblings:
-  - temporal_left
-  - temporal_right
-  - temporal_trackpad
-  - temporal_rgbdongle
+  - temporal_dongleleft
+  - temporal_dongleright
+  - temporal_dongle
   - temporal_prospector
+  - temporal_prospectorleft
+  - temporal_prospectorright

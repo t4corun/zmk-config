@@ -24,11 +24,3 @@
     // in addition the dongle uses a seeed xiao
     /delete-node/ nice_nano_v2_kscan;
 };
-
-&trackpad_split {
-    status = "okay";
-};
-
-&trackpad_listener {
-    status = "okay";
-};

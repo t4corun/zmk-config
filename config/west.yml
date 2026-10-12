@@ -10,6 +10,10 @@ manifest:
       url-base: https://github.com/caksoylar
     - name: geeksville
       url-base: https://github.com/geeksville
+    - name: dmhuisma
+      url-base: https://github.com/dmhuisma
+    - name: t4corun
+      url-base: https://github.com/t4corun
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -27,5 +31,14 @@ manifest:
     - name: zmk_driver_azoteq
       remote: geeksville
       revision: master
+    - name: nice-view-battery-peripheral
+      remote: t4corun
+      revision: t4co/singlebattery
+    - name: zmk_arbitrary_split_data_channel
+      remote: t4corun
+      revision: bugfix
+    - name: zmk-split-status-relay
+      remote: dmhuisma
+      revision: main
   self:
     path: config

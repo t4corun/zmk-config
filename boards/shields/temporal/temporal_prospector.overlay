@@ -4,4 +4,13 @@
  * SPDX-License-Identifier: MIT
  */
 
-#include "temporal_dongle.dtsi"
+#include "dongle.dtsi"
+#include "trackpad.dtsi"
+
+&trackpad_split {
+    status = "okay";
+};
+
+&trackpad_listener {
+    status = "okay";
+};

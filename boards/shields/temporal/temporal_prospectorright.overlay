@@ -5,6 +5,14 @@
  */
 
 #include "temporal.dtsi"
+#include "trackpad.dtsi"
+
+/*
+ * This half has no display. boards/nice_nano_nrf52840_zmk.overlay is processed
+ * AFTER this file, so it can't be disabled by label from here; this macro tells
+ * it to skip the SPI/display definitions entirely.
+ */
+#define TEMPORAL_NO_DISPLAY
 
 &default_transform {
     col-offset = <6>;

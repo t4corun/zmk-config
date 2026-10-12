@@ -1,0 +1,63 @@
+#ifndef TEMPORAL_TRACKPAD_DTSI
+#define TEMPORAL_TRACKPAD_DTSI
+
+/*
+ * Marker macro: shield overlays that include this file (temporal_prospector and
+ * temporal_prospectorright) define TEMPORAL_TRACKPAD_DTSI. The keymap is
+ * preprocessed after the shield overlays in the same cpp run, so
+ * config/temporal.keymap uses it to decide whether to include
+ * config/t4corun/trackpad.dtsi. Builds that don't include this file (dongle,
+ * dongleleft, dongleright, prospectorleft) never see the trackpad customizations.
+ */
+
+#include <input/processors.dtsi>
+
+
+/*
+ * Made an exception architecturally to blend my customizations with the
+ * trackpad enabler. I don't daily drive a trackpad.
+ * Keeping it separate I was struggling to
+ */
+
+/ {
+    trackpad_behaviors {
+    /*
+     * This is important or every touch will register as left click
+     * so moving the cursor will act as a drag click
+     */
+        is_touching_processor:is_touching_processor {
+            compatible = "zmk,input-processor-behaviors";
+            #input-processor-cells = <0>;
+
+            codes = <INPUT_BTN_TOUCH>;      // watch for the 'touch' pseudo button
+            bindings  = <&mo 0>;
+        };
+    };
+
+    /*
+     * Trackpad configuration
+     *
+     *   - Define the trackpad_split device in the [right] trackpad overlay
+     *   - Enable the trackpad_listener in the dongle overlay
+     */
+    split_inputs {
+        #address-cells = <1>;
+        #size-cells = <0>;
+
+        trackpad_split: tps43_split@0 {
+            compatible = "zmk,input-split";
+            reg = <0>;
+            status = "disabled";
+        };
+    };
+
+    trackpad_listener: tps43_listener {
+        compatible = "zmk,input-listener";
+        device = <&trackpad_split>;
+        status = "disabled";
+
+        input-processors =  <&is_touching_processor>;
+    };
+};
+
+#endif /* TEMPORAL_TRACKPAD_DTSI */

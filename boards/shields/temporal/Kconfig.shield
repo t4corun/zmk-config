@@ -2,14 +2,16 @@
 # SPDX-License-Identifier: MIT
 
 config SHIELD_TEMPORAL_LEFT
-    def_bool $(shields_list_contains,temporal_left)
+    def_bool \
+        $(shields_list_contains,temporal_dongleleft) || \
+        $(shields_list_contains,temporal_prospectorleft)
 
 config SHIELD_TEMPORAL_RIGHT
     def_bool \
-        $(shields_list_contains,temporal_right) || \
-        $(shields_list_contains,temporal_trackpad)
+        $(shields_list_contains,temporal_dongleright) || \
+        $(shields_list_contains,temporal_prospectorright)
 
 config SHIELD_TEMPORAL_DONGLE
     def_bool \
-        $(shields_list_contains,temporal_prospector) || \
-        $(shields_list_contains,temporal_rgbdongle)
+        $(shields_list_contains,temporal_dongle) || \
+        $(shields_list_contains,temporal_prospector)

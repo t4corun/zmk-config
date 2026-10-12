@@ -15,19 +15,11 @@
             type = <INPUT_EV_REL>;
             map = <INPUT_REL_MISC INPUT_REL_WHEEL>;
         };
-
-	/*
-	 * This is important or every touch will register as left click
-	 * so moving the cursor will act as a drag click
-	 */
-        is_touching_processor:is_touching_processor {
-            compatible = "zmk,input-processor-behaviors";
-            #input-processor-cells = <0>;
-
-            codes = <INPUT_BTN_TOUCH>;      // watch for the 'touch' pseudo button
-            bindings  = <&mo _NUMBER>;      // Activate Number layer during touch
-        };
     };
+};
+
+&is_touching_processor {
+    bindings = <&mo _NUMBER>;
 };
 
 &trackpad_listener {

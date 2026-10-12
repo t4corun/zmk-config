@@ -1,6 +1,13 @@
 #include "temporal.h"
 #include "t4corun/t4corun.keymap"
+
+/*
+ * Only builds whose shield overlay included boards/shields/temporal/trackpad.dtsi
+ * (temporal_prospector, temporal_prospectorright) define this macro.
+ */
+#ifdef TEMPORAL_TRACKPAD_DTSI
 #include "t4corun/trackpad.dtsi"
+#endif
 
 / {
     behaviors {
@@ -94,7 +101,7 @@
         };
 
         navigation {
-            display-name = "navigation";
+            display-name = "nav";
             bindings = <
                 TEMPORAL_WRAPPER(
                     LAYER_NAVIGATION,

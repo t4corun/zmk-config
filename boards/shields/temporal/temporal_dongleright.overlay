@@ -5,6 +5,7 @@
  */
 
 #include "temporal.dtsi"
+#include "splitdatachannel.dtsi"
 
 &default_transform {
     col-offset = <6>;
@@ -24,6 +25,14 @@
 &right_encoder {
     a-gpios = <&pro_micro 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>; // P0.08 = Encoder Pin B
     b-gpios = <&pro_micro 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>; // P0.06 = Encoder Pin A
+    status = "okay";
+};
+
+&asdc0 {
+    status = "okay";
+};
+
+&ssr0 {
     status = "okay";
 };
 

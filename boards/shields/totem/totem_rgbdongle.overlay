@@ -1,7 +1,0 @@
-/*
- * Copyright (c) 2026 Victor Nguyen
- *
- * SPDX-License-Identifier: MIT
- */
-
-#include "totem_dongle.dtsi"
