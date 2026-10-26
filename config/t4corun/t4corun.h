@@ -58,12 +58,11 @@
 
 // wireless connectivity and output modes. Cycles through profiles 1-6
 #define BT_CLEAR             &bt BT_CLR
-#define BT_0                 &bt BT_SEL 0
-#define BT_1                 &bt BT_SEL 1
-#define BT_2                 &bt BT_SEL 2
-#define BT_3                 &bt BT_SEL 3
-#define BT_4                 &bt BT_SEL 4
-#define BT_5                 &bt BT_SEL 5
+#define BT_1                 &bt BT_SEL 0
+#define BT_2                 &bt BT_SEL 1
+#define BT_3                 &bt BT_SEL 2
+#define BT_4                 &bt BT_SEL 3
+#define BT_5                 &bt BT_SEL 4
 #define OUTPUT_TOG           &out OUT_TOG
 
 // hold tap macros
@@ -81,8 +80,8 @@
 #define __________                                                 &trans
 #define ____xx____                                                 &none
 #define __NONE_4__                                                 ____xx____, ____xx____, ____xx____, ____xx____
-#define BASE_L4___________________________                         &mkp MB1,   NUMBER,     &kp LSHFT
-#define BASE_R4___________________________                         &kp SPACE,  NAVIGATION, &key_repeat
+#define BASE_L4___________________________                         &mkp MB1,   NUMBER,     &sk LSHFT
+#define BASE_R4___________________________                         &kp SPACE,  NAVIGATION, &kp TAB
 #define LAYER_TRANS_______________________                         ____xx____, __________, ____xx____
 #define MODS_GACS_____________________________________             &kp LGUI,   &kp LALT,   &kp LCTRL,  &kp LSHFT
 #define MODS_SCAG_____________________________________             &kp RSHFT,  &kp RCTRL,  &kp RALT,   &kp RGUI
@@ -119,8 +118,8 @@
 #define LAYER_GAMENUM                                                                                                           \
     &kp N8,     &kp N7,     &kp N6,     &kp N5,     &kp T,          NONE_5____________________________________________________, \
     &kp N4,     &kp N3,     &kp N2,     &kp N1,     &kp G,          NONE_5____________________________________________________, \
-    &kp GRAVE,  &kp ESC,    ____xx____, &kp ENTER,  &kp LALT,       NONE_5____________________________________________________, \
-                            __________, ____xx____, ____xx____,     QWERTY,     GRAPHITE,  ____xx____
+    &kp GRAVE,  &kp ESC,    ____xx____, &kp ENTER,  &kp  LALT,      NONE_5____________________________________________________, \
+                            __________, ____xx____, ____xx____,     QWERTY,     GRAPHITE,   ____xx____
 
 
 #define LAYER_NAVIGATION                                                                                                        \
@@ -134,7 +133,7 @@
     &kp ESC,    &mkp MB5,   &mkp MB3,   &mkp MB4,   W_SNIP,         &kp COMMA,  &kp N7,     &kp N8,     &kp N9,     &kp FSLH,   \
     MODS_GACS_____________________________________, &mkp MB2,       &kp DOT,    &kp N4,     &kp N5,     &kp N6,     &kp ASTRK,  \
     SHORTCUTS_UCCPR___________________________________________,     &kp MINUS,  &kp N1,     &kp N2,     &kp N3,     &kp PLUS,   \
-                            __________, __________, &kp SPACE,      &kp N0,     __________, __________
+                            __________, __________, &kp SPACE,      &kp N0,     __________, &kp TAB
 
 
 #define LAYER_SYMBOL                                                                                                            \
@@ -145,8 +144,8 @@
 
 
 #define LAYER_FUNCTION                                                                                                          \
-    BT_0,       BT_1,       BT_2,       BT_3,       BT_4,           ____xx____, &kp F7,     &kp F8,     &kp F9,     &kp F10,    \
-    MODS_GACS_____________________________________, BT_5,           ____xx____, &kp F4,     &kp F5,     &kp F6,     &kp F11,    \
+    BT_1,       BT_2,       BT_3,       BT_4,       BT_5,           ____xx____, &kp F7,     &kp F8,     &kp F9,     &kp F10,    \
+    MODS_GACS_____________________________________, ____xx____,     ____xx____, &kp F4,     &kp F5,     &kp F6,     &kp F11,    \
     BT_CLEAR,   &kp KP_NUM, &kp CAPS,   &kp SLCK,   &kp PSCRN,      ____xx____, &kp F1,     &kp F2,     &kp F3,     &kp F12,    \
                             OUTPUT_TOG, &ind_con,   &ind_bat,       QWERTY,     GRAPHITE,   GAME
 
