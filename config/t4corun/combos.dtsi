@@ -13,24 +13,39 @@
 
 // left side combos
 COMBO_MACRO(
+    escape,
+    LT4 LT3,
+    _TYPINGLAYERS,
+    &kp ESC
+)
+
+COMBO_MACRO(
     tab,
     LB2 LB1,
-    _BASELAYERS _NUMBER _SYMBOL,
+    _TYPINGLAYERS _NUMBER,
     &kp TAB
 )
 
 COMBO_MACRO(
     at,
     LM1 LM0,
-    _BASELAYERS _SYMBOL,
+    _TYPINGLAYERS,
     &kp AT
 )
 
+
 // right side combos
+COMBO_MACRO(
+    repeat,
+    RM0 RM1,
+    _TYPINGLAYERS,
+    &key_repeat
+)
+
 COMBO_MACRO(
     enter,
     RB1 RB2,
-    _BASELAYERS _NUMBER _NAVIGATION _SYMBOL,
+    _TYPINGLAYERS,
     &kp ENTER
 )
 
@@ -45,13 +60,13 @@ COMBO_MACRO(
 COMBO_MACRO(
     capsword,
     LH0 RH0,
-    _BASELAYERS,
+    _TYPINGLAYERS,
     &caps_word
 )
 
 COMBO_MACRO(
     numword,
     LH2 RH2,
-    _BASELAYERS,
+    _TYPINGLAYERS,
     &num_word _NUMBER
 )

@@ -1,8 +1,8 @@
 /*
  * Macros - inspired by RafaelRomao
- /
+ */
 
- /
+/* 
  * Bracket Hold
  * 
  * Desire:
@@ -30,7 +30,9 @@
         bindings = <BINDINGS>;                     \
     };
 
-//require prior idle ms used to be 125
+/*
+ * require prior idle ms used to be 125
+ */
 #define HOLDTAP_MACRO(                             \
             NAME                                   \
             , HOLD_MACRO                           \
@@ -148,6 +150,6 @@
     NAME: NAME {                                   \
         compatible = "zmk,behavior-sensor-rotate"; \
         #sensor-binding-cells = <0>;               \
-        #tap-ms = <TAP_TIME>;                      \
+        tap-ms = <TAP_TIME>;                       \
         bindings = <CW>, <CCW>;                    \
     };

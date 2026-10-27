@@ -79,7 +79,7 @@
                 TOTEM_WRAPPER(
                     LAYER_SYMBOL,
                     &sk LCTRL,
-                    &sk LSHIFT
+                    &sk LSHFT
                 )
             >;
         };

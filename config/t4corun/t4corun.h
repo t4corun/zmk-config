@@ -16,20 +16,28 @@
 #define _SYMBOL        6
 #define _FUNCTION      7
 
-#define _BASELAYERS _QWERTY _GRAPHITE _GAME
+#define _TYPINGLAYERS _QWERTY _GRAPHITE
 
 // Behavior Configuration
 #define TAPPING_TERM         190
 #define QUICK_TAP_TERM       150
-#define PRIOR_IDLE_TERM      150
+#define PRIOR_IDLE_TERM      175
 
 #define HRM_TAPPING_TERM     (TAPPING_TERM + 100)
 
 #define COMBO_TIMEOUT        50
 
 // homerow mods
-#define HRML(k1, k2, k3, k4) &hrmgui  LGUI  k1, &hrmlalt LALT  k2, &hrmleft LCTRL k3, &hrmleft LSHFT k4
-#define HRMR(k1, k2, k3, k4) &hrmrght RSHFT k1, &hrmrght RCTRL k2, &hrmralt RALT  k3, &hrmgui  RGUI  k4
+#define HRML(k1, k2, k3, k4) \
+    &hrmgui   LGUI  k1,      \
+    &hrmlalt  LALT  k2,      \
+    &hrmlctrl LCTRL k3,      \
+    &hrmlshft LSHFT k4
+#define HRMR(k1, k2, k3, k4) \
+    &hrmright RSHFT k1,      \
+    &hrmright RCTRL k2,      \
+    &hrmralt  RALT  k3,      \
+    &hrmgui   RGUI  k4
 
 // layer changes
 #define NUMBER               &mo  _NUMBER
@@ -53,10 +61,10 @@
 #define W_SNIP               &kp LG(LS(S))
 
 // encoder shortcuts
-#define ENC_NONE             &inc_dec_kp &none         &none
+#define ENC_NONE             &inc_dec_kp 0             0
 #define ENC_VOL              &inc_dec_kp C_VOL_UP      C_VOL_DN
 
-// wireless connectivity and output modes. Cycles through profiles 1-6
+// wireless connectivity and output modes. Cycles through profiles 1-5
 #define BT_CLEAR             &bt BT_CLR
 #define BT_1                 &bt BT_SEL 0
 #define BT_2                 &bt BT_SEL 1
@@ -81,7 +89,7 @@
 #define ____xx____                                                 &none
 #define __NONE_4__                                                 ____xx____, ____xx____, ____xx____, ____xx____
 #define BASE_L4___________________________                         &mkp MB1,   NUMBER,     &sk LSHFT
-#define BASE_R4___________________________                         &kp SPACE,  NAVIGATION, &kp TAB
+#define BASE_R4___________________________                         &kp SPACE,  NAVIGATION, &ko_bpsc
 #define LAYER_TRANS_______________________                         ____xx____, __________, ____xx____
 #define MODS_GACS_____________________________________             &kp LGUI,   &kp LALT,   &kp LCTRL,  &kp LSHFT
 #define MODS_SCAG_____________________________________             &kp RSHFT,  &kp RCTRL,  &kp RALT,   &kp RGUI
@@ -99,13 +107,11 @@
                             BASE_L4___________________________,     BASE_R4___________________________
 
 
-
 #define LAYER_GRAPHITE                                                                                                          \
     &kp B,      &kp L,      &kp D,      &kp W,      &kp Z,          &kp SQT,    &kp F,      &kp O,      &kp U,      &kp J,      \
     HRML(N,     R,          T,          S),         &kp G,          &kp Y,      HRMR(H,     A,          E,          I),         \
     &kp Q,      &kp X,      &kp M,      &kp C,      &kp V,          &kp K,      &kp P,      &ko_gdot,   &kp MINUS,  &ko_gcom,   \
                             BASE_L4___________________________,     BASE_R4___________________________
-
 
 
 #define LAYER_GAME                                                                                                              \
@@ -126,14 +132,14 @@
     &kp ESC,    &kp HOME,   &kp UP,     &kp END,    &kp PG_UP,      &kp INS,    &kp K_APP,  ____xx____, ____xx____, ____xx____, \
     ____xx____, &kp LEFT,   &kp DOWN,   &kp RIGHT,  &kp PG_DN,      &kp BSPC,   MODS_SCAG_____________________________________, \
     SHORTCUTS_UCCPR___________________________________________,     &kp DEL,    ____xx____, VOL_DOWN,   VOL_UP,     VOL_MUTE,   \
-                            __________, __________, ____xx____,     LAYER_TRANS_______________________
+                            &kp TAB,    __________, ____xx____,     LAYER_TRANS_______________________
 
 
 #define LAYER_NUMBER                                                                                                            \
     &kp ESC,    &mkp MB5,   &mkp MB3,   &mkp MB4,   W_SNIP,         &kp COMMA,  &kp N7,     &kp N8,     &kp N9,     &kp FSLH,   \
     MODS_GACS_____________________________________, &mkp MB2,       &kp DOT,    &kp N4,     &kp N5,     &kp N6,     &kp ASTRK,  \
     SHORTCUTS_UCCPR___________________________________________,     &kp MINUS,  &kp N1,     &kp N2,     &kp N3,     &kp PLUS,   \
-                            __________, __________, &kp SPACE,      &kp N0,     __________, &kp TAB
+                            __________, __________, &kp SPACE,      &kp N0,     __________, &ko_bpsc
 
 
 #define LAYER_SYMBOL                                                                                                            \

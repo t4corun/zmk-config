@@ -34,7 +34,8 @@
             bindings = <
                 /* See temporal.h for postitions              */
                 /* Main 3x5x3, LT5, LM5, LH3, RH3, RT5, RM5   */
-                /* LH3, RH3, RT5, RM5 do not physically exist */
+                /* LT5, LM5, RT5, RM5 do not physically exist */
+                /* RH3 is an encoder                          */
                 TEMPORAL_WRAPPER(
                     LAYER_QWERTY,
                     FUNCTION,

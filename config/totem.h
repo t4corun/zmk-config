@@ -81,6 +81,9 @@ lb5  lb4  lb3  lb2  lb1  lb0     rb0  rb1  rb2  rb3  rb4  rb5 \
 #define KEYS_L   LT4 LT3 LT2 LT1 LT0 LM4 LM3 LM2 LM1 LM0 LB5 LB4 LB3 LB2 LB1 LB0
 #define KEYS_R   RT0 RT1 RT2 RT3 RT4 RM0 RM1 RM2 RM3 RM4 RB0 RB1 RB2 RB3 RB4 RB5
 #define THUMBS   LH2 LH1 LH0 RH0 RH1 RH2
-#define HRM_NONE LH0
-#define HRM_RALT LB2 LB1
+#define HRM_NONE LB5
+#define HRM_SHFT LH2
 #define HRM_GUI  RH0
+#define HRM_LCTRL LH2 RH0 RH2
+#define HRM_RALT LB2 LB1
+

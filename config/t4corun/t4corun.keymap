@@ -11,16 +11,18 @@
 
 / {
     behaviors {
-        HRM_MACRO(hrmleft,   TAPPING_TERM,         KEYS_R)
-        HRM_MACRO(hrmrght,   TAPPING_TERM,         KEYS_L)
-        HRM_MACRO(hrmlalt,   TAPPING_TERM,         HRM_NONE)
-        HRM_MACRO(hrmralt,   TAPPING_TERM,         HRM_RALT)
-        HRM_MACRO(hrmgui,    TAPPING_TERM,         HRM_GUI)
+        HRM_MACRO(hrmlshft,  HRM_TAPPING_TERM,     KEYS_R HRM_SHFT)
+        HRM_MACRO(hrmlctrl,  HRM_TAPPING_TERM,     KEYS_R HRM_LCTRL)
+        HRM_MACRO(hrmlalt,   HRM_TAPPING_TERM,     HRM_NONE)
+        HRM_MACRO(hrmright,  HRM_TAPPING_TERM,     KEYS_L)
+        HRM_MACRO(hrmralt,   HRM_TAPPING_TERM,     HRM_RALT)
+        HRM_MACRO(hrmgui,    HRM_TAPPING_TERM,     HRM_GUI)
 
         MOD_MORPH(ko_com,    &kp COMMA, &kp QMARK, MOD_LSFT)
         MOD_MORPH(ko_dot,    &kp DOT,   &kp EXCL,  MOD_LSFT)
         MOD_MORPH(ko_gcom,   &kp COMMA, &kp EXCL,  MOD_LSFT)
         MOD_MORPH(ko_gdot,   &kp DOT,   &kp QMARK, MOD_LSFT)
+        MOD_MORPH(ko_bpsc,   &kp BSPC,  &kp DEL,   MOD_LSFT)
     };
 
     conditional_layers {
