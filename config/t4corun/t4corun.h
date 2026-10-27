@@ -129,14 +129,14 @@
 
 
 #define LAYER_NAVIGATION                                                                                                        \
-    &kp ESC,    &kp HOME,   &kp UP,     &kp END,    &kp PG_UP,      &kp INS,    &kp K_APP,  ____xx____, ____xx____, ____xx____, \
+    ____xx____, &kp HOME,   &kp UP,     &kp END,    &kp PG_UP,      &kp INS,    &kp K_APP,  ____xx____, ____xx____, ____xx____, \
     ____xx____, &kp LEFT,   &kp DOWN,   &kp RIGHT,  &kp PG_DN,      &kp BSPC,   MODS_SCAG_____________________________________, \
     SHORTCUTS_UCCPR___________________________________________,     &kp DEL,    ____xx____, VOL_DOWN,   VOL_UP,     VOL_MUTE,   \
-                            &kp TAB,    __________, ____xx____,     LAYER_TRANS_______________________
+                            __________, __________, ____xx____,     LAYER_TRANS_______________________
 
 
 #define LAYER_NUMBER                                                                                                            \
-    &kp ESC,    &mkp MB5,   &mkp MB3,   &mkp MB4,   W_SNIP,         &kp COMMA,  &kp N7,     &kp N8,     &kp N9,     &kp FSLH,   \
+    &key_repeat,&mkp MB5,   &mkp MB3,   &mkp MB4,   W_SNIP,         &kp COMMA,  &kp N7,     &kp N8,     &kp N9,     &kp FSLH,   \
     MODS_GACS_____________________________________, &mkp MB2,       &kp DOT,    &kp N4,     &kp N5,     &kp N6,     &kp ASTRK,  \
     SHORTCUTS_UCCPR___________________________________________,     &kp MINUS,  &kp N1,     &kp N2,     &kp N3,     &kp PLUS,   \
                             __________, __________, &kp SPACE,      &kp N0,     __________, &ko_bpsc
@@ -150,9 +150,9 @@
 
 
 #define LAYER_FUNCTION                                                                                                          \
-    BT_1,       BT_2,       BT_3,       BT_4,       BT_5,           ____xx____, &kp F7,     &kp F8,     &kp F9,     &kp F10,    \
-    MODS_GACS_____________________________________, ____xx____,     ____xx____, &kp F4,     &kp F5,     &kp F6,     &kp F11,    \
-    BT_CLEAR,   &kp KP_NUM, &kp CAPS,   &kp SLCK,   &kp PSCRN,      ____xx____, &kp F1,     &kp F2,     &kp F3,     &kp F12,    \
-                            OUTPUT_TOG, &ind_con,   &ind_bat,       QWERTY,     GRAPHITE,   GAME
+    BT_1,       BT_2,       BT_3,       BT_4,       BT_5,           &kp KP_NUM, &kp F7,     &kp F8,     &kp F9,     &kp F10,    \
+    MODS_GACS_____________________________________, &kp PSCRN,      &kp CAPS,   &kp F4,     &kp F5,     &kp F6,     &kp F11,    \
+    BT_CLEAR,   ____xx____, OUTPUT_TOG, &ind_con,   &ind_bat,       &kp SLCK,   &kp F1,     &kp F2,     &kp F3,     &kp F12,    \
+                            __________, __________, ____xx____,     QWERTY,     GRAPHITE,   GAME
 
 //  xxxxxxxxxx, xxxxxxxxxx, xxxxxxxxxx, xxxxxxxxxx, xxxxxxxxxx,     xxxxxxxxxx, xxxxxxxxxx, xxxxxxxxxx, xxxxxxxxxx, xxxxxxxxxx,

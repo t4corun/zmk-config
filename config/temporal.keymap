@@ -38,7 +38,7 @@
                 /* RH3 is an encoder                          */
                 TEMPORAL_WRAPPER(
                     LAYER_QWERTY,
-                    FUNCTION,
+                    &key_repeat,
                     ____xx____,
                     __NONE_4__
                 )
@@ -55,7 +55,7 @@
             bindings = <
                 TEMPORAL_WRAPPER(
                     LAYER_GRAPHITE,
-                    FUNCTION,
+                    &key_repeat,
                     ____xx____,
                     __NONE_4__
                 )
@@ -157,7 +157,7 @@
             bindings = <
                 TEMPORAL_WRAPPER(
                     LAYER_FUNCTION,
-                    __________,
+                    ____xx____,
                     ____xx____,
                     __NONE_4__
                 )
