@@ -139,7 +139,7 @@
     ____xx____, &mkp MB5,   &mkp MB3,   &mkp MB4,   W_SNIP,         &kp COMMA,  &kp N7,     &kp N8,     &kp N9,     &kp FSLH,   \
     MODS_GACS_____________________________________, &mkp MB2,       &kp DOT,    &kp N4,     &kp N5,     &kp N6,     &kp ASTRK,  \
     SHORTCUTS_UCCPR___________________________________________,     &kp MINUS,  &kp N1,     &kp N2,     &kp N3,     &kp PLUS,   \
-                            FUNCTION,   __________, &kp SPACE,      &kp N0,     __________, &ko_bpsc
+                            __________, __________, &kp SPACE,      &kp N0,     __________, &ko_bpsc
 
 
 #define LAYER_SYMBOL                                                                                                            \
@@ -153,6 +153,6 @@
     BT_1,       BT_2,       BT_3,       BT_4,       BT_5,           &kp KP_NUM, &kp F7,     &kp F8,     &kp F9,     &kp F10,    \
     MODS_GACS_____________________________________, OUTPUT_TOG,     &kp CAPS,   &kp F4,     &kp F5,     &kp F6,     &kp F11,    \
     BT_CLEAR,   ____xx____, &kp PSCRN,  &ind_con,   &ind_bat,       &kp SLCK,   &kp F1,     &kp F2,     &kp F3,     &kp F12,    \
-                            __________, __________, ____xx____,     QWERTY,     GRAPHITE,   GAME
+                            ____xx____, __________, __________,     QWERTY,     GRAPHITE,   GAME
 
 //  xxxxxxxxxx, xxxxxxxxxx, xxxxxxxxxx, xxxxxxxxxx, xxxxxxxxxx,     xxxxxxxxxx, xxxxxxxxxx, xxxxxxxxxx, xxxxxxxxxx, xxxxxxxxxx,

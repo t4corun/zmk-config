@@ -35,7 +35,7 @@ COMBO_MACRO(
 
 COMBO_MACRO(
     function,
-    LH2 LH1,
+    LH1 LH0,
     _TYPINGLAYERS,
     FUNCTION
 )
