@@ -139,7 +139,7 @@
     &key_repeat,&mkp MB5,   &mkp MB3,   &mkp MB4,   W_SNIP,         &kp COMMA,  &kp N7,     &kp N8,     &kp N9,     &kp FSLH,   \
     MODS_GACS_____________________________________, &mkp MB2,       &kp DOT,    &kp N4,     &kp N5,     &kp N6,     &kp ASTRK,  \
     SHORTCUTS_UCCPR___________________________________________,     &kp MINUS,  &kp N1,     &kp N2,     &kp N3,     &kp PLUS,   \
-                            __________, __________, &kp SPACE,      &kp N0,     __________, &ko_bpsc
+                            FUNCTION,   __________, &kp SPACE,      &kp N0,     __________, &ko_bpsc
 
 
 #define LAYER_SYMBOL                                                                                                            \
