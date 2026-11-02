@@ -42,7 +42,8 @@
 // layer changes
 #define NUMBER               &mo  _NUMBER
 #define NAVIGATION           &mo  _NAVIGATION
-#define FUNCTION             &mo  _FUNCTION
+#define FUNCTION_Z           &lt  _FUNCTION Z
+#define FUNCTION_Q           &lt  _FUNCTION Q
 #define GAMENUM              &mo  _GAMENUM
 
 #define QWERTY               &to  _QWERTY
@@ -103,14 +104,14 @@
 #define LAYER_QWERTY                                                                                                            \
     &kp Q,      &kp W,      &kp E,      &kp R,      &kp T,          &kp Y,      &kp U,      &kp I,      &kp O,      &kp P,      \
     HRML(A,     S,          D,          F),         &kp G,          &kp H,      HRMR(J,     K,          L,          SQT),       \
-    &kp Z,      &kp X,      &kp C,      &kp V,      &kp B,          &kp N,      &kp M,      &ko_com,    &ko_dot,    &kp MINUS,  \
+    FUNCTION_Z, &kp X,      &kp C,      &kp V,      &kp B,          &kp N,      &kp M,      &ko_com,    &ko_dot,    &kp MINUS,  \
                             BASE_L4___________________________,     BASE_R4___________________________
 
 
 #define LAYER_GRAPHITE                                                                                                          \
     &kp B,      &kp L,      &kp D,      &kp W,      &kp Z,          &kp SQT,    &kp F,      &kp O,      &kp U,      &kp J,      \
     HRML(N,     R,          T,          S),         &kp G,          &kp Y,      HRMR(H,     A,          E,          I),         \
-    &kp Q,      &kp X,      &kp M,      &kp C,      &kp V,          &kp K,      &kp P,      &ko_gdot,   &kp MINUS,  &ko_gcom,   \
+    FUNCTION_Q, &kp X,      &kp M,      &kp C,      &kp V,          &kp K,      &kp P,      &ko_gdot,   &kp MINUS,  &ko_gcom,   \
                             BASE_L4___________________________,     BASE_R4___________________________
 
 
@@ -150,9 +151,9 @@
 
 
 #define LAYER_FUNCTION                                                                                                          \
-    BT_1,       BT_2,       BT_3,       BT_4,       BT_5,           &kp KP_NUM, &kp F7,     &kp F8,     &kp F9,     &kp F10,    \
-    MODS_GACS_____________________________________, OUTPUT_TOG,     &kp CAPS,   &kp F4,     &kp F5,     &kp F6,     &kp F11,    \
-    BT_CLEAR,   ____xx____, &kp PSCRN,  &ind_con,   &ind_bat,       &kp SLCK,   &kp F1,     &kp F2,     &kp F3,     &kp F12,    \
-                            ____xx____, __________, __________,     QWERTY,     GRAPHITE,   GAME
+    BT_CLEAR,   ____xx____, ____xx____, &ind_con,   &ind_bat        &kp KP_NUM, &kp F7,     &kp F8,     &kp F9,     &kp F10,    \
+    MODS_GACS_____________________________________, &kp PSCRN,      &kp CAPS,   &kp F4,     &kp F5,     &kp F6,     &kp F11,    \
+    __________, ____xx____, ____xx____, OUTPUT_TOG, BT_5,           &kp SLCK,   &kp F1,     &kp F2,     &kp F3,     &kp F12,    \
+                            BT_3,       BT_2,       BT_1,           QWERTY,     GRAPHITE,   GAME
 
 //  xxxxxxxxxx, xxxxxxxxxx, xxxxxxxxxx, xxxxxxxxxx, xxxxxxxxxx,     xxxxxxxxxx, xxxxxxxxxx, xxxxxxxxxx, xxxxxxxxxx, xxxxxxxxxx,

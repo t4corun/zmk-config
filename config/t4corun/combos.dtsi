@@ -33,12 +33,6 @@ COMBO_MACRO(
     &kp AT
 )
 
-COMBO_MACRO(
-    function,
-    LH1 LH0,
-    _TYPINGLAYERS,
-    FUNCTION
-)
 
 
 // right side combos

@@ -157,7 +157,7 @@
             bindings = <
                 TEMPORAL_WRAPPER(
                     LAYER_FUNCTION,
-                    ____xx____,
+                    BT_4,
                     ____xx____,
                     __NONE_4__
                 )

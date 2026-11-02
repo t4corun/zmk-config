@@ -12,7 +12,7 @@
                 /* Main 3x5x3, LB5, RB5       */
                 TOTEM_WRAPPER(
                     LAYER_QWERTY,
-                    FUNCTION,
+                    &key_repeat,
                     VOL_MUTE
                 )
             >;
@@ -23,7 +23,7 @@
             bindings = <
                 TOTEM_WRAPPER(
                     LAYER_GRAPHITE,
-                    FUNCTION,
+                    &key_repeat,
                     VOL_MUTE
                 )
             >;
@@ -89,7 +89,7 @@
             bindings = <
                 TOTEM_WRAPPER(
                     LAYER_FUNCTION,
-                    __________,
+                    BT_4,
                     __________
                 )
             >;
