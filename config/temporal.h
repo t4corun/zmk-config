@@ -30,8 +30,7 @@ lm5  lm4  lm3  lm2  lm1  lm0     rm0  rm1  rm2  rm3  rm4  rm5  \
      lm4, lm3, lm2, lm1, lm0,    rm0, rm1, rm2, rm3, rm4,      \
      lb4, lb3, lb2, lb1, lb0,    rb0, rb1, rb2, rb3, rb4,      \
                lh2, lh1, lh0,    rh0, rh1, rh2,                \
-                         lh3,    rh3,                          \
-                    lt5, lm5,    rt5, rm5                      \
+                         lh3,    rh3                           \
 )                                                              \
      lt4  lt3  lt2  lt1  lt0     rt0  rt1  rt2  rt3  rt4       \
      lm4  lm3  lm2  lm1  lm0     rm0  rm1  rm2  rm3  rm4       \
