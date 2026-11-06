@@ -8,19 +8,16 @@
 #include "splitdatachannel.dtsi"
 
 &default_transform {
-	// 6 for 42 key
-	// 5 for 38 key
     col-offset = <5>;
 };
 
-&kscan {
+&kscan 
     col-gpios
         = <&pro_micro 14 GPIO_ACTIVE_HIGH>  // col_inner
         , <&pro_micro 15 GPIO_ACTIVE_HIGH>  // col_index
         , <&pro_micro 18 GPIO_ACTIVE_HIGH>  // col_middle
         , <&pro_micro 19 GPIO_ACTIVE_HIGH>  // col_ring
         , <&pro_micro 20 GPIO_ACTIVE_HIGH>  // col_pinky (also encoder switch)
-     // , <&pro_micro 21 GPIO_ACTIVE_HIGH>  // col_extra
         ;
 };
 

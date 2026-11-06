@@ -32,10 +32,10 @@
         qwerty {
             display-name = "temporal";
             bindings = <
-                /* See temporal.h for postitions              */
-                /* Main 3x5x3, LT5, LM5, LH3, RH3, RT5, RM5   */
-                /* LT5, LM5, RT5, RM5 do not physically exist */
-                /* RH3 is an encoder                          */
+                /* See temporal.h for postitions   */
+                /* Main 3x5x3, LH3, RH3,           */
+				/* LH3 is the left most thumb key  */
+                /* RH3 is the rotary encoder click */
                 TEMPORAL_WRAPPER(
                     LAYER_QWERTY,					
                     &key_repeat,

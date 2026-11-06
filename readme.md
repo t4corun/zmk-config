@@ -27,12 +27,121 @@ Wrote the sheild definitions and configuration files to make it as lean as possi
 
 <img src="images/totem.png" alt="keymap" width="600">
 
-## Learnings
+
+## Notes
 
 General Learnings
 
 - The order of includes isn't strict
 - The trackpad must have a code remap behavior or mouse movements will act as a drag click
+
+### Temporal 42 key layout
+
+My shield is for a 38 key layout. If you wish to implement the 42 key version then you will need to do the following
+
+1. Enable the outer columns in the overlays. Add pin 21 back to each left and right overlay file 
+
+
+```c
+//left
+&kscan {
+    col-gpios
+        = <&pro_micro 21 GPIO_ACTIVE_HIGH>  // col_extra (add this to the front of col-gpios)
+        ...
+        ;
+};
+```
+
+```c
+//right
+&default_transform {
+    col-offset = <6>; // (change this from 5 to 6)
+};
+
+&kscan {
+    col-gpios
+        ...
+        , <&pro_micro 21 GPIO_ACTIVE_HIGH>  // col_extra (add this line to the end of col-gpios) 
+        ;
+};
+```
+
+2. Tell ZMK how your board is laid out. In `temporal.dtsi` add in the outer columns and rename everything
+
+```C
+    default_transform: temporal_42_transform {
+        compatible = "zmk,matrix-transform";
+        columns = <12>;
+        rows = <4>;
+        map = <
+            RC(0,0) RC(0,1) RC(0,2) RC(0,3) RC(0,4) RC(0,5)     RC(0,6) RC(0,7) RC(0,8) RC(0,9) RC(0,10) RC(0,11)
+            RC(1,0) RC(1,1) RC(1,2) RC(1,3) RC(1,4) RC(1,5)     RC(1,6) RC(1,7) RC(1,8) RC(1,9) RC(1,10) RC(1,11)
+                    RC(2,1) RC(2,2) RC(2,3) RC(2,4) RC(2,5)     RC(2,6) RC(2,7) RC(2,8) RC(2,9) RC(2,10)
+                            RC(3,2) RC(3,3) RC(3,4) RC(3,5)     RC(3,6) RC(3,7) RC(3,8) RC(3,9)
+        >;
+    };
+```
+
+3. Adjust the wrapper and timerless positions in `temporal.h`. This is so the keybinds you send in are positioned properly and combos will work
+
+```C
+#define TEMPORAL_LAYOUT(                                       \
+     lt4, lt3, lt2, lt1, lt0,    rt0, rt1, rt2, rt3, rt4,      \
+     lm4, lm3, lm2, lm1, lm0,    rm0, rm1, rm2, rm3, rm4,      \
+     lb4, lb3, lb2, lb1, lb0,    rb0, rb1, rb2, rb3, rb4,      \
+               lh2, lh1, lh0,    rh0, rh1, rh2,                \
+                         lh3,    rh3,                          \
+                    lt5, lm5,    rt5, rm5                      \
+)                                                              \
+lt5  lt4  lt3  lt2  lt1  lt0     rt0  rt1  rt2  rt3  rt4  rt5  \
+lm5  lm4  lm3  lm2  lm1  lm0     rm0  rm1  rm2  rm3  rm4  rm5  \
+     lb4  lb3  lb2  lb1  lb0     rb0  rb1  rb2  rb3  rb4       \
+          lh3  lh2  lh1  lh0     rh0  rh1  rh2  rh3
+```
+
+```C
+/*
+ * Position definition for timerless home row mods
+ *
+ *   ╭─────────────────────────┬─────────────────────────╮
+ *   │ LT5 LT4 LT3 LT2 LT1 LT0 │ RT0 RT1 RT2 RT3 RT4 RT5 │
+ *   │ LM5 LM4 LM3 LM2 LM1 LM0 │ RM0 RM1 RM2 RM3 RM4 RM5 │
+ *   │     LB4 LB3 LB2 LB1 LB0 │ RB0 RB1 RB2 RB3 RB4     │
+ *   ╰───────╮ LH3 LH2 LH1 LH0 │ RH0 RH1 RH2 RH3 ╭───────╯
+ *           ╰─────────────────┴─────────────────╯
+ *
+ * LT5 would start at 0, increment each by 1. RH3 would be 41
+ */
+ ```
+
+4. Adjust `temporal.keymap` to add the new key bindings
+
+```C
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+
+        qwerty {
+            display-name = "temporal";
+            bindings = <
+                /* See temporal.h for postitions   */
+                TEMPORAL_WRAPPER(
+                    LAYER_QWERTY,					
+                    &key_repeat,
+                    ____xx____,
+                    ____xx____, ____xx____, ____xx____, ____xx____ // add the out column bindings here
+                )
+            >;
+
+            sensor-bindings = <
+                ENC_NONE
+                ENC_VOL
+            >;
+        };
+```
+
+
+### Azoteq Trackpad
 
 The trackpad eats power. I had the below refresh rates with the default timeout settings and I would be dead after 3-4 days.
 
@@ -50,17 +159,7 @@ report-rate-lp2 = <250>;
 95s on: lp2 6.25Hz
 ```
 
-
-
-
-
-## Wishlist
-
-- Can we do OS mod swap like QMK?
-
-## TPS43 Defaults
-
-With no additional settings these are the defaults. Units come from the `azoteq,tps43-common.yaml` binding where defined.
+**TPS43 Defaults:** with no additional settings these are the defaults. Units come from the `azoteq,tps43-common.yaml` binding where defined.
 
 | Setting | Value |
 | --- | --- |
@@ -159,6 +258,12 @@ Raw Logs
 [00:00:01.073,333] <inf> tps43: ZOOM_CONSECUTIVE_DISTANCE (0x06CD): 25 px
 [00:00:01.073,486] <inf> tps43: TPS43 driver successfully initialized
 ```
+
+## Wishlist
+
+- Can we do OS mod swap like QMK?
+
+
 
 
 ### Special Thanks
