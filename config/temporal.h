@@ -5,10 +5,10 @@
  * and reduces duplication
  */
 
-#define TEMPORAL_WRAPPER(...) \
-    TEMPORAL_LAYOUT(__VA_ARGS__)
+#define TEMPORAL42_WRAPPER(...) \
+    TEMPORAL42_LAYOUT(__VA_ARGS__)
 
-#define TEMPORAL_LAYOUT(                                       \
+#define TEMPORAL42_LAYOUT(                                     \
      lt4, lt3, lt2, lt1, lt0,    rt0, rt1, rt2, rt3, rt4,      \
      lm4, lm3, lm2, lm1, lm0,    rm0, rm1, rm2, rm3, rm4,      \
      lb4, lb3, lb2, lb1, lb0,    rb0, rb1, rb2, rb3, rb4,      \
@@ -21,6 +21,22 @@ lm5  lm4  lm3  lm2  lm1  lm0     rm0  rm1  rm2  rm3  rm4  rm5  \
      lb4  lb3  lb2  lb1  lb0     rb0  rb1  rb2  rb3  rb4       \
           lh3  lh2  lh1  lh0     rh0  rh1  rh2  rh3
 
+
+#define TEMPORAL38_WRAPPER(...) \
+    TEMPORAL38_LAYOUT(__VA_ARGS__)
+
+#define TEMPORAL38_LAYOUT(                                     \
+     lt4, lt3, lt2, lt1, lt0,    rt0, rt1, rt2, rt3, rt4,      \
+     lm4, lm3, lm2, lm1, lm0,    rm0, rm1, rm2, rm3, rm4,      \
+     lb4, lb3, lb2, lb1, lb0,    rb0, rb1, rb2, rb3, rb4,      \
+               lh2, lh1, lh0,    rh0, rh1, rh2,                \
+                         lh3,    rh3,                          \
+                    lt5, lm5,    rt5, rm5                      \
+)                                                              \
+     lt4  lt3  lt2  lt1  lt0     rt0  rt1  rt2  rt3  rt4       \
+     lm4  lm3  lm2  lm1  lm0     rm0  rm1  rm2  rm3  rm4       \
+     lb4  lb3  lb2  lb1  lb0     rb0  rb1  rb2  rb3  rb4       \
+          lh3  lh2  lh1  lh0     rh0  rh1  rh2  rh3
 
 /*
  * Position definition for timerless home row mods

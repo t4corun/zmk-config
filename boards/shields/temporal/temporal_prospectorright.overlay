@@ -15,7 +15,9 @@
 #define TEMPORAL_NO_DISPLAY
 
 &default_transform {
-    col-offset = <6>;
+	// 6 for 42 key
+	// 5 for 38 key
+    col-offset = <5>;
 };
 
 &kscan {
@@ -26,8 +28,8 @@
         , <&pro_micro 19 GPIO_ACTIVE_HIGH>  // col_ring
         , <&pro_micro 20 GPIO_ACTIVE_HIGH>  // col_pinky (also encoder switch)
 
-        // I need this pin for the trackpad
-        //, <&pro_micro 21 GPIO_ACTIVE_HIGH>  // col_extra
+     // I need this pin for the trackpad
+     // , <&pro_micro 21 GPIO_ACTIVE_HIGH>  // col_extra
         ;
 };
 

@@ -153,7 +153,7 @@
 #define LAYER_FUNCTION                                                                                                          \
     BT_CLEAR,   ____xx____, ____xx____, &ind_con,   &ind_bat,       &kp KP_NUM, &kp F7,     &kp F8,     &kp F9,     &kp F10,    \
     MODS_GACS_____________________________________, &kp PSCRN,      &kp CAPS,   &kp F4,     &kp F5,     &kp F6,     &kp F11,    \
-    __________, ____xx____, ____xx____, OUTPUT_TOG, BT_5,           &kp SLCK,   &kp F1,     &kp F2,     &kp F3,     &kp F12,    \
-                            BT_3,       BT_2,       BT_1,           QWERTY,     GRAPHITE,   GAME
+    __________, ____xx____, ____xx____, BT_4,       BT_5,           &kp SLCK,   &kp F1,     &kp F2,     &kp F3,     &kp F12,    \
+                            BT_1,       BT_2,       BT_3,           QWERTY,     GRAPHITE,   GAME
 
 //  xxxxxxxxxx, xxxxxxxxxx, xxxxxxxxxx, xxxxxxxxxx, xxxxxxxxxx,     xxxxxxxxxx, xxxxxxxxxx, xxxxxxxxxx, xxxxxxxxxx, xxxxxxxxxx,
