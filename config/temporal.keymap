@@ -36,7 +36,7 @@
                 /* Main 3x5x3, LT5, LM5, LH3, RH3, RT5, RM5   */
                 /* LT5, LM5, RT5, RM5 do not physically exist */
                 /* RH3 is an encoder                          */
-                TEMPORAL38_WRAPPER(
+                TEMPORAL_WRAPPER(
                     LAYER_QWERTY,					
                     &key_repeat,
                     ____xx____
@@ -52,7 +52,7 @@
         graphite {
             display-name = "graphite";
             bindings = <
-                TEMPORAL38_WRAPPER(
+                TEMPORAL_WRAPPER(
                     LAYER_GRAPHITE,
                     &key_repeat,
                     ____xx____
@@ -68,7 +68,7 @@
         game {
             display-name = "game";
             bindings = <
-                TEMPORAL38_WRAPPER(
+                TEMPORAL_WRAPPER(
                     LAYER_GAME,
                     &kp ENTER,
                     ____xx____
@@ -84,7 +84,7 @@
         gamenum {
             display-name = "g.num";
             bindings = <
-                TEMPORAL38_WRAPPER(
+                TEMPORAL_WRAPPER(
                     LAYER_GAMENUM,
                     &kp ENTER,
                     ____xx____
@@ -100,7 +100,7 @@
         navigation {
             display-name = "nav";
             bindings = <
-                TEMPORAL38_WRAPPER(
+                TEMPORAL_WRAPPER(
                     LAYER_NAVIGATION,
                     NAVLOCK,
                     ____xx____
@@ -116,7 +116,7 @@
         number {
             display-name = "number";
             bindings = <
-                TEMPORAL38_WRAPPER(
+                TEMPORAL_WRAPPER(
                     LAYER_NUMBER,
                     NUMLOCK,
                     ____xx____
@@ -132,7 +132,7 @@
         symbol {
             display-name = "symbol";
             bindings = <
-                TEMPORAL38_WRAPPER(
+                TEMPORAL_WRAPPER(
                     LAYER_SYMBOL,
                     &sk LCTRL,
                     ____xx____
@@ -148,7 +148,7 @@
         function {
             display-name = "function";
             bindings = <
-                TEMPORAL38_WRAPPER(
+                TEMPORAL_WRAPPER(
                     LAYER_FUNCTION,
                     OUTPUT_TOG,
                     ____xx____
