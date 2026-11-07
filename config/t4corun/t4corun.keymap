@@ -52,8 +52,9 @@
         MACRO(        mc_dquo, &kp DQT    &kp DQT   &kp LEFT)
         HOLDTAP_MACRO(ht_dqt,  &mc_dquo)
     };
+};
 
-	&lt {
-		tapping-term-ms = <150>;
-	};
+
+&lt {
+	tapping-term-ms = <150>;
 };
